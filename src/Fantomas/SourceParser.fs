@@ -27,7 +27,7 @@ type Composite<'a, 'b> =
 let MaxLength = 512
 
 [<Literal>]
-let private MangledGlobalName : string = "`global`"
+let private MangledGlobalName: string = "`global`"
 
 let (|Ident|) (s: Ident) =
     let ident = s.idText
@@ -53,7 +53,16 @@ let (|LongIdent|) (li: LongIdent) =
         else
             s
 
-let (|LongIdentPieces|_|) =
+let (|LongIdentPieces|) (li: LongIdent) =
+    li
+    |> List.map
+        (fun x ->
+            if x.idText = MangledGlobalName then
+                "global", x.idRange
+            else
+                (|Ident|) x, x.idRange)
+
+let (|LongIdentPiecesExpr|_|) =
     function
     | SynExpr.LongIdent (_, LongIdentWithDots (lids, _), _, _) ->
         lids
@@ -204,45 +213,15 @@ let (|Measure|) x =
 
     sprintf "<%s>" <| loop x
 
-/// Lose information about kinds of literals
-let rec (|Const|) c =
-    match c with
-    | SynConst.Measure (Const c, Measure m) -> c + m
-    | SynConst.UserNum (num, ty) -> num + ty
-    | SynConst.Unit -> "()"
-    | SynConst.Bool b -> sprintf "%A" b
-    | SynConst.SByte s -> sprintf "%A" s
-    | SynConst.Byte b -> sprintf "%A" b
-    | SynConst.Int16 i -> sprintf "%A" i
-    | SynConst.UInt16 u -> sprintf "%A" u
-    | SynConst.Int32 i -> sprintf "%A" i
-    | SynConst.UInt32 u -> sprintf "%A" u
-    | SynConst.Int64 i -> sprintf "%A" i
-    | SynConst.UInt64 u -> sprintf "%A" u
-    | SynConst.IntPtr i -> sprintf "%in" i
-    | SynConst.UIntPtr u -> sprintf "%iun" u
-    | SynConst.Single s -> sprintf "%A" s
-    | SynConst.Double d -> sprintf "%A" d
-    | SynConst.Char c -> sprintf "%A" c
-    | SynConst.Decimal d -> sprintf "%A" d
-    | SynConst.String (s, _) ->
-        // Naive check for verbatim strings
-        if not <| String.IsNullOrEmpty(s)
-           && s.Contains("\\")
-           && not <| s.Contains(@"\\") then
-            sprintf "@%A" s
-        else
-            sprintf "%A" s
-    | SynConst.Bytes (bs, _) -> sprintf "%A" bs
-    // Auto print may cut off the array
-    | SynConst.UInt16s us -> sprintf "%A" us
-
 let (|String|_|) e =
     match e with
     | SynExpr.Const (SynConst.String (s, _), _) -> Some s
     | _ -> None
 
-let (|Unresolved|) (Const s as c, r) = (c, r, s)
+let (|Unit|_|) =
+    function
+    | SynConst.Unit _ -> Some()
+    | _ -> None
 
 // File level patterns
 
@@ -256,14 +235,22 @@ let (|ParsedImplFileInput|) (ParsedImplFileInput.ParsedImplFileInput (_, _, _, _
 let (|ParsedSigFileInput|) (ParsedSigFileInput.ParsedSigFileInput (_, _, _, hs, mns)) = (hs, mns)
 
 let (|ModuleOrNamespace|)
-    (SynModuleOrNamespace.SynModuleOrNamespace (LongIdent s, isRecursive, isModule, mds, px, ats, ao, _))
+    (SynModuleOrNamespace.SynModuleOrNamespace (LongIdentPieces lids, isRecursive, kind, mds, px, ats, ao, _))
     =
-    (ats, px, ao, s, mds, isRecursive, isModule)
+    (ats, px, ao, lids, mds, isRecursive, kind)
 
 let (|SigModuleOrNamespace|)
-    (SynModuleOrNamespaceSig.SynModuleOrNamespaceSig (LongIdent s, isRecursive, isModule, mds, px, ats, ao, _))
+    (SynModuleOrNamespaceSig.SynModuleOrNamespaceSig (LongIdentPieces lids, isRecursive, kind, mds, px, ats, ao, _))
     =
-    (ats, px, ao, s, mds, isRecursive, isModule)
+    (ats, px, ao, lids, mds, isRecursive, kind)
+
+let (|EmptyFile|_|) (input: ParsedInput) =
+    match input with
+    | ImplFile (ParsedImplFileInput (_, [ ModuleOrNamespace (_, _, _, _, [], _, SynModuleOrNamespaceKind.AnonModule) ])) ->
+        Some input
+    | SigFile (ParsedSigFileInput (_, [ SigModuleOrNamespace (_, _, _, _, [], _, SynModuleOrNamespaceKind.AnonModule) ])) ->
+        Some input
+    | _ -> None
 
 let (|Attribute|) (a: SynAttribute) =
     let (LongIdentWithDots s) = a.TypeName
@@ -640,6 +627,11 @@ let (|ConstExpr|_|) =
     | SynExpr.Const (x, r) -> Some(x, r)
     | _ -> None
 
+let (|ConstUnitExpr|_|) =
+    function
+    | ConstExpr (Unit, _) -> Some()
+    | _ -> None
+
 let (|TypeApp|_|) =
     function
     | SynExpr.TypeApp (e, _, ts, _, _, _, _) -> Some(e, ts)
@@ -671,7 +663,7 @@ let (|SimpleExpr|_|) =
     | SynExpr.Null _
     | SynExpr.Ident _
     | SynExpr.LongIdent _
-    | SynExpr.Const (Const _, _) as e -> Some e
+    | SynExpr.Const _ as e -> Some e
     | _ -> None
 
 /// Only recognize numbers; strings are ignored
@@ -1075,10 +1067,14 @@ let (|ILEmbedded|_|) =
     | SynExpr.LibraryOnlyILAssembly (_, _, _, _, r) -> Some(r)
     | _ -> None
 
+let (|LibraryOnlyStaticOptimization|_|) (e: SynExpr) =
+    match e with
+    | SynExpr.LibraryOnlyStaticOptimization (constraints, e, optExpr, _) -> Some(optExpr, constraints, e)
+    | _ -> None
+
 let (|UnsupportedExpr|_|) =
     function
-    // Temprorarily ignore these cases not often used outside FSharp.Core
-    | SynExpr.LibraryOnlyStaticOptimization (_, _, _, r)
+    // Temporarily ignore these cases not often used outside FSharp.Core
     | SynExpr.LibraryOnlyUnionCaseFieldGet (_, _, _, r)
     | SynExpr.LibraryOnlyUnionCaseFieldSet (_, _, _, _, r) -> Some r
     | _ -> None
@@ -1179,6 +1175,11 @@ let (|PatConst|_|) =
     | SynPat.Const (c, r) -> Some(c, r)
     | _ -> None
 
+let (|PatUnitConst|_|) =
+    function
+    | SynPat.Const (Unit, _) -> Some()
+    | _ -> None
+
 let (|PatIsInst|_|) =
     function
     | SynPat.IsInst (t, _) -> Some t
@@ -1226,17 +1227,27 @@ let (|RecordField|) =
 let (|Clause|) (SynMatchClause.Clause (p, eo, e, _, _)) = (p, e, eo)
 
 /// Process compiler-generated matches in an appropriate way
+let rec private skipGeneratedLambdas expr =
+    match expr with
+    | SynExpr.Lambda (_, true, _, bodyExpr, _, _) -> skipGeneratedLambdas bodyExpr
+    | _ -> expr
+
+and skipGeneratedMatch expr =
+    match expr with
+    | SynExpr.Match (_, _, [ SynMatchClause.Clause (_, _, innerExpr, _, _) as clause ], matchRange) when
+        matchRange.Start = clause.Range.Start
+        ->
+        skipGeneratedMatch innerExpr
+    | _ -> expr
+
 let (|Lambda|_|) =
     function
     | SynExpr.Lambda (_, _, _, _, Some (pats, body), range) ->
-        // find the body expression from the last lambda
-        let rec visit (e: SynExpr) : SynExpr =
-            match e with
-            | SynExpr.Match (matchSeqPoint = NoDebugPointAtInvisibleBinding; clauses = [ Clause (_, expr, _) ])
-            | SynExpr.Lambda (_, _, _, SynExpr.Match(clauses = [ Clause (_, expr, _) ]), _, _) -> visit expr
-            | _ -> e
+        let inline getLambdaBodyExpr expr =
+            let skippedLambdas = skipGeneratedLambdas expr
+            skipGeneratedMatch skippedLambdas
 
-        Some(pats, visit body, range)
+        Some(pats, getLambdaBodyExpr body, range)
     | _ -> None
 
 // Type definitions
@@ -1623,30 +1634,46 @@ let isFunctionBinding (p: SynPat) =
 
 let (|ElmishReactWithoutChildren|_|) e =
     match e with
-    | App (OptVar (ident, _, _), [ ArrayOrList (isArray, children, _) as aolEx ])
-    | App (OptVar (ident, _, _), [ ArrayOrListOfSeqExpr (isArray, CompExpr (_, Sequentials children)) as aolEx ]) ->
-        Some(ident, isArray, children, aolEx.Range)
-    | App (OptVar (ident, _, _), [ ArrayOrListOfSeqExpr (isArray, CompExpr (_, singleChild)) as aolEx ]) ->
-        Some(ident, isArray, [ singleChild ], aolEx.Range)
+    | SynExpr.App (_,
+                   false,
+                   OptVar (ident, _, _),
+                   (ArrayOrList (isArray, children, _)
+                   | ArrayOrListOfSeqExpr (isArray, CompExpr (_, Sequentials children)) as aolEx),
+                   _) -> Some(ident, isArray, children, aolEx.Range)
+    | SynExpr.App (_,
+                   false,
+                   OptVar (ident, _, _),
+                   (ArrayOrListOfSeqExpr (isArray, CompExpr (_, singleChild)) as aolEx),
+                   _) -> Some(ident, isArray, [ singleChild ], aolEx.Range)
     | _ -> None
 
-let (|ElmishReactWithChildren|_|) e =
+let (|ElmishReactWithChildren|_|) (e: SynExpr) =
     match e with
-    | App (OptVar ident, [ ArrayOrList _ as attributes; ArrayOrList (isArray, children, _) as childrenNode ]) ->
-        Some(ident, attributes, (isArray, children, childrenNode.Range))
-    | App (OptVar ident,
-           [ ArrayOrListOfSeqExpr _ as attributes;
-             ArrayOrListOfSeqExpr (isArray, CompExpr (_, Sequentials children)) as childrenNode ]) ->
-        Some(ident, attributes, (isArray, children, childrenNode.Range))
-    | App (OptVar ident,
-           [ ArrayOrListOfSeqExpr _ as attributes;
-             ArrayOrListOfSeqExpr (isArray, CompExpr (_, singleChild)) as childrenNode ])
-    | App (OptVar ident,
-           [ ArrayOrList _ as attributes; ArrayOrListOfSeqExpr (isArray, CompExpr (_, singleChild)) as childrenNode ]) ->
-        Some(ident, attributes, (isArray, [ singleChild ], childrenNode.Range))
-    | App (OptVar ident, [ ArrayOrListOfSeqExpr _ as attributes; ArrayOrList (isArray, [], _) as childrenNode ]) ->
-        Some(ident, attributes, (isArray, [], childrenNode.Range))
-
+    | SynExpr.App (_,
+                   false,
+                   SynExpr.App (_, false, OptVar ident, (ArrayOrList _ as attributes), _),
+                   (ArrayOrList (isArray, children, _) as childrenNode),
+                   _) -> Some(ident, attributes, (isArray, children, childrenNode.Range))
+    | SynExpr.App (_,
+                   false,
+                   SynExpr.App (_, false, OptVar ident, (ArrayOrListOfSeqExpr _ as attributes), _),
+                   (ArrayOrListOfSeqExpr (isArray, CompExpr (_, Sequentials children)) as childrenNode),
+                   _) -> Some(ident, attributes, (isArray, children, childrenNode.Range))
+    | SynExpr.App (_,
+                   false,
+                   SynExpr.App (_,
+                                false,
+                                OptVar ident,
+                                ((ArrayOrListOfSeqExpr _
+                                | ArrayOrList _) as attributes),
+                                _),
+                   (ArrayOrListOfSeqExpr (isArray, CompExpr (_, singleChild)) as childrenNode),
+                   _) -> Some(ident, attributes, (isArray, [ singleChild ], childrenNode.Range))
+    | SynExpr.App (_,
+                   false,
+                   SynExpr.App (_, false, OptVar ident, (ArrayOrListOfSeqExpr _ as attributes), _),
+                   (ArrayOrList (isArray, [], _) as childrenNode),
+                   _) -> Some(ident, attributes, (isArray, [], childrenNode.Range))
     | _ -> None
 
 let isIfThenElseWithYieldReturn e =
@@ -1683,7 +1710,9 @@ let private shouldNotIndentBranch e es =
         match e with
         | SimpleExpr _
         | Sequential (_, _, true)
-        | App (SimpleExpr _, [ SimpleExpr _ ]) -> true
+        | App _
+        | Tuple _
+        | Paren (_, Tuple _, _, _) -> true
         | _ -> false
 
     let isLongElseBranch e =
@@ -1692,7 +1721,8 @@ let private shouldNotIndentBranch e es =
         | Sequential _
         | Match _
         | TryWith _
-        | App (_, [ ObjExpr _ ]) -> true
+        | App (_, [ ObjExpr _ ])
+        | NewlineInfixApp (_, _, AppParenTupleArg _, _) -> true
         | _ -> false
 
     List.forall isShortIfBranch es

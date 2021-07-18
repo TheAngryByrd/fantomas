@@ -18,11 +18,11 @@ For the overview how to use the tool, you can type the command
 	dotnet fantomas --help
 
 ```
-USAGE: dotnet fantomas [--help] [--recurse] [--force] [--profile] [--fsi <string>] [--stdin] [--stdout] [--out <string>] [--check] [--version] [<string>]
+USAGE: dotnet fantomas [--help] [--recurse] [--force] [--profile] [--fsi <string>] [--stdin] [--stdout] [--out <string>] [--check] [--version] [<string>...]
 
 INPUT:
 
-    <string>              Input path: can be a folder or file with *.fs,*.fsi,*.fsx,*.ml,*.mli extension.
+    <string>...           Input paths: can be multiple folders or files with *.fs,*.fsi,*.fsx,*.ml,*.mli extension.
 
 OPTIONS:
 
@@ -34,7 +34,6 @@ OPTIONS:
     --stdout               Write the formatted source code to standard output.
     --out <string>        Give a valid path for files/folders. Files should have .fs, .fsx, .fsi, .ml or .mli extension only.
     --check               Don't format files, just check if they have changed. Exits with 0 if it's formatted correctly, with 1 if some files need formatting and 99 if there was an internal error
-                          was an internal error
     --version, -v         Displays the version of Fantomas
     --help                display this list of options.
 
@@ -49,6 +48,37 @@ Both paths have to be files or folders at the same time.
 If they are folders, the structure of input folder will be reflected in the output one. 
 The tool will explore the input folder recursively if you set `--recurse` option.
 If you omit the output path, Fantomas will overwrite the input files.
+
+### Multiple paths
+
+*starting version 4.5*
+
+Multiple paths can be passed as last argument, these can be both files and folders.  
+This cannot be combined with the `--out` and `--stdout` flags.  
+When combined with the `--recurse` flag, all passed folders will be processed recursively.
+
+One interesting use-case of passing down multiple paths is that you can easily control the selection and filtering of paths from the current shell.
+
+Consider the following PowerShell scripts:
+```powershell
+# Create an array with paths
+$files =
+     Get-ChildItem src/*.fs -Recurse # Find all *.fs files in src,
+     | Where-Object { $_.FullName -notlike "*obj*" } # ignore files in the `obj` folder
+     | ForEach-Object { $_.FullName } #  and select the full path name.
+
+& "dotnet" "fantomas" $files
+```
+
+```powershell
+# Filter all added and modified files in git
+$files = git status --porcelain | Where-Object { $_ -match "^\s?A?M(.*)\.fs(x|i)?$" } | ForEach-Object { $_.TrimStart("AM").TrimStart(" ", "M") }
+& "dotnet" "fantomas" $files
+```
+
+Or usage with `find` on unix:
+
+`find my-project/ -type f -name "*.fs" -not -path "*obj*" | xargs dotnet fantomas --check`
 
 ## Configuration
 
@@ -94,6 +124,7 @@ fsharp_multi_line_lambda_closing_newline=false
 fsharp_disable_elmish_syntax=false
 fsharp_keep_indent_in_branch=false
 fsharp_blank_lines_around_nested_multiline_expressions=true
+fsharp_bar_before_discriminated_union_declaration=false
 fsharp_strict_mode=false
 ```
 
@@ -298,22 +329,22 @@ type Person() =
 
 ### fsharp_space_before_colon
 
-Add a space before `:`.
+Add a space before `:`. Please note that not every `:` is controlled by this setting.
 Default = false.
 
 `defaultConfig`
 
 ```fsharp
 type Point = { x: int; y: int }
-
-let update (msg: Msg) (model: Model): Model = model
+let myValue: int = 42 // See https://docs.microsoft.com/en-us/dotnet/fsharp/style-guide/formatting#right-pad-value-and-function-argument-type-annotations
+let update (msg: Msg) (model: Model) : Model = model // See https://docs.microsoft.com/en-us/dotnet/fsharp/style-guide/formatting#surround-return-type-annotations-with-white-space
 ```
 
 `{ defaultConfig with SpaceBeforeColon = true }`
 
 ```fsharp
 type Point = { x : int; y : int }
-
+let myValue : int = 42
 let update (msg : Msg) (model : Model) : Model = model
 ```
 
@@ -1049,6 +1080,8 @@ let encodeUrlModel code model: JsonValue =
 Breaks the normal indentation flow for the last branch of a pattern match of if/then/else expression.
 Only when the pattern match or if/then/else is the return value of a function or member.
 
+*This feature is consider experimental and is subject to change*
+
 `defaultConfig`
 
 ```fsharp
@@ -1088,7 +1121,7 @@ let main argv =
 ### fsharp_blank_lines_around_nested_multiline_expressions
 
 Surround **nested** multi-line expressions with blank lines.
-Existing blank lines are always preserved (via trivia).
+Existing blank lines are always preserved (via trivia).  
 Top level expressions will always follow the [2020 blank lines revision](https://github.com/fsprojects/fantomas/blob/master/docs/FormattingConventions.md#2020-revision) principle.
 Default = true.
 
@@ -1125,6 +1158,21 @@ let topLevelFunction () =
 let secondTopLevelFunction () =
     // ...
     ()
+```
+
+### fsharp_bar_before_discriminated_union_declaration
+
+Always use a `|` before every case in the declaration of a discriminated union. If `false`, a `|` character is used only in multiple-case discriminated unions, and is omitted in short single-case DUs.
+Default = false.
+
+```fsharp
+type MyDU = Short of int
+```
+
+`{ defaultConfig with BarBeforeDiscriminatedUnionDeclaration = true }`
+
+```fsharp
+type MyDU = | Short of int
 ```
 
 ### fsharp_strict_mode

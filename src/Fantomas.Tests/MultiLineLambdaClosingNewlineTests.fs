@@ -655,3 +655,226 @@ module Foo =
             x
             y
 """
+
+[<Test>]
+let ``multiline infix application with piped match expression`` () =
+    formatSourceString
+        false
+        """
+module Foo =
+
+    let bar =
+        baz
+        |> (
+            // Hi!
+            match false with
+            | true -> id
+            | false -> id
+        )
+"""
+        config
+    |> prepend newline
+    |> should
+        equal
+        """
+module Foo =
+
+    let bar =
+        baz
+        |> (
+            // Hi!
+            match false with
+            | true -> id
+            | false -> id
+        )
+"""
+
+[<Test>]
+let ``inner let binding inside lambda, 1741`` () =
+    formatSourceString
+        false
+        """
+module Foo =
+
+    let bar () =
+        []
+        |> Seq.iter(fun (a, b) ->
+            let blah =
+                fieldInfos
+                |> Seq.groupBy (fun fi -> fi.Name)
+                |> Seq.filter (fst >> foo >> not)
+                |> Seq.choose (fun (name, fieldInfos) ->
+                    let fieldTypes = fieldInfos |> Seq.map (fun fi -> TypeId fi.TypeInfo.Id) |> Seq.distinct |> Seq.toList
+                    match fieldTypes with
+                    | [ fieldType ] -> // hi!
+                        let parents = fieldInfos |> Seq.cache
+                        Some (name, fieldType, parents)
+                    | _ -> // differing
+                        None
+                )
+            ()
+        )
+"""
+        { config with
+              MultiLineLambdaClosingNewline = true
+              KeepIndentInBranch = true }
+    |> prepend newline
+    |> should
+        equal
+        """
+module Foo =
+
+    let bar () =
+        []
+        |> Seq.iter (fun (a, b) ->
+            let blah =
+                fieldInfos
+                |> Seq.groupBy (fun fi -> fi.Name)
+                |> Seq.filter (fst >> foo >> not)
+                |> Seq.choose (fun (name, fieldInfos) ->
+                    let fieldTypes =
+                        fieldInfos
+                        |> Seq.map (fun fi -> TypeId fi.TypeInfo.Id)
+                        |> Seq.distinct
+                        |> Seq.toList
+
+                    match fieldTypes with
+                    | [ fieldType ] -> // hi!
+                        let parents = fieldInfos |> Seq.cache
+                        Some(name, fieldType, parents)
+                    | _ -> // differing
+                        None
+                )
+
+            ()
+        )
+"""
+
+[<Test>]
+let ``inner let binding inside lambda, multiple arguments`` () =
+    formatSourceString
+        false
+        """
+module Foo =
+
+    let bar () =
+        []
+        |> Seq.fold (fun (a, b) ->
+            let blah =
+                fieldInfos
+                |> Seq.groupBy (fun fi -> fi.Name)
+                |> Seq.filter (fst >> foo >> not)
+                |> Seq.choose (fun (name, fieldInfos) ->
+                    let fieldTypes = fieldInfos |> Seq.map (fun fi -> TypeId fi.TypeInfo.Id) |> Seq.distinct |> Seq.toList
+                    match fieldTypes with
+                    | [ fieldType ] -> // hi!
+                        let parents = fieldInfos |> Seq.cache
+                        Some (name, fieldType, parents)
+                    | _ -> // differing
+                        None
+                )
+            ()
+        ) meh
+"""
+        { config with
+              MultiLineLambdaClosingNewline = true
+              KeepIndentInBranch = true }
+    |> prepend newline
+    |> should
+        equal
+        """
+module Foo =
+
+    let bar () =
+        []
+        |> Seq.fold
+            (fun (a, b) ->
+                let blah =
+                    fieldInfos
+                    |> Seq.groupBy (fun fi -> fi.Name)
+                    |> Seq.filter (fst >> foo >> not)
+                    |> Seq.choose (fun (name, fieldInfos) ->
+                        let fieldTypes =
+                            fieldInfos
+                            |> Seq.map (fun fi -> TypeId fi.TypeInfo.Id)
+                            |> Seq.distinct
+                            |> Seq.toList
+
+                        match fieldTypes with
+                        | [ fieldType ] -> // hi!
+                            let parents = fieldInfos |> Seq.cache
+                            Some(name, fieldType, parents)
+                        | _ -> // differing
+                            None
+                    )
+
+                ()
+            )
+            meh
+"""
+
+[<Test>]
+let ``SynExpr.MatchLambda inside parenthesis as argument, 1823`` () =
+    formatSourceString
+        false
+        """
+module Foo =
+    let bar =
+        []
+        |> List.choose (
+            function
+            | _ -> ""
+        )
+"""
+        config
+    |> prepend newline
+    |> should
+        equal
+        """
+module Foo =
+    let bar =
+        []
+        |> List.choose (
+            function
+            | _ -> ""
+        )
+"""
+
+[<Test>]
+let ``comment after single lambda in parenthesis argument`` () =
+    formatSourceString
+        false
+        """
+module Foo =
+
+    let blah =
+        it
+        |> List.iter (fun (_, output) ->
+            thing
+            |> Map.iter (fun key value ->
+                match value with
+                | Ok (TestResult.Failure f) -> failwith ""
+                | Error e -> failwith ""
+                | _ -> () // hi!
+            )
+        )
+"""
+        config
+    |> prepend newline
+    |> should
+        equal
+        """
+module Foo =
+
+    let blah =
+        it
+        |> List.iter (fun (_, output) ->
+            thing
+            |> Map.iter (fun key value ->
+                match value with
+                | Ok (TestResult.Failure f) -> failwith ""
+                | Error e -> failwith ""
+                | _ -> () // hi!
+            )
+        )
+"""

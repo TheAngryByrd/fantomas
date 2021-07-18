@@ -2181,7 +2181,7 @@ type Box() =
         equal
         """
 type Box() =
-    let mutable color : string = null
+    let mutable color: string = null
 
     // A Box has a color property with get and set.
     member x.Color
@@ -2262,7 +2262,6 @@ and Variable<'model,'msg> =
         equal
         """
 type ViewBinding<'model, 'msg> = string * Variable<'model, 'msg>
-
 and ViewBindings<'model, 'msg> = ViewBinding<'model, 'msg> list
 
 and Variable<'model, 'msg> =
@@ -2815,7 +2814,7 @@ and [<CustomEquality ; NoComparison>] Bar<'context, 'a> =
                                                     if inner then
                                                         let bv =
                                                             unbox<Foo<'innerContextLongLongLong, 'bb
-                                                                -> 'b>>
+                                                                          -> 'b>>
                                                                 bf
 
                                                         this.InnerEquals af bf cont

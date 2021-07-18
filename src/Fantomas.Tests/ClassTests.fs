@@ -265,7 +265,7 @@ and File(filename: string, containingFolder: Folder) =
         """
 type Folder(pathIn: string) =
     let path = pathIn
-    let filenameArray : string array = System.IO.Directory.GetFiles(path)
+    let filenameArray: string array = System.IO.Directory.GetFiles(path)
     member this.FileArray = Array.map (fun elem -> new File(elem, this)) filenameArray
 
 and File(filename: string, containingFolder: Folder) =
@@ -833,4 +833,66 @@ type ISingleExpressionValue<'p, 'o, 'v when 'p :> IProperty and 'o :> IOperator 
     abstract Property : 'p
     abstract Operator : 'o
     abstract Value : 'v
+"""
+
+[<Test>]
+let ``comment before multiline class member`` () =
+    formatSourceString
+        false
+        """
+type MaybeBuilder () =
+    member inline __.Bind
+// meh
+        (value, binder : 'T -> 'U option) : 'U option =
+        Option.bind binder value
+"""
+        config
+    |> prepend newline
+    |> should
+        equal
+        """
+type MaybeBuilder() =
+    member inline __.Bind
+        // meh
+        (
+            value,
+            binder: 'T -> 'U option
+        ) : 'U option =
+        Option.bind binder value
+"""
+
+[<Test>]
+let ``define hashes around member binding, 1753`` () =
+    formatSourceString
+        false
+        """
+[<Sealed>]
+type MaybeBuilder () =
+    // M<'T> * ('T -> M<'U>) -> M<'U>
+#if DEBUG
+    member __.Bind
+#else
+    member inline __.Bind
+#endif
+        (value, binder : 'T -> 'U option) : 'U option =
+        Option.bind binder value
+"""
+        config
+    |> prepend newline
+    |> should
+        equal
+        """
+[<Sealed>]
+type MaybeBuilder() =
+    // M<'T> * ('T -> M<'U>) -> M<'U>
+#if DEBUG
+    member __.Bind
+#else
+    member inline __.Bind
+#endif
+        (
+            value,
+            binder: 'T -> 'U option
+        ) : 'U option =
+        Option.bind binder value
 """

@@ -792,11 +792,13 @@ let ``comment between opening parenthesis and lambda, 1190`` () =
     |> should
         equal
         """
-( (* comment before gets swallowed *)
+(
+(* comment before gets swallowed *)
 fun x -> x * 42)
 
 (fun x ->
-    x * 42 (* comment after is OK *)
+    x * 42
+    (* comment after is OK *)
     )
 
 ( (* comment on first line is OK too *) fun x -> x * 42)
@@ -831,4 +833,126 @@ fun _ _ -> ()
         equal
         """
 fun _ _ -> ()
+"""
+
+[<Test>]
+let ``lambda argument in multiline function application, 1028`` () =
+    formatSourceString
+        false
+        """
+module Lifecycle =
+
+
+  let init config =
+    async {
+      cfg <- config
+      do!
+        MassTransit.init
+          cfg.LoggerFactory cfg.AzureServiceBusConnStr cfg.QueueName cfg.LoggerFactory
+          (fun reg ->
+            reg.Consume User.handleUserInitiatedRegistration
+            reg.Consume User.handleUserUpdated
+            reg.Consume User.handleGetSessionUserIdRequest
+          )
+    }
+"""
+        config
+    |> prepend newline
+    |> should
+        equal
+        """
+module Lifecycle =
+
+
+    let init config =
+        async {
+            cfg <- config
+
+            do!
+                MassTransit.init
+                    cfg.LoggerFactory
+                    cfg.AzureServiceBusConnStr
+                    cfg.QueueName
+                    cfg.LoggerFactory
+                    (fun reg ->
+                        reg.Consume User.handleUserInitiatedRegistration
+                        reg.Consume User.handleUserUpdated
+                        reg.Consume User.handleGetSessionUserIdRequest)
+        }
+"""
+
+[<Test>]
+let ``return lambda from lambda, 1782`` () =
+    formatSourceString
+        false
+        """
+let x =
+    fun _ ->
+        fun _ -> "hello"
+"""
+        config
+    |> prepend newline
+    |> should
+        equal
+        """
+let x = fun _ -> fun _ -> "hello"
+"""
+
+[<Test>]
+let ``wild card parameters in lambda, 1789`` () =
+    formatSourceString
+        false
+        """
+let elifs =
+    es
+    |> List.collect (fun (e1, e2, _, _, _) -> [ visit e1; visit e2 ])
+"""
+        config
+    |> prepend newline
+    |> should
+        equal
+        """
+let elifs =
+    es
+    |> List.collect (fun (e1, e2, _, _, _) -> [ visit e1; visit e2 ])
+"""
+
+[<Test>]
+let ``leading and trailing wild card parameters in lambda`` () =
+    formatSourceString
+        false
+        """
+List.map (fun (_, _, _, _, body, _) -> visit body) andBangs
+"""
+        config
+    |> prepend newline
+    |> should
+        equal
+        """
+List.map (fun (_, _, _, _, body, _) -> visit body) andBangs
+"""
+
+[<Test>]
+let ``multiple parameters with wild cards, 1806`` () =
+    formatSourceString
+        false
+        """
+module Foo =
+    let bar () =
+        {
+            Foo =
+                blah
+                |> Struct.map (fun _ (a, _, _) -> filterBackings a)
+        }
+"""
+        config
+    |> prepend newline
+    |> should
+        equal
+        """
+module Foo =
+    let bar () =
+        { Foo =
+              blah
+              |> Struct.map (fun _ (a, _, _) -> filterBackings a) }
 """

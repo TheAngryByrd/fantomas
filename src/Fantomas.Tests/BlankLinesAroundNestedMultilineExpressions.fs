@@ -83,7 +83,8 @@ let topLevelFunction () =
     printfn "Something to print"
     try
         nothing ()
-    with ex -> splash ()
+    with
+    | ex -> splash ()
     ()
 """
 
@@ -242,4 +243,73 @@ let comp =
             printfn " x = %d" x
         return 3 + 4
     }
+"""
+
+[<Test>]
+let ``recursive types`` () =
+    formatSourceString
+        false
+        """
+type Cmd<'msg> = Cmd'<'msg> list
+and private Cmd'<'msg> = Send<'msg> -> unit
+"""
+        config
+    |> prepend newline
+    |> should
+        equal
+        """
+type Cmd<'msg> = Cmd'<'msg> list
+and private Cmd'<'msg> = Send<'msg> -> unit
+"""
+
+[<Test>]
+let ``multiline recursive types`` () =
+    formatSourceString
+        false
+        """
+type ViewBinding<'model,'msg> = string * Variable<'model,'msg>
+and ViewBindings<'model,'msg> = ViewBinding<'model,'msg> list
+and Variable<'model,'msg> =
+    | Bind of Getter<'model>
+    | BindTwoWay of Getter<'model> * Setter<'model,'msg>
+    | BindTwoWayValidation of Getter<'model> * ValidSetter<'model,'msg>
+    | BindCmd of Execute<'model,'msg> * CanExecute<'model>
+    | BindModel of Getter<'model> * ViewBindings<'model,'msg>
+    | BindMap of Getter<'model> * (obj -> obj)
+"""
+        config
+    |> prepend newline
+    |> should
+        equal
+        """
+type ViewBinding<'model, 'msg> = string * Variable<'model, 'msg>
+and ViewBindings<'model, 'msg> = ViewBinding<'model, 'msg> list
+and Variable<'model, 'msg> =
+    | Bind of Getter<'model>
+    | BindTwoWay of Getter<'model> * Setter<'model, 'msg>
+    | BindTwoWayValidation of Getter<'model> * ValidSetter<'model, 'msg>
+    | BindCmd of Execute<'model, 'msg> * CanExecute<'model>
+    | BindModel of Getter<'model> * ViewBindings<'model, 'msg>
+    | BindMap of Getter<'model> * (obj -> obj)
+"""
+
+[<Test>]
+let ``recursive types in signature file`` () =
+    formatSourceString
+        true
+        """
+namespace Foobar
+
+type Cmd<'msg> = Cmd'<'msg> list
+and private Cmd'<'msg> = Send<'msg> -> unit
+"""
+        config
+    |> prepend newline
+    |> should
+        equal
+        """
+namespace Foobar
+
+type Cmd<'msg> = Cmd'<'msg> list
+and private Cmd'<'msg> = Send<'msg> -> unit
 """

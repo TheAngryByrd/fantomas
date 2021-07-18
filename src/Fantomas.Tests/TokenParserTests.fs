@@ -19,7 +19,7 @@ let private getDefines v =
 
 let private tokenize v = tokenize [] [] v
 
-let private mkRange : MkRange =
+let private mkRange: MkRange =
     fun (sl, sc) (el, ec) ->
         FSharp.Compiler.Text.Range.mkRange
             "TokenParserTests"
@@ -303,8 +303,10 @@ elif true then ()"""
     let triviaNodes = tokenize source |> getTriviaFromTokens
 
     match triviaNodes with
-    | [ { Item = Keyword { Content = "if" } }; { Item = Keyword { Content = "then" } };
-        { Item = Keyword { Content = "elif" } }; { Item = Keyword { Content = "then" } } ] -> pass ()
+    | [ { Item = Keyword { Content = "if" } }
+        { Item = Keyword { Content = "then" } }
+        { Item = Keyword { Content = "elif" } }
+        { Item = Keyword { Content = "then" } } ] -> pass ()
     | _ -> fail ()
 
 [<Test>]
@@ -638,3 +640,21 @@ prinfn \"Debug shizzle\"
     "
 
     getDefines source == [ "DEBUG" ]
+
+[<Test>]
+let ``backslash in verbatim string`` () =
+    let source =
+        "
+let ProgramFilesX86 =
+    if detected = null then @\"C:\Program Files (x86)\\\" else detected
+
+let isUnix =
+#if NETSTANDARD1_6 || NETSTANDARD2_0
+    meh
+#else
+    foo
+#endif
+        "
+
+    getDefines source
+    == [ "NETSTANDARD1_6"; "NETSTANDARD2_0" ]

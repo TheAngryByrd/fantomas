@@ -68,9 +68,9 @@ let ``line comment on same line, is after last AST item`` () =
     let triviaNodes = toTrivia source |> List.head
 
     match triviaNodes with
-    | [ { Type = MainNode SynModuleOrNamespace_AnonModule
+    | [ { Type = MainNode SynConst_Int32
           ContentAfter = [ Comment (LineCommentAfterSourceCode lineComment) ] } ] -> lineComment == "// should be 8"
-    | _ -> fail ()
+    | _ -> Assert.Fail(sprintf "Unexpected trivia %A" triviaNodes)
 
 [<Test>]
 let ``newline pick up before let binding`` () =
@@ -247,10 +247,9 @@ x
     let triviaNodes = toTrivia source |> List.head
 
     match triviaNodes with
-    | [ { ContentBefore = [ Comment (BlockComment (fooComment, _, true)); Comment (BlockComment (barComment, _, true)) ] } ] ->
-        fooComment == "(* foo *)"
-        barComment == "(* bar *)"
-    | _ -> fail ()
+    | [ { ContentBefore = [ Comment (BlockComment (combinedComment, _, true)) ] } ] ->
+        combinedComment == "(* foo *)\n(* bar *)"
+    | _ -> Assert.Fail(sprintf "Unexpected trivia %A" triviaNodes)
 
 [<Test>]
 let ``block comment inside line comment parsed correctly`` () =
@@ -292,11 +291,11 @@ elif true then ()"""
 
     match triviaNodes with
     | [ { Type = Token (IF, _)
-          ContentItself = Some (Keyword { Content = "if" }) };
+          ContentItself = Some (Keyword { Content = "if" }) }
         { Type = Token (THEN, _)
-          ContentItself = Some (Keyword { Content = "then" }) };
+          ContentItself = Some (Keyword { Content = "then" }) }
         { Type = Token (ELIF, _)
-          ContentItself = Some (Keyword { Content = "elif" }) };
+          ContentItself = Some (Keyword { Content = "elif" }) }
         { Type = Token (THEN, _)
           ContentItself = Some (Keyword { Content = "then" }) } ] -> pass ()
     | _ -> fail ()
@@ -316,16 +315,16 @@ doSomething()
     let withoutDefine = Map.find [] triviaNodes
 
     match withoutDefine with
-    | [ { Type = MainNode SynModuleOrNamespace_AnonModule
+    | [ { Type = MainNode SynModuleDecl_DoExpr
           ContentBefore = [ Directive "#if NOT_DEFINED\n#else" ]
           ContentAfter = [ Directive "#endif" ] } ] -> pass ()
-    | _ -> fail ()
+    | _ -> Assert.Fail(sprintf "Unexpected trivia %A" withoutDefine)
 
     match withDefine with
-    | [ { Type = MainNode SynModuleOrNamespace_AnonModule
+    | [ { Type = MainNode LongIdent_
           ContentBefore = [ Directive "#if NOT_DEFINED"; Directive "#else"; Directive "#endif" ]
           ContentAfter = [] } ] -> pass ()
-    | _ -> fail ()
+    | _ -> Assert.Fail(sprintf "Unexpected trivia %A" withDefine)
 
 [<Test>]
 let ``directive without else clause`` () =
@@ -341,19 +340,19 @@ let x = 1
     let withoutDefine = Map.find [] triviaNodes
 
     match withoutDefine with
-    | [ { Type = MainNode SynModuleOrNamespace_AnonModule
+    | [ { Type = MainNode LongIdent_
           ContentAfter = [ Directive "#if NOT_DEFINED\n\n#endif" ]
           ContentBefore = [] } ] -> pass ()
-    | _ -> fail ()
+    | _ -> Assert.Fail(sprintf "Unexpected trivia %A" withoutDefine)
 
     match withDefine with
-    | [ { Type = MainNode SynModuleOrNamespace_AnonModule
+    | [ { Type = MainNode LongIdent_
           ContentBefore = [ Directive "#if NOT_DEFINED" ]
-          ContentAfter = [] };
+          ContentAfter = [] }
         { Type = MainNode SynModuleDecl_Let
           ContentBefore = []
           ContentAfter = [ Directive "#endif" ] } ] -> pass ()
-    | _ -> fail ()
+    | _ -> Assert.Fail(sprintf "Unexpected trivia %A" withDefine)
 
 [<Test>]
 let ``unreachable directive should be present in trivia`` () =
@@ -370,7 +369,7 @@ type ExtensibleDumper = A | B
     let trivias = Map.find [ "DEBUG" ] triviaNodes
 
     match trivias with
-    | [ { Type = MainNode Ident_
+    | [ { Type = MainNode LongIdent_
           ContentAfter = [ Directive "#if EXTENSIBLE_DUMPER\n#if DEBUG\n\n#endif\n#endif" ] } ] -> pass ()
     | _ -> Assert.Fail(sprintf "Unexpected trivia %A" trivias)
 
@@ -400,7 +399,7 @@ let foo = 42
         toTriviaWithDefines source |> Map.find []
 
     match trivia with
-    | [ { Type = MainNode SynModuleOrNamespace_AnonModule
+    | [ { Type = MainNode LongIdent_
           ContentAfter = [ Directive "#if SOMETHING\n\n#endif" ] } ] -> pass ()
     | _ -> fail ()
 
@@ -412,7 +411,7 @@ let ``if keyword should be keyword itself`` () =
 
     match trivia with
     | [ { ContentItself = Some (Keyword { TokenInfo = { TokenName = "IF" } })
-          Type = TriviaNodeType.Token (IF, _) };
+          Type = TriviaNodeType.Token (IF, _) }
         { ContentItself = Some (Keyword { TokenInfo = { TokenName = "THEN" } })
           Type = TriviaNodeType.Token (THEN, _) } ] -> pass ()
     | _ -> fail ()

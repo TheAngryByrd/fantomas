@@ -373,7 +373,8 @@ let isValidFSharpCode (checker: FSharpChecker) (parsingOptions: FSharpParsingOpt
                 |> Array.forall (fun (a, _, _) -> isValidAST a)
 
             return isValid
-        with _ -> return false
+        with
+        | _ -> return false
     }
 
 let formatWith ast defines hashTokens formatContext config =
@@ -389,12 +390,16 @@ let formatWith ast defines hashTokens formatContext config =
 
         context
         |> genParsedInput ASTContext.Default ast
-        |> Dbg.tee (fun ctx -> printfn "%A" ctx.WriterEvents)
         |> Context.dump
 
     formattedSourceCode
 
-let format (checker: FSharpChecker) (parsingOptions: FSharpParsingOptions) config formatContext =
+let format
+    (checker: FSharpChecker)
+    (parsingOptions: FSharpParsingOptions)
+    (config: FormatConfig)
+    (formatContext: FormatContext)
+    : Async<string> =
     async {
         let! asts = parse checker parsingOptions formatContext
 
@@ -407,7 +412,7 @@ let format (checker: FSharpChecker) (parsingOptions: FSharpParsingOptions) confi
             match results with
             | [] -> failwith "not possible"
             | [ x ] -> x
-            | all -> List.reduce String.merge all
+            | all -> List.reduce (String.merge config.EndOfLine.NewLineString) all
 
         return merged
     }

@@ -1775,7 +1775,8 @@ let sendPushNotifications =
                                 PushSubscription(s.Endpoint, s.P256DH, s.Auth)
 
                             do! webPushClient.SendNotificationAsync(ps, payload, vapidDetails)
-                        with :? WebPushException as wpex ->
+                        with
+                        | :? WebPushException as wpex ->
                             log.LogError(sprintf "Couldn't send notification to %s, %A" user.UserId wpex)
 
                             do!
@@ -1931,7 +1932,7 @@ let create: Highlighter =
     |> should
         equal
         """
-let create : Highlighter =
+let create: Highlighter =
     fun searchTerm ->
         let regex = searchTerm |> SearchTerm.toRegex
 
@@ -2023,7 +2024,7 @@ let result = ResultBuilder()
 
 let run r1 r2 r3 =
     // And here is our applicative!
-    let res1 : Result<int, string> =
+    let res1: Result<int, string> =
         result {
             let! a = r1
             and! b = r2
@@ -2402,4 +2403,29 @@ aggregateResult {
           DisplayableId = displayableId
           More = more }
 }
+"""
+
+[<Test>]
+let ``line comment above SynExpr.LetOrUseBang`` () =
+    formatSourceString
+        false
+        """
+let x =
+    async {
+        // bar
+        let! f =   foo()
+        ()
+    }
+"""
+        config
+    |> prepend newline
+    |> should
+        equal
+        """
+let x =
+    async {
+        // bar
+        let! f = foo ()
+        ()
+    }
 """

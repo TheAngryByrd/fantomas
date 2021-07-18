@@ -226,13 +226,16 @@ let ``should understand ? as an infix operator`` () =
     |> fun (t : Task) -> t.Wait()
 with _ -> ()"""
         config
+    |> prepend newline
     |> should
         equal
-        """try
+        """
+try
     item.MethodInfo.Method.Invoke(null, ipa)
     |> (fun x -> x?Invoke (true))
     |> fun (t: Task) -> t.Wait()
-with _ -> ()
+with
+| _ -> ()
 """
 
 [<Test>]
@@ -1144,4 +1147,82 @@ module Foo =
              |> log.LogInformation
 
              ret)
+"""
+
+[<Test>]
+let ``combining two empty list with at`` () =
+    formatSourceString
+        false
+        """
+[] @ []
+"""
+        config
+    |> prepend newline
+    |> should
+        equal
+        """
+[] @ []
+"""
+
+[<Test>]
+let ``Appending two lists with at, 1719`` () =
+    formatSourceString
+        false
+        """
+[ 2.; 4. ] @ [ 2.; 4. ]
+"""
+        config
+    |> prepend newline
+    |> should
+        equal
+        """
+[ 2.; 4. ] @ [ 2.; 4. ]
+"""
+
+[<Test>]
+let ``list concat chain using operators, 1188`` () =
+    formatSourceString
+        false
+        """
+[1 .. 86] @ [89 .. 699] @ [901 .. 912] @ [988]
+"""
+        config
+    |> prepend newline
+    |> should
+        equal
+        """
+[ 1 .. 86 ]
+@ [ 89 .. 699 ] @ [ 901 .. 912 ] @ [ 988 ]
+"""
+
+[<Test>]
+let ``comment above piped match expression, 1711`` () =
+    formatSourceString
+        false
+        """
+module Foo =
+
+    let bar =
+        baz
+        |> (
+            // Hi!
+            match false with
+            | true -> id
+            | false -> id
+        )
+"""
+        config
+    |> prepend newline
+    |> should
+        equal
+        """
+module Foo =
+
+    let bar =
+        baz
+        |> (
+            // Hi!
+            match false with
+            | true -> id
+            | false -> id)
 """

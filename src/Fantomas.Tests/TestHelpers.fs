@@ -111,7 +111,7 @@ let formatSourceStringWithDefines defines (s: string) config =
         |> Async.RunSynchronously
 
     // merge with itself to make #if go on beginning of line
-    String.merge result result
+    String.merge config.EndOfLine.NewLineString result result
     |> String.normalizeNewLine
 
 let formatSelectionOnly isFsiFile r (s: string) config =
@@ -195,7 +195,8 @@ let toSynExprs (Input s) =
             parse false s
             |> Array.map (fun (ast, _, _) -> ast)
             |> Some
-        with _ -> None
+        with
+        | _ -> None
 
     match ast with
     | Some [| (ParsedInput.ImplFile (ParsedImplFileInput ("/tmp.fsx",
@@ -222,7 +223,8 @@ let toSynExprs (Input s) =
 let tryFormatAST ast sourceCode config =
     try
         formatAST ast sourceCode config
-    with _ -> ""
+    with
+    | _ -> ""
 
 let formatConfig =
     { FormatConfig.Default with
@@ -318,7 +320,7 @@ type TemporaryFileCodeSample internal (codeSnippet: string) =
 
     do File.WriteAllText(filename, codeSnippet)
 
-    member __.Filename : string = filename
+    member __.Filename: string = filename
 
     interface IDisposable with
         member this.Dispose() : unit = File.Delete(filename)

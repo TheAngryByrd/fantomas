@@ -495,11 +495,44 @@ let ``parenthesis around composed function expression, 1341`` () =
 """
 
 [<Test>]
+let ``parenthesis around short composed function expression, tuple, 1700`` () =
+    formatSourceString false """((=) (ownerName, username))""" config
+    |> should
+        equal
+        """((=) (ownerName, username))
+"""
+
+[<Test>]
+let ``parenthesis around short composed function expression, tuple in if, 1700`` () =
+    formatSourceString false """if ((=) (ownerName, username)) then 6""" config
+    |> should
+        equal
+        """if ((=) (ownerName, username)) then 6
+"""
+
+[<Test>]
+let ``parenthesis around short composed function expression, no tuple, 1700`` () =
+    formatSourceString false """((=) ownerName)""" config
+    |> should
+        equal
+        """((=) ownerName)
+"""
+
+[<Test>]
+let ``parenthesis around short composed function expression, no tuple in if, 1700, part 2`` () =
+    formatSourceString false """if ((=) ownerName) then 6""" config
+    |> should
+        equal
+        """if ((=) ownerName) then 6
+"""
+
+
+[<Test>]
 let ``parenthesis around simple function expression`` () =
     formatSourceString
         false
         """
-(ignore) ("Tuuuuuuuuuuuuurn tooooooooooooooooooooooo stooooooooooooooooooooooooone", 42)
+(ignore) ("Tuuuuuuuuuuuuurn Tuuuuuuuuuuuuurn Tuuuuuuuuuuuuurn Tuuuuuuuuuuuuurn tooooooooooooooooooooooo stooooooooooooooooooooooooone", 42)
 """
         config
     |> prepend newline
@@ -508,7 +541,7 @@ let ``parenthesis around simple function expression`` () =
         """
 (ignore)
     (
-        "Tuuuuuuuuuuuuurn tooooooooooooooooooooooo stooooooooooooooooooooooooone",
+        "Tuuuuuuuuuuuuurn Tuuuuuuuuuuuuurn Tuuuuuuuuuuuuurn Tuuuuuuuuuuuuurn tooooooooooooooooooooooo stooooooooooooooooooooooooone",
         42
     )
 """
@@ -625,4 +658,93 @@ SomeOtherFunction(
     arg1,
     arg2
 ) // does another thing
+"""
+
+[<Test>]
+let ``string interpolation should not affect multiline function applications, 1771`` () =
+    formatSourceString
+        false
+        """
+   let tryDataOperation  =
+
+           let body =
+             let clauses =
+               [ mkSynMatchClause
+                   (mkSynPatLongIdentSimple "Some")
+                   (mkSynExprAppNonAtomic
+                     (mkSynExprLongIdent $"this.{memberName}")
+                     (mkSynExprParen (
+                       mkSynExprTuple
+                         [ mkSynExprIdent "state" ]
+                     ))) ]
+
+             mkSynExprMatch clauses
+
+           mkMember $"this.Try{memberName}" None [ mkSynAttribute "CustomOperation" (mkSynExprConstString $"try{memberName}") ] [ parameters ] (objectStateExpr body)
+"""
+        { config with
+              IndentSize = 2
+              DisableElmishSyntax = true }
+    |> prepend newline
+    |> should
+        equal
+        """
+let tryDataOperation =
+
+  let body =
+    let clauses =
+      [ mkSynMatchClause
+          (mkSynPatLongIdentSimple "Some")
+          (mkSynExprAppNonAtomic
+            (mkSynExprLongIdent $"this.{memberName}")
+            (mkSynExprParen (mkSynExprTuple [ mkSynExprIdent "state" ]))) ]
+
+    mkSynExprMatch clauses
+
+  mkMember
+    $"this.Try{memberName}"
+    None
+    [ mkSynAttribute "CustomOperation" (mkSynExprConstString $"try{memberName}") ]
+    [ parameters ]
+    (objectStateExpr body)
+"""
+
+[<Test>]
+let ``comment after lambda inside parenthesis argument, 1822`` () =
+    formatSourceString
+        false
+        """
+module Foo =
+
+    let blah =
+        it
+        |> List.iter (fun (_, output) ->
+            thing
+            |> Map.iter (fun key value ->
+                match value with
+                | Ok (TestResult.Failure f) -> failwith ""
+                | Error e -> failwith ""
+                | _ -> () // hi!
+            )
+        )
+"""
+        config
+    |> prepend newline
+    |> should
+        equal
+        """
+module Foo =
+
+    let blah =
+        it
+        |> List.iter
+            (fun (_, output) ->
+                thing
+                |> Map.iter
+                    (fun key value ->
+                        match value with
+                        | Ok (TestResult.Failure f) -> failwith ""
+                        | Error e -> failwith ""
+                        | _ -> () // hi!
+                        ))
 """

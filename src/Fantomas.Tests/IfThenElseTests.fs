@@ -1502,7 +1502,8 @@ let main argv =
                     new StreamWriter(outFile)
 
             buffer.Flush()
-        with exn -> eprintfn "The following exception occurred while formatting %s: %O" inFile exn
+        with
+        | exn -> eprintfn "The following exception occurred while formatting %s: %O" inFile exn
 
     0
 """
@@ -2202,7 +2203,7 @@ type internal Foo2 private () =
         equal
         """
 type internal Foo private () =
-    static member Bar : int option =
+    static member Bar: int option =
         if thing = 1 then
             printfn "hi"
         else if veryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryLong
@@ -2213,7 +2214,7 @@ type internal Foo private () =
             failwith ""
 
 type internal Foo2 private () =
-    static member Bar : int option =
+    static member Bar: int option =
         if thing = 1 then
             printfn "hi"
         else if veryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryLong
@@ -2416,4 +2417,127 @@ if List.exists
     shortExpression ctx
 else
     expressionFitsOnRestOfLine shortExpression longExpression ctx
+"""
+
+[<Test>]
+let ``multiline dotget chain in if expression, 1712`` () =
+    formatSourceString
+        false
+        """
+module Foo =
+    let bar =
+        if Regex("long long long long long long long long long").Match(s).Success then
+            None
+        else Some "hi"
+"""
+        config
+    |> prepend newline
+    |> should
+        equal
+        """
+module Foo =
+    let bar =
+        if
+            Regex("long long long long long long long long long")
+                .Match(s)
+                .Success
+        then
+            None
+        else
+            Some "hi"
+"""
+
+[<Test>]
+let ``multiline if/then/else followed by infix, 1757`` () =
+    formatSourceString
+        false
+        """
+           let name =
+                if typ.GenericParameter.IsSolveAtCompileTime then "^" else "'"
+                + typ.GenericParameter.Name
+"""
+        { config with IndentSize = 2 }
+    |> prepend newline
+    |> should
+        equal
+        """
+let name =
+  (if typ.GenericParameter.IsSolveAtCompileTime then
+     "^"
+   else
+     "'")
+  + typ.GenericParameter.Name
+"""
+
+[<Test>]
+let ``multiline if/then/else followed by infix, no parenthesis needed`` () =
+    formatSourceString
+        false
+        """
+           let name =
+                if typ.GenericParameter.IsSolveAtCompileTime then "^" else "'"
+                + typ.GenericParameter.Name
+"""
+        { config with
+              IndentSize = 2
+              MaxIfThenElseShortWidth = 9000 }
+    |> prepend newline
+    |> should
+        equal
+        """
+let name =
+  if typ.GenericParameter.IsSolveAtCompileTime then "^" else "'"
+  + typ.GenericParameter.Name
+"""
+
+[<Test>]
+let ``short function application in infix expression, 1795`` () =
+    formatSourceString
+        false
+        """
+if
+        FOOQueryUserToken (uint32 activeSessionId, &token) <> 0u
+      then
+        Some x
+      else
+        None
+"""
+        config
+    |> prepend newline
+    |> should
+        equal
+        """
+if
+    FOOQueryUserToken(uint32 activeSessionId, &token)
+    <> 0u
+then
+    Some x
+else
+    None
+"""
+
+[<Test>]
+let ``short function application in infix expression, reversed`` () =
+    formatSourceString
+        false
+        """
+if
+      0u   <> FOOQueryUserToken (uint32 activeSessionId, &token)
+      then
+        Some x
+      else
+        None
+"""
+        config
+    |> prepend newline
+    |> should
+        equal
+        """
+if
+    0u
+    <> FOOQueryUserToken(uint32 activeSessionId, &token)
+then
+    Some x
+else
+    None
 """

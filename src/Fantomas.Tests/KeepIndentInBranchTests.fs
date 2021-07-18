@@ -740,8 +740,10 @@ type Foo() =
             try
                 try
                     cleanUp ()
-                with :? IOException -> foo ()
-            with exc -> foooo ()
+                with
+                | :? IOException -> foo ()
+            with
+            | exc -> foooo ()
 """
 
 [<Test>]
@@ -1175,4 +1177,911 @@ and [<CustomEquality ; NoComparison>] Bar<'context, 'a> =
                                     cont false
                         }
             }
+"""
+
+[<Test>]
+let ``ifdef trivia should not influence outcome, 1646`` () =
+    formatSourceString
+        false
+        """
+module Foo =
+    [<Foo>]
+    let blah<'a> config : Type =
+#if DEBUG
+        failwith ""
+#endif
+        DoThing.doIt ()
+        let result = Runner.Run<'a> config
+
+        if successful |> List.isEmpty then
+            result
+        else
+
+        let errors =
+            unsuccessful
+            |> List.filter (fun report ->
+                not report.BuildResult.IsBuildSuccess
+                || not report.BuildResult.IsGenerateSuccess
+            )
+            |> List.map (fun report -> report.BuildResult.ErrorMessage)
+
+        failwith ""
+"""
+        { config with
+              SpaceBeforeUppercaseInvocation = true
+              SpaceBeforeClassConstructor = true
+              SpaceBeforeMember = true
+              SpaceBeforeColon = true
+              SpaceBeforeSemicolon = true
+              MultilineBlockBracketsOnSameColumn = true
+              NewlineBetweenTypeDefinitionAndMembers = true
+              KeepIfThenInSameLine = true
+              AlignFunctionSignatureToIndentation = true
+              AlternativeLongMemberDefinitions = true
+              MultiLineLambdaClosingNewline = true
+              KeepIndentInBranch = true }
+    |> prepend newline
+    |> should
+        equal
+        """
+module Foo =
+    [<Foo>]
+    let blah<'a> config : Type =
+#if DEBUG
+        failwith ""
+#endif
+        DoThing.doIt ()
+        let result = Runner.Run<'a> config
+
+        if successful |> List.isEmpty then
+            result
+        else
+
+        let errors =
+            unsuccessful
+            |> List.filter (fun report ->
+                not report.BuildResult.IsBuildSuccess
+                || not report.BuildResult.IsGenerateSuccess
+            )
+            |> List.map (fun report -> report.BuildResult.ErrorMessage)
+
+        failwith ""
+"""
+
+[<Test>]
+let ``ifdef trivia should not influence outcome, idempotent`` () =
+    formatSourceString
+        false
+        """
+module Foo =
+    [<Foo>]
+    let blah<'a> config : Type =
+#if DEBUG
+        failwith ""
+#endif
+        DoThing.doIt ()
+        let result = Runner.Run<'a> config
+
+        if successful |> List.isEmpty then
+            result
+        else
+
+        let errors =
+            unsuccessful
+            |> List.filter (fun report ->
+                not report.BuildResult.IsBuildSuccess
+                || not report.BuildResult.IsGenerateSuccess
+            )
+            |> List.map (fun report -> report.BuildResult.ErrorMessage)
+
+        failwith ""
+"""
+        { config with
+              SpaceBeforeUppercaseInvocation = true
+              SpaceBeforeClassConstructor = true
+              SpaceBeforeMember = true
+              SpaceBeforeColon = true
+              SpaceBeforeSemicolon = true
+              MultilineBlockBracketsOnSameColumn = true
+              NewlineBetweenTypeDefinitionAndMembers = true
+              KeepIfThenInSameLine = true
+              AlignFunctionSignatureToIndentation = true
+              AlternativeLongMemberDefinitions = true
+              MultiLineLambdaClosingNewline = true
+              KeepIndentInBranch = true }
+    |> prepend newline
+    |> should
+        equal
+        """
+module Foo =
+    [<Foo>]
+    let blah<'a> config : Type =
+#if DEBUG
+        failwith ""
+#endif
+        DoThing.doIt ()
+        let result = Runner.Run<'a> config
+
+        if successful |> List.isEmpty then
+            result
+        else
+
+        let errors =
+            unsuccessful
+            |> List.filter (fun report ->
+                not report.BuildResult.IsBuildSuccess
+                || not report.BuildResult.IsGenerateSuccess
+            )
+            |> List.map (fun report -> report.BuildResult.ErrorMessage)
+
+        failwith ""
+"""
+
+[<Test>]
+let ``multiple nested Sequential expressions, 1714`` () =
+    formatSourceString
+        false
+        """
+namespace Foo
+
+module Bar =
+
+    [<EntryPoint>]
+    let main argv =
+        let args = foo
+        printfn ""
+        printfn ""
+        printfn ""
+        let m = ""
+        if foo then
+            printfn "aborting"
+            1
+        else
+
+        printfn "blah"
+        let m = ""
+        if foo then
+            printfn "aborting"
+            1
+        else
+
+        let fs = FileSystem ()
+        use f = fs.File.Open("")
+        0
+"""
+        config
+    |> prepend newline
+    |> should
+        equal
+        """
+namespace Foo
+
+module Bar =
+
+    [<EntryPoint>]
+    let main argv =
+        let args = foo
+        printfn ""
+        printfn ""
+        printfn ""
+        let m = ""
+
+        if foo then
+            printfn "aborting"
+            1
+        else
+
+        printfn "blah"
+        let m = ""
+
+        if foo then
+            printfn "aborting"
+            1
+        else
+
+        let fs = FileSystem()
+        use f = fs.File.Open("")
+        0
+"""
+
+[<Test>]
+let ``multiple nested LetOrUse expressions, 1717`` () =
+    formatSourceString
+        false
+        """
+module Foo =
+    let main (args : _) =
+        let fs = FileSystem()
+        let ab = ThingOne.make fs (ThingFour.defaultFoo args.Args.ThingOne)
+
+        let thingFive = ThingFive.thingFive fs ab
+
+        use loggerFactory = Logging.make thingFive LogEventLevel.Verbose LogEventLevel.Information
+        let log = loggerFactory.CreateLogger "foo"
+        log.LogDebug("Command line options used: {CommandLine}", args)
+        log.LogInformation("Thing One: {ThingOne}", ThingOne.getFoo ab)
+
+        let thing, cd =
+            args.Thing
+            |> Args.render loggerFactory thingFive
+
+        let skipBehaviour =
+            if defaultArg args.Skip then
+                Options.Exclude
+            else
+                Options.Include
+
+        let thing, errors = Information.make fs ab thing
+        use thing = thing
+
+        let operationToDo =
+            Operations.operation loggerFactory fs ab tp thing (DUCase args.Thing) args.Info skipBehaviour
+
+        match ThingEight.defaultFun args.DryRun with
+        | DryRunMode.Dry ->
+            log.LogInformation("No changes made due to --dry-run.")
+            0
+        | DryRunMode.Wet ->
+
+        match operationToDo with
+        | None ->
+            log.LogWarning("No changes required; no action taken.")
+            0
+        | Some thingsToDo ->
+
+        thingsToDo
+        |> Operations.perform loggerFactory (errors |> Map.keys)
+        |> Seq.map (fun i -> i.Name)
+        |> String.concat "\n"
+        |> fun i -> log.LogInformation("Completed operation:\n{Result}", i)
+        0
+"""
+        { config with
+              MultiLineLambdaClosingNewline = true
+              MultilineBlockBracketsOnSameColumn = true
+              AlternativeLongMemberDefinitions = true }
+    |> prepend newline
+    |> should
+        equal
+        """
+module Foo =
+    let main (args: _) =
+        let fs = FileSystem()
+
+        let ab =
+            ThingOne.make fs (ThingFour.defaultFoo args.Args.ThingOne)
+
+        let thingFive = ThingFive.thingFive fs ab
+
+        use loggerFactory =
+            Logging.make thingFive LogEventLevel.Verbose LogEventLevel.Information
+
+        let log = loggerFactory.CreateLogger "foo"
+        log.LogDebug("Command line options used: {CommandLine}", args)
+        log.LogInformation("Thing One: {ThingOne}", ThingOne.getFoo ab)
+
+        let thing, cd =
+            args.Thing |> Args.render loggerFactory thingFive
+
+        let skipBehaviour =
+            if defaultArg args.Skip then
+                Options.Exclude
+            else
+                Options.Include
+
+        let thing, errors = Information.make fs ab thing
+        use thing = thing
+
+        let operationToDo =
+            Operations.operation loggerFactory fs ab tp thing (DUCase args.Thing) args.Info skipBehaviour
+
+        match ThingEight.defaultFun args.DryRun with
+        | DryRunMode.Dry ->
+            log.LogInformation("No changes made due to --dry-run.")
+            0
+        | DryRunMode.Wet ->
+
+        match operationToDo with
+        | None ->
+            log.LogWarning("No changes required; no action taken.")
+            0
+        | Some thingsToDo ->
+
+        thingsToDo
+        |> Operations.perform loggerFactory (errors |> Map.keys)
+        |> Seq.map (fun i -> i.Name)
+        |> String.concat "\n"
+        |> fun i -> log.LogInformation("Completed operation:\n{Result}", i)
+
+        0
+"""
+
+[<Test>]
+let ``multiline if condition is indented, 1729`` () =
+    formatSourceString
+        false
+        """
+let x y =
+            if not (
+                result.HasResultsFor(
+                    [ "label"
+                      "ipv4"
+                      "macAddress"
+                      "medium"
+                      "manufacturer" ]
+                )
+            ) then
+                None
+            else
+
+            let label = string result.["label"]
+            let ipv4 = string result.["ipv4"]
+            None
+"""
+        config
+    |> prepend newline
+    |> should
+        equal
+        """
+let x y =
+    if
+        not
+            (
+                result.HasResultsFor(
+                    [ "label"
+                      "ipv4"
+                      "macAddress"
+                      "medium"
+                      "manufacturer" ]
+                )
+            )
+    then
+        None
+    else
+
+    let label = string result.["label"]
+    let ipv4 = string result.["ipv4"]
+    None
+"""
+
+[<Test>]
+let ``value binding, 1728`` () =
+    formatSourceString
+        false
+        """
+let x =
+            if not (
+                result.HasResultsFor(
+                    [ "label"
+                      "ipv4"
+                      "macAddress"
+                      "medium"
+                      "manufacturer" ]
+                )
+            ) then
+                None
+            else
+
+            let label = string result.["label"]
+            let ipv4 = string result.["ipv4"]
+            None
+"""
+        config
+    |> prepend newline
+    |> should
+        equal
+        """
+let x =
+    if
+        not
+            (
+                result.HasResultsFor(
+                    [ "label"
+                      "ipv4"
+                      "macAddress"
+                      "medium"
+                      "manufacturer" ]
+                )
+            )
+    then
+        None
+    else
+
+    let label = string result.["label"]
+    let ipv4 = string result.["ipv4"]
+    None
+"""
+
+[<Test>]
+let ``combination with MultiLineLambdaClosingNewline, 1715`` () =
+    formatSourceString
+        false
+        """
+module Foo =
+    let bar () =
+        let baz =
+            []
+            |> List.filter (fun ref ->
+                if ref.Type <> "h" then false
+                else
+                let m = regex.Match ref.To
+                m.Success && things |> Set.contains (m.Groups.[1].ToString ())
+            )
+        0
+"""
+        { config with
+              SpaceBeforeUppercaseInvocation = true
+              SpaceBeforeClassConstructor = true
+              SpaceBeforeMember = true
+              SpaceBeforeColon = true
+              SpaceBeforeSemicolon = true
+              AlignFunctionSignatureToIndentation = true
+              AlternativeLongMemberDefinitions = true
+              MultiLineLambdaClosingNewline = true
+              KeepIndentInBranch = true }
+    |> prepend newline
+    |> should
+        equal
+        """
+module Foo =
+    let bar () =
+        let baz =
+            []
+            |> List.filter (fun ref ->
+                if ref.Type <> "h" then
+                    false
+                else
+
+                let m = regex.Match ref.To
+
+                m.Success
+                && things |> Set.contains (m.Groups.[1].ToString ())
+            )
+
+        0
+"""
+
+[<Test>]
+let ``combination with MultiLineLambdaClosingNewline, multiple params`` () =
+    formatSourceString
+        false
+        """
+module Foo =
+    let bar () =
+        let baz =
+            []
+            |> List.filterWith X (fun ref ->
+                if ref.Type <> "h" then false
+                else
+                let m = regex.Match ref.To
+                m.Success && things |> Set.contains (m.Groups.[1].ToString ())
+            )
+        0
+"""
+        { config with
+              SpaceBeforeUppercaseInvocation = true
+              SpaceBeforeClassConstructor = true
+              SpaceBeforeMember = true
+              SpaceBeforeColon = true
+              SpaceBeforeSemicolon = true
+              AlignFunctionSignatureToIndentation = true
+              AlternativeLongMemberDefinitions = true
+              MultiLineLambdaClosingNewline = true
+              KeepIndentInBranch = true }
+    |> prepend newline
+    |> should
+        equal
+        """
+module Foo =
+    let bar () =
+        let baz =
+            []
+            |> List.filterWith
+                X
+                (fun ref ->
+                    if ref.Type <> "h" then
+                        false
+                    else
+
+                    let m = regex.Match ref.To
+
+                    m.Success
+                    && things |> Set.contains (m.Groups.[1].ToString ())
+                )
+
+        0
+"""
+
+[<Test>]
+let ``comment after arrow, 1759`` () =
+    formatSourceString
+        false
+        """
+let mapOperationToWebPart (operation: OpenApiOperationDescription) : SynExpr =
+    let verb = mkIdentExpr (operation.Method.ToUpper())
+    let route =
+        match operation with
+        | _ -> // no route parameters
+            let route = mkAppNonAtomicExpr (mkIdentExpr "route") (mkStringExprConst operation.Path)
+            let responseHttpFunc =
+                mkLambdaExpr [ ] unitExpr
+                |> mkParenExpr
+            infixFish route responseHttpFunc
+
+    infixFish verb route
+"""
+        config
+    |> prepend newline
+    |> should
+        equal
+        """
+let mapOperationToWebPart (operation: OpenApiOperationDescription) : SynExpr =
+    let verb = mkIdentExpr (operation.Method.ToUpper())
+
+    let route =
+        match operation with
+        | _ -> // no route parameters
+
+        let route =
+            mkAppNonAtomicExpr (mkIdentExpr "route") (mkStringExprConst operation.Path)
+
+        let responseHttpFunc = mkLambdaExpr [] unitExpr |> mkParenExpr
+        infixFish route responseHttpFunc
+
+    infixFish verb route
+"""
+
+[<Test>]
+let ``multiline infix application, 1768`` () =
+    formatSourceString
+        false
+        """
+let updateModuleInImpl (ast: ParsedInput) (mdl: SynModuleOrNamespace) : ParsedInput =
+    match ast with
+    | ParsedInput.SigFile _ -> ast
+    | ParsedInput.ImplFile _ ->
+        ParsedImplFileInput(
+            fileName,
+            isScript,
+            qualifiedNameOfFile,
+            scopedPragmas,
+            hashDirectives,
+            [ mdl ],
+            isLastAndCompiled
+        )
+        |> ParsedInput.ImplFile
+"""
+        config
+    |> prepend newline
+    |> should
+        equal
+        """
+let updateModuleInImpl (ast: ParsedInput) (mdl: SynModuleOrNamespace) : ParsedInput =
+    match ast with
+    | ParsedInput.SigFile _ -> ast
+    | ParsedInput.ImplFile _ ->
+
+    ParsedImplFileInput(
+        fileName,
+        isScript,
+        qualifiedNameOfFile,
+        scopedPragmas,
+        hashDirectives,
+        [ mdl ],
+        isLastAndCompiled
+    )
+    |> ParsedInput.ImplFile
+"""
+
+[<Test>]
+let ``short function application in if branch`` () =
+    formatSourceString
+        false
+        """
+let private parseModel (modelSrc: string) : Result<MyReturnType, string list> =
+  if not (File.Exists(modelSrc)) then
+    Error [ sprintf "Provided modelSrc \"%s\" does not exist" modelSrc ]
+  else
+    let graph = new QueryableGraph()
+    graph.LoadFromFile(modelSrc, TurtleParser())
+
+    let xsdPath =
+      Path.Combine(Directory.GetCurrentDirectory(), "Some.xsd")
+
+    let ontologyPath =
+      Path.Combine(Directory.GetCurrentDirectory(), "Some.ttl")
+
+    let ontoGraph = new OntologyGraph()
+    FileLoader.Load(ontoGraph, ontologyPath)
+
+    let validationErrors =
+      GraphValidation.validate xsdPath ontoGraph "http://company.com/meh" graph
+
+    if List.isEmpty validationErrors then
+      Ok graph
+    else
+      Error validationErrors
+"""
+        config
+    |> prepend newline
+    |> should
+        equal
+        """
+let private parseModel (modelSrc: string) : Result<MyReturnType, string list> =
+    if not (File.Exists(modelSrc)) then
+        Error [ sprintf "Provided modelSrc \"%s\" does not exist" modelSrc ]
+    else
+
+    let graph = new QueryableGraph()
+    graph.LoadFromFile(modelSrc, TurtleParser())
+
+    let xsdPath =
+        Path.Combine(Directory.GetCurrentDirectory(), "Some.xsd")
+
+    let ontologyPath =
+        Path.Combine(Directory.GetCurrentDirectory(), "Some.ttl")
+
+    let ontoGraph = new OntologyGraph()
+    FileLoader.Load(ontoGraph, ontologyPath)
+
+    let validationErrors =
+        GraphValidation.validate xsdPath ontoGraph "http://company.com/meh" graph
+
+    if List.isEmpty validationErrors then
+        Ok graph
+    else
+        Error validationErrors
+"""
+
+[<Test>]
+let ``tuple is consider as short branch, 1800`` () =
+    formatSourceString
+        false
+        """
+  let nextModel, objectsRemoved =
+    List.fold
+      (fun acc item ->
+        match entityInCurrentModel with
+        | None ->
+          // look it's a tuple
+          nextModel, objectsRemoved
+        | Some subjectToRemove ->
+          let a = 5
+          let b = 6
+          someFunctionApp a b |> ignore
+          acc)
+      state
+      []
+"""
+        { config with
+              MultiLineLambdaClosingNewline = true
+              KeepIndentInBranch = true }
+    |> prepend newline
+    |> should
+        equal
+        """
+let nextModel, objectsRemoved =
+    List.fold
+        (fun acc item ->
+            match entityInCurrentModel with
+            | None ->
+                // look it's a tuple
+                nextModel, objectsRemoved
+            | Some subjectToRemove ->
+
+            let a = 5
+            let b = 6
+            someFunctionApp a b |> ignore
+            acc
+        )
+        state
+        []
+"""
+
+[<Test>]
+let ``parenthesis tuple is consider as short branch`` () =
+    formatSourceString
+        false
+        """
+  let nextModel, objectsRemoved =
+    List.fold
+      (fun acc item ->
+        match entityInCurrentModel with
+        | None ->
+          // look it's a tuple but wrapped in parenthesis
+          (nextModel, objectsRemoved)
+        | Some subjectToRemove ->
+          let a = 5
+          let b = 6
+          someFunctionApp a b |> ignore
+          acc)
+      state
+      []
+"""
+        { config with
+              MultiLineLambdaClosingNewline = true
+              KeepIndentInBranch = true }
+    |> prepend newline
+    |> should
+        equal
+        """
+let nextModel, objectsRemoved =
+    List.fold
+        (fun acc item ->
+            match entityInCurrentModel with
+            | None ->
+                // look it's a tuple but wrapped in parenthesis
+                (nextModel, objectsRemoved)
+            | Some subjectToRemove ->
+
+            let a = 5
+            let b = 6
+            someFunctionApp a b |> ignore
+            acc
+        )
+        state
+        []
+"""
+
+[<Test>]
+let ``long multiline if expression, 1812`` () =
+    formatSourceString
+        false
+        """
+module Foo =
+    let bar =
+
+        if output.Exists && not (output.EnumerateFiles() |> Seq.isEmpty && onlyContainsFoobar output) then
+            Error (FooBarBazError.ErrorCase output)
+        else
+
+        let blah =
+            let x = y
+            None
+
+        {
+            Hi = blah
+        }
+        |> Ok
+"""
+        { config with
+              MaxLineLength = 100
+              SpaceBeforeUppercaseInvocation = true
+              SpaceBeforeClassConstructor = true
+              SpaceBeforeMember = true
+              SpaceBeforeColon = true
+              SpaceBeforeSemicolon = true
+              IndentOnTryWith = true
+              MultilineBlockBracketsOnSameColumn = true
+              NewlineBetweenTypeDefinitionAndMembers = true
+              AlignFunctionSignatureToIndentation = true
+              AlternativeLongMemberDefinitions = true
+              MultiLineLambdaClosingNewline = true
+              DisableElmishSyntax = true
+              KeepIndentInBranch = true }
+    |> prepend newline
+    |> should
+        equal
+        """
+module Foo =
+    let bar =
+
+        if
+            output.Exists
+            && not
+                (
+                    output.EnumerateFiles () |> Seq.isEmpty
+                    && onlyContainsFoobar output
+                )
+        then
+            Error (FooBarBazError.ErrorCase output)
+        else
+
+        let blah =
+            let x = y
+            None
+
+        { Hi = blah } |> Ok
+"""
+
+[<Test>]
+let ``long multiline match expression`` () =
+    formatSourceString
+        false
+        """
+module Foo =
+    let bar =
+
+        match output.Exists && not (output.EnumerateFiles() |> Seq.isEmpty && onlyContainsFoobar output) with
+        | true ->
+            Error (FooBarBazError.ErrorCase output)
+        | false ->
+
+        let blah =
+            let x = y
+            None
+
+        {
+            Hi = blah
+        }
+        |> Ok
+"""
+        { config with
+              MaxLineLength = 100
+              SpaceBeforeUppercaseInvocation = true
+              SpaceBeforeClassConstructor = true
+              SpaceBeforeMember = true
+              SpaceBeforeColon = true
+              SpaceBeforeSemicolon = true
+              IndentOnTryWith = true
+              MultilineBlockBracketsOnSameColumn = true
+              NewlineBetweenTypeDefinitionAndMembers = true
+              AlignFunctionSignatureToIndentation = true
+              AlternativeLongMemberDefinitions = true
+              MultiLineLambdaClosingNewline = true
+              DisableElmishSyntax = true
+              KeepIndentInBranch = true }
+    |> prepend newline
+    |> should
+        equal
+        """
+module Foo =
+    let bar =
+
+        match
+            output.Exists
+            && not
+                (
+                    output.EnumerateFiles () |> Seq.isEmpty
+                    && onlyContainsFoobar output
+                )
+            with
+        | true -> Error (FooBarBazError.ErrorCase output)
+        | false ->
+
+        let blah =
+            let x = y
+            None
+
+        { Hi = blah } |> Ok
+"""
+
+[<Test>]
+let ``add space after long identifier in if expression, 1816`` () =
+    formatSourceString
+        false
+        """
+module Foo =
+    let assertConsistent () : unit =
+        if veryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryLong then
+            ()
+        else
+            if foo = bar then
+                ()
+            else
+                let leftSet = HashSet (FooBarBaz.keys leftThings)
+                leftSet.SymmetricExceptWith (FooBarBaz.keys rightThings)
+                |> ignore
+"""
+        { config with
+              MaxLineLength = 100
+              MultilineBlockBracketsOnSameColumn = true
+              MultiLineLambdaClosingNewline = true
+              KeepIndentInBranch = true }
+    |> prepend newline
+    |> should
+        equal
+        """
+module Foo =
+    let assertConsistent () : unit =
+        if veryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryLong then
+            ()
+        elif foo = bar then
+            ()
+        else
+
+        let leftSet = HashSet(FooBarBaz.keys leftThings)
+
+        leftSet.SymmetricExceptWith(FooBarBaz.keys rightThings)
+        |> ignore
 """

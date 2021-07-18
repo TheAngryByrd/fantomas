@@ -350,8 +350,8 @@ let someFun someReallyLoooooooooooooooongValue =
 
 [<Test>]
 let ``should keep space before :`` () =
-    formatSourceString false "let refl<'a> : Teq<'a, 'a> = Teq(id,   id)" config
-    |> fun formatted -> formatSourceString false formatted config
+    formatSourceString false "let refl<'a> : Teq<'a, 'a> = Teq(id,   id)" { config with SpaceBeforeColon = true }
+    |> fun formatted -> formatSourceString false formatted { config with SpaceBeforeColon = true }
     |> should
         equal
         "let refl<'a> : Teq<'a, 'a> = Teq(id, id)
@@ -914,7 +914,8 @@ let private authenticateRequest (logger: ILogger) header =
                 logger.LogError(sprintf "User has a valid token but lacks the correct permission")
                 return None
         }
-    with exn ->
+    with
+    | exn ->
         logger.LogError(sprintf "Could not authenticate token %s\n%A" token exn)
         task { return None }
 """
@@ -1619,7 +1620,7 @@ let myFun (a: decimal) b c : decimal = a + b + c
     |> should
         equal
         """
-let expensiveToCompute : int = 0
+let expensiveToCompute: int = 0
 let myFun (a: decimal) b c : decimal = a + b + c
 """
 
@@ -1748,52 +1749,6 @@ module Foo =
 """
 
 [<Test>]
-let ``mhex xx 2`` () =
-    formatSourceString
-        false
-        """
-module Foo =
-    let bar () =
-
-        let f1 = ()
-
-        let runTest () =
-            let (Thing f) =
-                [ a ; b ] |> Blah.tryConcat |> Option.get in f () |> ignore
-
-        Assert.Throws<exn> runTest |> ignore
-"""
-        { config with
-              MaxLineLength = 100
-              SpaceBeforeUppercaseInvocation = true
-              SpaceBeforeClassConstructor = true
-              SpaceBeforeMember = true
-              SpaceBeforeColon = true
-              SpaceBeforeSemicolon = true
-              MultilineBlockBracketsOnSameColumn = true
-              NewlineBetweenTypeDefinitionAndMembers = true
-              KeepIfThenInSameLine = true
-              AlignFunctionSignatureToIndentation = true
-              AlternativeLongMemberDefinitions = true
-              MultiLineLambdaClosingNewline = true
-              KeepIndentInBranch = true }
-    |> prepend newline
-    |> should
-        equal
-        """
-module Foo =
-    let bar () =
-
-        let f1 = ()
-
-        let runTest () =
-            let (Thing f) =
-                [ a ; b ] |> Blah.tryConcat |> Option.get in f () |> ignore
-
-        Assert.Throws<exn> runTest |> ignore
-"""
-
-[<Test>]
 let ``multiline return type followed by type declaration, 1624`` () =
     formatSourceString
         false
@@ -1817,7 +1772,7 @@ type Viewport =
     |> should
         equal
         """
-let useGeolocation : unit
+let useGeolocation: unit
     -> {| latitude: float
           longitude: float
           loading: bool
@@ -1906,4 +1861,114 @@ module PoorlyIndented =
                 dependency
 
         cmd.AsyncExecute(id = thingId)
+"""
+
+[<Test>]
+let ``short let in`` () =
+    formatSourceString
+        false
+        """
+let a = x in foo x
+"""
+        config
+    |> prepend newline
+    |> should
+        equal
+        """
+let a = x in foo x
+"""
+
+[<Test>]
+let ``let binding as part of sequential inside parenthesis, 1805`` () =
+    formatSourceString
+        false
+        """
+module Foo =
+    let foo =
+        lazy (
+            if not <| bar then
+                raise <| Exception "Very very very very very very very very very very very very very very long"
+            let ret = false
+            if ret then
+                "foo"
+            else
+                "bar"
+            |> log.Info
+            ret
+        )
+"""
+        config
+    |> prepend newline
+    |> should
+        equal
+        """
+module Foo =
+    let foo =
+        lazy
+            (if not <| bar then
+                 raise
+                 <| Exception "Very very very very very very very very very very very very very very long"
+
+             let ret = false
+
+             if ret then "foo" else "bar"
+             |> log.Info
+
+             ret)
+"""
+
+[<Test>]
+let ``sequential inside parenthesis, 1777`` () =
+    formatSourceString
+        false
+        """
+if kind = shiftFlag then (
+                    if errorSuppressionCountDown > 0 then
+                        errorSuppressionCountDown <- errorSuppressionCountDown - 1
+#if DEBUG
+                        if Flags.debug then Console.WriteLine("shifting, reduced errorRecoveryLevel to {0}\n", errorSuppressionCountDown)
+#endif
+                    let nextState = actionValue action
+                    if not haveLookahead then failwith "shift on end of input!"
+                    let data = tables.dataOfToken lookaheadToken
+                    valueStack.Push(ValueInfo(data, lookaheadStartPos, lookaheadEndPos))
+                    stateStack.Push(nextState)
+#if DEBUG
+                    if Flags.debug then Console.WriteLine("shift/consume input {0}, shift to state {1}", report haveLookahead lookaheadToken, nextState)
+#endif
+                    haveLookahead <- false
+
+                )
+"""
+        config
+    |> prepend newline
+    |> should
+        equal
+        """
+if kind = shiftFlag then
+    (if errorSuppressionCountDown > 0 then
+         errorSuppressionCountDown <- errorSuppressionCountDown - 1
+#if DEBUG
+         if Flags.debug then
+             Console.WriteLine("shifting, reduced errorRecoveryLevel to {0}\n", errorSuppressionCountDown)
+#endif
+     let nextState = actionValue action
+
+     if not haveLookahead then
+         failwith "shift on end of input!"
+
+     let data = tables.dataOfToken lookaheadToken
+     valueStack.Push(ValueInfo(data, lookaheadStartPos, lookaheadEndPos))
+     stateStack.Push(nextState)
+#if DEBUG
+     if Flags.debug then
+         Console.WriteLine(
+             "shift/consume input {0}, shift to state {1}",
+             report haveLookahead lookaheadToken,
+             nextState
+         )
+#endif
+     haveLookahead <- false
+
+    )
 """

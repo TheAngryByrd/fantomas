@@ -1513,8 +1513,8 @@ and [<CustomEquality>] Bang =
         {
             LongNameBarBarBarBarBarBarBar: int
         }
-        ///
-        override GetHashCode : unit -> int
+    ///
+    override GetHashCode : unit -> int
 """
 
 [<Test>]
@@ -1538,4 +1538,66 @@ namespace Baz
 type Foo =
     /// Hi!
     | Bar of int
+"""
+
+[<Test>]
+let ``long multiline prefix type name should be indented far enough, 1687`` () =
+    formatSourceString
+        true
+        """
+namespace Foo
+
+type Bar =
+    member Hello : thing : XLongLongLongLongLongLongLongLong<bool -> 'a, bool -> 'b, bool -> 'c, bool -> 'd, bool -> ('e -> 'f) -> 'g, ('h -> 'i) -> 'j> * item : int list -> LongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLong
+"""
+        { config with
+              SpaceBeforeUppercaseInvocation = true
+              SpaceBeforeClassConstructor = true
+              SpaceBeforeMember = true
+              SpaceBeforeColon = true
+              SpaceBeforeSemicolon = true
+              AlignFunctionSignatureToIndentation = true
+              AlternativeLongMemberDefinitions = true }
+    |> prepend newline
+    |> should
+        equal
+        """
+namespace Foo
+
+type Bar =
+    member Hello :
+        thing : XLongLongLongLongLongLongLongLong<bool -> 'a, bool -> 'b, bool -> 'c, bool -> 'd, bool
+                                                      -> ('e -> 'f)
+                                                      -> 'g, ('h -> 'i) -> 'j>
+        * item : int list ->
+        LongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLong
+"""
+
+[<Test>]
+let ``a record type with accessibility modifier and members`` () =
+    formatSourceString
+        true
+        """
+namespace Thing
+
+type Foo =
+    private
+        {
+            Bar : int
+            Qux : string
+        }
+    static member Baz : int
+"""
+        config
+    |> prepend newline
+    |> should
+        equal
+        """
+namespace Thing
+
+type Foo =
+    private
+        { Bar: int
+          Qux: string }
+    static member Baz : int
 """

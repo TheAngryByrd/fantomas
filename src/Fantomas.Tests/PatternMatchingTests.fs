@@ -244,7 +244,8 @@ try
                 s' = s0 && can (type_match ty ty0) [])
             (!the_interface)
     )
-with Failure _ -> s0
+with
+| Failure _ -> s0
 """
 
 [<Test>]
@@ -700,7 +701,7 @@ let MethInfoIsUnseen g m ty minfo =
 #else
                   (fun _provAttribs -> None)
 #endif
-               with
+            with
         | Some res -> res
         | None -> false
 
@@ -1266,7 +1267,8 @@ let private formatResponse<'options> () =
 
                 return sendBadRequest content
 
-            with exn -> return sendBadRequest (sprintf "%A" exn)
+            with
+            | exn -> return sendBadRequest (sprintf "%A" exn)
         | Error err -> return sendInternalError (err)
     }
 """
@@ -1663,7 +1665,8 @@ let GenApp (cenv: cenv) cgbuf eenv (f, fty, tyargs, curriedArgs, m) sequel =
                  | BranchCallMethod (arityInfo, _, _, _, _, _) -> arityInfo
 
               arityInfo.Length = curriedArgs.Length)
-             && (* no tailcall out of exception handler, etc. *)
+             &&
+             (* no tailcall out of exception handler, etc. *)
              (match sequelIgnoringEndScopesAndDiscard sequel with
               | Return
               | ReturnVoid -> true
@@ -1753,4 +1756,212 @@ match x with
         """
 match x with
 | :? (int) as i -> ()
+"""
+
+[<Test>]
+let ``don't add parenthesis if last clause is single line, 1698`` () =
+    formatSourceString
+        false
+        """
+  let select px =
+    match px with
+    | Shared.Foo _ -> "foo"
+    | Shared.LongerFoobarFoo -> "lf"
+    | Shared.Barry -> "barry"
+    |> List.singleton
+    |> instr "ziggy"
+"""
+        { config with IndentSize = 2 }
+    |> prepend newline
+    |> should
+        equal
+        """
+let select px =
+  match px with
+  | Shared.Foo _ -> "foo"
+  | Shared.LongerFoobarFoo -> "lf"
+  | Shared.Barry -> "barry"
+  |> List.singleton
+  |> instr "ziggy"
+"""
+
+[<Test>]
+let ``match in last clause followed by pipe`` () =
+    formatSourceString
+        false
+        """
+  let select px =
+    match px with
+    | Shared.Foo _ -> "foo"
+    | Shared.LongerFoobarFoo -> "lf"
+    | Shared.Barry ->
+        match () with
+        | _ -> "meh"
+    |> List.singleton
+    |> instr "ziggy"
+"""
+        { config with IndentSize = 2 }
+    |> prepend newline
+    |> should
+        equal
+        """
+let select px =
+  (match px with
+   | Shared.Foo _ -> "foo"
+   | Shared.LongerFoobarFoo -> "lf"
+   | Shared.Barry ->
+     match () with
+     | _ -> "meh")
+  |> List.singleton
+  |> instr "ziggy"
+"""
+
+[<Test>]
+let ``match with single line last clause followed by long custom operator`` () =
+    formatSourceString
+        false
+        """
+match x with
+| _ -> ()
+--*-- bar
+"""
+        config
+    |> prepend newline
+    |> should
+        equal
+        """
+match x with
+| _ -> ()
+--*-- bar
+"""
+
+[<Test>]
+let ``match with multiline line last clause followed by long custom operator`` () =
+    formatSourceString
+        false
+        """
+match x with
+| _ ->
+        try
+            somethingElse ()
+        with
+        | e -> printfn "failure %A" e
+--*-- bar
+"""
+        config
+    |> prepend newline
+    |> should
+        equal
+        """
+(match x with
+ | _ ->
+     try
+         somethingElse ()
+     with
+     | e -> printfn "failure %A" e)
+--*-- bar
+"""
+
+[<Test>]
+let ``match with single line last clause followed by line comment and infix operator, 1721 `` () =
+    formatSourceString
+        false
+        """
+  let select p =
+    match p with
+    | voo _ -> "v_"
+    | dd -> "dd_"
+    | q -> "q_" // comment
+    |> List.singleton
+    |> instruction "s"
+"""
+        { config with IndentSize = 2 }
+    |> prepend newline
+    |> should
+        equal
+        """
+let select p =
+  match p with
+  | voo _ -> "v_"
+  | dd -> "dd_"
+  | q -> "q_" // comment
+  |> List.singleton
+  |> instruction "s"
+"""
+
+[<Test>]
+let ``multiline infix expression in match, 1774`` () =
+    formatSourceString
+        false
+        """
+match structuralTypes |> List.tryFind (fst >> checkIfFieldTypeSupportsComparison tycon >> not) with
+| _ -> ()
+"""
+        config
+    |> prepend newline
+    |> should
+        equal
+        """
+match
+    structuralTypes
+    |> List.tryFind
+        (
+            fst
+            >> checkIfFieldTypeSupportsComparison tycon
+            >> not
+        )
+    with
+| _ -> ()
+"""
+
+[<Test>]
+let ``multiline infix expression in match bang`` () =
+    formatSourceString
+        false
+        """
+match! structuralTypes |> List.tryFind (fst >> checkIfFieldTypeSupportsComparison tycon >> not) with
+| _ -> ()
+"""
+        { config with IndentSize = 2 }
+    |> prepend newline
+    |> should
+        equal
+        """
+match!
+  structuralTypes
+  |> List.tryFind
+    (
+      fst
+      >> checkIfFieldTypeSupportsComparison tycon
+      >> not
+    )
+  with
+| _ -> ()
+"""
+
+[<Test>]
+let ``match-case should indent from match, 1234`` () =
+    formatSourceString
+        false
+        """
+let foo x =
+    match x with
+    | Some x -> x
+    | None ->
+        let x = 123
+        let y = x * x * (x + 1)
+        x
+"""
+        { config with IndentSize = 2 }
+    |> prepend newline
+    |> should
+        equal
+        """
+let foo x =
+  match x with
+  | Some x -> x
+  | None ->
+    let x = 123
+    let y = x * x * (x + 1)
+    x
 """

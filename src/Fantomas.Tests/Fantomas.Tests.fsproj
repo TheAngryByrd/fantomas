@@ -1,6 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Version>4.5.0-alpha-011</Version>
+    <Version>4.5.0</Version>
     <NoWarn>FS0988</NoWarn>
     <TargetFramework>net5.0</TargetFramework>
     <WarningsAsErrors>FS0025</WarningsAsErrors>
@@ -86,6 +86,10 @@
     <Compile Include="MultilineFunctionApplicationsInConditionExpressionsTests.fs" />
     <Compile Include="KeepIndentInBranchTests.fs" />
     <Compile Include="BlankLinesAroundNestedMultilineExpressions.fs" />
+    <Compile Include="ColMultilineItemTests.fs" />
+    <Compile Include="BarBeforeDiscriminatedUnionDeclarationTests.fs" />
+    <Compile Include="SpaceBeforeColonTests.fs" />
+    <Compile Include="LibraryOnlySynExprTests.fs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Fantomas.Extras\Fantomas.Extras.fsproj" />

@@ -38,7 +38,7 @@ type TemporaryFileCodeSample
          else
              File.WriteAllText(filename, codeSnippet))
 
-    member _.Filename : string = filename
+    member _.Filename: string = filename
 
     interface IDisposable with
         member this.Dispose() : unit =
@@ -54,7 +54,7 @@ type OutputFile internal () =
     let filename =
         Path.Join(Path.GetTempPath(), Guid.NewGuid().ToString() + ".fs")
 
-    member _.Filename : string = filename
+    member _.Filename: string = filename
 
     interface IDisposable with
         member this.Dispose() : unit =
@@ -66,7 +66,7 @@ type ConfigurationFile internal (content: string) =
         Path.Join(Path.GetTempPath(), ".editorconfig")
 
     do File.WriteAllText(filename, content)
-    member _.Filename : string = filename
+    member _.Filename: string = filename
 
     interface IDisposable with
         member this.Dispose() : unit =
@@ -78,14 +78,19 @@ type FantomasIgnoreFile internal (content: string) =
         Path.Join(Path.GetTempPath(), IgnoreFile.IgnoreFileName)
 
     do File.WriteAllText(filename, content)
-    member _.Filename : string = filename
+    member _.Filename: string = filename
 
     interface IDisposable with
         member this.Dispose() : unit =
             if File.Exists(filename) then
                 File.Delete(filename)
 
-let runFantomasTool arguments =
+type FantomasToolResult =
+    { ExitCode: int
+      Output: string
+      Error: string }
+
+let runFantomasTool arguments : FantomasToolResult =
     let pwd =
         Path.GetDirectoryName(typeof<TemporaryFileCodeSample>.Assembly.Location)
 
@@ -116,15 +121,29 @@ let runFantomasTool arguments =
     p.StartInfo.Arguments <- sprintf "%s %s" fantomasDll arguments
     p.StartInfo.WorkingDirectory <- Path.GetTempPath()
     p.StartInfo.RedirectStandardOutput <- true
+    p.StartInfo.RedirectStandardError <- true
     p.Start() |> ignore
     let output = p.StandardOutput.ReadToEnd()
+    let error = p.StandardError.ReadToEnd()
     p.WaitForExit()
-    (p.ExitCode, output)
 
-let checkCode file =
-    let arguments = sprintf "--check \"%s\"" file
+    { ExitCode = p.ExitCode
+      Output = output
+      Error = error }
+
+let checkCode (files: string list) : FantomasToolResult =
+    let files =
+        files
+        |> List.map (fun file -> sprintf "\"%s\"" file)
+        |> String.concat " "
+
+    let arguments = sprintf "--check %s" files
     runFantomasTool arguments
 
-let formatCode file =
-    let arguments = sprintf "\"%s\"" file
+let formatCode (files: string list) : FantomasToolResult =
+    let arguments =
+        files
+        |> List.map (fun file -> sprintf "\"%s\"" file)
+        |> String.concat " "
+
     runFantomasTool arguments

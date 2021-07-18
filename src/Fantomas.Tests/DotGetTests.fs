@@ -999,7 +999,8 @@ type Foobar =
                        .GetSystemAssemblies()
                        .Contains(fileNameWithoutExtension filename))
                 || tcConfig.FxResolver.IsInReferenceAssemblyPackDirectory filename)
-        with _ -> false
+        with
+        | _ -> false
 """
 
 [<Test>]
@@ -1206,4 +1207,100 @@ mock
     .Returns(Some mock)
     .OrNot()
     .End
+"""
+
+[<Test>]
+let ``dotget function application should add space before argument, short`` () =
+    formatSourceString
+        false
+        """
+m.Property(fun p -> p.Name).HasMaxLength 64
+"""
+        config
+    |> prepend newline
+    |> should
+        equal
+        """
+m.Property(fun p -> p.Name).HasMaxLength 64
+"""
+
+
+[<Test>]
+let ``dotget function application should add space before argument, long`` () =
+    formatSourceString
+        false
+        """
+m.Property(fun p -> p.Name).IsRequired().HasColumnName("ModelName").HasMaxLength 64
+"""
+        config
+    |> prepend newline
+    |> should
+        equal
+        """
+m
+    .Property(fun p -> p.Name)
+    .IsRequired()
+    .HasColumnName("ModelName")
+    .HasMaxLength 64
+"""
+
+[<Test>]
+let ``dotget lambda multiline application`` () =
+    formatSourceString
+        false
+        """
+m.Property(fun p -> p.Name).IsRequired().HasColumnName("ModelName").HasMaxLength
+"""
+        config
+    |> prepend newline
+    |> should
+        equal
+        """
+m
+    .Property(fun p -> p.Name)
+    .IsRequired()
+    .HasColumnName(
+        "ModelName"
+    )
+    .HasMaxLength
+"""
+
+[<Test>]
+let ``dotget chain with a lambda and ending in multiline function application, 1804`` () =
+    formatSourceString
+        false
+        """
+db.Schema.Users.Query
+    .Where(fun x -> x.Role)
+    .Matches(function Role.User companyId -> companyId |_->__)
+    .In(
+        db.Schema.Companies.Query
+            .Where(fun x -> x.LicenceId).Equals(licenceId)
+            .Select(fun x -> x.Id)
+    )
+"""
+        config
+    |> prepend newline
+    |> should
+        equal
+        """
+db
+    .Schema
+    .Users
+    .Query
+    .Where(fun x -> x.Role)
+    .Matches(
+        function
+        | Role.User companyId -> companyId
+        | _ -> __
+    )
+    .In(
+        db
+            .Schema
+            .Companies
+            .Query
+            .Where(fun x -> x.LicenceId)
+            .Equals(licenceId)
+            .Select(fun x -> x.Id)
+    )
 """

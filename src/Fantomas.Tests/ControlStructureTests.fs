@@ -136,7 +136,8 @@ let result1 = divide1 100 0
 let divide1 x y =
     try
         Some(x / y)
-    with :? System.DivideByZeroException ->
+    with
+    | :? System.DivideByZeroException ->
         printfn "Division by zero!"
         None
 
@@ -279,7 +280,8 @@ let x =
     if
         try
             true
-        with Failure _ -> false
+        with
+        | Failure _ -> false
     then
         ()
     else
@@ -732,7 +734,7 @@ let foldi (folder: 'State -> int -> 'T -> 'State) (state: 'State) (array: 'T [])
         let folder =
             OptimizedClosures.FSharpFunc<_, _, _, _>.Adapt folder
 
-        let mutable state : 'State = state
+        let mutable state: 'State = state
         let len = array.Length
 
         for i = 0 to len - 1 do
@@ -764,7 +766,7 @@ try
     TrySomething(someParam)
 with
     //comment2
-    ex -> MakeSureToCleanup(someParam)
+    | ex -> MakeSureToCleanup(someParam)
 """
 
 [<Test>]
@@ -797,7 +799,7 @@ module Foo =
                 return Some content
             with
                 // should we specify HttpRequestException?
-                ex ->
+                | ex ->
                     Infrastructure.ReportWarning ex
                     return None
         }
@@ -835,11 +837,12 @@ try
         TrySomething(someParam)
     with
         //comment3
-        ex -> MakeSureToCleanup(someParam)
+        | ex -> MakeSureToCleanup(someParam)
 
-with ex ->
-    Infrastructure.ReportWarning ex
-    return None
+with
+    | ex ->
+        Infrastructure.ReportWarning ex
+        return None
 """
 
 [<Test>]
@@ -926,7 +929,7 @@ try
     foo.CreationTime <> defaultTime
 with
 // hmm
-:? FileNotFoundException -> false
+| :? FileNotFoundException -> false
 """
 
 [<Test>]
@@ -955,7 +958,76 @@ try
     foo.CreationTime <> defaultTime
 with
 // hmm
-:? FileNotFoundException -> false
+| :? FileNotFoundException -> false
+"""
+
+[<Test>]
+let ``comment above pipe of try/with named clause, 1686`` () =
+    formatSourceString
+        false
+        """
+namespace Foo
+
+module Foo =
+    let a =
+        try
+            failwith ""
+        with
+        // hi!
+        | :? Exception as e ->
+            failwith ""
+"""
+        { config with
+              SpaceBeforeColon = true
+              SpaceBeforeSemicolon = true
+              IndentOnTryWith = true }
+    |> prepend newline
+    |> should
+        equal
+        """
+namespace Foo
+
+module Foo =
+    let a =
+        try
+            failwith ""
+        with
+            // hi!
+            | :? Exception as e -> failwith ""
+"""
+
+[<Test>]
+let ``comment above pipe of try/with named clause, idempotent`` () =
+    formatSourceString
+        false
+        """
+namespace Foo
+
+module Foo =
+    let a =
+        try
+            failwith ""
+        with
+            // hi!
+            :? Exception as e -> failwith ""
+"""
+        { config with
+              SpaceBeforeColon = true
+              SpaceBeforeSemicolon = true
+              IndentOnTryWith = true }
+    |> prepend newline
+    |> should
+        equal
+        """
+namespace Foo
+
+module Foo =
+    let a =
+        try
+            failwith ""
+        with
+            // hi!
+            | :? Exception as e -> failwith ""
 """
 
 [<Test>]
@@ -1023,10 +1095,85 @@ module Foo =
                                 foo.CreationTime <> defaultTime
                             with
                             // hmm
-                            :? FileNotFoundException -> false
+                            | :? FileNotFoundException -> false
 
                         exists
 
                     ()
             }
+"""
+
+[<Test>]
+let ``short catch clause in try/with should have pipe, 1571`` () =
+    formatSourceString
+        false
+        """
+try
+    ()
+with
+| exc ->
+    ()
+"""
+        config
+    |> prepend newline
+    |> should
+        equal
+        """
+try
+    ()
+with
+| exc -> ()
+"""
+
+[<Test>]
+let ``short catch clause in try/with should have pipe, IndentOnTryWith = true`` () =
+    formatSourceString
+        false
+        """
+try
+    ()
+with
+| exc ->
+    ()
+"""
+        { config with IndentOnTryWith = true }
+    |> prepend newline
+    |> should
+        equal
+        """
+try
+    ()
+with
+    | exc -> ()
+"""
+
+[<Test>]
+let ``try/with in infix expression should be indented, 1746`` () =
+    formatSourceString
+        false
+        """
+    let isAbstractNonVirtualMember (m: FSharpMemberOrFunctionOrValue) =
+      // is an abstract member
+      m.IsDispatchSlot
+      // this member doesn't implement anything
+      && (try m.ImplementedAbstractSignatures <> null &&  m.ImplementedAbstractSignatures.Count = 0 with _ -> true) // exceptions here trying to acces the member means we're safe
+      // this member is not an override
+      && not m.IsOverrideOrExplicitInterfaceImplementation
+"""
+        config
+    |> prepend newline
+    |> should
+        equal
+        """
+let isAbstractNonVirtualMember (m: FSharpMemberOrFunctionOrValue) =
+    // is an abstract member
+    m.IsDispatchSlot
+    // this member doesn't implement anything
+    && (try
+            m.ImplementedAbstractSignatures <> null
+            && m.ImplementedAbstractSignatures.Count = 0
+        with
+        | _ -> true) // exceptions here trying to acces the member means we're safe
+    // this member is not an override
+    && not m.IsOverrideOrExplicitInterfaceImplementation
 """

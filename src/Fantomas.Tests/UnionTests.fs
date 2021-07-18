@@ -618,7 +618,7 @@ namespace X
 type UnresolvedAssemblyReference = UnresolvedAssemblyReference of string * AssemblyReference list
 
 type ResolvedExtensionReference =
-    ResolvedExtensionReference of string * AssemblyReference list * Tainted<ITypeProvider> list
+    | ResolvedExtensionReference of string * AssemblyReference list * Tainted<ITypeProvider> list
 """
 
 [<Test>]
@@ -641,7 +641,7 @@ namespace X
 type UnresolvedAssemblyReference = UnresolvedAssemblyReference of string * AssemblyReference list
 
 type ResolvedExtensionReference =
-    ResolvedExtensionReference of string * AssemblyReference list * Tainted<ITypeProvider> list
+    | ResolvedExtensionReference of string * AssemblyReference list * Tainted<ITypeProvider> list
 """
 
 [<Test>]
@@ -751,4 +751,116 @@ type A =
 #if DEBUG
     | C
 #endif
+"""
+
+[<Test>]
+let ``multiline DU case`` () =
+    formatSourceString
+        false
+        """
+[<NoEquality; NoComparison>]
+type SynBinding =
+    SynBinding of
+                        accessibility: SynAccess option *
+                        kind: SynBindingKind *
+                        mustInline: bool *
+                        isMutable: bool *
+                        attributes: SynAttributes *
+                        xmlDoc: PreXmlDoc *
+                        valData: SynValData *
+                        headPat: SynPat *
+                        returnInfo: SynBindingReturnInfo option *
+                        expr: SynExpr *
+                        range: range *
+                        seqPoint: DebugPointAtBinding
+"""
+        config
+    |> prepend newline
+    |> should
+        equal
+        """
+[<NoEquality; NoComparison>]
+type SynBinding =
+    | SynBinding of
+        accessibility: SynAccess option *
+        kind: SynBindingKind *
+        mustInline: bool *
+        isMutable: bool *
+        attributes: SynAttributes *
+        xmlDoc: PreXmlDoc *
+        valData: SynValData *
+        headPat: SynPat *
+        returnInfo: SynBindingReturnInfo option *
+        expr: SynExpr *
+        range: range *
+        seqPoint: DebugPointAtBinding
+"""
+
+[<Test>]
+let ``comment above union case in signature file, 973`` () =
+    formatSourceString
+        true
+        """
+namespace foo
+
+type SynTypeConstraint =
+
+    /// F# syntax: is 'typar: struct
+    | WhereTyparIsValueType of
+        typar: SynTypar *
+        range: range
+"""
+        config
+    |> prepend newline
+    |> should
+        equal
+        """
+namespace foo
+
+type SynTypeConstraint =
+
+    /// F# syntax: is 'typar: struct
+    | WhereTyparIsValueType of typar: SynTypar * range: range
+"""
+
+[<Test>]
+let ``long union case with attributes without fields, 1796`` () =
+    formatSourceString
+        false
+        """
+type TransactionType =
+    | [<CompiledName "External Credit Balance Refund">] ExternalCreditBalanceRefund
+    | [<CompiledName "Credit Balance Adjustment (Applied from Credit Balance)">] CreditBalanceAdjustmentAppliedFromCreditBalance
+"""
+        config
+    |> prepend newline
+    |> should
+        equal
+        """
+type TransactionType =
+    | [<CompiledName "External Credit Balance Refund">] ExternalCreditBalanceRefund
+    | [<CompiledName "Credit Balance Adjustment (Applied from Credit Balance)">] CreditBalanceAdjustmentAppliedFromCreditBalance
+"""
+
+[<Test>]
+let ``long union case with attributes without fields, signature file`` () =
+    formatSourceString
+        true
+        """
+namespace X
+
+type TransactionType =
+    | [<CompiledName "External Credit Balance Refund">] ExternalCreditBalanceRefund
+    | [<CompiledName "Credit Balance Adjustment (Applied from Credit Balance)">] CreditBalanceAdjustmentAppliedFromCreditBalance
+"""
+        config
+    |> prepend newline
+    |> should
+        equal
+        """
+namespace X
+
+type TransactionType =
+    | [<CompiledName "External Credit Balance Refund">] ExternalCreditBalanceRefund
+    | [<CompiledName "Credit Balance Adjustment (Applied from Credit Balance)">] CreditBalanceAdjustmentAppliedFromCreditBalance
 """

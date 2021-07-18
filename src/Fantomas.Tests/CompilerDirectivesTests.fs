@@ -16,9 +16,11 @@ SetupTesting.generateSetupScript __SOURCE_DIRECTORY__
 #endif
 """
         config
+    |> prepend newline
     |> should
         equal
-        """#if INTERACTIVE
+        """
+#if INTERACTIVE
 #load "../FSharpx.TypeProviders/SetupTesting.fsx"
 SetupTesting.generateSetupScript __SOURCE_DIRECTORY__
 #load "__setup__.fsx"
@@ -38,12 +40,41 @@ SetupTesting.generateSetupScript __SOURCE_DIRECTORY__
 #endif
 """
         config
+    |> prepend newline
     |> should
         equal
-        """#if INTERACTIVE
+        """
+#if INTERACTIVE
 #else
 #load "../FSharpx.TypeProviders/SetupTesting.fsx"
 SetupTesting.generateSetupScript __SOURCE_DIRECTORY__
+#load "__setup__.fsx"
+#endif
+"""
+
+[<Test>]
+let ``should keep compiler directives, idempotent`` () =
+    formatSourceString
+        false
+        """
+#if INTERACTIVE
+#else
+#load "../FSharpx.TypeProviders/SetupTesting.fsx"
+SetupTesting.generateSetupScript __SOURCE_DIRECTORY__
+
+#load "__setup__.fsx"
+#endif
+"""
+        config
+    |> prepend newline
+    |> should
+        equal
+        """
+#if INTERACTIVE
+#else
+#load "../FSharpx.TypeProviders/SetupTesting.fsx"
+SetupTesting.generateSetupScript __SOURCE_DIRECTORY__
+
 #load "__setup__.fsx"
 #endif
 """
@@ -211,7 +242,6 @@ namespace Internal.Utilities.Text.Lexing"""
         """
 #nowarn "47"
 namespace Internal.Utilities.Text.Lexing
-
 """
 
 [<Test>]
@@ -431,7 +461,8 @@ let start (args: IArgs) =
                 .Run()
 
             0
-        with ex ->
+        with
+        | ex ->
             Log.Fatal(ex, "Host terminated unexpectedly")
             1
     finally
@@ -905,11 +936,11 @@ let ``module with nested directives`` () =
 #else
     [<Import("*", "react-dom")>]
 #endif
-    let ReactDom : IReactDom = jsNative
+    let ReactDom: IReactDom = jsNative
 
 #if !FABLE_REPL_LIB
     [<Import("default", "react-dom/server")>]
-    let ReactDomServer : IReactDomServer = jsNative
+    let ReactDomServer: IReactDomServer = jsNative
 #endif
 """
 
@@ -938,11 +969,11 @@ let ``module with nested directives, no defines`` () =
 #else
     [<Import("*", "react-dom")>]
 #endif
-    let ReactDom : IReactDom = jsNative
+    let ReactDom: IReactDom = jsNative
 
 #if !FABLE_REPL_LIB
     [<Import("default", "react-dom/server")>]
-    let ReactDomServer : IReactDomServer = jsNative
+    let ReactDomServer: IReactDomServer = jsNative
 #endif
 """
 
@@ -971,7 +1002,7 @@ let ``module with nested directives, FABLE_REPL_LIB`` () =
 #else
 
 #endif
-    let ReactDom : IReactDom = jsNative
+    let ReactDom: IReactDom = jsNative
 
 #if !FABLE_REPL_LIB
 
@@ -1027,6 +1058,23 @@ let foo = 42
         """
 #if SOMETHING
 let foo = 42
+#endif
+"""
+
+[<Test>]
+let ``no code for inactive define, no defines`` () =
+    formatSourceStringWithDefines
+        []
+        """#if SOMETHING
+let foo = 42
+#endif"""
+        config
+    |> prepend newline
+    |> should
+        equal
+        """
+#if SOMETHING
+
 #endif
 """
 
@@ -1264,7 +1312,8 @@ try
 #if DEF
     ()
 #endif
-with _ -> ()
+with
+| _ -> ()
 """
 
 [<Test>]
@@ -2303,7 +2352,8 @@ module ReactHookExtensions =
 
                         let! output = operation
                         do setDeferred (Deferred<'T>.Resolved output)
-                    with error ->
+                    with
+                    | error ->
 #if DEBUG
                         Browser.Dom.console.log (error)
 #endif
@@ -2500,4 +2550,92 @@ let Environment =
 
         member _.SetEnvironmentVariable(varName, value) =
             System.Environment.SetEnvironmentVariable(varName, value) }
+"""
+
+[<Test>]
+let ``hash directive above recursive let binding inside type definition, 1776`` () =
+    formatSourceString
+        false
+        """
+    type ObjectGraphFormatter(opts: FormatOptions, bindingFlags) =
+        let rec nestedObjL depthLim prec (x:obj, ty:Type) =
+            objL ShowAll depthLim prec (x, ty)
+        and stringValueL (s: string) =
+            countNodes 1
+#if COMPILER
+            ()
+#else
+            wordL (tagStringLiteral (formatString s))
+#endif
+
+        and arrayValueL depthLim (arr: Array) =
+            ()
+"""
+        config
+    |> prepend newline
+    |> should
+        equal
+        """
+type ObjectGraphFormatter(opts: FormatOptions, bindingFlags) =
+    let rec nestedObjL depthLim prec (x: obj, ty: Type) = objL ShowAll depthLim prec (x, ty)
+
+    and stringValueL (s: string) =
+        countNodes 1
+#if COMPILER
+        ()
+#else
+        wordL (tagStringLiteral (formatString s))
+#endif
+
+    and arrayValueL depthLim (arr: Array) = ()
+"""
+
+[<Test>]
+let ``verbatim string is ignore for hash directive scan,  1794`` () =
+    formatSourceString
+        false
+        """
+let ProgramFilesX86 =
+    match wow64, globalArch with
+    | "AMD64", "AMD64"
+    | null, "AMD64"
+    | "x86", "AMD64" -> Environment.GetEnvironmentVariable "ProgramFiles(x86)"
+    | _ -> Environment.GetEnvironmentVariable "ProgramFiles"
+    |> fun detected -> if detected = null then @"C:\Program Files (x86)\" else detected
+
+let isUnix =
+#if NETSTANDARD1_6 || NETSTANDARD2_0
+    System.Runtime.InteropServices.RuntimeInformation.IsOSPlatform(
+        System.Runtime.InteropServices.OSPlatform.Linux) ||
+    System.Runtime.InteropServices.RuntimeInformation.IsOSPlatform(
+        System.Runtime.InteropServices.OSPlatform.OSX)
+#else
+    int Environment.OSVersion.Platform |> fun p -> (p = 4) || (p = 6) || (p = 128)
+#endif
+"""
+        config
+    |> prepend newline
+    |> should
+        equal
+        """
+let ProgramFilesX86 =
+    match wow64, globalArch with
+    | "AMD64", "AMD64"
+    | null, "AMD64"
+    | "x86", "AMD64" -> Environment.GetEnvironmentVariable "ProgramFiles(x86)"
+    | _ -> Environment.GetEnvironmentVariable "ProgramFiles"
+    |> fun detected ->
+        if detected = null then
+            @"C:\Program Files (x86)\"
+        else
+            detected
+
+let isUnix =
+#if NETSTANDARD1_6 || NETSTANDARD2_0
+    System.Runtime.InteropServices.RuntimeInformation.IsOSPlatform(System.Runtime.InteropServices.OSPlatform.Linux)
+    || System.Runtime.InteropServices.RuntimeInformation.IsOSPlatform(System.Runtime.InteropServices.OSPlatform.OSX)
+#else
+    int Environment.OSVersion.Platform
+    |> fun p -> (p = 4) || (p = 6) || (p = 128)
+#endif
 """
