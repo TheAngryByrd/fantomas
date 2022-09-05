@@ -1,19 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-root="https://fsprojects.github.io/fantomas/">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="author" content="Florian Verdonck, Jindřich Ivánek">
+  <meta name="author" content="Florian Verdonck, Jindřich Ivánek, David Schaefer">
   <title>SynModuleSigDecl (fantomas)</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;1,400&family=Reem+Kufi:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
-  <link rel="shortcut icon" type="image/x-icon" href="/fantomas/images/favicon.ico">
-  <link type="text/css" rel="stylesheet" href="/fantomas/content/fsdocs-custom.css" />
-  <link type="text/css" rel="stylesheet" href="/fantomas/content/fsdocs-default.css" />
-  <script type="text/javascript" src="/fantomas/content/fsdocs-tips.js"></script>
+  <link rel="shortcut icon" type="image/x-icon" href="https://fsprojects.github.io/fantomas/images/favicon.ico">
+  <link type="text/css" rel="stylesheet" href="https://fsprojects.github.io/fantomas/content/fsdocs-custom.css" />
+  <script type="text/javascript" src="https://fsprojects.github.io/fantomas/content/fsdocs-tips.js"></script>
   <!-- BEGIN SEARCH BOX: this adds support for the search box -->
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <link rel="stylesheet"
@@ -24,110 +23,117 @@
 
 <body>
   <main id="main-container">
-  
-     <div id="sidebar-wrapper" class="bg-primary h-100 fs-5 collapse show" >
+     <div id="sidebar-wrapper" class="bg-primary h-100 fs-5 collapse show">
       <div id="sidebar-header" class="d-flex justify-content-end mt-1">
       <button class="btn d-md-none" data-bs-toggle="collapse" data-bs-target="#sidebar-wrapper" data-bs-parent="#main-container" aria-controls="sidebar-wrapper" aria-expanded="false" aria-label="Toggle navigation">
         <i class="sidebar-toggle fs-3 bi bi-x-lg"></i>
                   </button>
               </div>
       <div id="sidebar-logo" class="d-flex justify-content-center p-5">
-      <a href="./index.html" ><img id="fsdocs-logo" src="/fantomas//images/logo-fantomas-white.svg" /></a>
+      <a href="https://fsprojects.github.io/fantomas/docs/index.html" ><img id="fsdocs-logo" src="https://fsprojects.github.io/fantomas//images/logo-fantomas-white.svg" /></a>
 </div>
-      <div id="sidebar-generation" class="list-unstyled ps-0 text-white fs-6">
-        <li class="nav-header">
-  End-user documentation
-</li>             
-<li class="nav-item">
-  <a class="nav-link" href="/fantomas/docs/FAKE.html">
-    FAKE build system
+      <div id="sidebar-content" class="list-unstyled ps-0 text-white fs-6">
+                    <div id="end-users-wrapper" class="p-2 list-wrapper menu-open">
+            <li class="docs-menu">
+                <button class="btn text-white d-flex p-1 justify-content-between align-items-center" data-bs-toggle="collapse"
+                        data-bs-target="#end-users" aria-expanded="true">
+                        End-users
+                        <i class="bi bi-chevron-down mx-2" style="-webkit-text-stroke: 2px;"></i>
+                </button>
+                <div id="end-users" class="ms-4 collapse show">
+                    <ul class="list-unstyled fw-normal mb-0">
+                        <li class="nav-item"><a href="https://fsprojects.github.io/fantomas/docs/end-users/GettingStarted.html" class="nav-link mt-2 d-block" > Getting Started
+</a></li>
 
-  </a>
-</li>             
-<li class="nav-item">
-  <a class="nav-link" href="/fantomas/docs/Rider.html">
-    JetBrains Rider
+<li class="nav-item"><a href="https://fsprojects.github.io/fantomas/docs/end-users/StyleGuide.html" class="nav-link mt-2 d-block" > Style guide
+</a></li>
 
-  </a>
-</li>             
-<li class="nav-item">
-  <a class="nav-link" href="/fantomas/docs/VSCode.html">
-    Visual Studio Code
+<li class="nav-item"><a href="https://fsprojects.github.io/fantomas/docs/end-users/Configuration.html" class="nav-link mt-2 d-block" > Configuration
+</a></li>
 
-  </a>
-</li>             
-<li class="nav-item">
-  <a class="nav-link" href="/fantomas/docs/Configuration.html">
-    Configuration
+<li class="nav-item"><a href="https://fsprojects.github.io/fantomas/docs/end-users/IgnoreFiles.html" class="nav-link mt-2 d-block" > Ignore Files
+</a></li>
 
-  </a>
-</li>             
-<li class="nav-item">
-  <a class="nav-link" href="/fantomas/docs/VisualStudio.html">
-    Visual Studio
+<li class="nav-item"><a href="https://fsprojects.github.io/fantomas/docs/end-users/FormattingCheck.html" class="nav-link mt-2 d-block" > Formatting Check
+</a></li>
 
-  </a>
-</li>             
-<li class="nav-item">
-  <a class="nav-link" href="/fantomas/docs/StyleGuide.html">
-    Style guide
+<li class="nav-item"><a href="https://fsprojects.github.io/fantomas/docs/end-users/GitHooks.html" class="nav-link mt-2 d-block" > Git hooks
+</a></li>
 
-  </a>
-</li>             
-<li class="nav-item">
-  <a class="nav-link" href="/fantomas/docs/Benchmarks.html">
-    Benchmarks
+<li class="nav-item"><a href="https://fsprojects.github.io/fantomas/docs/end-users/VisualStudio.html" class="nav-link mt-2 d-block" > Visual Studio
+</a></li>
 
-  </a>
-</li>             
-<li class="nav-item">
-  <a class="nav-link" href="/fantomas/docs/FAQ.html">
-    FAQ
+<li class="nav-item"><a href="https://fsprojects.github.io/fantomas/docs/end-users/Rider.html" class="nav-link mt-2 d-block" > JetBrains Rider
+</a></li>
 
-  </a>
-</li>             
-<li class="nav-header">
-  Documentation
-</li>             
-<li class="nav-item">
-  <a class="nav-link" href="/fantomas/docs/GettingStarted.html">
-    Getting Started
+<li class="nav-item"><a href="https://fsprojects.github.io/fantomas/docs/end-users/VSCode.html" class="nav-link mt-2 d-block" > Visual Studio Code
+</a></li>
 
-  </a>
-</li>             
-<li class="nav-item">
-  <a class="nav-link" href="/fantomas/docs/IgnoreFiles.html">
-    Ignore Files
+<li class="nav-item"><a href="https://fsprojects.github.io/fantomas/docs/end-users/FAQ.html" class="nav-link mt-2 d-block" > FAQ
+</a></li>
 
-  </a>
-</li>             
-<li class="nav-item">
-  <a class="nav-link" href="/fantomas/docs/FormattingCheck.html">
-    Formatting Check
+                    </ul>
+                </div>
+            </li>
+            </div>
 
-  </a>
-</li>             
-<li class="nav-item">
-  <a class="nav-link" href="/fantomas/docs/GitHooks.html">
-    Git hooks
+            <div id="contributors-wrapper" class="p-2 list-wrapper menu-open">
+            <li class="docs-menu">
+                <button class="btn text-white d-flex p-1 justify-content-between align-items-center" data-bs-toggle="collapse"
+                        data-bs-target="#contributors" aria-expanded="true">
+                        Contributors
+                        <i class="bi bi-chevron-down mx-2" style="-webkit-text-stroke: 2px;"></i>
+                </button>
+                <div id="contributors" class="ms-4 collapse show">
+                    <ul class="list-unstyled fw-normal mb-0">
+                        <li class="nav-item"><a href="https://fsprojects.github.io/fantomas/docs/contributors/Index.html" class="nav-link mt-2 d-block" > Contributors
+</a></li>
 
-  </a>
-</li>             
-<li class="nav-header">
-  Contributors
-</li>             
-<li class="nav-item">
-  <a class="nav-link" href="/fantomas/docs/contributors/Index.html">
-    Contributors
+<li class="nav-item"><a href="https://fsprojects.github.io/fantomas/docs/contributors/FSharp.html" class="nav-link mt-2 d-block" > F#
+</a></li>
 
-  </a>
-</li>             
-<li class="nav-item">
-  <a class="nav-link" href="/fantomas/docs/contributors/FSharp.html">
-    F#
+<li class="nav-item"><a href="https://fsprojects.github.io/fantomas/docs/contributors/Getting Started.html" class="nav-link mt-2 d-block" > Getting started
+</a></li>
 
-  </a>
-</li>
+<li class="nav-item"><a href="https://fsprojects.github.io/fantomas/docs/contributors/Solution Structure.html" class="nav-link mt-2 d-block" > Solution structure
+</a></li>
+
+<li class="nav-item"><a href="https://fsprojects.github.io/fantomas/docs/contributors/Prepare Context.html" class="nav-link mt-2 d-block" > Fantomas.Core overview (1)
+</a></li>
+
+<li class="nav-item"><a href="https://fsprojects.github.io/fantomas/docs/contributors/Print AST with Context.html" class="nav-link mt-2 d-block" > Fantomas.Core overview (2)
+</a></li>
+
+<li class="nav-item"><a href="https://fsprojects.github.io/fantomas/docs/contributors/Formatted Code.html" class="nav-link mt-2 d-block" > Fantomas.Core overview (3)
+</a></li>
+
+<li class="nav-item"><a href="https://fsprojects.github.io/fantomas/docs/contributors/Conditional Compilation Directives.html" class="nav-link mt-2 d-block" > Formatting Conditional Compilation Directives
+</a></li>
+
+<li class="nav-item"><a href="https://fsprojects.github.io/fantomas/docs/contributors/How Can I Contribute.html" class="nav-link mt-2 d-block" > How can I contribute?
+</a></li>
+
+                    </ul>
+                </div>
+            </li>
+            </div>
+
+                    <div id="api_reference-wrapper" class="p-2 list-wrapper menu-open">
+            <li class="docs-menu">
+                <button class="btn text-white d-flex p-1 justify-content-between align-items-center" data-bs-toggle="collapse"
+                        data-bs-target="#api_reference" aria-expanded="true">
+                        API Reference
+                        <i class="bi bi-chevron-down mx-2" style="-webkit-text-stroke: 2px;"></i>
+                </button>
+                <div id="api_reference" class="ms-4 collapse show">
+                    <ul class="list-unstyled fw-normal mb-0">
+                        <li class="nav-item"><a href="https://fsprojects.github.io/fantomas/reference/index.html" class="nav-link mt-2 d-block" > All Namespaces</a></li>
+
+                    </ul>
+                </div>
+            </li>
+            </div>
+
       </div>
     </div>
 
@@ -139,7 +145,7 @@
           </button>
           <div id="mobile-navbar" class="container-fluid d-flex justify-content-between d-sm-none">
             <i class="invisible bi bi-github fs-3 align-self-end"></i>
-         <a href="./index.html" ><img id="fsdocs-logo" width="32" height="32" src="/fantomas//images/logo.png" /></a>
+         <a href="./index.html" ><img id="fsdocs-logo" width="32" height="32" src="https://fsprojects.github.io/fantomas//images/logo.png" /></a>
             <a class="nav-link m-0 p-0" target="_blank" href="https://github.com/fsprojects/fantomas/"> <i class="bi bi-github fs-3 align-self-end"></i>
 </a>
           </div>
@@ -178,7 +184,7 @@
   <dl class="fsdocs-metadata">
     <dt>
       Namespace: 
-      <a href="/fantomas/reference/fsharp-compiler-syntax.html">
+      <a href="https://fsprojects.github.io/fantomas/reference/fsharp-compiler-syntax.html">
         FSharp.Compiler.Syntax
       </a>
     </dt>
@@ -221,7 +227,7 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '992', 992)" onmouseover="showTip(event, '992', 992)">
+              <code onmouseout="hideTip(event, '988', 988)" onmouseover="showTip(event, '988', 988)">
                 <p>
                   <a id="Exception">
                     <a href="#Exception">
@@ -230,7 +236,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="992">
+              <div class="fsdocs-tip" id="988">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code><span>Exception(<span>exnSig,&#32;range</span>)</span></code>
@@ -243,7 +249,7 @@
                         exnSig
                       </b>
                       :
-                      <code><a href="/fantomas/reference/fsharp-compiler-syntax-synexceptionsig.html">SynExceptionSig</a></code>
+                      <code><a href="https://fsprojects.github.io/fantomas/reference/fsharp-compiler-syntax-synexceptionsig.html">SynExceptionSig</a></code>
                     </span>
                     <br/>
                     <span>
@@ -251,7 +257,7 @@
                         range
                       </b>
                       :
-                      <code><a href="/fantomas/reference/fsharp-compiler-text-range-0.html">range</a></code>
+                      <code><a href="https://fsprojects.github.io/fantomas/reference/fsharp-compiler-text-range-0.html">range</a></code>
                     </span>
                     <br/>
                   </ul>
@@ -263,8 +269,8 @@
           <td class="fsdocs-member-xmldoc">
             <div class="fsdocs-summary">
               <a href="https://github.com/fsprojects/fantomas/paket-files/dotnet/fsharp/src/Compiler/SyntaxTree/SyntaxTree.fsi#L1704-1704" class="fsdocs-source-link" title="Source on GitHub">
-                <img src="/fantomas/content/img/github.png" class="normal"/>
-                <img src="/fantomas/content/img/github-hover.png" class="hover"/>
+                <img src="https://fsprojects.github.io/fantomas/content/img/github.png" class="normal"/>
+                <img src="https://fsprojects.github.io/fantomas/content/img/github-hover.png" class="hover"/>
               </a>
               <p class="fsdocs-summary">
                 
@@ -278,7 +284,7 @@
                   exnSig
                 </span>
                 :
-                <code><a href="/fantomas/reference/fsharp-compiler-syntax-synexceptionsig.html">SynExceptionSig</a></code>
+                <code><a href="https://fsprojects.github.io/fantomas/reference/fsharp-compiler-syntax-synexceptionsig.html">SynExceptionSig</a></code>
               </dt>
               <dd class="fsdocs-param-docs"></dd>
               <dt class="fsdocs-param">
@@ -286,7 +292,7 @@
                   range
                 </span>
                 :
-                <code><a href="/fantomas/reference/fsharp-compiler-text-range-0.html">range</a></code>
+                <code><a href="https://fsprojects.github.io/fantomas/reference/fsharp-compiler-text-range-0.html">range</a></code>
               </dt>
               <dd class="fsdocs-param-docs"></dd>
             </dl>
@@ -295,7 +301,7 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '993', 993)" onmouseover="showTip(event, '993', 993)">
+              <code onmouseout="hideTip(event, '989', 989)" onmouseover="showTip(event, '989', 989)">
                 <p>
                   <a id="HashDirective">
                     <a href="#HashDirective">
@@ -304,7 +310,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="993">
+              <div class="fsdocs-tip" id="989">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code><span>HashDirective(<span>hashDirective,&#32;range</span>)</span></code>
@@ -317,7 +323,7 @@
                         hashDirective
                       </b>
                       :
-                      <code><a href="/fantomas/reference/fsharp-compiler-syntax-parsedhashdirective.html">ParsedHashDirective</a></code>
+                      <code><a href="https://fsprojects.github.io/fantomas/reference/fsharp-compiler-syntax-parsedhashdirective.html">ParsedHashDirective</a></code>
                     </span>
                     <br/>
                     <span>
@@ -325,7 +331,7 @@
                         range
                       </b>
                       :
-                      <code><a href="/fantomas/reference/fsharp-compiler-text-range-0.html">range</a></code>
+                      <code><a href="https://fsprojects.github.io/fantomas/reference/fsharp-compiler-text-range-0.html">range</a></code>
                     </span>
                     <br/>
                   </ul>
@@ -337,8 +343,8 @@
           <td class="fsdocs-member-xmldoc">
             <div class="fsdocs-summary">
               <a href="https://github.com/fsprojects/fantomas/paket-files/dotnet/fsharp/src/Compiler/SyntaxTree/SyntaxTree.fsi#L1710-1710" class="fsdocs-source-link" title="Source on GitHub">
-                <img src="/fantomas/content/img/github.png" class="normal"/>
-                <img src="/fantomas/content/img/github-hover.png" class="hover"/>
+                <img src="https://fsprojects.github.io/fantomas/content/img/github.png" class="normal"/>
+                <img src="https://fsprojects.github.io/fantomas/content/img/github-hover.png" class="hover"/>
               </a>
               <p class="fsdocs-summary">
                 
@@ -352,7 +358,7 @@
                   hashDirective
                 </span>
                 :
-                <code><a href="/fantomas/reference/fsharp-compiler-syntax-parsedhashdirective.html">ParsedHashDirective</a></code>
+                <code><a href="https://fsprojects.github.io/fantomas/reference/fsharp-compiler-syntax-parsedhashdirective.html">ParsedHashDirective</a></code>
               </dt>
               <dd class="fsdocs-param-docs"></dd>
               <dt class="fsdocs-param">
@@ -360,7 +366,7 @@
                   range
                 </span>
                 :
-                <code><a href="/fantomas/reference/fsharp-compiler-text-range-0.html">range</a></code>
+                <code><a href="https://fsprojects.github.io/fantomas/reference/fsharp-compiler-text-range-0.html">range</a></code>
               </dt>
               <dd class="fsdocs-param-docs"></dd>
             </dl>
@@ -369,7 +375,7 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '994', 994)" onmouseover="showTip(event, '994', 994)">
+              <code onmouseout="hideTip(event, '990', 990)" onmouseover="showTip(event, '990', 990)">
                 <p>
                   <a id="ModuleAbbrev">
                     <a href="#ModuleAbbrev">
@@ -378,7 +384,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="994">
+              <div class="fsdocs-tip" id="990">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code><span>ModuleAbbrev(<span>ident,&#32;longId,&#32;range</span>)</span></code>
@@ -391,7 +397,7 @@
                         ident
                       </b>
                       :
-                      <code><a href="/fantomas/reference/fsharp-compiler-syntax-ident.html">Ident</a></code>
+                      <code><a href="https://fsprojects.github.io/fantomas/reference/fsharp-compiler-syntax-ident.html">Ident</a></code>
                     </span>
                     <br/>
                     <span>
@@ -399,7 +405,7 @@
                         longId
                       </b>
                       :
-                      <code><a href="/fantomas/reference/fsharp-compiler-syntax-longident.html">LongIdent</a></code>
+                      <code><a href="https://fsprojects.github.io/fantomas/reference/fsharp-compiler-syntax-longident.html">LongIdent</a></code>
                     </span>
                     <br/>
                     <span>
@@ -407,7 +413,7 @@
                         range
                       </b>
                       :
-                      <code><a href="/fantomas/reference/fsharp-compiler-text-range-0.html">range</a></code>
+                      <code><a href="https://fsprojects.github.io/fantomas/reference/fsharp-compiler-text-range-0.html">range</a></code>
                     </span>
                     <br/>
                   </ul>
@@ -419,8 +425,8 @@
           <td class="fsdocs-member-xmldoc">
             <div class="fsdocs-summary">
               <a href="https://github.com/fsprojects/fantomas/paket-files/dotnet/fsharp/src/Compiler/SyntaxTree/SyntaxTree.fsi#L1686-1686" class="fsdocs-source-link" title="Source on GitHub">
-                <img src="/fantomas/content/img/github.png" class="normal"/>
-                <img src="/fantomas/content/img/github-hover.png" class="hover"/>
+                <img src="https://fsprojects.github.io/fantomas/content/img/github.png" class="normal"/>
+                <img src="https://fsprojects.github.io/fantomas/content/img/github-hover.png" class="hover"/>
               </a>
               <p class="fsdocs-summary">
                 
@@ -434,7 +440,7 @@
                   ident
                 </span>
                 :
-                <code><a href="/fantomas/reference/fsharp-compiler-syntax-ident.html">Ident</a></code>
+                <code><a href="https://fsprojects.github.io/fantomas/reference/fsharp-compiler-syntax-ident.html">Ident</a></code>
               </dt>
               <dd class="fsdocs-param-docs"></dd>
               <dt class="fsdocs-param">
@@ -442,7 +448,7 @@
                   longId
                 </span>
                 :
-                <code><a href="/fantomas/reference/fsharp-compiler-syntax-longident.html">LongIdent</a></code>
+                <code><a href="https://fsprojects.github.io/fantomas/reference/fsharp-compiler-syntax-longident.html">LongIdent</a></code>
               </dt>
               <dd class="fsdocs-param-docs"></dd>
               <dt class="fsdocs-param">
@@ -450,7 +456,7 @@
                   range
                 </span>
                 :
-                <code><a href="/fantomas/reference/fsharp-compiler-text-range-0.html">range</a></code>
+                <code><a href="https://fsprojects.github.io/fantomas/reference/fsharp-compiler-text-range-0.html">range</a></code>
               </dt>
               <dd class="fsdocs-param-docs"></dd>
             </dl>
@@ -459,19 +465,19 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '995', 995)" onmouseover="showTip(event, '995', 995)">
+              <code onmouseout="hideTip(event, '991', 991)" onmouseover="showTip(event, '991', 991)">
                 <p>
                   <a id="NamespaceFragment">
                     <a href="#NamespaceFragment">
-                      <code><span>NamespaceFragment&#32;<a href="/fantomas/reference/fsharp-compiler-syntax-synmoduleornamespacesig.html">SynModuleOrNamespaceSig</a></span></code>
+                      <code><span>NamespaceFragment&#32;<a href="https://fsprojects.github.io/fantomas/reference/fsharp-compiler-syntax-synmoduleornamespacesig.html">SynModuleOrNamespaceSig</a></span></code>
                     </a>
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="995">
+              <div class="fsdocs-tip" id="991">
                 <div class="member-tooltip">
                   Full Usage: 
-                  <code><span>NamespaceFragment&#32;<a href="/fantomas/reference/fsharp-compiler-syntax-synmoduleornamespacesig.html">SynModuleOrNamespaceSig</a></span></code>
+                  <code><span>NamespaceFragment&#32;<a href="https://fsprojects.github.io/fantomas/reference/fsharp-compiler-syntax-synmoduleornamespacesig.html">SynModuleOrNamespaceSig</a></span></code>
                   <br/>
                   <br/>
                   Parameters: 
@@ -481,7 +487,7 @@
                         Item
                       </b>
                       :
-                      <code><a href="/fantomas/reference/fsharp-compiler-syntax-synmoduleornamespacesig.html">SynModuleOrNamespaceSig</a></code>
+                      <code><a href="https://fsprojects.github.io/fantomas/reference/fsharp-compiler-syntax-synmoduleornamespacesig.html">SynModuleOrNamespaceSig</a></code>
                     </span>
                     <br/>
                   </ul>
@@ -493,8 +499,8 @@
           <td class="fsdocs-member-xmldoc">
             <div class="fsdocs-summary">
               <a href="https://github.com/fsprojects/fantomas/paket-files/dotnet/fsharp/src/Compiler/SyntaxTree/SyntaxTree.fsi#L1713-1713" class="fsdocs-source-link" title="Source on GitHub">
-                <img src="/fantomas/content/img/github.png" class="normal"/>
-                <img src="/fantomas/content/img/github-hover.png" class="hover"/>
+                <img src="https://fsprojects.github.io/fantomas/content/img/github.png" class="normal"/>
+                <img src="https://fsprojects.github.io/fantomas/content/img/github-hover.png" class="hover"/>
               </a>
               <p class="fsdocs-summary">
                 
@@ -508,7 +514,7 @@
                   Item
                 </span>
                 :
-                <code><a href="/fantomas/reference/fsharp-compiler-syntax-synmoduleornamespacesig.html">SynModuleOrNamespaceSig</a></code>
+                <code><a href="https://fsprojects.github.io/fantomas/reference/fsharp-compiler-syntax-synmoduleornamespacesig.html">SynModuleOrNamespaceSig</a></code>
               </dt>
               <dd class="fsdocs-param-docs"></dd>
             </dl>
@@ -517,7 +523,7 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '996', 996)" onmouseover="showTip(event, '996', 996)">
+              <code onmouseout="hideTip(event, '992', 992)" onmouseover="showTip(event, '992', 992)">
                 <p>
                   <a id="NestedModule">
                     <a href="#NestedModule">
@@ -526,7 +532,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="996">
+              <div class="fsdocs-tip" id="992">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code><span>NestedModule(<span>moduleInfo,&#32;isRecursive,&#32;moduleDecls,&#32;range,&#32;trivia</span>)</span></code>
@@ -539,7 +545,7 @@
                         moduleInfo
                       </b>
                       :
-                      <code><a href="/fantomas/reference/fsharp-compiler-syntax-syncomponentinfo.html">SynComponentInfo</a></code>
+                      <code><a href="https://fsprojects.github.io/fantomas/reference/fsharp-compiler-syntax-syncomponentinfo.html">SynComponentInfo</a></code>
                     </span>
                     <br/>
                     <span>
@@ -555,7 +561,7 @@
                         moduleDecls
                       </b>
                       :
-                      <code><span><a href="/fantomas/reference/fsharp-compiler-syntax-synmodulesigdecl.html">SynModuleSigDecl</a>&#32;list</span></code>
+                      <code><span><a href="https://fsprojects.github.io/fantomas/reference/fsharp-compiler-syntax-synmodulesigdecl.html">SynModuleSigDecl</a>&#32;list</span></code>
                     </span>
                     <br/>
                     <span>
@@ -563,7 +569,7 @@
                         range
                       </b>
                       :
-                      <code><a href="/fantomas/reference/fsharp-compiler-text-range-0.html">range</a></code>
+                      <code><a href="https://fsprojects.github.io/fantomas/reference/fsharp-compiler-text-range-0.html">range</a></code>
                     </span>
                     <br/>
                     <span>
@@ -571,7 +577,7 @@
                         trivia
                       </b>
                       :
-                      <code><a href="/fantomas/reference/fsharp-compiler-syntaxtrivia-synmodulesigdeclnestedmoduletrivia.html">SynModuleSigDeclNestedModuleTrivia</a></code>
+                      <code><a href="https://fsprojects.github.io/fantomas/reference/fsharp-compiler-syntaxtrivia-synmodulesigdeclnestedmoduletrivia.html">SynModuleSigDeclNestedModuleTrivia</a></code>
                     </span>
                     <br/>
                   </ul>
@@ -583,8 +589,8 @@
           <td class="fsdocs-member-xmldoc">
             <div class="fsdocs-summary">
               <a href="https://github.com/fsprojects/fantomas/paket-files/dotnet/fsharp/src/Compiler/SyntaxTree/SyntaxTree.fsi#L1689-1689" class="fsdocs-source-link" title="Source on GitHub">
-                <img src="/fantomas/content/img/github.png" class="normal"/>
-                <img src="/fantomas/content/img/github-hover.png" class="hover"/>
+                <img src="https://fsprojects.github.io/fantomas/content/img/github.png" class="normal"/>
+                <img src="https://fsprojects.github.io/fantomas/content/img/github-hover.png" class="hover"/>
               </a>
               <p class="fsdocs-summary">
                 
@@ -598,7 +604,7 @@
                   moduleInfo
                 </span>
                 :
-                <code><a href="/fantomas/reference/fsharp-compiler-syntax-syncomponentinfo.html">SynComponentInfo</a></code>
+                <code><a href="https://fsprojects.github.io/fantomas/reference/fsharp-compiler-syntax-syncomponentinfo.html">SynComponentInfo</a></code>
               </dt>
               <dd class="fsdocs-param-docs"></dd>
               <dt class="fsdocs-param">
@@ -614,7 +620,7 @@
                   moduleDecls
                 </span>
                 :
-                <code><span><a href="/fantomas/reference/fsharp-compiler-syntax-synmodulesigdecl.html">SynModuleSigDecl</a>&#32;list</span></code>
+                <code><span><a href="https://fsprojects.github.io/fantomas/reference/fsharp-compiler-syntax-synmodulesigdecl.html">SynModuleSigDecl</a>&#32;list</span></code>
               </dt>
               <dd class="fsdocs-param-docs"></dd>
               <dt class="fsdocs-param">
@@ -622,7 +628,7 @@
                   range
                 </span>
                 :
-                <code><a href="/fantomas/reference/fsharp-compiler-text-range-0.html">range</a></code>
+                <code><a href="https://fsprojects.github.io/fantomas/reference/fsharp-compiler-text-range-0.html">range</a></code>
               </dt>
               <dd class="fsdocs-param-docs"></dd>
               <dt class="fsdocs-param">
@@ -630,7 +636,7 @@
                   trivia
                 </span>
                 :
-                <code><a href="/fantomas/reference/fsharp-compiler-syntaxtrivia-synmodulesigdeclnestedmoduletrivia.html">SynModuleSigDeclNestedModuleTrivia</a></code>
+                <code><a href="https://fsprojects.github.io/fantomas/reference/fsharp-compiler-syntaxtrivia-synmodulesigdeclnestedmoduletrivia.html">SynModuleSigDeclNestedModuleTrivia</a></code>
               </dt>
               <dd class="fsdocs-param-docs"></dd>
             </dl>
@@ -639,7 +645,7 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '997', 997)" onmouseover="showTip(event, '997', 997)">
+              <code onmouseout="hideTip(event, '993', 993)" onmouseover="showTip(event, '993', 993)">
                 <p>
                   <a id="Open">
                     <a href="#Open">
@@ -648,7 +654,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="997">
+              <div class="fsdocs-tip" id="993">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code><span>Open(<span>target,&#32;range</span>)</span></code>
@@ -661,7 +667,7 @@
                         target
                       </b>
                       :
-                      <code><a href="/fantomas/reference/fsharp-compiler-syntax-synopendecltarget.html">SynOpenDeclTarget</a></code>
+                      <code><a href="https://fsprojects.github.io/fantomas/reference/fsharp-compiler-syntax-synopendecltarget.html">SynOpenDeclTarget</a></code>
                     </span>
                     <br/>
                     <span>
@@ -669,7 +675,7 @@
                         range
                       </b>
                       :
-                      <code><a href="/fantomas/reference/fsharp-compiler-text-range-0.html">range</a></code>
+                      <code><a href="https://fsprojects.github.io/fantomas/reference/fsharp-compiler-text-range-0.html">range</a></code>
                     </span>
                     <br/>
                   </ul>
@@ -681,8 +687,8 @@
           <td class="fsdocs-member-xmldoc">
             <div class="fsdocs-summary">
               <a href="https://github.com/fsprojects/fantomas/paket-files/dotnet/fsharp/src/Compiler/SyntaxTree/SyntaxTree.fsi#L1707-1707" class="fsdocs-source-link" title="Source on GitHub">
-                <img src="/fantomas/content/img/github.png" class="normal"/>
-                <img src="/fantomas/content/img/github-hover.png" class="hover"/>
+                <img src="https://fsprojects.github.io/fantomas/content/img/github.png" class="normal"/>
+                <img src="https://fsprojects.github.io/fantomas/content/img/github-hover.png" class="hover"/>
               </a>
               <p class="fsdocs-summary">
                 
@@ -696,7 +702,7 @@
                   target
                 </span>
                 :
-                <code><a href="/fantomas/reference/fsharp-compiler-syntax-synopendecltarget.html">SynOpenDeclTarget</a></code>
+                <code><a href="https://fsprojects.github.io/fantomas/reference/fsharp-compiler-syntax-synopendecltarget.html">SynOpenDeclTarget</a></code>
               </dt>
               <dd class="fsdocs-param-docs"></dd>
               <dt class="fsdocs-param">
@@ -704,7 +710,7 @@
                   range
                 </span>
                 :
-                <code><a href="/fantomas/reference/fsharp-compiler-text-range-0.html">range</a></code>
+                <code><a href="https://fsprojects.github.io/fantomas/reference/fsharp-compiler-text-range-0.html">range</a></code>
               </dt>
               <dd class="fsdocs-param-docs"></dd>
             </dl>
@@ -713,7 +719,7 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '998', 998)" onmouseover="showTip(event, '998', 998)">
+              <code onmouseout="hideTip(event, '994', 994)" onmouseover="showTip(event, '994', 994)">
                 <p>
                   <a id="Types">
                     <a href="#Types">
@@ -722,7 +728,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="998">
+              <div class="fsdocs-tip" id="994">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code><span>Types(<span>types,&#32;range</span>)</span></code>
@@ -735,7 +741,7 @@
                         types
                       </b>
                       :
-                      <code><span><a href="/fantomas/reference/fsharp-compiler-syntax-syntypedefnsig.html">SynTypeDefnSig</a>&#32;list</span></code>
+                      <code><span><a href="https://fsprojects.github.io/fantomas/reference/fsharp-compiler-syntax-syntypedefnsig.html">SynTypeDefnSig</a>&#32;list</span></code>
                     </span>
                     <br/>
                     <span>
@@ -743,7 +749,7 @@
                         range
                       </b>
                       :
-                      <code><a href="/fantomas/reference/fsharp-compiler-text-range-0.html">range</a></code>
+                      <code><a href="https://fsprojects.github.io/fantomas/reference/fsharp-compiler-text-range-0.html">range</a></code>
                     </span>
                     <br/>
                   </ul>
@@ -755,8 +761,8 @@
           <td class="fsdocs-member-xmldoc">
             <div class="fsdocs-summary">
               <a href="https://github.com/fsprojects/fantomas/paket-files/dotnet/fsharp/src/Compiler/SyntaxTree/SyntaxTree.fsi#L1701-1701" class="fsdocs-source-link" title="Source on GitHub">
-                <img src="/fantomas/content/img/github.png" class="normal"/>
-                <img src="/fantomas/content/img/github-hover.png" class="hover"/>
+                <img src="https://fsprojects.github.io/fantomas/content/img/github.png" class="normal"/>
+                <img src="https://fsprojects.github.io/fantomas/content/img/github-hover.png" class="hover"/>
               </a>
               <p class="fsdocs-summary">
                 
@@ -770,7 +776,7 @@
                   types
                 </span>
                 :
-                <code><span><a href="/fantomas/reference/fsharp-compiler-syntax-syntypedefnsig.html">SynTypeDefnSig</a>&#32;list</span></code>
+                <code><span><a href="https://fsprojects.github.io/fantomas/reference/fsharp-compiler-syntax-syntypedefnsig.html">SynTypeDefnSig</a>&#32;list</span></code>
               </dt>
               <dd class="fsdocs-param-docs"></dd>
               <dt class="fsdocs-param">
@@ -778,7 +784,7 @@
                   range
                 </span>
                 :
-                <code><a href="/fantomas/reference/fsharp-compiler-text-range-0.html">range</a></code>
+                <code><a href="https://fsprojects.github.io/fantomas/reference/fsharp-compiler-text-range-0.html">range</a></code>
               </dt>
               <dd class="fsdocs-param-docs"></dd>
             </dl>
@@ -787,7 +793,7 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '999', 999)" onmouseover="showTip(event, '999', 999)">
+              <code onmouseout="hideTip(event, '995', 995)" onmouseover="showTip(event, '995', 995)">
                 <p>
                   <a id="Val">
                     <a href="#Val">
@@ -796,7 +802,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="999">
+              <div class="fsdocs-tip" id="995">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code><span>Val(<span>valSig,&#32;range</span>)</span></code>
@@ -809,7 +815,7 @@
                         valSig
                       </b>
                       :
-                      <code><a href="/fantomas/reference/fsharp-compiler-syntax-synvalsig.html">SynValSig</a></code>
+                      <code><a href="https://fsprojects.github.io/fantomas/reference/fsharp-compiler-syntax-synvalsig.html">SynValSig</a></code>
                     </span>
                     <br/>
                     <span>
@@ -817,7 +823,7 @@
                         range
                       </b>
                       :
-                      <code><a href="/fantomas/reference/fsharp-compiler-text-range-0.html">range</a></code>
+                      <code><a href="https://fsprojects.github.io/fantomas/reference/fsharp-compiler-text-range-0.html">range</a></code>
                     </span>
                     <br/>
                   </ul>
@@ -829,8 +835,8 @@
           <td class="fsdocs-member-xmldoc">
             <div class="fsdocs-summary">
               <a href="https://github.com/fsprojects/fantomas/paket-files/dotnet/fsharp/src/Compiler/SyntaxTree/SyntaxTree.fsi#L1698-1698" class="fsdocs-source-link" title="Source on GitHub">
-                <img src="/fantomas/content/img/github.png" class="normal"/>
-                <img src="/fantomas/content/img/github-hover.png" class="hover"/>
+                <img src="https://fsprojects.github.io/fantomas/content/img/github.png" class="normal"/>
+                <img src="https://fsprojects.github.io/fantomas/content/img/github-hover.png" class="hover"/>
               </a>
               <p class="fsdocs-summary">
                 
@@ -845,7 +851,7 @@
                   valSig
                 </span>
                 :
-                <code><a href="/fantomas/reference/fsharp-compiler-syntax-synvalsig.html">SynValSig</a></code>
+                <code><a href="https://fsprojects.github.io/fantomas/reference/fsharp-compiler-syntax-synvalsig.html">SynValSig</a></code>
               </dt>
               <dd class="fsdocs-param-docs"></dd>
               <dt class="fsdocs-param">
@@ -853,7 +859,7 @@
                   range
                 </span>
                 :
-                <code><a href="/fantomas/reference/fsharp-compiler-text-range-0.html">range</a></code>
+                <code><a href="https://fsprojects.github.io/fantomas/reference/fsharp-compiler-text-range-0.html">range</a></code>
               </dt>
               <dd class="fsdocs-param-docs"></dd>
             </dl>
@@ -884,7 +890,7 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '1000', 1000)" onmouseover="showTip(event, '1000', 1000)">
+              <code onmouseout="hideTip(event, '996', 996)" onmouseover="showTip(event, '996', 996)">
                 <p>
                   <a id="Range">
                     <a href="#Range">
@@ -893,7 +899,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="1000">
+              <div class="fsdocs-tip" id="996">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code><span>this.Range</span></code>
@@ -901,7 +907,7 @@
                   <br/>
                   <span>
                     Returns: 
-                    <code><a href="/fantomas/reference/fsharp-compiler-text-range-0.html">range</a></code>
+                    <code><a href="https://fsprojects.github.io/fantomas/reference/fsharp-compiler-text-range-0.html">range</a></code>
                   </span>
                   <br/>
                 </div>
@@ -911,16 +917,16 @@
           <td class="fsdocs-member-xmldoc">
             <div class="fsdocs-summary">
               <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:P:FSharp.Compiler.Syntax.SynModuleSigDecl.Range`')">
-                <img src="/fantomas/content/img/copy-md.png" class="normal"/>
-                <img src="/fantomas/content/img/copy-md-hover.png" class="hover"/>
+                <img src="https://fsprojects.github.io/fantomas/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsprojects.github.io/fantomas/content/img/copy-md-hover.png" class="hover"/>
               </div>
               <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'P:FSharp.Compiler.Syntax.SynModuleSigDecl.Range\'/>')">
-                <img src="/fantomas/content/img/copy-xml.png" class="normal"/>
-                <img src="/fantomas/content/img/copy-xml-hover.png" class="hover"/>
+                <img src="https://fsprojects.github.io/fantomas/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsprojects.github.io/fantomas/content/img/copy-xml-hover.png" class="hover"/>
               </div>
               <a href="https://github.com/fsprojects/fantomas/paket-files/dotnet/fsharp/src/Compiler/SyntaxTree/SyntaxTree.fs#L1528-1528" class="fsdocs-source-link" title="Source on GitHub">
-                <img src="/fantomas/content/img/github.png" class="normal"/>
-                <img src="/fantomas/content/img/github-hover.png" class="hover"/>
+                <img src="https://fsprojects.github.io/fantomas/content/img/github.png" class="normal"/>
+                <img src="https://fsprojects.github.io/fantomas/content/img/github-hover.png" class="hover"/>
               </a>
               <p class="fsdocs-summary">
                 
@@ -933,7 +939,7 @@
                 <span class="fsdocs-return-name">
                   Returns: 
                 </span>
-                <code><a href="/fantomas/reference/fsharp-compiler-text-range-0.html">range</a></code>
+                <code><a href="https://fsprojects.github.io/fantomas/reference/fsharp-compiler-text-range-0.html">range</a></code>
               </dt>
               <dd class="fsdocs-return-docs"></dd>
             </dl>
@@ -948,10 +954,11 @@
       </div>
         <div id="push"></div>
     </div>
-    
   </main>
-  <script type="module" src="/fantomas/content/sidebar-generation.js"></script>
   <script type="text/javascript">
+window.addEventListener('load', (event) => {
+    const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+    const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
 addEventListener('hide.bs.collapse', (e) => {
   if (e.target && e.target.id === 'sidebar-wrapper') {
     document.getElementById('main-container').classList.add('toggled');
@@ -968,17 +975,28 @@ addEventListener('show.bs.collapse', (e) => {
     document.getElementById(e.target.id+'-wrapper').classList.add('menu-open');
   }
 })
+});
   </script>
   <!-- BEGIN SEARCH BOX: this adds support for the search box -->
   <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.css" />
-  <script type="text/javascript">var fsdocs_search_baseurl = '/fantomas/';</script>
+  <script type="text/javascript">var fsdocs_search_baseurl = 'https://fsprojects.github.io/fantomas/';</script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.8/lunr.min.js"></script>
   <script type="text/javascript"
     src="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.min.js"></script>
-  <script type="text/javascript" src="/fantomas/content/fsdocs-search.js"></script>
+  <script type="text/javascript" src="https://fsprojects.github.io/fantomas/content/fsdocs-search.js"></script>
   <!-- END SEARCH BOX: this adds support for the search box -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+  <script type="module" src="https://fsprojects.github.io/fantomas/content/webcomponents.js"></script>
+  <script type="module">
+      import mermaid from "https://cdn.skypack.dev/mermaid";
+      mermaid.initialize({
+          startOnLoad: true,
+          theme: "base",
+          themeVariables: {
+              primaryColor: '#eff5f7'
+          }
+      });
+  </script>
 </body>
-
 </html>

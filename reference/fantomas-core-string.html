@@ -1,19 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-root="https://fsprojects.github.io/fantomas/">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="author" content="Florian Verdonck, Jindřich Ivánek">
+  <meta name="author" content="Florian Verdonck, Jindřich Ivánek, David Schaefer">
   <title>String (fantomas)</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;1,400&family=Reem+Kufi:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
-  <link rel="shortcut icon" type="image/x-icon" href="/fantomas/images/favicon.ico">
-  <link type="text/css" rel="stylesheet" href="/fantomas/content/fsdocs-custom.css" />
-  <link type="text/css" rel="stylesheet" href="/fantomas/content/fsdocs-default.css" />
-  <script type="text/javascript" src="/fantomas/content/fsdocs-tips.js"></script>
+  <link rel="shortcut icon" type="image/x-icon" href="https://fsprojects.github.io/fantomas/images/favicon.ico">
+  <link type="text/css" rel="stylesheet" href="https://fsprojects.github.io/fantomas/content/fsdocs-custom.css" />
+  <script type="text/javascript" src="https://fsprojects.github.io/fantomas/content/fsdocs-tips.js"></script>
   <!-- BEGIN SEARCH BOX: this adds support for the search box -->
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <link rel="stylesheet"
@@ -24,110 +23,117 @@
 
 <body>
   <main id="main-container">
-  
-     <div id="sidebar-wrapper" class="bg-primary h-100 fs-5 collapse show" >
+     <div id="sidebar-wrapper" class="bg-primary h-100 fs-5 collapse show">
       <div id="sidebar-header" class="d-flex justify-content-end mt-1">
       <button class="btn d-md-none" data-bs-toggle="collapse" data-bs-target="#sidebar-wrapper" data-bs-parent="#main-container" aria-controls="sidebar-wrapper" aria-expanded="false" aria-label="Toggle navigation">
         <i class="sidebar-toggle fs-3 bi bi-x-lg"></i>
                   </button>
               </div>
       <div id="sidebar-logo" class="d-flex justify-content-center p-5">
-      <a href="./index.html" ><img id="fsdocs-logo" src="/fantomas//images/logo-fantomas-white.svg" /></a>
+      <a href="https://fsprojects.github.io/fantomas/docs/index.html" ><img id="fsdocs-logo" src="https://fsprojects.github.io/fantomas//images/logo-fantomas-white.svg" /></a>
 </div>
-      <div id="sidebar-generation" class="list-unstyled ps-0 text-white fs-6">
-        <li class="nav-header">
-  End-user documentation
-</li>             
-<li class="nav-item">
-  <a class="nav-link" href="/fantomas/docs/FAKE.html">
-    FAKE build system
+      <div id="sidebar-content" class="list-unstyled ps-0 text-white fs-6">
+                    <div id="end-users-wrapper" class="p-2 list-wrapper menu-open">
+            <li class="docs-menu">
+                <button class="btn text-white d-flex p-1 justify-content-between align-items-center" data-bs-toggle="collapse"
+                        data-bs-target="#end-users" aria-expanded="true">
+                        End-users
+                        <i class="bi bi-chevron-down mx-2" style="-webkit-text-stroke: 2px;"></i>
+                </button>
+                <div id="end-users" class="ms-4 collapse show">
+                    <ul class="list-unstyled fw-normal mb-0">
+                        <li class="nav-item"><a href="https://fsprojects.github.io/fantomas/docs/end-users/GettingStarted.html" class="nav-link mt-2 d-block" > Getting Started
+</a></li>
 
-  </a>
-</li>             
-<li class="nav-item">
-  <a class="nav-link" href="/fantomas/docs/Rider.html">
-    JetBrains Rider
+<li class="nav-item"><a href="https://fsprojects.github.io/fantomas/docs/end-users/StyleGuide.html" class="nav-link mt-2 d-block" > Style guide
+</a></li>
 
-  </a>
-</li>             
-<li class="nav-item">
-  <a class="nav-link" href="/fantomas/docs/VSCode.html">
-    Visual Studio Code
+<li class="nav-item"><a href="https://fsprojects.github.io/fantomas/docs/end-users/Configuration.html" class="nav-link mt-2 d-block" > Configuration
+</a></li>
 
-  </a>
-</li>             
-<li class="nav-item">
-  <a class="nav-link" href="/fantomas/docs/Configuration.html">
-    Configuration
+<li class="nav-item"><a href="https://fsprojects.github.io/fantomas/docs/end-users/IgnoreFiles.html" class="nav-link mt-2 d-block" > Ignore Files
+</a></li>
 
-  </a>
-</li>             
-<li class="nav-item">
-  <a class="nav-link" href="/fantomas/docs/VisualStudio.html">
-    Visual Studio
+<li class="nav-item"><a href="https://fsprojects.github.io/fantomas/docs/end-users/FormattingCheck.html" class="nav-link mt-2 d-block" > Formatting Check
+</a></li>
 
-  </a>
-</li>             
-<li class="nav-item">
-  <a class="nav-link" href="/fantomas/docs/StyleGuide.html">
-    Style guide
+<li class="nav-item"><a href="https://fsprojects.github.io/fantomas/docs/end-users/GitHooks.html" class="nav-link mt-2 d-block" > Git hooks
+</a></li>
 
-  </a>
-</li>             
-<li class="nav-item">
-  <a class="nav-link" href="/fantomas/docs/Benchmarks.html">
-    Benchmarks
+<li class="nav-item"><a href="https://fsprojects.github.io/fantomas/docs/end-users/VisualStudio.html" class="nav-link mt-2 d-block" > Visual Studio
+</a></li>
 
-  </a>
-</li>             
-<li class="nav-item">
-  <a class="nav-link" href="/fantomas/docs/FAQ.html">
-    FAQ
+<li class="nav-item"><a href="https://fsprojects.github.io/fantomas/docs/end-users/Rider.html" class="nav-link mt-2 d-block" > JetBrains Rider
+</a></li>
 
-  </a>
-</li>             
-<li class="nav-header">
-  Documentation
-</li>             
-<li class="nav-item">
-  <a class="nav-link" href="/fantomas/docs/GettingStarted.html">
-    Getting Started
+<li class="nav-item"><a href="https://fsprojects.github.io/fantomas/docs/end-users/VSCode.html" class="nav-link mt-2 d-block" > Visual Studio Code
+</a></li>
 
-  </a>
-</li>             
-<li class="nav-item">
-  <a class="nav-link" href="/fantomas/docs/IgnoreFiles.html">
-    Ignore Files
+<li class="nav-item"><a href="https://fsprojects.github.io/fantomas/docs/end-users/FAQ.html" class="nav-link mt-2 d-block" > FAQ
+</a></li>
 
-  </a>
-</li>             
-<li class="nav-item">
-  <a class="nav-link" href="/fantomas/docs/FormattingCheck.html">
-    Formatting Check
+                    </ul>
+                </div>
+            </li>
+            </div>
 
-  </a>
-</li>             
-<li class="nav-item">
-  <a class="nav-link" href="/fantomas/docs/GitHooks.html">
-    Git hooks
+            <div id="contributors-wrapper" class="p-2 list-wrapper menu-open">
+            <li class="docs-menu">
+                <button class="btn text-white d-flex p-1 justify-content-between align-items-center" data-bs-toggle="collapse"
+                        data-bs-target="#contributors" aria-expanded="true">
+                        Contributors
+                        <i class="bi bi-chevron-down mx-2" style="-webkit-text-stroke: 2px;"></i>
+                </button>
+                <div id="contributors" class="ms-4 collapse show">
+                    <ul class="list-unstyled fw-normal mb-0">
+                        <li class="nav-item"><a href="https://fsprojects.github.io/fantomas/docs/contributors/Index.html" class="nav-link mt-2 d-block" > Contributors
+</a></li>
 
-  </a>
-</li>             
-<li class="nav-header">
-  Contributors
-</li>             
-<li class="nav-item">
-  <a class="nav-link" href="/fantomas/docs/contributors/Index.html">
-    Contributors
+<li class="nav-item"><a href="https://fsprojects.github.io/fantomas/docs/contributors/FSharp.html" class="nav-link mt-2 d-block" > F#
+</a></li>
 
-  </a>
-</li>             
-<li class="nav-item">
-  <a class="nav-link" href="/fantomas/docs/contributors/FSharp.html">
-    F#
+<li class="nav-item"><a href="https://fsprojects.github.io/fantomas/docs/contributors/Getting Started.html" class="nav-link mt-2 d-block" > Getting started
+</a></li>
 
-  </a>
-</li>
+<li class="nav-item"><a href="https://fsprojects.github.io/fantomas/docs/contributors/Solution Structure.html" class="nav-link mt-2 d-block" > Solution structure
+</a></li>
+
+<li class="nav-item"><a href="https://fsprojects.github.io/fantomas/docs/contributors/Prepare Context.html" class="nav-link mt-2 d-block" > Fantomas.Core overview (1)
+</a></li>
+
+<li class="nav-item"><a href="https://fsprojects.github.io/fantomas/docs/contributors/Print AST with Context.html" class="nav-link mt-2 d-block" > Fantomas.Core overview (2)
+</a></li>
+
+<li class="nav-item"><a href="https://fsprojects.github.io/fantomas/docs/contributors/Formatted Code.html" class="nav-link mt-2 d-block" > Fantomas.Core overview (3)
+</a></li>
+
+<li class="nav-item"><a href="https://fsprojects.github.io/fantomas/docs/contributors/Conditional Compilation Directives.html" class="nav-link mt-2 d-block" > Formatting Conditional Compilation Directives
+</a></li>
+
+<li class="nav-item"><a href="https://fsprojects.github.io/fantomas/docs/contributors/How Can I Contribute.html" class="nav-link mt-2 d-block" > How can I contribute?
+</a></li>
+
+                    </ul>
+                </div>
+            </li>
+            </div>
+
+                    <div id="api_reference-wrapper" class="p-2 list-wrapper menu-open">
+            <li class="docs-menu">
+                <button class="btn text-white d-flex p-1 justify-content-between align-items-center" data-bs-toggle="collapse"
+                        data-bs-target="#api_reference" aria-expanded="true">
+                        API Reference
+                        <i class="bi bi-chevron-down mx-2" style="-webkit-text-stroke: 2px;"></i>
+                </button>
+                <div id="api_reference" class="ms-4 collapse show">
+                    <ul class="list-unstyled fw-normal mb-0">
+                        <li class="nav-item"><a href="https://fsprojects.github.io/fantomas/reference/index.html" class="nav-link mt-2 d-block" > All Namespaces</a></li>
+
+                    </ul>
+                </div>
+            </li>
+            </div>
+
       </div>
     </div>
 
@@ -139,7 +145,7 @@
           </button>
           <div id="mobile-navbar" class="container-fluid d-flex justify-content-between d-sm-none">
             <i class="invisible bi bi-github fs-3 align-self-end"></i>
-         <a href="./index.html" ><img id="fsdocs-logo" width="32" height="32" src="/fantomas//images/logo.png" /></a>
+         <a href="./index.html" ><img id="fsdocs-logo" width="32" height="32" src="https://fsprojects.github.io/fantomas//images/logo.png" /></a>
             <a class="nav-link m-0 p-0" target="_blank" href="https://github.com/fsprojects/fantomas/"> <i class="bi bi-github fs-3 align-self-end"></i>
 </a>
           </div>
@@ -178,7 +184,7 @@
   <dl class="fsdocs-metadata">
     <dt>
       Namespace: 
-      <a href="/fantomas/reference/fantomas-core.html">
+      <a href="https://fsprojects.github.io/fantomas/reference/fantomas-core.html">
         Fantomas.Core
       </a>
     </dt>
@@ -212,7 +218,7 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '160', 160)" onmouseover="showTip(event, '160', 160)">
+              <code onmouseout="hideTip(event, '156', 156)" onmouseover="showTip(event, '156', 156)">
                 <p>
                   <a id="empty">
                     <a href="#empty">
@@ -221,7 +227,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="160">
+              <div class="fsdocs-tip" id="156">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code><span>String.empty&#32;<span></span></span></code>
@@ -239,16 +245,16 @@
           <td class="fsdocs-member-xmldoc">
             <div class="fsdocs-summary">
               <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:P:Fantomas.Core.String.empty`')">
-                <img src="/fantomas/content/img/copy-md.png" class="normal"/>
-                <img src="/fantomas/content/img/copy-md-hover.png" class="hover"/>
+                <img src="https://fsprojects.github.io/fantomas/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsprojects.github.io/fantomas/content/img/copy-md-hover.png" class="hover"/>
               </div>
               <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'P:Fantomas.Core.String.empty\'/>')">
-                <img src="/fantomas/content/img/copy-xml.png" class="normal"/>
-                <img src="/fantomas/content/img/copy-xml-hover.png" class="hover"/>
+                <img src="https://fsprojects.github.io/fantomas/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsprojects.github.io/fantomas/content/img/copy-xml-hover.png" class="hover"/>
               </div>
               <a href="" class="fsdocs-source-link" title="Source on GitHub">
-                <img src="/fantomas/content/img/github.png" class="normal"/>
-                <img src="/fantomas/content/img/github-hover.png" class="hover"/>
+                <img src="https://fsprojects.github.io/fantomas/content/img/github.png" class="normal"/>
+                <img src="https://fsprojects.github.io/fantomas/content/img/github-hover.png" class="hover"/>
               </a>
               <p class="fsdocs-summary">
                 
@@ -268,7 +274,7 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '161', 161)" onmouseover="showTip(event, '161', 161)">
+              <code onmouseout="hideTip(event, '157', 157)" onmouseover="showTip(event, '157', 157)">
                 <p>
                   <a id="isMultiline">
                     <a href="#isMultiline">
@@ -277,7 +283,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="161">
+              <div class="fsdocs-tip" id="157">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code><span>String.isMultiline&#32;<span>s</span></span></code>
@@ -307,16 +313,16 @@
           <td class="fsdocs-member-xmldoc">
             <div class="fsdocs-summary">
               <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Fantomas.Core.String.isMultiline`')">
-                <img src="/fantomas/content/img/copy-md.png" class="normal"/>
-                <img src="/fantomas/content/img/copy-md-hover.png" class="hover"/>
+                <img src="https://fsprojects.github.io/fantomas/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsprojects.github.io/fantomas/content/img/copy-md-hover.png" class="hover"/>
               </div>
               <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Fantomas.Core.String.isMultiline\'/>')">
-                <img src="/fantomas/content/img/copy-xml.png" class="normal"/>
-                <img src="/fantomas/content/img/copy-xml-hover.png" class="hover"/>
+                <img src="https://fsprojects.github.io/fantomas/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsprojects.github.io/fantomas/content/img/copy-xml-hover.png" class="hover"/>
               </div>
               <a href="" class="fsdocs-source-link" title="Source on GitHub">
-                <img src="/fantomas/content/img/github.png" class="normal"/>
-                <img src="/fantomas/content/img/github-hover.png" class="hover"/>
+                <img src="https://fsprojects.github.io/fantomas/content/img/github.png" class="normal"/>
+                <img src="https://fsprojects.github.io/fantomas/content/img/github-hover.png" class="hover"/>
               </a>
               <p class="fsdocs-summary">
                 
@@ -346,7 +352,7 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '162', 162)" onmouseover="showTip(event, '162', 162)">
+              <code onmouseout="hideTip(event, '158', 158)" onmouseover="showTip(event, '158', 158)">
                 <p>
                   <a id="isNotNullOrEmpty">
                     <a href="#isNotNullOrEmpty">
@@ -355,7 +361,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="162">
+              <div class="fsdocs-tip" id="158">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code><span>String.isNotNullOrEmpty&#32;<span></span></span></code>
@@ -373,16 +379,16 @@
           <td class="fsdocs-member-xmldoc">
             <div class="fsdocs-summary">
               <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:P:Fantomas.Core.String.isNotNullOrEmpty`')">
-                <img src="/fantomas/content/img/copy-md.png" class="normal"/>
-                <img src="/fantomas/content/img/copy-md-hover.png" class="hover"/>
+                <img src="https://fsprojects.github.io/fantomas/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsprojects.github.io/fantomas/content/img/copy-md-hover.png" class="hover"/>
               </div>
               <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'P:Fantomas.Core.String.isNotNullOrEmpty\'/>')">
-                <img src="/fantomas/content/img/copy-xml.png" class="normal"/>
-                <img src="/fantomas/content/img/copy-xml-hover.png" class="hover"/>
+                <img src="https://fsprojects.github.io/fantomas/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsprojects.github.io/fantomas/content/img/copy-xml-hover.png" class="hover"/>
               </div>
               <a href="" class="fsdocs-source-link" title="Source on GitHub">
-                <img src="/fantomas/content/img/github.png" class="normal"/>
-                <img src="/fantomas/content/img/github-hover.png" class="hover"/>
+                <img src="https://fsprojects.github.io/fantomas/content/img/github.png" class="normal"/>
+                <img src="https://fsprojects.github.io/fantomas/content/img/github-hover.png" class="hover"/>
               </a>
               <p class="fsdocs-summary">
                 
@@ -402,7 +408,7 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '163', 163)" onmouseover="showTip(event, '163', 163)">
+              <code onmouseout="hideTip(event, '159', 159)" onmouseover="showTip(event, '159', 159)">
                 <p>
                   <a id="isNotNullOrWhitespace">
                     <a href="#isNotNullOrWhitespace">
@@ -411,7 +417,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="163">
+              <div class="fsdocs-tip" id="159">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code><span>String.isNotNullOrWhitespace&#32;<span></span></span></code>
@@ -429,16 +435,16 @@
           <td class="fsdocs-member-xmldoc">
             <div class="fsdocs-summary">
               <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:P:Fantomas.Core.String.isNotNullOrWhitespace`')">
-                <img src="/fantomas/content/img/copy-md.png" class="normal"/>
-                <img src="/fantomas/content/img/copy-md-hover.png" class="hover"/>
+                <img src="https://fsprojects.github.io/fantomas/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsprojects.github.io/fantomas/content/img/copy-md-hover.png" class="hover"/>
               </div>
               <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'P:Fantomas.Core.String.isNotNullOrWhitespace\'/>')">
-                <img src="/fantomas/content/img/copy-xml.png" class="normal"/>
-                <img src="/fantomas/content/img/copy-xml-hover.png" class="hover"/>
+                <img src="https://fsprojects.github.io/fantomas/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsprojects.github.io/fantomas/content/img/copy-xml-hover.png" class="hover"/>
               </div>
               <a href="" class="fsdocs-source-link" title="Source on GitHub">
-                <img src="/fantomas/content/img/github.png" class="normal"/>
-                <img src="/fantomas/content/img/github-hover.png" class="hover"/>
+                <img src="https://fsprojects.github.io/fantomas/content/img/github.png" class="normal"/>
+                <img src="https://fsprojects.github.io/fantomas/content/img/github-hover.png" class="hover"/>
               </a>
               <p class="fsdocs-summary">
                 
@@ -458,7 +464,7 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '164', 164)" onmouseover="showTip(event, '164', 164)">
+              <code onmouseout="hideTip(event, '160', 160)" onmouseover="showTip(event, '160', 160)">
                 <p>
                   <a id="merge">
                     <a href="#merge">
@@ -467,7 +473,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="164">
+              <div class="fsdocs-tip" id="160">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code><span>String.merge&#32;<span>aChunks&#32;bChunks</span></span></code>
@@ -505,16 +511,16 @@
           <td class="fsdocs-member-xmldoc">
             <div class="fsdocs-summary">
               <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Fantomas.Core.String.merge`')">
-                <img src="/fantomas/content/img/copy-md.png" class="normal"/>
-                <img src="/fantomas/content/img/copy-md-hover.png" class="hover"/>
+                <img src="https://fsprojects.github.io/fantomas/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsprojects.github.io/fantomas/content/img/copy-md-hover.png" class="hover"/>
               </div>
               <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Fantomas.Core.String.merge\'/>')">
-                <img src="/fantomas/content/img/copy-xml.png" class="normal"/>
-                <img src="/fantomas/content/img/copy-xml-hover.png" class="hover"/>
+                <img src="https://fsprojects.github.io/fantomas/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsprojects.github.io/fantomas/content/img/copy-xml-hover.png" class="hover"/>
               </div>
               <a href="" class="fsdocs-source-link" title="Source on GitHub">
-                <img src="/fantomas/content/img/github.png" class="normal"/>
-                <img src="/fantomas/content/img/github-hover.png" class="hover"/>
+                <img src="https://fsprojects.github.io/fantomas/content/img/github.png" class="normal"/>
+                <img src="https://fsprojects.github.io/fantomas/content/img/github-hover.png" class="hover"/>
               </a>
               <p class="fsdocs-summary">
                 
@@ -552,7 +558,7 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '165', 165)" onmouseover="showTip(event, '165', 165)">
+              <code onmouseout="hideTip(event, '161', 161)" onmouseover="showTip(event, '161', 161)">
                 <p>
                   <a id="normalizeNewLine">
                     <a href="#normalizeNewLine">
@@ -561,7 +567,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="165">
+              <div class="fsdocs-tip" id="161">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code><span>String.normalizeNewLine&#32;<span>str</span></span></code>
@@ -591,16 +597,16 @@
           <td class="fsdocs-member-xmldoc">
             <div class="fsdocs-summary">
               <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Fantomas.Core.String.normalizeNewLine`')">
-                <img src="/fantomas/content/img/copy-md.png" class="normal"/>
-                <img src="/fantomas/content/img/copy-md-hover.png" class="hover"/>
+                <img src="https://fsprojects.github.io/fantomas/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsprojects.github.io/fantomas/content/img/copy-md-hover.png" class="hover"/>
               </div>
               <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Fantomas.Core.String.normalizeNewLine\'/>')">
-                <img src="/fantomas/content/img/copy-xml.png" class="normal"/>
-                <img src="/fantomas/content/img/copy-xml-hover.png" class="hover"/>
+                <img src="https://fsprojects.github.io/fantomas/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsprojects.github.io/fantomas/content/img/copy-xml-hover.png" class="hover"/>
               </div>
               <a href="" class="fsdocs-source-link" title="Source on GitHub">
-                <img src="/fantomas/content/img/github.png" class="normal"/>
-                <img src="/fantomas/content/img/github-hover.png" class="hover"/>
+                <img src="https://fsprojects.github.io/fantomas/content/img/github.png" class="normal"/>
+                <img src="https://fsprojects.github.io/fantomas/content/img/github-hover.png" class="hover"/>
               </a>
               <p class="fsdocs-summary">
                 
@@ -630,7 +636,7 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '166', 166)" onmouseover="showTip(event, '166', 166)">
+              <code onmouseout="hideTip(event, '162', 162)" onmouseover="showTip(event, '162', 162)">
                 <p>
                   <a id="normalizeThenSplitNewLine">
                     <a href="#normalizeThenSplitNewLine">
@@ -639,7 +645,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="166">
+              <div class="fsdocs-tip" id="162">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code><span>String.normalizeThenSplitNewLine&#32;<span>str</span></span></code>
@@ -669,16 +675,16 @@
           <td class="fsdocs-member-xmldoc">
             <div class="fsdocs-summary">
               <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Fantomas.Core.String.normalizeThenSplitNewLine`')">
-                <img src="/fantomas/content/img/copy-md.png" class="normal"/>
-                <img src="/fantomas/content/img/copy-md-hover.png" class="hover"/>
+                <img src="https://fsprojects.github.io/fantomas/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsprojects.github.io/fantomas/content/img/copy-md-hover.png" class="hover"/>
               </div>
               <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Fantomas.Core.String.normalizeThenSplitNewLine\'/>')">
-                <img src="/fantomas/content/img/copy-xml.png" class="normal"/>
-                <img src="/fantomas/content/img/copy-xml-hover.png" class="hover"/>
+                <img src="https://fsprojects.github.io/fantomas/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsprojects.github.io/fantomas/content/img/copy-xml-hover.png" class="hover"/>
               </div>
               <a href="" class="fsdocs-source-link" title="Source on GitHub">
-                <img src="/fantomas/content/img/github.png" class="normal"/>
-                <img src="/fantomas/content/img/github-hover.png" class="hover"/>
+                <img src="https://fsprojects.github.io/fantomas/content/img/github.png" class="normal"/>
+                <img src="https://fsprojects.github.io/fantomas/content/img/github-hover.png" class="hover"/>
               </a>
               <p class="fsdocs-summary">
                 
@@ -708,7 +714,7 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '167', 167)" onmouseover="showTip(event, '167', 167)">
+              <code onmouseout="hideTip(event, '163', 163)" onmouseover="showTip(event, '163', 163)">
                 <p>
                   <a id="splitInFragments">
                     <a href="#splitInFragments">
@@ -717,7 +723,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="167">
+              <div class="fsdocs-tip" id="163">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code><span>String.splitInFragments&#32;<span>newline&#32;items</span></span></code>
@@ -755,16 +761,16 @@
           <td class="fsdocs-member-xmldoc">
             <div class="fsdocs-summary">
               <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Fantomas.Core.String.splitInFragments`')">
-                <img src="/fantomas/content/img/copy-md.png" class="normal"/>
-                <img src="/fantomas/content/img/copy-md-hover.png" class="hover"/>
+                <img src="https://fsprojects.github.io/fantomas/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsprojects.github.io/fantomas/content/img/copy-md-hover.png" class="hover"/>
               </div>
               <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Fantomas.Core.String.splitInFragments\'/>')">
-                <img src="/fantomas/content/img/copy-xml.png" class="normal"/>
-                <img src="/fantomas/content/img/copy-xml-hover.png" class="hover"/>
+                <img src="https://fsprojects.github.io/fantomas/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsprojects.github.io/fantomas/content/img/copy-xml-hover.png" class="hover"/>
               </div>
               <a href="" class="fsdocs-source-link" title="Source on GitHub">
-                <img src="/fantomas/content/img/github.png" class="normal"/>
-                <img src="/fantomas/content/img/github-hover.png" class="hover"/>
+                <img src="https://fsprojects.github.io/fantomas/content/img/github.png" class="normal"/>
+                <img src="https://fsprojects.github.io/fantomas/content/img/github-hover.png" class="hover"/>
               </a>
               <p class="fsdocs-summary">
                 
@@ -802,7 +808,7 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '168', 168)" onmouseover="showTip(event, '168', 168)">
+              <code onmouseout="hideTip(event, '164', 164)" onmouseover="showTip(event, '164', 164)">
                 <p>
                   <a id="startsWithOrdinal">
                     <a href="#startsWithOrdinal">
@@ -811,7 +817,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="168">
+              <div class="fsdocs-tip" id="164">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code><span>String.startsWithOrdinal&#32;<span>prefix&#32;str</span></span></code>
@@ -849,16 +855,16 @@
           <td class="fsdocs-member-xmldoc">
             <div class="fsdocs-summary">
               <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Fantomas.Core.String.startsWithOrdinal`')">
-                <img src="/fantomas/content/img/copy-md.png" class="normal"/>
-                <img src="/fantomas/content/img/copy-md-hover.png" class="hover"/>
+                <img src="https://fsprojects.github.io/fantomas/content/img/copy-md.png" class="normal"/>
+                <img src="https://fsprojects.github.io/fantomas/content/img/copy-md-hover.png" class="hover"/>
               </div>
               <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Fantomas.Core.String.startsWithOrdinal\'/>')">
-                <img src="/fantomas/content/img/copy-xml.png" class="normal"/>
-                <img src="/fantomas/content/img/copy-xml-hover.png" class="hover"/>
+                <img src="https://fsprojects.github.io/fantomas/content/img/copy-xml.png" class="normal"/>
+                <img src="https://fsprojects.github.io/fantomas/content/img/copy-xml-hover.png" class="hover"/>
               </div>
               <a href="" class="fsdocs-source-link" title="Source on GitHub">
-                <img src="/fantomas/content/img/github.png" class="normal"/>
-                <img src="/fantomas/content/img/github-hover.png" class="hover"/>
+                <img src="https://fsprojects.github.io/fantomas/content/img/github.png" class="normal"/>
+                <img src="https://fsprojects.github.io/fantomas/content/img/github-hover.png" class="hover"/>
               </a>
               <p class="fsdocs-summary">
                 
@@ -909,10 +915,11 @@
       </div>
         <div id="push"></div>
     </div>
-    
   </main>
-  <script type="module" src="/fantomas/content/sidebar-generation.js"></script>
   <script type="text/javascript">
+window.addEventListener('load', (event) => {
+    const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+    const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
 addEventListener('hide.bs.collapse', (e) => {
   if (e.target && e.target.id === 'sidebar-wrapper') {
     document.getElementById('main-container').classList.add('toggled');
@@ -929,17 +936,28 @@ addEventListener('show.bs.collapse', (e) => {
     document.getElementById(e.target.id+'-wrapper').classList.add('menu-open');
   }
 })
+});
   </script>
   <!-- BEGIN SEARCH BOX: this adds support for the search box -->
   <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.css" />
-  <script type="text/javascript">var fsdocs_search_baseurl = '/fantomas/';</script>
+  <script type="text/javascript">var fsdocs_search_baseurl = 'https://fsprojects.github.io/fantomas/';</script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.8/lunr.min.js"></script>
   <script type="text/javascript"
     src="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.min.js"></script>
-  <script type="text/javascript" src="/fantomas/content/fsdocs-search.js"></script>
+  <script type="text/javascript" src="https://fsprojects.github.io/fantomas/content/fsdocs-search.js"></script>
   <!-- END SEARCH BOX: this adds support for the search box -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+  <script type="module" src="https://fsprojects.github.io/fantomas/content/webcomponents.js"></script>
+  <script type="module">
+      import mermaid from "https://cdn.skypack.dev/mermaid";
+      mermaid.initialize({
+          startOnLoad: true,
+          theme: "base",
+          themeVariables: {
+              primaryColor: '#eff5f7'
+          }
+      });
+  </script>
 </body>
-
 </html>

@@ -50,7 +50,7 @@
         <nav class="navbar navbar-expand-lg navbar-light">
             <a class="navbar-brand d-flex align-items-center p-0" href="./">
                 <img src="./images/icon-fantomas-white.svg" class="" width="70" height="70" alt="">
-                <strong>Fantomas</strong>
+                Fantomas
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -135,7 +135,7 @@
     </section>
     <section id="get-started" class="bg-secondary text-white">
         <div class="container text-center">
-            <h2>Get started</h2>
+            <h2 id="getting-started">Get started</h2>
             <p class="text-capitalize">Install <strong>Fantomas</strong> as <em>.NET tool</em></p>
             <div class="d-flex justify-content-center align-items-center">
                 <code class="my-4">
@@ -153,7 +153,7 @@
     </section>
     <section class="bg-primary">
         <div class="container text-white text-center">
-            <h2>What people say about Fantomas</h2>
+            <h2 id="what-people-say-about-fantomas">What people say about Fantomas</h2>
             <div id="testimonialsCarousel" class="carousel slide mt-4" data-bs-ride="carousel">
                 <div class="carousel-indicators">
                     <button type="button" data-bs-target="#testimonialsCarousel" data-bs-slide-to="0" class="active"
@@ -191,7 +191,7 @@
     </section>
     <section id="users">
         <div class="container">
-            <h2 class="mb-4 text-primary">Who uses Fantomas?</h2>
+            <h2 class="mb-4 text-primary" id="who-uses-fantomas">Who uses Fantomas?</h2>
             <div id="tile-container">
                 <a class="tile" href="https://github.com/dotnet/fsharp" data-bs-toggle="tooltip" title="dotnet/fsharp">
                     <img src="./images/users/fsharp-compiler.png" alt="F# compiler logo">
@@ -219,6 +219,13 @@
                    title="TheAngryByrd/MiniScaffold">
                     <img src="./images/users/unknown-github.png" alt="Default GitHub logo">
                 </a>
+                <a class="tile" href="https://github.com/CompositionalIT/farmer" data-bs-toggle="tooltip"
+                   title="CompositionalIT/farmer">
+                    <img src="./images/users/farmer.png" alt="Farmer logo">
+                </a>
+                <a class="tile" href="https://plotly.net/" data-bs-toggle="tooltip" title="plotly/Plotly.NET">
+                    <img src="./images/users/plotly.png" alt="Plotly.NET logo">
+                </a>
                 <a class="tile" href="#get-started" id="your-logo-here">
                     <p>Your logo here?</p>
                 </a>
@@ -227,7 +234,7 @@
     </section>
     <section class="bg-light" id="sponsors">
         <div class="container">
-            <h2 class="text-center">Sponsors</h2>
+            <h2 class="text-center" id="our-sponsor">Sponsors</h2>
             <h3 class="my-4">Enterprise sponsors</h3>
             <div class="row">
                 <div class="col-6">
@@ -251,12 +258,13 @@
                 <li><a href="https://github.com/cartermp"><img src="https://github.com/cartermp.png?size=50" alt="Phillip Carter" class="me-2 img-thumbnail">Phillip Carter</a></li>
                 <li><a href="https://www.gresearch.co.uk"><img src="https://github.com/G-Research.png?size=50" alt="G-Research-OSS" class="me-2 img-thumbnail">G-Research-OSS</a></li>
                 <li><a href="https://github.com/edgarfgp"><img src="https://github.com/edgarfgp.png?size=50" alt="Edgar Gonzalez" class="me-2 img-thumbnail">Edgar Gonzalez</a></li>
+                <li><a href="https://github.com/OnurGumus"><img src="https://github.com/OnurGumus.png?size=50" alt="Edgar Gonzalez" class="me-2 img-thumbnail">Onur Gumus</a></li>
             </ul>
         </div>
     </section>
     <section class="bg-secondary" id="media">
         <div class="container text-white">
-            <h2>Media</h2>
+            <h2 id="fantomas-media">Media</h2>
             <div class="text-center my-4">
                 <div class="ratio ratio-16x9">
                     <iframe src="https://www.youtube.com/embed/R9Ob5Vp4a9c"
@@ -267,19 +275,47 @@
             </div>
             <div class="row">
                 <div class="col-md-4">
-                    <div class="tweet">
-                        <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Yesterday I had a blast during the <a
-                                href="https://twitter.com/FSharpLondon?ref_src=twsrc%5Etfw">@FSharpLondon</a> meetup!
-                            Thanks
-                            again for having me! I wrote a blog post that captures some of the story beats from
-                            yesterday <a
-                                    href="https://t.co/ViCkmmMSci">https://t.co/ViCkmmMSci</a>. I&#39;m really happy how
-                            Fantomas v5 is shaping up😊 <a
-                                    href="https://twitter.com/hashtag/fsharp?src=hash&amp;ref_src=twsrc%5Etfw">#fsharp</a>
-                            <a href="https://t.co/83bjAp9ody">https://t.co/83bjAp9ody</a></p>&mdash; Florian Verdonck
-                            (@verdonckflorian) <a
-                                    href="https://twitter.com/verdonckflorian/status/1529019121433821184?ref_src=twsrc%5Etfw">May
-                                24, 2022</a></blockquote>
+                    <div class="card bg-white">
+                        <div class="card-body text-dark">
+                            <h5 class="card-title text-primary"><i class="bi bi-newspaper me-1"></i>Say Hello to
+                                Fantomas 5</h5>
+                            <p class="card-text">A blogpost about migrating to Fantomas V5</p>
+                            <a href="https://blog.nojaf.com/2022/08/25/say-hello-to-fantomas-five/"
+                               class="btn btn-primary text-white d-inline-block float-end mt-1">Read blogpost</a>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <div class="tweet">
+                            <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Hey folks! We will be hosting a <a
+                                    href="https://twitter.com/hashtag/fantomas?src=hash&amp;ref_src=twsrc%5Etfw">#fantomas</a>
+                                <a href="https://twitter.com/hashtag/v5?src=hash&amp;ref_src=twsrc%5Etfw">#v5</a>
+                                release party 🥳🎉 on Discord on Friday, September 16th. <br><a
+                                        href="https://twitter.com/hashtag/fsharp?src=hash&amp;ref_src=twsrc%5Etfw">#fsharp</a>
+                            </p>&mdash; Florian Verdonck (@verdonckflorian) <a
+                                    href="https://twitter.com/verdonckflorian/status/1562120800127406081?ref_src=twsrc%5Etfw">August
+                                23, 2022</a></blockquote>
+                            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <div class="tweet">
+                            <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Yesterday I had a blast during the
+                                <a
+                                        href="https://twitter.com/FSharpLondon?ref_src=twsrc%5Etfw">@FSharpLondon</a>
+                                meetup!
+                                Thanks
+                                again for having me! I wrote a blog post that captures some of the story beats from
+                                yesterday <a
+                                        href="https://t.co/ViCkmmMSci">https://t.co/ViCkmmMSci</a>. I&#39;m really happy
+                                how
+                                Fantomas v5 is shaping up😊 <a
+                                        href="https://twitter.com/hashtag/fsharp?src=hash&amp;ref_src=twsrc%5Etfw">#fsharp</a>
+                                <a href="https://t.co/83bjAp9ody">https://t.co/83bjAp9ody</a></p>&mdash; Florian
+                                Verdonck
+                                (@verdonckflorian) <a
+                                        href="https://twitter.com/verdonckflorian/status/1529019121433821184?ref_src=twsrc%5Etfw">May
+                                    24, 2022</a></blockquote>
+                        </div>
                     </div>
                     <div class="card bg-white mt-4">
                         <div class="card-body text-dark">
