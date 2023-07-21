@@ -23,7 +23,7 @@
 
 <body>
      <aside class="bg-primary h-100 fs-5">
-      <div id="sidebar-header" class="d-flex justify-content-end mt-1">
+      <div id="sidebar-header" class="d-flex justify-content-end mt-1 d-md-none">
       <button class="btn d-md-none" id="close-mobile-menu" aria-controls="sidebar-wrapper" aria-expanded="false" aria-label="Toggle navigation">
         <i class="sidebar-toggle fs-3 bi bi-x-lg"></i>
                   </button>
@@ -70,6 +70,9 @@
 </a></li>
 
 <li class="nav-item"><a href="https://fsprojects.github.io/fantomas/docs/end-users/GeneratingCode.html" class="nav-link pb-2 d-block" > Generating source code
+</a></li>
+
+<li class="nav-item"><a href="https://fsprojects.github.io/fantomas/docs/end-users/UpgradeGuide.html" class="nav-link pb-2 d-block" > Upgrade guide
 </a></li>
 
 <li class="nav-item"><a href="https://fsprojects.github.io/fantomas/docs/end-users/FAQ.html" class="nav-link pb-2 d-block" > FAQ
@@ -119,7 +122,13 @@
 <li class="nav-item"><a href="https://fsprojects.github.io/fantomas/docs/contributors/The Missing Comment.html" class="nav-link pb-2 d-block" > The Missing Comment
 </a></li>
 
+<li class="nav-item"><a href="https://fsprojects.github.io/fantomas/docs/contributors/Multiple Times.html" class="nav-link pb-2 d-block" > Fantomas is trying to format the input multiple times due to the detection of multiple defines
+</a></li>
+
 <li class="nav-item"><a href="https://fsprojects.github.io/fantomas/docs/contributors/Pull request ground rules.html" class="nav-link pb-2 d-block" > Pull request ground rules
+</a></li>
+
+<li class="nav-item"><a href="https://fsprojects.github.io/fantomas/docs/contributors/Updating the compiler.html" class="nav-link pb-2 d-block" > Updating the compiler sources
 </a></li>
 
 <li class="nav-item"><a href="https://fsprojects.github.io/fantomas/docs/contributors/Releases.html" class="nav-link pb-2 d-block" > Releases
@@ -231,7 +240,7 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '1125', 1125)" onmouseover="showTip(event, '1125', 1125)">
+              <code onmouseout="hideTip(event, '128', 128)" onmouseover="showTip(event, '128', 128)">
                 <p>
                   <a id="formatSelection">
                     <a href="#formatSelection">
@@ -240,7 +249,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="1125">
+              <div class="fsdocs-tip" id="128">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code><span>formatSelection&#32;<span>config&#32;isSignature&#32;selection&#32;sourceText</span></span></code>
@@ -253,7 +262,7 @@
                         config
                       </b>
                       :
-                      <code><a href="https://fsprojects.github.io/fantomas/reference/fantomas-core-formatconfig-formatconfig.html">FormatConfig</a></code>
+                      <code><a href="https://fsprojects.github.io/fantomas/reference/fantomas-core-formatconfig.html">FormatConfig</a></code>
                     </span>
                     <br/>
                     <span>
@@ -269,7 +278,7 @@
                         selection
                       </b>
                       :
-                      <code><a href="https://fsprojects.github.io/fantomas/reference/fsharp-compiler-text-range-0.html">range</a></code>
+                      <code><a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-text-range-0.html">range</a></code>
                     </span>
                     <br/>
                     <span>
@@ -277,14 +286,14 @@
                         sourceText
                       </b>
                       :
-                      <code><a href="https://fsprojects.github.io/fantomas/reference/fsharp-compiler-text-isourcetext.html">ISourceText</a></code>
+                      <code><a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-text-isourcetext.html">ISourceText</a></code>
                     </span>
                     <br/>
                   </ul>
                   <br/>
                   <span>
                     Returns: 
-                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1">Async</a>&lt;<span>string&#32;*&#32;<a href="https://fsprojects.github.io/fantomas/reference/fsharp-compiler-text-range-0.html">range</a></span>&gt;</span></code>
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1">Async</a>&lt;<span>string&#32;*&#32;<a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-text-range-0.html">range</a></span>&gt;</span></code>
                   </span>
                   <br/>
                 </div>
@@ -292,30 +301,13 @@
             </div>
           </td>
           <td class="fsdocs-member-xmldoc">
-            <div class="fsdocs-summary">
-              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Fantomas.Core.Selection.formatSelection`')">
-                <img src="https://fsprojects.github.io/fantomas/content/img/copy-md.png" class="normal"/>
-                <img src="https://fsprojects.github.io/fantomas/content/img/copy-md-hover.png" class="hover"/>
-              </div>
-              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Fantomas.Core.Selection.formatSelection\'/>')">
-                <img src="https://fsprojects.github.io/fantomas/content/img/copy-xml.png" class="normal"/>
-                <img src="https://fsprojects.github.io/fantomas/content/img/copy-xml-hover.png" class="hover"/>
-              </div>
-              <a href="" class="fsdocs-source-link" title="Source on GitHub">
-                <img src="https://fsprojects.github.io/fantomas/content/img/github.png" class="normal"/>
-                <img src="https://fsprojects.github.io/fantomas/content/img/github-hover.png" class="hover"/>
-              </a>
-              <p class="fsdocs-summary">
-                
-              </p>
-            </div>
             <dl class="fsdocs-params">
               <dt class="fsdocs-param">
                 <span class="fsdocs-param-name">
                   config
                 </span>
                 :
-                <code><a href="https://fsprojects.github.io/fantomas/reference/fantomas-core-formatconfig-formatconfig.html">FormatConfig</a></code>
+                <code><a href="https://fsprojects.github.io/fantomas/reference/fantomas-core-formatconfig.html">FormatConfig</a></code>
               </dt>
               <dd class="fsdocs-param-docs"></dd>
               <dt class="fsdocs-param">
@@ -331,7 +323,7 @@
                   selection
                 </span>
                 :
-                <code><a href="https://fsprojects.github.io/fantomas/reference/fsharp-compiler-text-range-0.html">range</a></code>
+                <code><a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-text-range-0.html">range</a></code>
               </dt>
               <dd class="fsdocs-param-docs"></dd>
               <dt class="fsdocs-param">
@@ -339,7 +331,7 @@
                   sourceText
                 </span>
                 :
-                <code><a href="https://fsprojects.github.io/fantomas/reference/fsharp-compiler-text-isourcetext.html">ISourceText</a></code>
+                <code><a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-text-isourcetext.html">ISourceText</a></code>
               </dt>
               <dd class="fsdocs-param-docs"></dd>
             </dl>
@@ -348,7 +340,7 @@
                 <span class="fsdocs-return-name">
                   Returns: 
                 </span>
-                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1">Async</a>&lt;<span>string&#32;*&#32;<a href="https://fsprojects.github.io/fantomas/reference/fsharp-compiler-text-range-0.html">range</a></span>&gt;</span></code>
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1">Async</a>&lt;<span>string&#32;*&#32;<a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-text-range-0.html">range</a></span>&gt;</span></code>
               </dt>
               <dd class="fsdocs-return-docs"></dd>
             </dl>

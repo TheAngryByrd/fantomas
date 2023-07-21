@@ -23,7 +23,7 @@
 
 <body>
      <aside class="bg-primary h-100 fs-5">
-      <div id="sidebar-header" class="d-flex justify-content-end mt-1">
+      <div id="sidebar-header" class="d-flex justify-content-end mt-1 d-md-none">
       <button class="btn d-md-none" id="close-mobile-menu" aria-controls="sidebar-wrapper" aria-expanded="false" aria-label="Toggle navigation">
         <i class="sidebar-toggle fs-3 bi bi-x-lg"></i>
                   </button>
@@ -70,6 +70,9 @@
 </a></li>
 
 <li class="nav-item"><a href="https://fsprojects.github.io/fantomas/docs/end-users/GeneratingCode.html" class="nav-link pb-2 d-block" > Generating source code
+</a></li>
+
+<li class="nav-item"><a href="https://fsprojects.github.io/fantomas/docs/end-users/UpgradeGuide.html" class="nav-link pb-2 d-block" > Upgrade guide
 </a></li>
 
 <li class="nav-item"><a href="https://fsprojects.github.io/fantomas/docs/end-users/FAQ.html" class="nav-link pb-2 d-block" > FAQ
@@ -119,7 +122,13 @@
 <li class="nav-item"><a href="https://fsprojects.github.io/fantomas/docs/contributors/The Missing Comment.html" class="nav-link pb-2 d-block" > The Missing Comment
 </a></li>
 
+<li class="nav-item"><a href="https://fsprojects.github.io/fantomas/docs/contributors/Multiple Times.html" class="nav-link pb-2 d-block" > Fantomas is trying to format the input multiple times due to the detection of multiple defines
+</a></li>
+
 <li class="nav-item"><a href="https://fsprojects.github.io/fantomas/docs/contributors/Pull request ground rules.html" class="nav-link pb-2 d-block" > Pull request ground rules
+</a></li>
+
+<li class="nav-item"><a href="https://fsprojects.github.io/fantomas/docs/contributors/Updating the compiler.html" class="nav-link pb-2 d-block" > Updating the compiler sources
 </a></li>
 
 <li class="nav-item"><a href="https://fsprojects.github.io/fantomas/docs/contributors/Releases.html" class="nav-link pb-2 d-block" > Releases
@@ -218,7 +227,7 @@
       All Interfaces: 
       <code><a href="https://fsprojects.github.io/fantomas/reference/fantomas-client-contracts-fantomasservice.html">FantomasService</a></code>
       , 
-      <code><a href="https://docs.microsoft.com/dotnet/api/system.idisposable">IDisposable</a></code>
+      <code><a href="https://learn.microsoft.com/dotnet/api/system.idisposable">IDisposable</a></code>
     </dt>
   </dl>
   <div class="fsdocs-xmldoc">
@@ -254,7 +263,7 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '6242', 6242)" onmouseover="showTip(event, '6242', 6242)">
+              <code onmouseout="hideTip(event, '3046', 3046)" onmouseover="showTip(event, '3046', 3046)">
                 <p>
                   <a id="ClearCache">
                     <a href="#ClearCache">
@@ -263,7 +272,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="6242">
+              <div class="fsdocs-tip" id="3046">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code><span>this.ClearCache</span></code>
@@ -299,7 +308,7 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '6243', 6243)" onmouseover="showTip(event, '6243', 6243)">
+              <code onmouseout="hideTip(event, '3047', 3047)" onmouseover="showTip(event, '3047', 3047)">
                 <p>
                   <a id="ConfigurationAsync">
                     <a href="#ConfigurationAsync">
@@ -308,7 +317,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="6243">
+              <div class="fsdocs-tip" id="3047">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code><span>this.ConfigurationAsync</span></code>
@@ -329,14 +338,14 @@
                         ?cancellationToken
                       </b>
                       :
-                      <code><a href="https://docs.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></code>
+                      <code><a href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></code>
                     </span>
                     <br/>
                   </ul>
                   <br/>
                   <span>
                     Returns: 
-                    <code><span><a href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a href="https://fsprojects.github.io/fantomas/reference/fantomas-client-contracts-fantomasresponse.html">FantomasResponse</a>&gt;</span></code>
+                    <code><span><a href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a href="https://fsprojects.github.io/fantomas/reference/fantomas-client-contracts-fantomasresponse.html">FantomasResponse</a>&gt;</span></code>
                   </span>
                   <br/>
                   Modifiers: 
@@ -347,23 +356,6 @@
             </div>
           </td>
           <td class="fsdocs-member-xmldoc">
-            <div class="fsdocs-summary">
-              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Fantomas.Client.Contracts.FantomasService.ConfigurationAsync`')">
-                <img src="https://fsprojects.github.io/fantomas/content/img/copy-md.png" class="normal"/>
-                <img src="https://fsprojects.github.io/fantomas/content/img/copy-md-hover.png" class="hover"/>
-              </div>
-              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Fantomas.Client.Contracts.FantomasService.ConfigurationAsync\'/>')">
-                <img src="https://fsprojects.github.io/fantomas/content/img/copy-xml.png" class="normal"/>
-                <img src="https://fsprojects.github.io/fantomas/content/img/copy-xml-hover.png" class="hover"/>
-              </div>
-              <a href="" class="fsdocs-source-link" title="Source on GitHub">
-                <img src="https://fsprojects.github.io/fantomas/content/img/github.png" class="normal"/>
-                <img src="https://fsprojects.github.io/fantomas/content/img/github-hover.png" class="hover"/>
-              </a>
-              <p class="fsdocs-summary">
-                
-              </p>
-            </div>
             <dl class="fsdocs-params">
               <dt class="fsdocs-param">
                 <span class="fsdocs-param-name">
@@ -378,7 +370,7 @@
                   ?cancellationToken
                 </span>
                 :
-                <code><a href="https://docs.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></code>
+                <code><a href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></code>
               </dt>
               <dd class="fsdocs-param-docs"></dd>
             </dl>
@@ -387,7 +379,7 @@
                 <span class="fsdocs-return-name">
                   Returns: 
                 </span>
-                <code><span><a href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a href="https://fsprojects.github.io/fantomas/reference/fantomas-client-contracts-fantomasresponse.html">FantomasResponse</a>&gt;</span></code>
+                <code><span><a href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a href="https://fsprojects.github.io/fantomas/reference/fantomas-client-contracts-fantomasresponse.html">FantomasResponse</a>&gt;</span></code>
               </dt>
               <dd class="fsdocs-return-docs"></dd>
             </dl>
@@ -396,7 +388,7 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '6244', 6244)" onmouseover="showTip(event, '6244', 6244)">
+              <code onmouseout="hideTip(event, '3048', 3048)" onmouseover="showTip(event, '3048', 3048)">
                 <p>
                   <a id="FormatDocumentAsync">
                     <a href="#FormatDocumentAsync">
@@ -405,7 +397,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="6244">
+              <div class="fsdocs-tip" id="3048">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code><span>this.FormatDocumentAsync</span></code>
@@ -426,14 +418,14 @@
                         ?cancellationToken
                       </b>
                       :
-                      <code><a href="https://docs.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></code>
+                      <code><a href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></code>
                     </span>
                     <br/>
                   </ul>
                   <br/>
                   <span>
                     Returns: 
-                    <code><span><a href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a href="https://fsprojects.github.io/fantomas/reference/fantomas-client-contracts-fantomasresponse.html">FantomasResponse</a>&gt;</span></code>
+                    <code><span><a href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a href="https://fsprojects.github.io/fantomas/reference/fantomas-client-contracts-fantomasresponse.html">FantomasResponse</a>&gt;</span></code>
                   </span>
                   <br/>
                   Modifiers: 
@@ -444,23 +436,6 @@
             </div>
           </td>
           <td class="fsdocs-member-xmldoc">
-            <div class="fsdocs-summary">
-              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Fantomas.Client.Contracts.FantomasService.FormatDocumentAsync`')">
-                <img src="https://fsprojects.github.io/fantomas/content/img/copy-md.png" class="normal"/>
-                <img src="https://fsprojects.github.io/fantomas/content/img/copy-md-hover.png" class="hover"/>
-              </div>
-              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Fantomas.Client.Contracts.FantomasService.FormatDocumentAsync\'/>')">
-                <img src="https://fsprojects.github.io/fantomas/content/img/copy-xml.png" class="normal"/>
-                <img src="https://fsprojects.github.io/fantomas/content/img/copy-xml-hover.png" class="hover"/>
-              </div>
-              <a href="" class="fsdocs-source-link" title="Source on GitHub">
-                <img src="https://fsprojects.github.io/fantomas/content/img/github.png" class="normal"/>
-                <img src="https://fsprojects.github.io/fantomas/content/img/github-hover.png" class="hover"/>
-              </a>
-              <p class="fsdocs-summary">
-                
-              </p>
-            </div>
             <dl class="fsdocs-params">
               <dt class="fsdocs-param">
                 <span class="fsdocs-param-name">
@@ -475,7 +450,7 @@
                   ?cancellationToken
                 </span>
                 :
-                <code><a href="https://docs.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></code>
+                <code><a href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></code>
               </dt>
               <dd class="fsdocs-param-docs"></dd>
             </dl>
@@ -484,7 +459,7 @@
                 <span class="fsdocs-return-name">
                   Returns: 
                 </span>
-                <code><span><a href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a href="https://fsprojects.github.io/fantomas/reference/fantomas-client-contracts-fantomasresponse.html">FantomasResponse</a>&gt;</span></code>
+                <code><span><a href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a href="https://fsprojects.github.io/fantomas/reference/fantomas-client-contracts-fantomasresponse.html">FantomasResponse</a>&gt;</span></code>
               </dt>
               <dd class="fsdocs-return-docs"></dd>
             </dl>
@@ -493,7 +468,7 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '6245', 6245)" onmouseover="showTip(event, '6245', 6245)">
+              <code onmouseout="hideTip(event, '3049', 3049)" onmouseover="showTip(event, '3049', 3049)">
                 <p>
                   <a id="FormatSelectionAsync">
                     <a href="#FormatSelectionAsync">
@@ -502,7 +477,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="6245">
+              <div class="fsdocs-tip" id="3049">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code><span>this.FormatSelectionAsync</span></code>
@@ -523,14 +498,14 @@
                         ?cancellationToken
                       </b>
                       :
-                      <code><a href="https://docs.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></code>
+                      <code><a href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></code>
                     </span>
                     <br/>
                   </ul>
                   <br/>
                   <span>
                     Returns: 
-                    <code><span><a href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a href="https://fsprojects.github.io/fantomas/reference/fantomas-client-contracts-fantomasresponse.html">FantomasResponse</a>&gt;</span></code>
+                    <code><span><a href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a href="https://fsprojects.github.io/fantomas/reference/fantomas-client-contracts-fantomasresponse.html">FantomasResponse</a>&gt;</span></code>
                   </span>
                   <br/>
                   Modifiers: 
@@ -541,23 +516,6 @@
             </div>
           </td>
           <td class="fsdocs-member-xmldoc">
-            <div class="fsdocs-summary">
-              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Fantomas.Client.Contracts.FantomasService.FormatSelectionAsync`')">
-                <img src="https://fsprojects.github.io/fantomas/content/img/copy-md.png" class="normal"/>
-                <img src="https://fsprojects.github.io/fantomas/content/img/copy-md-hover.png" class="hover"/>
-              </div>
-              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Fantomas.Client.Contracts.FantomasService.FormatSelectionAsync\'/>')">
-                <img src="https://fsprojects.github.io/fantomas/content/img/copy-xml.png" class="normal"/>
-                <img src="https://fsprojects.github.io/fantomas/content/img/copy-xml-hover.png" class="hover"/>
-              </div>
-              <a href="" class="fsdocs-source-link" title="Source on GitHub">
-                <img src="https://fsprojects.github.io/fantomas/content/img/github.png" class="normal"/>
-                <img src="https://fsprojects.github.io/fantomas/content/img/github-hover.png" class="hover"/>
-              </a>
-              <p class="fsdocs-summary">
-                
-              </p>
-            </div>
             <dl class="fsdocs-params">
               <dt class="fsdocs-param">
                 <span class="fsdocs-param-name">
@@ -572,7 +530,7 @@
                   ?cancellationToken
                 </span>
                 :
-                <code><a href="https://docs.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></code>
+                <code><a href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></code>
               </dt>
               <dd class="fsdocs-param-docs"></dd>
             </dl>
@@ -581,7 +539,7 @@
                 <span class="fsdocs-return-name">
                   Returns: 
                 </span>
-                <code><span><a href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a href="https://fsprojects.github.io/fantomas/reference/fantomas-client-contracts-fantomasresponse.html">FantomasResponse</a>&gt;</span></code>
+                <code><span><a href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a href="https://fsprojects.github.io/fantomas/reference/fantomas-client-contracts-fantomasresponse.html">FantomasResponse</a>&gt;</span></code>
               </dt>
               <dd class="fsdocs-return-docs"></dd>
             </dl>
@@ -590,7 +548,7 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '6246', 6246)" onmouseover="showTip(event, '6246', 6246)">
+              <code onmouseout="hideTip(event, '3050', 3050)" onmouseover="showTip(event, '3050', 3050)">
                 <p>
                   <a id="VersionAsync">
                     <a href="#VersionAsync">
@@ -599,7 +557,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="6246">
+              <div class="fsdocs-tip" id="3050">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code><span>this.VersionAsync</span></code>
@@ -620,14 +578,14 @@
                         ?cancellationToken
                       </b>
                       :
-                      <code><a href="https://docs.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></code>
+                      <code><a href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></code>
                     </span>
                     <br/>
                   </ul>
                   <br/>
                   <span>
                     Returns: 
-                    <code><span><a href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a href="https://fsprojects.github.io/fantomas/reference/fantomas-client-contracts-fantomasresponse.html">FantomasResponse</a>&gt;</span></code>
+                    <code><span><a href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a href="https://fsprojects.github.io/fantomas/reference/fantomas-client-contracts-fantomasresponse.html">FantomasResponse</a>&gt;</span></code>
                   </span>
                   <br/>
                   Modifiers: 
@@ -638,23 +596,6 @@
             </div>
           </td>
           <td class="fsdocs-member-xmldoc">
-            <div class="fsdocs-summary">
-              <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Fantomas.Client.Contracts.FantomasService.VersionAsync`')">
-                <img src="https://fsprojects.github.io/fantomas/content/img/copy-md.png" class="normal"/>
-                <img src="https://fsprojects.github.io/fantomas/content/img/copy-md-hover.png" class="hover"/>
-              </div>
-              <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Fantomas.Client.Contracts.FantomasService.VersionAsync\'/>')">
-                <img src="https://fsprojects.github.io/fantomas/content/img/copy-xml.png" class="normal"/>
-                <img src="https://fsprojects.github.io/fantomas/content/img/copy-xml-hover.png" class="hover"/>
-              </div>
-              <a href="" class="fsdocs-source-link" title="Source on GitHub">
-                <img src="https://fsprojects.github.io/fantomas/content/img/github.png" class="normal"/>
-                <img src="https://fsprojects.github.io/fantomas/content/img/github-hover.png" class="hover"/>
-              </a>
-              <p class="fsdocs-summary">
-                
-              </p>
-            </div>
             <dl class="fsdocs-params">
               <dt class="fsdocs-param">
                 <span class="fsdocs-param-name">
@@ -669,7 +610,7 @@
                   ?cancellationToken
                 </span>
                 :
-                <code><a href="https://docs.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></code>
+                <code><a href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></code>
               </dt>
               <dd class="fsdocs-param-docs"></dd>
             </dl>
@@ -678,7 +619,7 @@
                 <span class="fsdocs-return-name">
                   Returns: 
                 </span>
-                <code><span><a href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a href="https://fsprojects.github.io/fantomas/reference/fantomas-client-contracts-fantomasresponse.html">FantomasResponse</a>&gt;</span></code>
+                <code><span><a href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a href="https://fsprojects.github.io/fantomas/reference/fantomas-client-contracts-fantomasresponse.html">FantomasResponse</a>&gt;</span></code>
               </dt>
               <dd class="fsdocs-return-docs"></dd>
             </dl>
