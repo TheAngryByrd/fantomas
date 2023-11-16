@@ -1,185 +1,269 @@
 <!DOCTYPE html>
 <html lang="en" data-root="https://fsprojects.github.io/fantomas/">
-
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="author" content="Florian Verdonck, Jindřich Ivánek, David Schaefer">
-  <title>FormatConfig (fantomas)</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;1,400&family=Reem+Kufi:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
-  <link rel="shortcut icon" type="image/x-icon" href="https://fsprojects.github.io/fantomas/images/favicon.ico">
-  <link type="text/css" rel="stylesheet" href="https://fsprojects.github.io/fantomas/content/fsdocs-custom.css" />
-  <script type="text/javascript" src="https://fsprojects.github.io/fantomas/content/fsdocs-tips.js"></script>
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
-  
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Florian Verdonck, Jindřich Ivánek, David Schaefer" name="author">
+    <title>FormatConfig (fantomas) | fantomas</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <link href="https://fsprojects.github.io/fantomas/images/favicon.ico" rel="icon" sizes="32x32" type="image/png"/>
+    <link href="https://fsprojects.github.io/fantomas/content/fsdocs-default.css" rel="stylesheet" type="text/css"/>
+    <link href="https://fsprojects.github.io/fantomas/content/fsdocs-theme.css" rel="stylesheet" type="text/css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;1,400&family=Reem+Kufi:wght@400;500;700&display=swap" rel="stylesheet">
+
+    
 </head>
-
-<body>
-     <aside class="bg-primary h-100 fs-5">
-      <div id="sidebar-header" class="d-flex justify-content-end mt-1 d-md-none">
-      <button class="btn d-md-none" id="close-mobile-menu" aria-controls="sidebar-wrapper" aria-expanded="false" aria-label="Toggle navigation">
-        <i class="sidebar-toggle fs-3 bi bi-x-lg"></i>
-                  </button>
-              </div>
-      <div id="sidebar-logo" class="d-flex justify-content-center p-5">
-        <a href="https://fsprojects.github.io/fantomas/docs/index.html" ><img id="fsdocs-logo" src="https://fsprojects.github.io/fantomas//images/logo-fantomas-white.svg" /></a>
-      </div>
-      <div id="sidebar-content" class="accordion accordion-flush ps-0 text-white fs-6">
-        <div id="end-users-wrapper" class="accordion-item ">
-    <li class="docs-menu">
-        <button id="end-users-button"
-            class="accordion-button collapsed btn text-white d-flex justify-content-between align-items-center"
-            data-bs-toggle="collapse" data-bs-target="#end-users" aria-expanded="false"
-            aria-control="end-users" type="button">
-            End-users
-        </button>
-        <div id="end-users" class="accordion-collapse collapse ps-4 pb-2 " data-bs-parent="#sidebar-content">
-            <ul class="list-unstyled fw-normal mb-0">
-                <li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/GettingStarted.html" class="nav-link pb-2 d-block" > Getting Started
+<body class="api-docs">
+<header>
+    <div class="start">
+        <div id="menu-toggle">
+            <iconify-icon class="icon closed" height="22" icon="eva:menu-fill" width="22"></iconify-icon>
+            <iconify-icon class="icon open" height="22" icon="mi:close" width="22"></iconify-icon>
+            <input type="checkbox" name="mobile-menu" />
+            <ul class="menu">
+                <li class="nav-header">Links</li>
+                <li class="nav-item"><a class="nav-link" href="https://github.com/fsprojects/fantomas/blob/main/LICENSE.md">License</a>
+                </li>
+                <li class="nav-item"><a class="nav-link"
+                                        href="https://github.com/fsprojects/fantomas/blob/main/CHANGELOG.md">Release
+                    Notes</a></li>
+                <li class="nav-item"><a class="nav-link" href="https://github.com/fsprojects/fantomas/">Source
+                    Repository</a></li>
+                <li class="nav-header " id="end-users">
+    End-users
+    <iconify-icon icon="fluent:chevron-up-24-regular" width="32" height="32" rotate="180deg"></iconify-icon>
+</li>
+<div class="menu-items">
+    <li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/GettingStarted.html" class="nav-link" > Getting Started
 </a></li>
 
-<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/StyleGuide.html" class="nav-link pb-2 d-block" > Style guide
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/StyleGuide.html" class="nav-link" > Style guide
 </a></li>
 
-<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/Configuration.html" class="nav-link pb-2 d-block" > Configuration
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/Configuration.html" class="nav-link" > Configuration
 </a></li>
 
-<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/IgnoreFiles.html" class="nav-link pb-2 d-block" > Ignore Files
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/IgnoreFiles.html" class="nav-link" > Ignore Files
 </a></li>
 
-<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/FormattingCheck.html" class="nav-link pb-2 d-block" > Formatting Check
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/FormattingCheck.html" class="nav-link" > Formatting Check
 </a></li>
 
-<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/GitHooks.html" class="nav-link pb-2 d-block" > Git hooks
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/GitHooks.html" class="nav-link" > Git hooks
 </a></li>
 
-<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/Rider.html" class="nav-link pb-2 d-block" > JetBrains Rider
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/Rider.html" class="nav-link" > JetBrains Rider
 </a></li>
 
-<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/VisualStudio.html" class="nav-link pb-2 d-block" > Visual Studio
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/VisualStudio.html" class="nav-link" > Visual Studio
 </a></li>
 
-<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/VSCode.html" class="nav-link pb-2 d-block" > Visual Studio Code
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/VSCode.html" class="nav-link" > Visual Studio Code
 </a></li>
 
-<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/GeneratingCode.html" class="nav-link pb-2 d-block" > Generating source code
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/GeneratingCode.html" class="nav-link" > Generating source code
 </a></li>
 
-<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/UpgradeGuide.html" class="nav-link pb-2 d-block" > Upgrade guide
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/UpgradeGuide.html" class="nav-link" > Upgrade guide
 </a></li>
 
-<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/FAQ.html" class="nav-link pb-2 d-block" > FAQ
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/FAQ.html" class="nav-link" > FAQ
 </a></li>
 
+</div>
+<li class="nav-header " id="contributors">
+    Contributors
+    <iconify-icon icon="fluent:chevron-up-24-regular" width="32" height="32" rotate="180deg"></iconify-icon>
+</li>
+<div class="menu-items">
+    <li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/contributors/Index.html" class="nav-link" > Contributors
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/contributors/FSharp.html" class="nav-link" > F#
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/contributors/Getting Started.html" class="nav-link" > Getting started
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/contributors/Solution Structure.html" class="nav-link" > Solution structure
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/contributors/Transforming.html" class="nav-link" > Fantomas.Core overview (1)
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/contributors/Traverse.html" class="nav-link" > Fantomas.Core overview (2)
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/contributors/Formatted Code.html" class="nav-link" > Fantomas.Core overview (3)
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/contributors/Conditional Compilation Directives.html" class="nav-link" > Formatting Conditional Compilation Directives
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/contributors/How Can I Contribute.html" class="nav-link" > How can I contribute?
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/contributors/The Missing Comment.html" class="nav-link" > The Missing Comment
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/contributors/Multiple Times.html" class="nav-link" > Fantomas is trying to format the input multiple times due to the detection of multiple defines
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/contributors/Pull request ground rules.html" class="nav-link" > Pull request ground rules
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/contributors/Updating the compiler.html" class="nav-link" > Updating the compiler sources
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/contributors/Releases.html" class="nav-link" > Releases
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/contributors/Glossary.html" class="nav-link" > Glossary
+</a></li>
+
+</div>
+                <li class="nav-header " id="api_reference">
+    API Reference
+    <iconify-icon icon="fluent:chevron-up-24-regular" width="32" height="32" rotate="180deg"></iconify-icon>
+</li>
+<div class="menu-items">
+    <li class="nav-item active"><a href="https://fsprojects.github.io/fantomas/reference/index.html" class="nav-link" > All Namespaces</a></li>
+
+</div>
             </ul>
         </div>
-    </li>
+        <a href="https://fsprojects.github.io/fantomas/">
+            <img alt="Header menu logo" src="https://fsprojects.github.io/fantomas/images/logo.png">
+            <strong>fantomas</strong>
+        </a>
+    </div>
+    <div class="end">
+        <a href="https://github.com/fsprojects/fantomas/" target="_blank">
+            <iconify-icon icon="uil:github" width="26" height="26"></iconify-icon>
+        </a>
+        <iconify-icon id="search-btn" icon="carbon:search" class="search" width="24" height="24"></iconify-icon>
+        <fsdocs-theme-toggle></fsdocs-theme-toggle>
+    </div>
+</header>
+<aside id="fsdocs-main-menu">
+    <ul class="menu">
+        <li class="nav-header">Links</li>
+        <li class="nav-item"><a class="nav-link" href="https://github.com/fsprojects/fantomas/blob/main/LICENSE.md">License</a>
+        </li>
+        <li class="nav-item"><a class="nav-link"
+                                href="https://github.com/fsprojects/fantomas/blob/main/CHANGELOG.md">Release
+            Notes</a></li>
+        <li class="nav-item"><a class="nav-link" href="https://github.com/fsprojects/fantomas/">Source
+            Repository</a></li>
+        <li class="nav-header " id="end-users">
+    End-users
+    <iconify-icon icon="fluent:chevron-up-24-regular" width="32" height="32" rotate="180deg"></iconify-icon>
+</li>
+<div class="menu-items">
+    <li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/GettingStarted.html" class="nav-link" > Getting Started
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/StyleGuide.html" class="nav-link" > Style guide
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/Configuration.html" class="nav-link" > Configuration
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/IgnoreFiles.html" class="nav-link" > Ignore Files
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/FormattingCheck.html" class="nav-link" > Formatting Check
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/GitHooks.html" class="nav-link" > Git hooks
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/Rider.html" class="nav-link" > JetBrains Rider
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/VisualStudio.html" class="nav-link" > Visual Studio
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/VSCode.html" class="nav-link" > Visual Studio Code
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/GeneratingCode.html" class="nav-link" > Generating source code
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/UpgradeGuide.html" class="nav-link" > Upgrade guide
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/FAQ.html" class="nav-link" > FAQ
+</a></li>
+
 </div>
-<div id="contributors-wrapper" class="accordion-item ">
-    <li class="docs-menu">
-        <button id="contributors-button"
-            class="accordion-button collapsed btn text-white d-flex justify-content-between align-items-center"
-            data-bs-toggle="collapse" data-bs-target="#contributors" aria-expanded="false"
-            aria-control="contributors" type="button">
-            Contributors
-        </button>
-        <div id="contributors" class="accordion-collapse collapse ps-4 pb-2 " data-bs-parent="#sidebar-content">
-            <ul class="list-unstyled fw-normal mb-0">
-                <li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/contributors/Index.html" class="nav-link pb-2 d-block" > Contributors
+<li class="nav-header " id="contributors">
+    Contributors
+    <iconify-icon icon="fluent:chevron-up-24-regular" width="32" height="32" rotate="180deg"></iconify-icon>
+</li>
+<div class="menu-items">
+    <li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/contributors/Index.html" class="nav-link" > Contributors
 </a></li>
 
-<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/contributors/FSharp.html" class="nav-link pb-2 d-block" > F#
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/contributors/FSharp.html" class="nav-link" > F#
 </a></li>
 
-<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/contributors/Getting Started.html" class="nav-link pb-2 d-block" > Getting started
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/contributors/Getting Started.html" class="nav-link" > Getting started
 </a></li>
 
-<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/contributors/Solution Structure.html" class="nav-link pb-2 d-block" > Solution structure
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/contributors/Solution Structure.html" class="nav-link" > Solution structure
 </a></li>
 
-<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/contributors/Transforming.html" class="nav-link pb-2 d-block" > Fantomas.Core overview (1)
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/contributors/Transforming.html" class="nav-link" > Fantomas.Core overview (1)
 </a></li>
 
-<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/contributors/Traverse.html" class="nav-link pb-2 d-block" > Fantomas.Core overview (2)
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/contributors/Traverse.html" class="nav-link" > Fantomas.Core overview (2)
 </a></li>
 
-<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/contributors/Formatted Code.html" class="nav-link pb-2 d-block" > Fantomas.Core overview (3)
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/contributors/Formatted Code.html" class="nav-link" > Fantomas.Core overview (3)
 </a></li>
 
-<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/contributors/Conditional Compilation Directives.html" class="nav-link pb-2 d-block" > Formatting Conditional Compilation Directives
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/contributors/Conditional Compilation Directives.html" class="nav-link" > Formatting Conditional Compilation Directives
 </a></li>
 
-<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/contributors/How Can I Contribute.html" class="nav-link pb-2 d-block" > How can I contribute?
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/contributors/How Can I Contribute.html" class="nav-link" > How can I contribute?
 </a></li>
 
-<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/contributors/The Missing Comment.html" class="nav-link pb-2 d-block" > The Missing Comment
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/contributors/The Missing Comment.html" class="nav-link" > The Missing Comment
 </a></li>
 
-<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/contributors/Multiple Times.html" class="nav-link pb-2 d-block" > Fantomas is trying to format the input multiple times due to the detection of multiple defines
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/contributors/Multiple Times.html" class="nav-link" > Fantomas is trying to format the input multiple times due to the detection of multiple defines
 </a></li>
 
-<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/contributors/Pull request ground rules.html" class="nav-link pb-2 d-block" > Pull request ground rules
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/contributors/Pull request ground rules.html" class="nav-link" > Pull request ground rules
 </a></li>
 
-<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/contributors/Updating the compiler.html" class="nav-link pb-2 d-block" > Updating the compiler sources
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/contributors/Updating the compiler.html" class="nav-link" > Updating the compiler sources
 </a></li>
 
-<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/contributors/Releases.html" class="nav-link pb-2 d-block" > Releases
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/contributors/Releases.html" class="nav-link" > Releases
 </a></li>
 
-<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/contributors/Glossary.html" class="nav-link pb-2 d-block" > Glossary
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/contributors/Glossary.html" class="nav-link" > Glossary
 </a></li>
 
-            </ul>
-        </div>
-    </li>
 </div>
-        <div id="api_reference-wrapper" class="accordion-item ">
-    <li class="docs-menu">
-        <button id="api_reference-button"
-            class="accordion-button collapsed btn text-white d-flex justify-content-between align-items-center"
-            data-bs-toggle="collapse" data-bs-target="#api_reference" aria-expanded="false"
-            aria-control="api_reference" type="button">
-            API Reference
-        </button>
-        <div id="api_reference" class="accordion-collapse collapse ps-4 pb-2 " data-bs-parent="#sidebar-content">
-            <ul class="list-unstyled fw-normal mb-0">
-                <li class="nav-item "><a href="https://fsprojects.github.io/fantomas/reference/index.html" class="nav-link pb-2 d-block" > All Namespaces</a></li>
+        <li class="nav-header " id="api_reference">
+    API Reference
+    <iconify-icon icon="fluent:chevron-up-24-regular" width="32" height="32" rotate="180deg"></iconify-icon>
+</li>
+<div class="menu-items">
+    <li class="nav-item active"><a href="https://fsprojects.github.io/fantomas/reference/index.html" class="nav-link" > All Namespaces</a></li>
 
-            </ul>
-        </div>
-    </li>
 </div>
-      </div>
-    </aside>
-    <main class="doc-content">
-     <nav class="navbar navbar-expand-sm border py-1">
-        <div class="container-fluid flex-nowrap">
-          <button class="btn" id="toggle-mobile-menu" aria-expanded="false" aria-label="Toggle navigation">
-            <i class="sidebar-toggle fs-3 bi bi-list"></i>
-          </button>
-          <div id="mobile-navbar" class="container-fluid d-flex justify-content-between d-sm-none">
-            <i class="invisible bi bi-github fs-3 align-self-end"></i>
-         <a href="./index.html" ><img id="fsdocs-logo-mobile" width="32" height="32" src="https://fsprojects.github.io/fantomas//images/logo.png" /></a>
-            <a class="nav-link m-0 p-0" target="_blank" href="https://github.com/fsprojects/fantomas/"> <i class="bi bi-github fs-3 align-self-end"></i>
-</a>
-          </div>
-          <div class="collapse navbar-collapse" id="navbarText">
-            <div class="navbar-nav me-auto mb-2 mb-lg-0 fs-5">
-                <a class="nav-link active" aria-current="page" href="https://fsprojects.github.io/fantomas/docs/index.html">Docs</a>
-                <a class="nav-link" target="_blank" href="https://fsprojects.github.io/fantomas-tools/">Tools</a>
-            </div>
-            <i class="bi bi-search text-black me-2" id="search-btn"></i>
-            <a class="nav-link m-0 p-0" target="_blank" href="https://github.com/fsprojects/fantomas/">GitHub<i
-                class="bi bi-box-arrow-up-right mx-2"></i></a>
-          </div>
-        </div>
-      </nav>
-      <div id="fsdocs-content" class="bg-white m-2 m-sm-5 p-3 p-sm-4">
+    </ul>
+</aside>
+<main>
+    <div id="content">
         <div>
   <h2>
     FormatConfig Type
@@ -241,7 +325,7 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '4178', 4178)" onmouseover="showTip(event, '4178', 4178)">
+              <code onmouseout="hideTip(event, '4179', 4179)" onmouseover="showTip(event, '4179', 4179)">
                 <p>
                   <a id="AlignFunctionSignatureToIndentation">
                     <a href="#AlignFunctionSignatureToIndentation">
@@ -250,7 +334,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="4178">
+              <div class="fsdocs-tip" id="4179">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code>AlignFunctionSignatureToIndentation</code>
@@ -280,7 +364,7 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '4179', 4179)" onmouseover="showTip(event, '4179', 4179)">
+              <code onmouseout="hideTip(event, '4180', 4180)" onmouseover="showTip(event, '4180', 4180)">
                 <p>
                   <a id="AlternativeLongMemberDefinitions">
                     <a href="#AlternativeLongMemberDefinitions">
@@ -289,7 +373,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="4179">
+              <div class="fsdocs-tip" id="4180">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code>AlternativeLongMemberDefinitions</code>
@@ -319,7 +403,7 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '4180', 4180)" onmouseover="showTip(event, '4180', 4180)">
+              <code onmouseout="hideTip(event, '4181', 4181)" onmouseover="showTip(event, '4181', 4181)">
                 <p>
                   <a id="ArrayOrListMultilineFormatter">
                     <a href="#ArrayOrListMultilineFormatter">
@@ -328,7 +412,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="4180">
+              <div class="fsdocs-tip" id="4181">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code>ArrayOrListMultilineFormatter</code>
@@ -358,7 +442,7 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '4181', 4181)" onmouseover="showTip(event, '4181', 4181)">
+              <code onmouseout="hideTip(event, '4182', 4182)" onmouseover="showTip(event, '4182', 4182)">
                 <p>
                   <a id="BarBeforeDiscriminatedUnionDeclaration">
                     <a href="#BarBeforeDiscriminatedUnionDeclaration">
@@ -367,7 +451,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="4181">
+              <div class="fsdocs-tip" id="4182">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code>BarBeforeDiscriminatedUnionDeclaration</code>
@@ -397,7 +481,7 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '4182', 4182)" onmouseover="showTip(event, '4182', 4182)">
+              <code onmouseout="hideTip(event, '4183', 4183)" onmouseover="showTip(event, '4183', 4183)">
                 <p>
                   <a id="BlankLinesAroundNestedMultilineExpressions">
                     <a href="#BlankLinesAroundNestedMultilineExpressions">
@@ -406,7 +490,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="4182">
+              <div class="fsdocs-tip" id="4183">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code>BlankLinesAroundNestedMultilineExpressions</code>
@@ -436,7 +520,7 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '4183', 4183)" onmouseover="showTip(event, '4183', 4183)">
+              <code onmouseout="hideTip(event, '4184', 4184)" onmouseover="showTip(event, '4184', 4184)">
                 <p>
                   <a id="EndOfLine">
                     <a href="#EndOfLine">
@@ -445,7 +529,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="4183">
+              <div class="fsdocs-tip" id="4184">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code>EndOfLine</code>
@@ -475,7 +559,7 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '4184', 4184)" onmouseover="showTip(event, '4184', 4184)">
+              <code onmouseout="hideTip(event, '4185', 4185)" onmouseover="showTip(event, '4185', 4185)">
                 <p>
                   <a id="ExperimentalElmish">
                     <a href="#ExperimentalElmish">
@@ -484,7 +568,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="4184">
+              <div class="fsdocs-tip" id="4185">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code>ExperimentalElmish</code>
@@ -514,7 +598,7 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '4185', 4185)" onmouseover="showTip(event, '4185', 4185)">
+              <code onmouseout="hideTip(event, '4186', 4186)" onmouseover="showTip(event, '4186', 4186)">
                 <p>
                   <a id="ExperimentalKeepIndentInBranch">
                     <a href="#ExperimentalKeepIndentInBranch">
@@ -523,7 +607,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="4185">
+              <div class="fsdocs-tip" id="4186">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code>ExperimentalKeepIndentInBranch</code>
@@ -553,7 +637,7 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '4186', 4186)" onmouseover="showTip(event, '4186', 4186)">
+              <code onmouseout="hideTip(event, '4187', 4187)" onmouseover="showTip(event, '4187', 4187)">
                 <p>
                   <a id="IndentSize">
                     <a href="#IndentSize">
@@ -562,7 +646,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="4186">
+              <div class="fsdocs-tip" id="4187">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code>IndentSize</code>
@@ -592,7 +676,7 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '4187', 4187)" onmouseover="showTip(event, '4187', 4187)">
+              <code onmouseout="hideTip(event, '4188', 4188)" onmouseover="showTip(event, '4188', 4188)">
                 <p>
                   <a id="InsertFinalNewline">
                     <a href="#InsertFinalNewline">
@@ -601,7 +685,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="4187">
+              <div class="fsdocs-tip" id="4188">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code>InsertFinalNewline</code>
@@ -631,7 +715,7 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '4188', 4188)" onmouseover="showTip(event, '4188', 4188)">
+              <code onmouseout="hideTip(event, '4189', 4189)" onmouseover="showTip(event, '4189', 4189)">
                 <p>
                   <a id="KeepMaxNumberOfBlankLines">
                     <a href="#KeepMaxNumberOfBlankLines">
@@ -640,7 +724,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="4188">
+              <div class="fsdocs-tip" id="4189">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code>KeepMaxNumberOfBlankLines</code>
@@ -670,7 +754,7 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '4189', 4189)" onmouseover="showTip(event, '4189', 4189)">
+              <code onmouseout="hideTip(event, '4190', 4190)" onmouseover="showTip(event, '4190', 4190)">
                 <p>
                   <a id="MaxArrayOrListNumberOfItems">
                     <a href="#MaxArrayOrListNumberOfItems">
@@ -679,7 +763,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="4189">
+              <div class="fsdocs-tip" id="4190">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code>MaxArrayOrListNumberOfItems</code>
@@ -709,7 +793,7 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '4190', 4190)" onmouseover="showTip(event, '4190', 4190)">
+              <code onmouseout="hideTip(event, '4191', 4191)" onmouseover="showTip(event, '4191', 4191)">
                 <p>
                   <a id="MaxArrayOrListWidth">
                     <a href="#MaxArrayOrListWidth">
@@ -718,7 +802,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="4190">
+              <div class="fsdocs-tip" id="4191">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code>MaxArrayOrListWidth</code>
@@ -748,7 +832,7 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '4191', 4191)" onmouseover="showTip(event, '4191', 4191)">
+              <code onmouseout="hideTip(event, '4192', 4192)" onmouseover="showTip(event, '4192', 4192)">
                 <p>
                   <a id="MaxDotGetExpressionWidth">
                     <a href="#MaxDotGetExpressionWidth">
@@ -757,7 +841,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="4191">
+              <div class="fsdocs-tip" id="4192">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code>MaxDotGetExpressionWidth</code>
@@ -787,7 +871,7 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '4192', 4192)" onmouseover="showTip(event, '4192', 4192)">
+              <code onmouseout="hideTip(event, '4193', 4193)" onmouseover="showTip(event, '4193', 4193)">
                 <p>
                   <a id="MaxFunctionBindingWidth">
                     <a href="#MaxFunctionBindingWidth">
@@ -796,7 +880,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="4192">
+              <div class="fsdocs-tip" id="4193">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code>MaxFunctionBindingWidth</code>
@@ -826,7 +910,7 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '4193', 4193)" onmouseover="showTip(event, '4193', 4193)">
+              <code onmouseout="hideTip(event, '4194', 4194)" onmouseover="showTip(event, '4194', 4194)">
                 <p>
                   <a id="MaxIfThenElseShortWidth">
                     <a href="#MaxIfThenElseShortWidth">
@@ -835,7 +919,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="4193">
+              <div class="fsdocs-tip" id="4194">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code>MaxIfThenElseShortWidth</code>
@@ -865,7 +949,7 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '4194', 4194)" onmouseover="showTip(event, '4194', 4194)">
+              <code onmouseout="hideTip(event, '4195', 4195)" onmouseover="showTip(event, '4195', 4195)">
                 <p>
                   <a id="MaxIfThenShortWidth">
                     <a href="#MaxIfThenShortWidth">
@@ -874,7 +958,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="4194">
+              <div class="fsdocs-tip" id="4195">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code>MaxIfThenShortWidth</code>
@@ -904,7 +988,7 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '4195', 4195)" onmouseover="showTip(event, '4195', 4195)">
+              <code onmouseout="hideTip(event, '4196', 4196)" onmouseover="showTip(event, '4196', 4196)">
                 <p>
                   <a id="MaxInfixOperatorExpression">
                     <a href="#MaxInfixOperatorExpression">
@@ -913,7 +997,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="4195">
+              <div class="fsdocs-tip" id="4196">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code>MaxInfixOperatorExpression</code>
@@ -943,7 +1027,7 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '4196', 4196)" onmouseover="showTip(event, '4196', 4196)">
+              <code onmouseout="hideTip(event, '4197', 4197)" onmouseover="showTip(event, '4197', 4197)">
                 <p>
                   <a id="MaxLineLength">
                     <a href="#MaxLineLength">
@@ -952,7 +1036,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="4196">
+              <div class="fsdocs-tip" id="4197">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code>MaxLineLength</code>
@@ -982,7 +1066,7 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '4197', 4197)" onmouseover="showTip(event, '4197', 4197)">
+              <code onmouseout="hideTip(event, '4198', 4198)" onmouseover="showTip(event, '4198', 4198)">
                 <p>
                   <a id="MaxRecordNumberOfItems">
                     <a href="#MaxRecordNumberOfItems">
@@ -991,7 +1075,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="4197">
+              <div class="fsdocs-tip" id="4198">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code>MaxRecordNumberOfItems</code>
@@ -1021,7 +1105,7 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '4198', 4198)" onmouseover="showTip(event, '4198', 4198)">
+              <code onmouseout="hideTip(event, '4199', 4199)" onmouseover="showTip(event, '4199', 4199)">
                 <p>
                   <a id="MaxRecordWidth">
                     <a href="#MaxRecordWidth">
@@ -1030,7 +1114,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="4198">
+              <div class="fsdocs-tip" id="4199">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code>MaxRecordWidth</code>
@@ -1060,7 +1144,7 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '4199', 4199)" onmouseover="showTip(event, '4199', 4199)">
+              <code onmouseout="hideTip(event, '4200', 4200)" onmouseover="showTip(event, '4200', 4200)">
                 <p>
                   <a id="MaxValueBindingWidth">
                     <a href="#MaxValueBindingWidth">
@@ -1069,7 +1153,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="4199">
+              <div class="fsdocs-tip" id="4200">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code>MaxValueBindingWidth</code>
@@ -1099,7 +1183,7 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '4200', 4200)" onmouseover="showTip(event, '4200', 4200)">
+              <code onmouseout="hideTip(event, '4201', 4201)" onmouseover="showTip(event, '4201', 4201)">
                 <p>
                   <a id="MultiLineLambdaClosingNewline">
                     <a href="#MultiLineLambdaClosingNewline">
@@ -1108,7 +1192,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="4200">
+              <div class="fsdocs-tip" id="4201">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code>MultiLineLambdaClosingNewline</code>
@@ -1138,7 +1222,7 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '4201', 4201)" onmouseover="showTip(event, '4201', 4201)">
+              <code onmouseout="hideTip(event, '4202', 4202)" onmouseover="showTip(event, '4202', 4202)">
                 <p>
                   <a id="MultilineBracketStyle">
                     <a href="#MultilineBracketStyle">
@@ -1147,7 +1231,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="4201">
+              <div class="fsdocs-tip" id="4202">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code>MultilineBracketStyle</code>
@@ -1177,7 +1261,7 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '4202', 4202)" onmouseover="showTip(event, '4202', 4202)">
+              <code onmouseout="hideTip(event, '4203', 4203)" onmouseover="showTip(event, '4203', 4203)">
                 <p>
                   <a id="NewlineBeforeMultilineComputationExpression">
                     <a href="#NewlineBeforeMultilineComputationExpression">
@@ -1186,7 +1270,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="4202">
+              <div class="fsdocs-tip" id="4203">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code>NewlineBeforeMultilineComputationExpression</code>
@@ -1216,7 +1300,7 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '4203', 4203)" onmouseover="showTip(event, '4203', 4203)">
+              <code onmouseout="hideTip(event, '4204', 4204)" onmouseover="showTip(event, '4204', 4204)">
                 <p>
                   <a id="NewlineBetweenTypeDefinitionAndMembers">
                     <a href="#NewlineBetweenTypeDefinitionAndMembers">
@@ -1225,7 +1309,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="4203">
+              <div class="fsdocs-tip" id="4204">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code>NewlineBetweenTypeDefinitionAndMembers</code>
@@ -1255,7 +1339,7 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '4204', 4204)" onmouseover="showTip(event, '4204', 4204)">
+              <code onmouseout="hideTip(event, '4205', 4205)" onmouseover="showTip(event, '4205', 4205)">
                 <p>
                   <a id="RecordMultilineFormatter">
                     <a href="#RecordMultilineFormatter">
@@ -1264,7 +1348,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="4204">
+              <div class="fsdocs-tip" id="4205">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code>RecordMultilineFormatter</code>
@@ -1294,7 +1378,7 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '4205', 4205)" onmouseover="showTip(event, '4205', 4205)">
+              <code onmouseout="hideTip(event, '4206', 4206)" onmouseover="showTip(event, '4206', 4206)">
                 <p>
                   <a id="SpaceAfterComma">
                     <a href="#SpaceAfterComma">
@@ -1303,7 +1387,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="4205">
+              <div class="fsdocs-tip" id="4206">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code>SpaceAfterComma</code>
@@ -1333,7 +1417,7 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '4206', 4206)" onmouseover="showTip(event, '4206', 4206)">
+              <code onmouseout="hideTip(event, '4207', 4207)" onmouseover="showTip(event, '4207', 4207)">
                 <p>
                   <a id="SpaceAfterSemicolon">
                     <a href="#SpaceAfterSemicolon">
@@ -1342,7 +1426,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="4206">
+              <div class="fsdocs-tip" id="4207">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code>SpaceAfterSemicolon</code>
@@ -1372,7 +1456,7 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '4207', 4207)" onmouseover="showTip(event, '4207', 4207)">
+              <code onmouseout="hideTip(event, '4208', 4208)" onmouseover="showTip(event, '4208', 4208)">
                 <p>
                   <a id="SpaceAroundDelimiter">
                     <a href="#SpaceAroundDelimiter">
@@ -1381,7 +1465,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="4207">
+              <div class="fsdocs-tip" id="4208">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code>SpaceAroundDelimiter</code>
@@ -1411,7 +1495,7 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '4208', 4208)" onmouseover="showTip(event, '4208', 4208)">
+              <code onmouseout="hideTip(event, '4209', 4209)" onmouseover="showTip(event, '4209', 4209)">
                 <p>
                   <a id="SpaceBeforeClassConstructor">
                     <a href="#SpaceBeforeClassConstructor">
@@ -1420,7 +1504,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="4208">
+              <div class="fsdocs-tip" id="4209">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code>SpaceBeforeClassConstructor</code>
@@ -1450,7 +1534,7 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '4209', 4209)" onmouseover="showTip(event, '4209', 4209)">
+              <code onmouseout="hideTip(event, '4210', 4210)" onmouseover="showTip(event, '4210', 4210)">
                 <p>
                   <a id="SpaceBeforeColon">
                     <a href="#SpaceBeforeColon">
@@ -1459,7 +1543,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="4209">
+              <div class="fsdocs-tip" id="4210">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code>SpaceBeforeColon</code>
@@ -1489,7 +1573,7 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '4210', 4210)" onmouseover="showTip(event, '4210', 4210)">
+              <code onmouseout="hideTip(event, '4211', 4211)" onmouseover="showTip(event, '4211', 4211)">
                 <p>
                   <a id="SpaceBeforeLowercaseInvocation">
                     <a href="#SpaceBeforeLowercaseInvocation">
@@ -1498,7 +1582,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="4210">
+              <div class="fsdocs-tip" id="4211">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code>SpaceBeforeLowercaseInvocation</code>
@@ -1528,7 +1612,7 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '4211', 4211)" onmouseover="showTip(event, '4211', 4211)">
+              <code onmouseout="hideTip(event, '4212', 4212)" onmouseover="showTip(event, '4212', 4212)">
                 <p>
                   <a id="SpaceBeforeMember">
                     <a href="#SpaceBeforeMember">
@@ -1537,7 +1621,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="4211">
+              <div class="fsdocs-tip" id="4212">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code>SpaceBeforeMember</code>
@@ -1567,7 +1651,7 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '4212', 4212)" onmouseover="showTip(event, '4212', 4212)">
+              <code onmouseout="hideTip(event, '4213', 4213)" onmouseover="showTip(event, '4213', 4213)">
                 <p>
                   <a id="SpaceBeforeParameter">
                     <a href="#SpaceBeforeParameter">
@@ -1576,7 +1660,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="4212">
+              <div class="fsdocs-tip" id="4213">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code>SpaceBeforeParameter</code>
@@ -1606,7 +1690,7 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '4213', 4213)" onmouseover="showTip(event, '4213', 4213)">
+              <code onmouseout="hideTip(event, '4214', 4214)" onmouseover="showTip(event, '4214', 4214)">
                 <p>
                   <a id="SpaceBeforeSemicolon">
                     <a href="#SpaceBeforeSemicolon">
@@ -1615,7 +1699,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="4213">
+              <div class="fsdocs-tip" id="4214">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code>SpaceBeforeSemicolon</code>
@@ -1645,7 +1729,7 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '4214', 4214)" onmouseover="showTip(event, '4214', 4214)">
+              <code onmouseout="hideTip(event, '4215', 4215)" onmouseover="showTip(event, '4215', 4215)">
                 <p>
                   <a id="SpaceBeforeUppercaseInvocation">
                     <a href="#SpaceBeforeUppercaseInvocation">
@@ -1654,7 +1738,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="4214">
+              <div class="fsdocs-tip" id="4215">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code>SpaceBeforeUppercaseInvocation</code>
@@ -1705,7 +1789,7 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '4215', 4215)" onmouseover="showTip(event, '4215', 4215)">
+              <code onmouseout="hideTip(event, '4216', 4216)" onmouseover="showTip(event, '4216', 4216)">
                 <p>
                   <a id="IsStroustrupStyle">
                     <a href="#IsStroustrupStyle">
@@ -1714,7 +1798,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="4215">
+              <div class="fsdocs-tip" id="4216">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code><span>this.IsStroustrupStyle</span></code>
@@ -1763,7 +1847,7 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '4216', 4216)" onmouseover="showTip(event, '4216', 4216)">
+              <code onmouseout="hideTip(event, '4217', 4217)" onmouseover="showTip(event, '4217', 4217)">
                 <p>
                   <a id="Default">
                     <a href="#Default">
@@ -1772,7 +1856,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="4216">
+              <div class="fsdocs-tip" id="4217">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code><span>FormatConfig.Default</span></code>
@@ -1804,29 +1888,42 @@
   </div>
 </div>
         
-      </div>
-        <div id="push"></div>
-    </main>
-    <dialog>
-      <input type="search" placeholder="Search docs" />
-      <div class="results">
-          <ul></ul>
-          <p class="empty">Type something to start searching.</p>
-      </div>
-  </dialog>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
-  <script type="module" src="https://fsprojects.github.io/fantomas/content/webcomponents.js"></script>
-  <script type="module">
-      import mermaid from "https://cdn.skypack.dev/mermaid@9.2.2";
-      mermaid.initialize({
-          startOnLoad: true,
-          theme: "base",
-          themeVariables: {
-              primaryColor: '#eff5f7'
-          }
-      });
-  </script>
-  <script type="module" src="https://fsprojects.github.io/fantomas/content/docs-setup.js"></script>
-  <script type="module" src="https://fsprojects.github.io/fantomas/content/fsdocs-search.js"></script>
+    </div>
+</main>
+<aside id="fsdocs-page-menu">
+    <p>On this page</p>
+    <div class="empty"></div>
+</aside>
+<dialog>
+    <input type="search" placeholder="Search docs" />
+    <div class="results">
+        <ul></ul>
+        <p class="empty">Type something to start searching.</p>
+    </div>
+</dialog>
+<script type="module" src="https://fsprojects.github.io/fantomas/content/fsdocs-tips.js"></script>
+<script type="module" src="https://fsprojects.github.io/fantomas/content/fsdocs-theme-toggle.js"></script>
+<script type="module" src="https://fsprojects.github.io/fantomas/content/fsdocs-theme.js"></script>
+<script type="module" src="https://fsprojects.github.io/fantomas/content/fsdocs-search.js"></script>
+<script type="module">
+    import mermaid from "https://esm.sh/mermaid@9.2.2";
+    mermaid.initialize({
+        startOnLoad: true,
+        theme: "base",
+        themeVariables: {
+            primaryColor: '#338cbb',
+            primaryTextColor: '#FFF',
+            primaryBorderColor: '#5aacd6'
+        }
+    });
+
+    const menuHeaders = [...document.querySelectorAll(".nav-header")].filter(nh => nh.id);
+    menuHeaders.forEach(nv => {
+        nv.addEventListener("click", () => {
+            nv.classList.toggle("active");
+        })
+    })
+</script>
+<script type="module" src="https://fsprojects.github.io/fantomas/content/webcomponents.js"></script>
 </body>
 </html>
