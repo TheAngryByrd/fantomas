@@ -5,12 +5,23 @@
     <meta content="IE=edge" http-equiv="X-UA-Compatible">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Florian Verdonck, Jindřich Ivánek, David Schaefer" name="author">
-    <title>ISourceTextExtensions (fantomas) | fantomas</title>
+    <!-- Opengraph properties (https://ogp.me/) -->
+    <meta property="og:site_name" content="fantomas">
+    <meta property="og:title" content="Internal.Utilities.Hashing" />
+    <meta property="og:url" content="https://fsprojects.github.io/fantomas/{{fsdocs-source-basename}}.html">
+    <meta property="og:type" content="website" />
+    <!-- Twitter cards (https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/summary-card-with-large-image) -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="https://fsprojects.github.io/fantomas/">
+    <meta name="twitter:title" content="Internal.Utilities.Hashing">
+    
+    <title>Internal.Utilities.Hashing | fantomas</title>
     <link href="https://fonts.googleapis.com" rel="preconnect">
     <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
     <link href="https://fsprojects.github.io/fantomas/images/favicon.ico" rel="icon" sizes="32x32" type="image/png"/>
+    <script type="application/javascript" src="https://fsprojects.github.io/fantomas/content/fsdocs-theme-set-dark.js"></script>
     <link href="https://fsprojects.github.io/fantomas/content/fsdocs-default.css" rel="stylesheet" type="text/css"/>
     <link href="https://fsprojects.github.io/fantomas/content/fsdocs-theme.css" rel="stylesheet" type="text/css"/>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;1,400&family=Reem+Kufi:wght@400;500;700&display=swap" rel="stylesheet">
@@ -69,6 +80,9 @@
 </a></li>
 
 <li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/UpgradeGuide.html" class="nav-link" > Upgrade guide
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/Recipes.html" class="nav-link" > Recipes
 </a></li>
 
 <li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/FAQ.html" class="nav-link" > FAQ
@@ -197,6 +211,9 @@
 <li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/UpgradeGuide.html" class="nav-link" > Upgrade guide
 </a></li>
 
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/Recipes.html" class="nav-link" > Recipes
+</a></li>
+
 <li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/FAQ.html" class="nav-link" > FAQ
 </a></li>
 
@@ -265,125 +282,84 @@
 <main>
     <div id="content">
         <div>
-  <h2>
-    ISourceTextExtensions Module
+  <h2 id="internal-utilities-hashing">
+    Internal.Utilities.Hashing Namespace
   </h2>
-  <dl class="fsdocs-metadata">
-    <dt>
-      Namespace: 
-      <a href="https://fsprojects.github.io/fantomas/reference/fantomas-core.html">
-        Fantomas.Core
-      </a>
-    </dt>
-    <dt>
-      Assembly: Fantomas.Core.dll
-    </dt>
-  </dl>
-  <div class="fsdocs-xmldoc">
-    <div>
-      <p class="fsdocs-summary">
-        
-      </p>
-    </div>
-  </div>
-  <div></div>
-  <div>
-    <h3>
-      Type extensions
-    </h3>
-    <table class="table outer-list fsdocs-member-list">
-      <thead>
-        <tr>
-          <td class="fsdocs-member-list-header">
-            Type extension
-          </td>
-          <td class="fsdocs-member-list-header">
-            Description
-          </td>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="fsdocs-member-usage">
-            <div>
-              <code onmouseout="hideTip(event, '102', 102)" onmouseover="showTip(event, '102', 102)">
-                <p>
-                  <a id="GetContentAt">
-                    <a href="#GetContentAt">
-                      <code><span>this.GetContentAt</span></code>
-                    </a>
-                  </a>
-                </p>
-              </code>
-              <div class="fsdocs-tip" id="102">
-                <div class="member-tooltip">
-                  Full Usage: 
-                  <code><span>this.GetContentAt</span></code>
-                  <br/>
-                  <br/>
-                  Parameters: 
-                  <ul>
-                    <span>
-                      <b>
-                        range
-                      </b>
-                      :
-                      <code><a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-text-range-0.html">range</a></code>
-                    </span>
-                    <br/>
-                  </ul>
-                  <br/>
-                  <span>
-                    Returns: 
-                    <code>string</code>
-                  </span>
-                  <br/>
-                </div>
-              </div>
+  <div class="fsdocs-xmldoc"></div>
+  <table class="table outer-list fsdocs-entity-list">
+    <thead>
+      <tr>
+        <td>
+          Modules
+        </td>
+        <td>
+          Description
+        </td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="Md5Hasher">
+              <a href="https://fsprojects.github.io/fantomas/reference/internal-utilities-hashing-md5hasher.html">
+                Md5Hasher
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-entity-xmldoc">
+          <div>
+            <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:T:Internal.Utilities.Hashing.Md5Hasher`')">
+              <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
             </div>
-          </td>
-          <td class="fsdocs-member-xmldoc">
-            <p>
-              Extended Type: 
-              <code><a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-text-isourcetext.html">ISourceText</a></code>
+            <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'T:Internal.Utilities.Hashing.Md5Hasher\'/>')">
+              <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+            </div>
+            <a href="" class="fsdocs-source-link" title="Source on GitHub">
+              <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+            </a>
+            <p class="fsdocs-summary">
+              
             </p>
-            <dl class="fsdocs-params">
-              <dt class="fsdocs-param">
-                <span class="fsdocs-param-name">
-                  range
-                </span>
-                :
-                <code><a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-text-range-0.html">range</a></code>
-              </dt>
-              <dd class="fsdocs-param-docs"></dd>
-            </dl>
-            <dl class="fsdocs-returns">
-              <dt>
-                <span class="fsdocs-return-name">
-                  Returns: 
-                </span>
-                <code>string</code>
-              </dt>
-              <dd class="fsdocs-return-docs"></dd>
-            </dl>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-  <div></div>
-  <div></div>
-  <div></div>
-  <div></div>
-  <div></div>
-  <div></div>
-  <div></div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="Md5StringHasher">
+              <a href="https://fsprojects.github.io/fantomas/reference/internal-utilities-hashing-md5stringhasher.html">
+                Md5StringHasher
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-entity-xmldoc">
+          <div>
+            <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:T:Internal.Utilities.Hashing.Md5StringHasher`')">
+              <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+            </div>
+            <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'T:Internal.Utilities.Hashing.Md5StringHasher\'/>')">
+              <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+            </div>
+            <a href="" class="fsdocs-source-link" title="Source on GitHub">
+              <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+            </a>
+            <p class="fsdocs-summary">
+               Tools for hashing things with MD5 into a string that can be used as a cache key.
+            </p>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>
         
     </div>
 </main>
 <aside id="fsdocs-page-menu">
-    <p>On this page</p>
+    <p id="on-this-page">On this page</p>
     <div class="empty"></div>
 </aside>
 <dialog>

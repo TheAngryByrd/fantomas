@@ -5,12 +5,23 @@
     <meta content="IE=edge" http-equiv="X-UA-Compatible">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Florian Verdonck, Jindřich Ivánek, David Schaefer" name="author">
-    <title>ILNativeResource (fantomas) | fantomas</title>
+    <!-- Opengraph properties (https://ogp.me/) -->
+    <meta property="og:site_name" content="fantomas">
+    <meta property="og:title" content="InterruptibleLazy<'T> (fantomas)" />
+    <meta property="og:url" content="https://fsprojects.github.io/fantomas/{{fsdocs-source-basename}}.html">
+    <meta property="og:type" content="website" />
+    <!-- Twitter cards (https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/summary-card-with-large-image) -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="https://fsprojects.github.io/fantomas/">
+    <meta name="twitter:title" content="InterruptibleLazy<'T> (fantomas)">
+    
+    <title>InterruptibleLazy<'T> (fantomas) | fantomas</title>
     <link href="https://fonts.googleapis.com" rel="preconnect">
     <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
     <link href="https://fsprojects.github.io/fantomas/images/favicon.ico" rel="icon" sizes="32x32" type="image/png"/>
+    <script type="application/javascript" src="https://fsprojects.github.io/fantomas/content/fsdocs-theme-set-dark.js"></script>
     <link href="https://fsprojects.github.io/fantomas/content/fsdocs-default.css" rel="stylesheet" type="text/css"/>
     <link href="https://fsprojects.github.io/fantomas/content/fsdocs-theme.css" rel="stylesheet" type="text/css"/>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;1,400&family=Reem+Kufi:wght@400;500;700&display=swap" rel="stylesheet">
@@ -69,6 +80,9 @@
 </a></li>
 
 <li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/UpgradeGuide.html" class="nav-link" > Upgrade guide
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/Recipes.html" class="nav-link" > Recipes
 </a></li>
 
 <li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/FAQ.html" class="nav-link" > FAQ
@@ -197,6 +211,9 @@
 <li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/UpgradeGuide.html" class="nav-link" > Upgrade guide
 </a></li>
 
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/Recipes.html" class="nav-link" > Recipes
+</a></li>
+
 <li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/FAQ.html" class="nav-link" > FAQ
 </a></li>
 
@@ -266,37 +283,21 @@
     <div id="content">
         <div>
   <h2>
-    ILNativeResource Type
+    InterruptibleLazy<'T> Type
   </h2>
   <dl class="fsdocs-metadata">
     <dt>
       Namespace: 
-      <a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-abstractil.html">
-        Fantomas.FCS.AbstractIL
+      <a href="https://fsprojects.github.io/fantomas/reference/internal-utilities-library.html">
+        Internal.Utilities.Library
       </a>
     </dt>
     <dt>
       Assembly: Fantomas.FCS.dll
     </dt>
     <dt>
-      Parent Module: 
-      <a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-abstractil-il.html">
-        IL
-      </a>
-    </dt>
-    <dt>
       Base Type: 
       <code>obj</code>
-    </dt>
-    <dt>
-      All Interfaces: 
-      <code><a href="https://learn.microsoft.com/dotnet/api/system.collections.istructuralequatable">IStructuralEquatable</a></code>
-      , 
-      <code><span><a href="https://learn.microsoft.com/dotnet/api/system.icomparable-1">IComparable</a>&lt;<a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-abstractil-il-ilnativeresource.html">ILNativeResource</a>&gt;</span></code>
-      , 
-      <code><a href="https://learn.microsoft.com/dotnet/api/system.icomparable">IComparable</a></code>
-      , 
-      <code><a href="https://learn.microsoft.com/dotnet/api/system.collections.istructuralcomparable">IStructuralComparable</a></code>
     </dt>
   </dl>
   <div class="fsdocs-xmldoc">
@@ -309,15 +310,18 @@
   <div></div>
   <div></div>
   <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
   <div>
     <h3>
-      Union cases
+      Constructors
     </h3>
     <table class="table outer-list fsdocs-member-list">
       <thead>
         <tr>
           <td class="fsdocs-member-list-header">
-            Union case
+            Constructor
           </td>
           <td class="fsdocs-member-list-header">
             Description
@@ -328,183 +332,289 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '5980', 5980)" onmouseover="showTip(event, '5980', 5980)">
+              <code onmouseout="hideTip(event, '8731', 8731)" onmouseover="showTip(event, '8731', 8731)">
                 <p>
-                  <a id="In">
-                    <a href="#In">
-                      <code><span>In(<span>fileName,&#32;linkedResourceBase,&#32;linkedResourceStart,&#32;linkedResourceLength</span>)</span></code>
+                  <a id="``.ctor``">
+                    <a href="#``.ctor``">
+                      <code><span>InterruptibleLazy<span><span>(<span>valueFactory</span>)</span></span></span></code>
                     </a>
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="5980">
+              <div class="fsdocs-tip" id="8731">
                 <div class="member-tooltip">
                   Full Usage: 
-                  <code><span>In(<span>fileName,&#32;linkedResourceBase,&#32;linkedResourceStart,&#32;linkedResourceLength</span>)</span></code>
+                  <code><span>InterruptibleLazy<span><span>(<span>valueFactory</span>)</span></span></span></code>
                   <br/>
                   <br/>
                   Parameters: 
                   <ul>
                     <span>
                       <b>
-                        fileName
+                        valueFactory
                       </b>
                       :
-                      <code>string</code>
-                    </span>
-                    <br/>
-                    <span>
-                      <b>
-                        linkedResourceBase
-                      </b>
-                      :
-                      <code>int</code>
-                    </span>
-                    <br/>
-                    <span>
-                      <b>
-                        linkedResourceStart
-                      </b>
-                      :
-                      <code>int</code>
-                    </span>
-                    <br/>
-                    <span>
-                      <b>
-                        linkedResourceLength
-                      </b>
-                      :
-                      <code>int</code>
+                      <code><span>unit&#32;->&#32;'T</span></code>
                     </span>
                     <br/>
                   </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://fsprojects.github.io/fantomas/reference/internal-utilities-library-interruptiblelazy-1.html">InterruptibleLazy</a>&lt;'T&gt;</span></code>
+                  </span>
                   <br/>
                 </div>
               </div>
             </div>
           </td>
           <td class="fsdocs-member-xmldoc">
-            <details>
-              <summary>
-                <div class="fsdocs-summary">
-                  <a href="" class="fsdocs-source-link" title="Source on GitHub">
-                    <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
-                  </a>
-                  <p class="fsdocs-summary">
-                     Represents a native resource to be read from the PE file
-                  </p>
-                </div>
-              </summary>
-              <dl class="fsdocs-params">
-                <dt class="fsdocs-param">
-                  <span class="fsdocs-param-name">
-                    fileName
-                  </span>
-                  :
-                  <code>string</code>
-                </dt>
-                <dd class="fsdocs-param-docs"></dd>
-                <dt class="fsdocs-param">
-                  <span class="fsdocs-param-name">
-                    linkedResourceBase
-                  </span>
-                  :
-                  <code>int</code>
-                </dt>
-                <dd class="fsdocs-param-docs"></dd>
-                <dt class="fsdocs-param">
-                  <span class="fsdocs-param-name">
-                    linkedResourceStart
-                  </span>
-                  :
-                  <code>int</code>
-                </dt>
-                <dd class="fsdocs-param-docs"></dd>
-                <dt class="fsdocs-param">
-                  <span class="fsdocs-param-name">
-                    linkedResourceLength
-                  </span>
-                  :
-                  <code>int</code>
-                </dt>
-                <dd class="fsdocs-param-docs"></dd>
-              </dl>
-            </details>
-          </td>
-        </tr>
-        <tr>
-          <td class="fsdocs-member-usage">
-            <div>
-              <code onmouseout="hideTip(event, '5981', 5981)" onmouseover="showTip(event, '5981', 5981)">
-                <p>
-                  <a id="Out">
-                    <a href="#Out">
-                      <code><span>Out&#32;unlinkedResource</span></code>
-                    </a>
-                  </a>
-                </p>
-              </code>
-              <div class="fsdocs-tip" id="5981">
-                <div class="member-tooltip">
-                  Full Usage: 
-                  <code><span>Out&#32;unlinkedResource</span></code>
-                  <br/>
-                  <br/>
-                  Parameters: 
-                  <ul>
-                    <span>
-                      <b>
-                        unlinkedResource
-                      </b>
-                      :
-                      <code><span>byte[]</span></code>
-                    </span>
-                    <br/>
-                  </ul>
-                  <br/>
-                </div>
-              </div>
-            </div>
-          </td>
-          <td class="fsdocs-member-xmldoc">
-            <details>
-              <summary>
-                <div class="fsdocs-summary">
-                  <a href="" class="fsdocs-source-link" title="Source on GitHub">
-                    <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
-                  </a>
-                  <p class="fsdocs-summary">
-                     Represents a native resource to be written in an output file
-                  </p>
-                </div>
-              </summary>
-              <dl class="fsdocs-params">
-                <dt class="fsdocs-param">
-                  <span class="fsdocs-param-name">
-                    unlinkedResource
-                  </span>
-                  :
-                  <code><span>byte[]</span></code>
-                </dt>
-                <dd class="fsdocs-param-docs"></dd>
-              </dl>
-            </details>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  valueFactory
+                </span>
+                :
+                <code><span>unit&#32;->&#32;'T</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://fsprojects.github.io/fantomas/reference/internal-utilities-library-interruptiblelazy-1.html">InterruptibleLazy</a>&lt;'T&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
           </td>
         </tr>
       </tbody>
     </table>
   </div>
-  <div></div>
-  <div></div>
-  <div></div>
-  <div></div>
-  <div></div>
+  <div>
+    <h3>
+      Instance members
+    </h3>
+    <table class="table outer-list fsdocs-member-list">
+      <thead>
+        <tr>
+          <td class="fsdocs-member-list-header">
+            Instance member
+          </td>
+          <td class="fsdocs-member-list-header">
+            Description
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '8732', 8732)" onmouseover="showTip(event, '8732', 8732)">
+                <p>
+                  <a id="Force">
+                    <a href="#Force">
+                      <code><span>this.Force</span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="8732">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>this.Force</span></code>
+                  <br/>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code>'T</code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code>'T</code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '8733', 8733)" onmouseover="showTip(event, '8733', 8733)">
+                <p>
+                  <a id="IsValueCreated">
+                    <a href="#IsValueCreated">
+                      <code><span>this.IsValueCreated</span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="8733">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>this.IsValueCreated</span></code>
+                  <br/>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code>bool</code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code>bool</code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '8734', 8734)" onmouseover="showTip(event, '8734', 8734)">
+                <p>
+                  <a id="Value">
+                    <a href="#Value">
+                      <code><span>this.Value</span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="8734">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>this.Value</span></code>
+                  <br/>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code>'T</code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code>'T</code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div>
+    <h3>
+      Static members
+    </h3>
+    <table class="table outer-list fsdocs-member-list">
+      <thead>
+        <tr>
+          <td class="fsdocs-member-list-header">
+            Static member
+          </td>
+          <td class="fsdocs-member-list-header">
+            Description
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '8735', 8735)" onmouseover="showTip(event, '8735', 8735)">
+                <p>
+                  <a id="FromValue">
+                    <a href="#FromValue">
+                      <code><span>InterruptibleLazy.FromValue<span><span>(<span>value</span>)</span></span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="8735">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>InterruptibleLazy.FromValue<span><span>(<span>value</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        value
+                      </b>
+                      :
+                      <code>'T</code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://fsprojects.github.io/fantomas/reference/internal-utilities-library-interruptiblelazy-1.html">InterruptibleLazy</a>&lt;'T&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  value
+                </span>
+                :
+                <code>'T</code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><span><a href="https://fsprojects.github.io/fantomas/reference/internal-utilities-library-interruptiblelazy-1.html">InterruptibleLazy</a>&lt;'T&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
         
     </div>
 </main>
 <aside id="fsdocs-page-menu">
-    <p>On this page</p>
+    <p id="on-this-page">On this page</p>
     <div class="empty"></div>
 </aside>
 <dialog>

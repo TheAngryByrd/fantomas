@@ -5,12 +5,23 @@
     <meta content="IE=edge" http-equiv="X-UA-Compatible">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Florian Verdonck, Jindřich Ivánek, David Schaefer" name="author">
-    <title>ILAttribute (fantomas) | fantomas</title>
+    <!-- Opengraph properties (https://ogp.me/) -->
+    <meta property="og:site_name" content="fantomas">
+    <meta property="og:title" content="SynExprSequentialTrivia (fantomas)" />
+    <meta property="og:url" content="https://fsprojects.github.io/fantomas/{{fsdocs-source-basename}}.html">
+    <meta property="og:type" content="website" />
+    <!-- Twitter cards (https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/summary-card-with-large-image) -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="https://fsprojects.github.io/fantomas/">
+    <meta name="twitter:title" content="SynExprSequentialTrivia (fantomas)">
+    
+    <title>SynExprSequentialTrivia (fantomas) | fantomas</title>
     <link href="https://fonts.googleapis.com" rel="preconnect">
     <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
     <link href="https://fsprojects.github.io/fantomas/images/favicon.ico" rel="icon" sizes="32x32" type="image/png"/>
+    <script type="application/javascript" src="https://fsprojects.github.io/fantomas/content/fsdocs-theme-set-dark.js"></script>
     <link href="https://fsprojects.github.io/fantomas/content/fsdocs-default.css" rel="stylesheet" type="text/css"/>
     <link href="https://fsprojects.github.io/fantomas/content/fsdocs-theme.css" rel="stylesheet" type="text/css"/>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;1,400&family=Reem+Kufi:wght@400;500;700&display=swap" rel="stylesheet">
@@ -69,6 +80,9 @@
 </a></li>
 
 <li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/UpgradeGuide.html" class="nav-link" > Upgrade guide
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/Recipes.html" class="nav-link" > Recipes
 </a></li>
 
 <li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/FAQ.html" class="nav-link" > FAQ
@@ -197,6 +211,9 @@
 <li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/UpgradeGuide.html" class="nav-link" > Upgrade guide
 </a></li>
 
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/Recipes.html" class="nav-link" > Recipes
+</a></li>
+
 <li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/FAQ.html" class="nav-link" > FAQ
 </a></li>
 
@@ -266,58 +283,43 @@
     <div id="content">
         <div>
   <h2>
-    ILAttribute Type
+    SynExprSequentialTrivia Type
   </h2>
   <dl class="fsdocs-metadata">
     <dt>
       Namespace: 
-      <a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-abstractil.html">
-        Fantomas.FCS.AbstractIL
+      <a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-syntaxtrivia.html">
+        Fantomas.FCS.SyntaxTrivia
       </a>
     </dt>
     <dt>
       Assembly: Fantomas.FCS.dll
     </dt>
     <dt>
-      Parent Module: 
-      <a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-abstractil-il.html">
-        IL
-      </a>
-    </dt>
-    <dt>
       Base Type: 
       <code>obj</code>
-    </dt>
-    <dt>
-      All Interfaces: 
-      <code><a href="https://learn.microsoft.com/dotnet/api/system.collections.istructuralequatable">IStructuralEquatable</a></code>
-      , 
-      <code><span><a href="https://learn.microsoft.com/dotnet/api/system.icomparable-1">IComparable</a>&lt;<a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-abstractil-il-ilattribute.html">ILAttribute</a>&gt;</span></code>
-      , 
-      <code><a href="https://learn.microsoft.com/dotnet/api/system.icomparable">IComparable</a></code>
-      , 
-      <code><a href="https://learn.microsoft.com/dotnet/api/system.collections.istructuralcomparable">IStructuralComparable</a></code>
     </dt>
   </dl>
   <div class="fsdocs-xmldoc">
     <div>
       <p class="fsdocs-summary">
-         Custom attribute.
+         Represents additional information for SynExpr.Sequential
       </p>
     </div>
   </div>
   <div></div>
   <div></div>
   <div></div>
+  <div></div>
   <div>
     <h3>
-      Union cases
+      Record fields
     </h3>
     <table class="table outer-list fsdocs-member-list">
       <thead>
         <tr>
           <td class="fsdocs-member-list-header">
-            Union case
+            Record Field
           </td>
           <td class="fsdocs-member-list-header">
             Description
@@ -328,48 +330,25 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '5524', 5524)" onmouseover="showTip(event, '5524', 5524)">
+              <code onmouseout="hideTip(event, '8255', 8255)" onmouseover="showTip(event, '8255', 8255)">
                 <p>
-                  <a id="Decoded">
-                    <a href="#Decoded">
-                      <code><span>Decoded(<span>method,&#32;fixedArgs,&#32;namedArgs</span>)</span></code>
+                  <a id="SeparatorRange">
+                    <a href="#SeparatorRange">
+                      <code>SeparatorRange</code>
                     </a>
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="5524">
+              <div class="fsdocs-tip" id="8255">
                 <div class="member-tooltip">
                   Full Usage: 
-                  <code><span>Decoded(<span>method,&#32;fixedArgs,&#32;namedArgs</span>)</span></code>
+                  <code>SeparatorRange</code>
                   <br/>
                   <br/>
-                  Parameters: 
-                  <ul>
-                    <span>
-                      <b>
-                        method
-                      </b>
-                      :
-                      <code><a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-abstractil-il-ilmethodspec.html">ILMethodSpec</a></code>
-                    </span>
-                    <br/>
-                    <span>
-                      <b>
-                        fixedArgs
-                      </b>
-                      :
-                      <code><span><a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-abstractil-il-ilattribelem.html">ILAttribElem</a>&#32;list</span></code>
-                    </span>
-                    <br/>
-                    <span>
-                      <b>
-                        namedArgs
-                      </b>
-                      :
-                      <code><span><a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-abstractil-il-ilattributenamedarg.html">ILAttributeNamedArg</a>&#32;list</span></code>
-                    </span>
-                    <br/>
-                  </ul>
+                  <span>
+                    Field type: 
+                    <code><span><a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-text-range-0.html">range</a>&#32;option</span></code>
+                  </span>
                   <br/>
                 </div>
               </div>
@@ -383,127 +362,19 @@
                     <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
                   </a>
                   <p class="fsdocs-summary">
-                     Attribute with args in decoded form.
+                     The syntax range of the `;` token.
+ Could also be the `then` keyword.
                   </p>
                 </div>
               </summary>
-              <dl class="fsdocs-params">
-                <dt class="fsdocs-param">
-                  <span class="fsdocs-param-name">
-                    method
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Field type: 
                   </span>
-                  :
-                  <code><a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-abstractil-il-ilmethodspec.html">ILMethodSpec</a></code>
+                  <code><span><a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-text-range-0.html">range</a>&#32;option</span></code>
                 </dt>
-                <dd class="fsdocs-param-docs"></dd>
-                <dt class="fsdocs-param">
-                  <span class="fsdocs-param-name">
-                    fixedArgs
-                  </span>
-                  :
-                  <code><span><a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-abstractil-il-ilattribelem.html">ILAttribElem</a>&#32;list</span></code>
-                </dt>
-                <dd class="fsdocs-param-docs"></dd>
-                <dt class="fsdocs-param">
-                  <span class="fsdocs-param-name">
-                    namedArgs
-                  </span>
-                  :
-                  <code><span><a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-abstractil-il-ilattributenamedarg.html">ILAttributeNamedArg</a>&#32;list</span></code>
-                </dt>
-                <dd class="fsdocs-param-docs"></dd>
-              </dl>
-            </details>
-          </td>
-        </tr>
-        <tr>
-          <td class="fsdocs-member-usage">
-            <div>
-              <code onmouseout="hideTip(event, '5525', 5525)" onmouseover="showTip(event, '5525', 5525)">
-                <p>
-                  <a id="Encoded">
-                    <a href="#Encoded">
-                      <code><span>Encoded(<span>method,&#32;data,&#32;elements</span>)</span></code>
-                    </a>
-                  </a>
-                </p>
-              </code>
-              <div class="fsdocs-tip" id="5525">
-                <div class="member-tooltip">
-                  Full Usage: 
-                  <code><span>Encoded(<span>method,&#32;data,&#32;elements</span>)</span></code>
-                  <br/>
-                  <br/>
-                  Parameters: 
-                  <ul>
-                    <span>
-                      <b>
-                        method
-                      </b>
-                      :
-                      <code><a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-abstractil-il-ilmethodspec.html">ILMethodSpec</a></code>
-                    </span>
-                    <br/>
-                    <span>
-                      <b>
-                        data
-                      </b>
-                      :
-                      <code><span>byte[]</span></code>
-                    </span>
-                    <br/>
-                    <span>
-                      <b>
-                        elements
-                      </b>
-                      :
-                      <code><span><a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-abstractil-il-ilattribelem.html">ILAttribElem</a>&#32;list</span></code>
-                    </span>
-                    <br/>
-                  </ul>
-                  <br/>
-                </div>
-              </div>
-            </div>
-          </td>
-          <td class="fsdocs-member-xmldoc">
-            <details>
-              <summary>
-                <div class="fsdocs-summary">
-                  <a href="" class="fsdocs-source-link" title="Source on GitHub">
-                    <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
-                  </a>
-                  <p class="fsdocs-summary">
-                     Attribute with args encoded to a binary blob according to ECMA-335 II.21 and II.23.3.
- 'decodeILAttribData' is used to parse the byte[] blob to ILAttribElem's as best as possible.
-                  </p>
-                </div>
-              </summary>
-              <dl class="fsdocs-params">
-                <dt class="fsdocs-param">
-                  <span class="fsdocs-param-name">
-                    method
-                  </span>
-                  :
-                  <code><a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-abstractil-il-ilmethodspec.html">ILMethodSpec</a></code>
-                </dt>
-                <dd class="fsdocs-param-docs"></dd>
-                <dt class="fsdocs-param">
-                  <span class="fsdocs-param-name">
-                    data
-                  </span>
-                  :
-                  <code><span>byte[]</span></code>
-                </dt>
-                <dd class="fsdocs-param-docs"></dd>
-                <dt class="fsdocs-param">
-                  <span class="fsdocs-param-name">
-                    elements
-                  </span>
-                  :
-                  <code><span><a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-abstractil-il-ilattribelem.html">ILAttribElem</a>&#32;list</span></code>
-                </dt>
-                <dd class="fsdocs-param-docs"></dd>
+                <dd class="fsdocs-return-docs"></dd>
               </dl>
             </details>
           </td>
@@ -516,13 +387,13 @@
   <div></div>
   <div>
     <h3>
-      Instance members
+      Static members
     </h3>
     <table class="table outer-list fsdocs-member-list">
       <thead>
         <tr>
           <td class="fsdocs-member-list-header">
-            Instance member
+            Static member
           </td>
           <td class="fsdocs-member-list-header">
             Description
@@ -533,24 +404,24 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '5526', 5526)" onmouseover="showTip(event, '5526', 5526)">
+              <code onmouseout="hideTip(event, '8256', 8256)" onmouseover="showTip(event, '8256', 8256)">
                 <p>
-                  <a id="Elements">
-                    <a href="#Elements">
-                      <code><span>this.Elements</span></code>
+                  <a id="Zero">
+                    <a href="#Zero">
+                      <code><span>SynExprSequentialTrivia.Zero</span></code>
                     </a>
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="5526">
+              <div class="fsdocs-tip" id="8256">
                 <div class="member-tooltip">
                   Full Usage: 
-                  <code><span>this.Elements</span></code>
+                  <code><span>SynExprSequentialTrivia.Zero</span></code>
                   <br/>
                   <br/>
                   <span>
                     Returns: 
-                    <code><span><a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-abstractil-il-ilattribelem.html">ILAttribElem</a>&#32;list</span></code>
+                    <code><a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-syntaxtrivia-synexprsequentialtrivia.html">SynExprSequentialTrivia</a></code>
                   </span>
                   <br/>
                 </div>
@@ -558,148 +429,12 @@
             </div>
           </td>
           <td class="fsdocs-member-xmldoc">
-            <details>
-              <summary>
-                <div class="fsdocs-summary">
-                  <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:P:Fantomas.FCS.AbstractIL.IL.ILAttribute.Elements`')">
-                    <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
-                  </div>
-                  <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'P:Fantomas.FCS.AbstractIL.IL.ILAttribute.Elements\'/>')">
-                    <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
-                  </div>
-                  <a href="" class="fsdocs-source-link" title="Source on GitHub">
-                    <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
-                  </a>
-                  <p class="fsdocs-summary">
-                     Decoded arguments. May be empty in encoded attribute form.
-                  </p>
-                </div>
-              </summary>
-              <dl class="fsdocs-returns">
-                <dt>
-                  <span class="fsdocs-return-name">
-                    Returns: 
-                  </span>
-                  <code><span><a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-abstractil-il-ilattribelem.html">ILAttribElem</a>&#32;list</span></code>
-                </dt>
-                <dd class="fsdocs-return-docs"></dd>
-              </dl>
-            </details>
-          </td>
-        </tr>
-        <tr>
-          <td class="fsdocs-member-usage">
-            <div>
-              <code onmouseout="hideTip(event, '5527', 5527)" onmouseover="showTip(event, '5527', 5527)">
-                <p>
-                  <a id="Method">
-                    <a href="#Method">
-                      <code><span>this.Method</span></code>
-                    </a>
-                  </a>
-                </p>
-              </code>
-              <div class="fsdocs-tip" id="5527">
-                <div class="member-tooltip">
-                  Full Usage: 
-                  <code><span>this.Method</span></code>
-                  <br/>
-                  <br/>
-                  <span>
-                    Returns: 
-                    <code><a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-abstractil-il-ilmethodspec.html">ILMethodSpec</a></code>
-                  </span>
-                  <br/>
-                </div>
-              </div>
-            </div>
-          </td>
-          <td class="fsdocs-member-xmldoc">
-            <details>
-              <summary>
-                <div class="fsdocs-summary">
-                  <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:P:Fantomas.FCS.AbstractIL.IL.ILAttribute.Method`')">
-                    <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
-                  </div>
-                  <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'P:Fantomas.FCS.AbstractIL.IL.ILAttribute.Method\'/>')">
-                    <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
-                  </div>
-                  <a href="" class="fsdocs-source-link" title="Source on GitHub">
-                    <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
-                  </a>
-                  <p class="fsdocs-summary">
-                     Attribute instance constructor.
-                  </p>
-                </div>
-              </summary>
-              <dl class="fsdocs-returns">
-                <dt>
-                  <span class="fsdocs-return-name">
-                    Returns: 
-                  </span>
-                  <code><a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-abstractil-il-ilmethodspec.html">ILMethodSpec</a></code>
-                </dt>
-                <dd class="fsdocs-return-docs"></dd>
-              </dl>
-            </details>
-          </td>
-        </tr>
-        <tr>
-          <td class="fsdocs-member-usage">
-            <div>
-              <code onmouseout="hideTip(event, '5528', 5528)" onmouseover="showTip(event, '5528', 5528)">
-                <p>
-                  <a id="WithMethod">
-                    <a href="#WithMethod">
-                      <code><span>this.WithMethod</span></code>
-                    </a>
-                  </a>
-                </p>
-              </code>
-              <div class="fsdocs-tip" id="5528">
-                <div class="member-tooltip">
-                  Full Usage: 
-                  <code><span>this.WithMethod</span></code>
-                  <br/>
-                  <br/>
-                  Parameters: 
-                  <ul>
-                    <span>
-                      <b>
-                        method
-                      </b>
-                      :
-                      <code><a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-abstractil-il-ilmethodspec.html">ILMethodSpec</a></code>
-                    </span>
-                    <br/>
-                  </ul>
-                  <br/>
-                  <span>
-                    Returns: 
-                    <code><a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-abstractil-il-ilattribute.html">ILAttribute</a></code>
-                  </span>
-                  <br/>
-                </div>
-              </div>
-            </div>
-          </td>
-          <td class="fsdocs-member-xmldoc">
-            <dl class="fsdocs-params">
-              <dt class="fsdocs-param">
-                <span class="fsdocs-param-name">
-                  method
-                </span>
-                :
-                <code><a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-abstractil-il-ilmethodspec.html">ILMethodSpec</a></code>
-              </dt>
-              <dd class="fsdocs-param-docs"></dd>
-            </dl>
             <dl class="fsdocs-returns">
               <dt>
                 <span class="fsdocs-return-name">
                   Returns: 
                 </span>
-                <code><a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-abstractil-il-ilattribute.html">ILAttribute</a></code>
+                <code><a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-syntaxtrivia-synexprsequentialtrivia.html">SynExprSequentialTrivia</a></code>
               </dt>
               <dd class="fsdocs-return-docs"></dd>
             </dl>
@@ -708,13 +443,12 @@
       </tbody>
     </table>
   </div>
-  <div></div>
 </div>
         
     </div>
 </main>
 <aside id="fsdocs-page-menu">
-    <p>On this page</p>
+    <p id="on-this-page">On this page</p>
     <div class="empty"></div>
 </aside>
 <dialog>

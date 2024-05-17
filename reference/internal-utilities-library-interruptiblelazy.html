@@ -5,12 +5,23 @@
     <meta content="IE=edge" http-equiv="X-UA-Compatible">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Florian Verdonck, Jindřich Ivánek, David Schaefer" name="author">
-    <title>ILCallingConv (fantomas) | fantomas</title>
+    <!-- Opengraph properties (https://ogp.me/) -->
+    <meta property="og:site_name" content="fantomas">
+    <meta property="og:title" content="InterruptibleLazy (fantomas)" />
+    <meta property="og:url" content="https://fsprojects.github.io/fantomas/{{fsdocs-source-basename}}.html">
+    <meta property="og:type" content="website" />
+    <!-- Twitter cards (https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/summary-card-with-large-image) -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="https://fsprojects.github.io/fantomas/">
+    <meta name="twitter:title" content="InterruptibleLazy (fantomas)">
+    
+    <title>InterruptibleLazy (fantomas) | fantomas</title>
     <link href="https://fonts.googleapis.com" rel="preconnect">
     <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
     <link href="https://fsprojects.github.io/fantomas/images/favicon.ico" rel="icon" sizes="32x32" type="image/png"/>
+    <script type="application/javascript" src="https://fsprojects.github.io/fantomas/content/fsdocs-theme-set-dark.js"></script>
     <link href="https://fsprojects.github.io/fantomas/content/fsdocs-default.css" rel="stylesheet" type="text/css"/>
     <link href="https://fsprojects.github.io/fantomas/content/fsdocs-theme.css" rel="stylesheet" type="text/css"/>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;1,400&family=Reem+Kufi:wght@400;500;700&display=swap" rel="stylesheet">
@@ -69,6 +80,9 @@
 </a></li>
 
 <li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/UpgradeGuide.html" class="nav-link" > Upgrade guide
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/Recipes.html" class="nav-link" > Recipes
 </a></li>
 
 <li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/FAQ.html" class="nav-link" > FAQ
@@ -197,6 +211,9 @@
 <li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/UpgradeGuide.html" class="nav-link" > Upgrade guide
 </a></li>
 
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/Recipes.html" class="nav-link" > Recipes
+</a></li>
+
 <li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/FAQ.html" class="nav-link" > FAQ
 </a></li>
 
@@ -266,37 +283,17 @@
     <div id="content">
         <div>
   <h2>
-    ILCallingConv Type
+    InterruptibleLazy Module
   </h2>
   <dl class="fsdocs-metadata">
     <dt>
       Namespace: 
-      <a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-abstractil.html">
-        Fantomas.FCS.AbstractIL
+      <a href="https://fsprojects.github.io/fantomas/reference/internal-utilities-library.html">
+        Internal.Utilities.Library
       </a>
     </dt>
     <dt>
       Assembly: Fantomas.FCS.dll
-    </dt>
-    <dt>
-      Parent Module: 
-      <a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-abstractil-il.html">
-        IL
-      </a>
-    </dt>
-    <dt>
-      Base Type: 
-      <code>obj</code>
-    </dt>
-    <dt>
-      All Interfaces: 
-      <code><a href="https://learn.microsoft.com/dotnet/api/system.collections.istructuralequatable">IStructuralEquatable</a></code>
-      , 
-      <code><span><a href="https://learn.microsoft.com/dotnet/api/system.icomparable-1">IComparable</a>&lt;<a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-abstractil-il-ilcallingconv.html">ILCallingConv</a>&gt;</span></code>
-      , 
-      <code><a href="https://learn.microsoft.com/dotnet/api/system.icomparable">IComparable</a></code>
-      , 
-      <code><a href="https://learn.microsoft.com/dotnet/api/system.collections.istructuralcomparable">IStructuralComparable</a></code>
     </dt>
   </dl>
   <div class="fsdocs-xmldoc">
@@ -306,18 +303,15 @@
       </p>
     </div>
   </div>
-  <div></div>
-  <div></div>
-  <div></div>
   <div>
     <h3>
-      Union cases
+      Functions and values
     </h3>
     <table class="table outer-list fsdocs-member-list">
       <thead>
         <tr>
           <td class="fsdocs-member-list-header">
-            Union case
+            Function or value
           </td>
           <td class="fsdocs-member-list-header">
             Description
@@ -328,40 +322,37 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '5552', 5552)" onmouseover="showTip(event, '5552', 5552)">
+              <code onmouseout="hideTip(event, '1249', 1249)" onmouseover="showTip(event, '1249', 1249)">
                 <p>
-                  <a id="Callconv">
-                    <a href="#Callconv">
-                      <code><span>Callconv(<span><a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-abstractil-il-ilthisconvention.html">ILThisConvention</a>,&#32;<a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-abstractil-il-ilargconvention.html">ILArgConvention</a></span>)</span></code>
+                  <a id="force">
+                    <a href="#force">
+                      <code><span>force&#32;<span>arg1</span></span></code>
                     </a>
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="5552">
+              <div class="fsdocs-tip" id="1249">
                 <div class="member-tooltip">
                   Full Usage: 
-                  <code><span>Callconv(<span><a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-abstractil-il-ilthisconvention.html">ILThisConvention</a>,&#32;<a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-abstractil-il-ilargconvention.html">ILArgConvention</a></span>)</span></code>
+                  <code><span>force&#32;<span>arg1</span></span></code>
                   <br/>
                   <br/>
                   Parameters: 
                   <ul>
                     <span>
                       <b>
-                        Item1
+                        arg0
                       </b>
                       :
-                      <code><a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-abstractil-il-ilthisconvention.html">ILThisConvention</a></code>
-                    </span>
-                    <br/>
-                    <span>
-                      <b>
-                        Item2
-                      </b>
-                      :
-                      <code><a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-abstractil-il-ilargconvention.html">ILArgConvention</a></code>
+                      <code><span><a href="https://fsprojects.github.io/fantomas/reference/internal-utilities-library-interruptiblelazy-1.html">InterruptibleLazy</a>&lt;'T&gt;</span></code>
                     </span>
                     <br/>
                   </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code>'T</code>
+                  </span>
                   <br/>
                 </div>
               </div>
@@ -371,235 +362,19 @@
             <dl class="fsdocs-params">
               <dt class="fsdocs-param">
                 <span class="fsdocs-param-name">
-                  Item1
+                  arg0
                 </span>
                 :
-                <code><a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-abstractil-il-ilthisconvention.html">ILThisConvention</a></code>
-              </dt>
-              <dd class="fsdocs-param-docs"></dd>
-              <dt class="fsdocs-param">
-                <span class="fsdocs-param-name">
-                  Item2
-                </span>
-                :
-                <code><a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-abstractil-il-ilargconvention.html">ILArgConvention</a></code>
+                <code><span><a href="https://fsprojects.github.io/fantomas/reference/internal-utilities-library-interruptiblelazy-1.html">InterruptibleLazy</a>&lt;'T&gt;</span></code>
               </dt>
               <dd class="fsdocs-param-docs"></dd>
             </dl>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-  <div></div>
-  <div></div>
-  <div></div>
-  <div>
-    <h3>
-      Instance members
-    </h3>
-    <table class="table outer-list fsdocs-member-list">
-      <thead>
-        <tr>
-          <td class="fsdocs-member-list-header">
-            Instance member
-          </td>
-          <td class="fsdocs-member-list-header">
-            Description
-          </td>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="fsdocs-member-usage">
-            <div>
-              <code onmouseout="hideTip(event, '5553', 5553)" onmouseover="showTip(event, '5553', 5553)">
-                <p>
-                  <a id="BasicConv">
-                    <a href="#BasicConv">
-                      <code><span>this.BasicConv</span></code>
-                    </a>
-                  </a>
-                </p>
-              </code>
-              <div class="fsdocs-tip" id="5553">
-                <div class="member-tooltip">
-                  Full Usage: 
-                  <code><span>this.BasicConv</span></code>
-                  <br/>
-                  <br/>
-                  <span>
-                    Returns: 
-                    <code><a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-abstractil-il-ilargconvention.html">ILArgConvention</a></code>
-                  </span>
-                  <br/>
-                </div>
-              </div>
-            </div>
-          </td>
-          <td class="fsdocs-member-xmldoc">
             <dl class="fsdocs-returns">
               <dt>
                 <span class="fsdocs-return-name">
                   Returns: 
                 </span>
-                <code><a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-abstractil-il-ilargconvention.html">ILArgConvention</a></code>
-              </dt>
-              <dd class="fsdocs-return-docs"></dd>
-            </dl>
-          </td>
-        </tr>
-        <tr>
-          <td class="fsdocs-member-usage">
-            <div>
-              <code onmouseout="hideTip(event, '5554', 5554)" onmouseover="showTip(event, '5554', 5554)">
-                <p>
-                  <a id="IsInstance">
-                    <a href="#IsInstance">
-                      <code><span>this.IsInstance</span></code>
-                    </a>
-                  </a>
-                </p>
-              </code>
-              <div class="fsdocs-tip" id="5554">
-                <div class="member-tooltip">
-                  Full Usage: 
-                  <code><span>this.IsInstance</span></code>
-                  <br/>
-                  <br/>
-                  <span>
-                    Returns: 
-                    <code>bool</code>
-                  </span>
-                  <br/>
-                </div>
-              </div>
-            </div>
-          </td>
-          <td class="fsdocs-member-xmldoc">
-            <dl class="fsdocs-returns">
-              <dt>
-                <span class="fsdocs-return-name">
-                  Returns: 
-                </span>
-                <code>bool</code>
-              </dt>
-              <dd class="fsdocs-return-docs"></dd>
-            </dl>
-          </td>
-        </tr>
-        <tr>
-          <td class="fsdocs-member-usage">
-            <div>
-              <code onmouseout="hideTip(event, '5555', 5555)" onmouseover="showTip(event, '5555', 5555)">
-                <p>
-                  <a id="IsInstanceExplicit">
-                    <a href="#IsInstanceExplicit">
-                      <code><span>this.IsInstanceExplicit</span></code>
-                    </a>
-                  </a>
-                </p>
-              </code>
-              <div class="fsdocs-tip" id="5555">
-                <div class="member-tooltip">
-                  Full Usage: 
-                  <code><span>this.IsInstanceExplicit</span></code>
-                  <br/>
-                  <br/>
-                  <span>
-                    Returns: 
-                    <code>bool</code>
-                  </span>
-                  <br/>
-                </div>
-              </div>
-            </div>
-          </td>
-          <td class="fsdocs-member-xmldoc">
-            <dl class="fsdocs-returns">
-              <dt>
-                <span class="fsdocs-return-name">
-                  Returns: 
-                </span>
-                <code>bool</code>
-              </dt>
-              <dd class="fsdocs-return-docs"></dd>
-            </dl>
-          </td>
-        </tr>
-        <tr>
-          <td class="fsdocs-member-usage">
-            <div>
-              <code onmouseout="hideTip(event, '5556', 5556)" onmouseover="showTip(event, '5556', 5556)">
-                <p>
-                  <a id="IsStatic">
-                    <a href="#IsStatic">
-                      <code><span>this.IsStatic</span></code>
-                    </a>
-                  </a>
-                </p>
-              </code>
-              <div class="fsdocs-tip" id="5556">
-                <div class="member-tooltip">
-                  Full Usage: 
-                  <code><span>this.IsStatic</span></code>
-                  <br/>
-                  <br/>
-                  <span>
-                    Returns: 
-                    <code>bool</code>
-                  </span>
-                  <br/>
-                </div>
-              </div>
-            </div>
-          </td>
-          <td class="fsdocs-member-xmldoc">
-            <dl class="fsdocs-returns">
-              <dt>
-                <span class="fsdocs-return-name">
-                  Returns: 
-                </span>
-                <code>bool</code>
-              </dt>
-              <dd class="fsdocs-return-docs"></dd>
-            </dl>
-          </td>
-        </tr>
-        <tr>
-          <td class="fsdocs-member-usage">
-            <div>
-              <code onmouseout="hideTip(event, '5557', 5557)" onmouseover="showTip(event, '5557', 5557)">
-                <p>
-                  <a id="ThisConv">
-                    <a href="#ThisConv">
-                      <code><span>this.ThisConv</span></code>
-                    </a>
-                  </a>
-                </p>
-              </code>
-              <div class="fsdocs-tip" id="5557">
-                <div class="member-tooltip">
-                  Full Usage: 
-                  <code><span>this.ThisConv</span></code>
-                  <br/>
-                  <br/>
-                  <span>
-                    Returns: 
-                    <code><a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-abstractil-il-ilthisconvention.html">ILThisConvention</a></code>
-                  </span>
-                  <br/>
-                </div>
-              </div>
-            </div>
-          </td>
-          <td class="fsdocs-member-xmldoc">
-            <dl class="fsdocs-returns">
-              <dt>
-                <span class="fsdocs-return-name">
-                  Returns: 
-                </span>
-                <code><a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-abstractil-il-ilthisconvention.html">ILThisConvention</a></code>
+                <code>'T</code>
               </dt>
               <dd class="fsdocs-return-docs"></dd>
             </dl>
@@ -608,109 +383,20 @@
       </tbody>
     </table>
   </div>
-  <div>
-    <h3>
-      Static members
-    </h3>
-    <table class="table outer-list fsdocs-member-list">
-      <thead>
-        <tr>
-          <td class="fsdocs-member-list-header">
-            Static member
-          </td>
-          <td class="fsdocs-member-list-header">
-            Description
-          </td>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="fsdocs-member-usage">
-            <div>
-              <code onmouseout="hideTip(event, '5558', 5558)" onmouseover="showTip(event, '5558', 5558)">
-                <p>
-                  <a id="Instance">
-                    <a href="#Instance">
-                      <code><span>ILCallingConv.Instance</span></code>
-                    </a>
-                  </a>
-                </p>
-              </code>
-              <div class="fsdocs-tip" id="5558">
-                <div class="member-tooltip">
-                  Full Usage: 
-                  <code><span>ILCallingConv.Instance</span></code>
-                  <br/>
-                  <br/>
-                  <span>
-                    Returns: 
-                    <code><a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-abstractil-il-ilcallingconv.html">ILCallingConv</a></code>
-                  </span>
-                  <br/>
-                </div>
-              </div>
-            </div>
-          </td>
-          <td class="fsdocs-member-xmldoc">
-            <dl class="fsdocs-returns">
-              <dt>
-                <span class="fsdocs-return-name">
-                  Returns: 
-                </span>
-                <code><a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-abstractil-il-ilcallingconv.html">ILCallingConv</a></code>
-              </dt>
-              <dd class="fsdocs-return-docs"></dd>
-            </dl>
-          </td>
-        </tr>
-        <tr>
-          <td class="fsdocs-member-usage">
-            <div>
-              <code onmouseout="hideTip(event, '5559', 5559)" onmouseover="showTip(event, '5559', 5559)">
-                <p>
-                  <a id="Static">
-                    <a href="#Static">
-                      <code><span>ILCallingConv.Static</span></code>
-                    </a>
-                  </a>
-                </p>
-              </code>
-              <div class="fsdocs-tip" id="5559">
-                <div class="member-tooltip">
-                  Full Usage: 
-                  <code><span>ILCallingConv.Static</span></code>
-                  <br/>
-                  <br/>
-                  <span>
-                    Returns: 
-                    <code><a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-abstractil-il-ilcallingconv.html">ILCallingConv</a></code>
-                  </span>
-                  <br/>
-                </div>
-              </div>
-            </div>
-          </td>
-          <td class="fsdocs-member-xmldoc">
-            <dl class="fsdocs-returns">
-              <dt>
-                <span class="fsdocs-return-name">
-                  Returns: 
-                </span>
-                <code><a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-abstractil-il-ilcallingconv.html">ILCallingConv</a></code>
-              </dt>
-              <dd class="fsdocs-return-docs"></dd>
-            </dl>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
 </div>
         
     </div>
 </main>
 <aside id="fsdocs-page-menu">
-    <p>On this page</p>
+    <p id="on-this-page">On this page</p>
     <div class="empty"></div>
 </aside>
 <dialog>

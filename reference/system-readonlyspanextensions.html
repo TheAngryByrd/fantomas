@@ -5,12 +5,23 @@
     <meta content="IE=edge" http-equiv="X-UA-Compatible">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Florian Verdonck, Jindřich Ivánek, David Schaefer" name="author">
-    <title>ILArgConvention (fantomas) | fantomas</title>
+    <!-- Opengraph properties (https://ogp.me/) -->
+    <meta property="og:site_name" content="fantomas">
+    <meta property="og:title" content="ReadOnlySpanExtensions (fantomas)" />
+    <meta property="og:url" content="https://fsprojects.github.io/fantomas/{{fsdocs-source-basename}}.html">
+    <meta property="og:type" content="website" />
+    <!-- Twitter cards (https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/summary-card-with-large-image) -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="https://fsprojects.github.io/fantomas/">
+    <meta name="twitter:title" content="ReadOnlySpanExtensions (fantomas)">
+    
+    <title>ReadOnlySpanExtensions (fantomas) | fantomas</title>
     <link href="https://fonts.googleapis.com" rel="preconnect">
     <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
     <link href="https://fsprojects.github.io/fantomas/images/favicon.ico" rel="icon" sizes="32x32" type="image/png"/>
+    <script type="application/javascript" src="https://fsprojects.github.io/fantomas/content/fsdocs-theme-set-dark.js"></script>
     <link href="https://fsprojects.github.io/fantomas/content/fsdocs-default.css" rel="stylesheet" type="text/css"/>
     <link href="https://fsprojects.github.io/fantomas/content/fsdocs-theme.css" rel="stylesheet" type="text/css"/>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;1,400&family=Reem+Kufi:wght@400;500;700&display=swap" rel="stylesheet">
@@ -69,6 +80,9 @@
 </a></li>
 
 <li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/UpgradeGuide.html" class="nav-link" > Upgrade guide
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/Recipes.html" class="nav-link" > Recipes
 </a></li>
 
 <li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/FAQ.html" class="nav-link" > FAQ
@@ -197,6 +211,9 @@
 <li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/UpgradeGuide.html" class="nav-link" > Upgrade guide
 </a></li>
 
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/Recipes.html" class="nav-link" > Recipes
+</a></li>
+
 <li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/FAQ.html" class="nav-link" > FAQ
 </a></li>
 
@@ -266,37 +283,21 @@
     <div id="content">
         <div>
   <h2>
-    ILArgConvention Type
+    ReadOnlySpanExtensions Type
   </h2>
   <dl class="fsdocs-metadata">
     <dt>
       Namespace: 
-      <a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-abstractil.html">
-        Fantomas.FCS.AbstractIL
+      <a href="https://fsprojects.github.io/fantomas/reference/system.html">
+        System
       </a>
     </dt>
     <dt>
       Assembly: Fantomas.FCS.dll
     </dt>
     <dt>
-      Parent Module: 
-      <a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-abstractil-il.html">
-        IL
-      </a>
-    </dt>
-    <dt>
       Base Type: 
       <code>obj</code>
-    </dt>
-    <dt>
-      All Interfaces: 
-      <code><a href="https://learn.microsoft.com/dotnet/api/system.collections.istructuralequatable">IStructuralEquatable</a></code>
-      , 
-      <code><span><a href="https://learn.microsoft.com/dotnet/api/system.icomparable-1">IComparable</a>&lt;<a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-abstractil-il-ilargconvention.html">ILArgConvention</a>&gt;</span></code>
-      , 
-      <code><a href="https://learn.microsoft.com/dotnet/api/system.icomparable">IComparable</a></code>
-      , 
-      <code><a href="https://learn.microsoft.com/dotnet/api/system.collections.istructuralcomparable">IStructuralComparable</a></code>
     </dt>
   </dl>
   <div class="fsdocs-xmldoc">
@@ -309,15 +310,20 @@
   <div></div>
   <div></div>
   <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
   <div>
     <h3>
-      Union cases
+      Static members
     </h3>
     <table class="table outer-list fsdocs-member-list">
       <thead>
         <tr>
           <td class="fsdocs-member-list-header">
-            Union case
+            Static member
           </td>
           <td class="fsdocs-member-list-header">
             Description
@@ -328,215 +334,429 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '5458', 5458)" onmouseover="showTip(event, '5458', 5458)">
+              <code onmouseout="hideTip(event, '8857', 8857)" onmouseover="showTip(event, '8857', 8857)">
                 <p>
-                  <a id="CDecl">
-                    <a href="#CDecl">
-                      <code><span>CDecl</span></code>
+                  <a id="IndexOfAnyExcept">
+                    <a href="#IndexOfAnyExcept">
+                      <code><span>ReadOnlySpanExtensions.IndexOfAnyExcept<span><span>(<span>span,&#32;value</span>)</span></span></span></code>
                     </a>
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="5458">
+              <div class="fsdocs-tip" id="8857">
                 <div class="member-tooltip">
                   Full Usage: 
-                  <code><span>CDecl</span></code>
+                  <code><span>ReadOnlySpanExtensions.IndexOfAnyExcept<span><span>(<span>span,&#32;value</span>)</span></span></span></code>
                   <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        span
+                      </b>
+                      :
+                      <code><span><a href="https://learn.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan</a>&lt;char&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        value
+                      </b>
+                      :
+                      <code>char</code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code>int</code>
+                  </span>
                   <br/>
                 </div>
               </div>
             </div>
           </td>
           <td class="fsdocs-member-xmldoc">
-            <div class="fsdocs-summary">
-              <a href="" class="fsdocs-source-link" title="Source on GitHub">
-                <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
-              </a>
-              <p class="fsdocs-summary">
-                
-              </p>
-            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  span
+                </span>
+                :
+                <code><span><a href="https://learn.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan</a>&lt;char&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  value
+                </span>
+                :
+                <code>char</code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code>int</code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
           </td>
         </tr>
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '5459', 5459)" onmouseover="showTip(event, '5459', 5459)">
+              <code onmouseout="hideTip(event, '8858', 8858)" onmouseover="showTip(event, '8858', 8858)">
                 <p>
-                  <a id="Default">
-                    <a href="#Default">
-                      <code><span>Default</span></code>
+                  <a id="IndexOfAnyExcept">
+                    <a href="#IndexOfAnyExcept">
+                      <code><span>ReadOnlySpanExtensions.IndexOfAnyExcept<span><span>(<span>span,&#32;values</span>)</span></span></span></code>
                     </a>
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="5459">
+              <div class="fsdocs-tip" id="8858">
                 <div class="member-tooltip">
                   Full Usage: 
-                  <code><span>Default</span></code>
+                  <code><span>ReadOnlySpanExtensions.IndexOfAnyExcept<span><span>(<span>span,&#32;values</span>)</span></span></span></code>
                   <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        span
+                      </b>
+                      :
+                      <code><span><a href="https://learn.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan</a>&lt;char&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        values
+                      </b>
+                      :
+                      <code><span><a href="https://learn.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan</a>&lt;char&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code>int</code>
+                  </span>
                   <br/>
                 </div>
               </div>
             </div>
           </td>
           <td class="fsdocs-member-xmldoc">
-            <div class="fsdocs-summary">
-              <a href="" class="fsdocs-source-link" title="Source on GitHub">
-                <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
-              </a>
-              <p class="fsdocs-summary">
-                
-              </p>
-            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  span
+                </span>
+                :
+                <code><span><a href="https://learn.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan</a>&lt;char&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  values
+                </span>
+                :
+                <code><span><a href="https://learn.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan</a>&lt;char&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code>int</code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
           </td>
         </tr>
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '5460', 5460)" onmouseover="showTip(event, '5460', 5460)">
+              <code onmouseout="hideTip(event, '8859', 8859)" onmouseover="showTip(event, '8859', 8859)">
                 <p>
-                  <a id="FastCall">
-                    <a href="#FastCall">
-                      <code><span>FastCall</span></code>
+                  <a id="IndexOfAnyExcept">
+                    <a href="#IndexOfAnyExcept">
+                      <code><span>ReadOnlySpanExtensions.IndexOfAnyExcept<span><span>(<span>span,&#32;value0,&#32;value1</span>)</span></span></span></code>
                     </a>
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="5460">
+              <div class="fsdocs-tip" id="8859">
                 <div class="member-tooltip">
                   Full Usage: 
-                  <code><span>FastCall</span></code>
+                  <code><span>ReadOnlySpanExtensions.IndexOfAnyExcept<span><span>(<span>span,&#32;value0,&#32;value1</span>)</span></span></span></code>
                   <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        span
+                      </b>
+                      :
+                      <code><span><a href="https://learn.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan</a>&lt;char&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        value0
+                      </b>
+                      :
+                      <code>char</code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        value1
+                      </b>
+                      :
+                      <code>char</code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code>int</code>
+                  </span>
                   <br/>
                 </div>
               </div>
             </div>
           </td>
           <td class="fsdocs-member-xmldoc">
-            <div class="fsdocs-summary">
-              <a href="" class="fsdocs-source-link" title="Source on GitHub">
-                <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
-              </a>
-              <p class="fsdocs-summary">
-                
-              </p>
-            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  span
+                </span>
+                :
+                <code><span><a href="https://learn.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan</a>&lt;char&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  value0
+                </span>
+                :
+                <code>char</code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  value1
+                </span>
+                :
+                <code>char</code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code>int</code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
           </td>
         </tr>
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '5461', 5461)" onmouseover="showTip(event, '5461', 5461)">
+              <code onmouseout="hideTip(event, '8860', 8860)" onmouseover="showTip(event, '8860', 8860)">
                 <p>
-                  <a id="StdCall">
-                    <a href="#StdCall">
-                      <code><span>StdCall</span></code>
+                  <a id="LastIndexOfAnyExcept">
+                    <a href="#LastIndexOfAnyExcept">
+                      <code><span>ReadOnlySpanExtensions.LastIndexOfAnyExcept<span><span>(<span>span,&#32;value</span>)</span></span></span></code>
                     </a>
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="5461">
+              <div class="fsdocs-tip" id="8860">
                 <div class="member-tooltip">
                   Full Usage: 
-                  <code><span>StdCall</span></code>
+                  <code><span>ReadOnlySpanExtensions.LastIndexOfAnyExcept<span><span>(<span>span,&#32;value</span>)</span></span></span></code>
                   <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        span
+                      </b>
+                      :
+                      <code><span><a href="https://learn.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan</a>&lt;char&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        value
+                      </b>
+                      :
+                      <code>char</code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code>int</code>
+                  </span>
                   <br/>
                 </div>
               </div>
             </div>
           </td>
           <td class="fsdocs-member-xmldoc">
-            <div class="fsdocs-summary">
-              <a href="" class="fsdocs-source-link" title="Source on GitHub">
-                <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
-              </a>
-              <p class="fsdocs-summary">
-                
-              </p>
-            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  span
+                </span>
+                :
+                <code><span><a href="https://learn.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan</a>&lt;char&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  value
+                </span>
+                :
+                <code>char</code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code>int</code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
           </td>
         </tr>
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '5462', 5462)" onmouseover="showTip(event, '5462', 5462)">
+              <code onmouseout="hideTip(event, '8861', 8861)" onmouseover="showTip(event, '8861', 8861)">
                 <p>
-                  <a id="ThisCall">
-                    <a href="#ThisCall">
-                      <code><span>ThisCall</span></code>
+                  <a id="LastIndexOfAnyInRange">
+                    <a href="#LastIndexOfAnyInRange">
+                      <code><span>ReadOnlySpanExtensions.LastIndexOfAnyInRange<span><span>(<span>span,&#32;lowInclusive,&#32;highInclusive</span>)</span></span></span></code>
                     </a>
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="5462">
+              <div class="fsdocs-tip" id="8861">
                 <div class="member-tooltip">
                   Full Usage: 
-                  <code><span>ThisCall</span></code>
+                  <code><span>ReadOnlySpanExtensions.LastIndexOfAnyInRange<span><span>(<span>span,&#32;lowInclusive,&#32;highInclusive</span>)</span></span></span></code>
                   <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        span
+                      </b>
+                      :
+                      <code><span><a href="https://learn.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan</a>&lt;char&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        lowInclusive
+                      </b>
+                      :
+                      <code>char</code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        highInclusive
+                      </b>
+                      :
+                      <code>char</code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code>int</code>
+                  </span>
                   <br/>
                 </div>
               </div>
             </div>
           </td>
           <td class="fsdocs-member-xmldoc">
-            <div class="fsdocs-summary">
-              <a href="" class="fsdocs-source-link" title="Source on GitHub">
-                <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
-              </a>
-              <p class="fsdocs-summary">
-                
-              </p>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td class="fsdocs-member-usage">
-            <div>
-              <code onmouseout="hideTip(event, '5463', 5463)" onmouseover="showTip(event, '5463', 5463)">
-                <p>
-                  <a id="VarArg">
-                    <a href="#VarArg">
-                      <code><span>VarArg</span></code>
-                    </a>
-                  </a>
-                </p>
-              </code>
-              <div class="fsdocs-tip" id="5463">
-                <div class="member-tooltip">
-                  Full Usage: 
-                  <code><span>VarArg</span></code>
-                  <br/>
-                  <br/>
-                </div>
-              </div>
-            </div>
-          </td>
-          <td class="fsdocs-member-xmldoc">
-            <div class="fsdocs-summary">
-              <a href="" class="fsdocs-source-link" title="Source on GitHub">
-                <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
-              </a>
-              <p class="fsdocs-summary">
-                
-              </p>
-            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  span
+                </span>
+                :
+                <code><span><a href="https://learn.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan</a>&lt;char&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  lowInclusive
+                </span>
+                :
+                <code>char</code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  highInclusive
+                </span>
+                :
+                <code>char</code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code>int</code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
           </td>
         </tr>
       </tbody>
     </table>
   </div>
-  <div></div>
-  <div></div>
-  <div></div>
-  <div></div>
-  <div></div>
 </div>
         
     </div>
 </main>
 <aside id="fsdocs-page-menu">
-    <p>On this page</p>
+    <p id="on-this-page">On this page</p>
     <div class="empty"></div>
 </aside>
 <dialog>

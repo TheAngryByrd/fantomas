@@ -5,12 +5,23 @@
     <meta content="IE=edge" http-equiv="X-UA-Compatible">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Florian Verdonck, Jindřich Ivánek, David Schaefer" name="author">
+    <!-- Opengraph properties (https://ogp.me/) -->
+    <meta property="og:site_name" content="fantomas">
+    <meta property="og:title" content="Context (fantomas)" />
+    <meta property="og:url" content="https://fsprojects.github.io/fantomas/{{fsdocs-source-basename}}.html">
+    <meta property="og:type" content="website" />
+    <!-- Twitter cards (https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/summary-card-with-large-image) -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="https://fsprojects.github.io/fantomas/">
+    <meta name="twitter:title" content="Context (fantomas)">
+    
     <title>Context (fantomas) | fantomas</title>
     <link href="https://fonts.googleapis.com" rel="preconnect">
     <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
     <link href="https://fsprojects.github.io/fantomas/images/favicon.ico" rel="icon" sizes="32x32" type="image/png"/>
+    <script type="application/javascript" src="https://fsprojects.github.io/fantomas/content/fsdocs-theme-set-dark.js"></script>
     <link href="https://fsprojects.github.io/fantomas/content/fsdocs-default.css" rel="stylesheet" type="text/css"/>
     <link href="https://fsprojects.github.io/fantomas/content/fsdocs-theme.css" rel="stylesheet" type="text/css"/>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;1,400&family=Reem+Kufi:wght@400;500;700&display=swap" rel="stylesheet">
@@ -69,6 +80,9 @@
 </a></li>
 
 <li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/UpgradeGuide.html" class="nav-link" > Upgrade guide
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/Recipes.html" class="nav-link" > Recipes
 </a></li>
 
 <li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/FAQ.html" class="nav-link" > FAQ
@@ -195,6 +209,9 @@
 </a></li>
 
 <li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/UpgradeGuide.html" class="nav-link" > Upgrade guide
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/Recipes.html" class="nav-link" > Recipes
 </a></li>
 
 <li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/FAQ.html" class="nav-link" > FAQ
@@ -6555,7 +6572,7 @@
                 <p>
                   <a id="sepSpaceOrIndentAndNlnIfExpressionExceedsPageWidthUnlessStroustrup">
                     <a href="#sepSpaceOrIndentAndNlnIfExpressionExceedsPageWidthUnlessStroustrup">
-                      <code><span>sepSpaceOrIndentAndNlnIfExpressionExceedsPageWidthUnlessStroustrup&#32;<span>f&#32;expr</span></span></code>
+                      <code><span>sepSpaceOrIndentAndNlnIfExpressionExceedsPageWidthUnlessStroustrup&#32;<span>f&#32;expr&#32;ctx</span></span></code>
                     </a>
                   </a>
                 </p>
@@ -6563,7 +6580,7 @@
               <div class="fsdocs-tip" id="90">
                 <div class="member-tooltip">
                   Full Usage: 
-                  <code><span>sepSpaceOrIndentAndNlnIfExpressionExceedsPageWidthUnlessStroustrup&#32;<span>f&#32;expr</span></span></code>
+                  <code><span>sepSpaceOrIndentAndNlnIfExpressionExceedsPageWidthUnlessStroustrup&#32;<span>f&#32;expr&#32;ctx</span></span></code>
                   <br/>
                   <br/>
                   Parameters: 
@@ -6584,11 +6601,19 @@
                       <code><a href="https://fsprojects.github.io/fantomas/reference/fantomas-core-syntaxoak-expr.html">Expr</a></code>
                     </span>
                     <br/>
+                    <span>
+                      <b>
+                        ctx
+                      </b>
+                      :
+                      <code><a href="https://fsprojects.github.io/fantomas/reference/fantomas-core-context-context.html">Context</a></code>
+                    </span>
+                    <br/>
                   </ul>
                   <br/>
                   <span>
                     Returns: 
-                    <code><span><a href="https://fsprojects.github.io/fantomas/reference/fantomas-core-context-context.html">Context</a>&#32;->&#32;<a href="https://fsprojects.github.io/fantomas/reference/fantomas-core-context-context.html">Context</a></span></code>
+                    <code><a href="https://fsprojects.github.io/fantomas/reference/fantomas-core-context-context.html">Context</a></code>
                   </span>
                   <br/>
                 </div>
@@ -6613,13 +6638,21 @@
                 <code><a href="https://fsprojects.github.io/fantomas/reference/fantomas-core-syntaxoak-expr.html">Expr</a></code>
               </dt>
               <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  ctx
+                </span>
+                :
+                <code><a href="https://fsprojects.github.io/fantomas/reference/fantomas-core-context-context.html">Context</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
             </dl>
             <dl class="fsdocs-returns">
               <dt>
                 <span class="fsdocs-return-name">
                   Returns: 
                 </span>
-                <code><span><a href="https://fsprojects.github.io/fantomas/reference/fantomas-core-context-context.html">Context</a>&#32;->&#32;<a href="https://fsprojects.github.io/fantomas/reference/fantomas-core-context-context.html">Context</a></span></code>
+                <code><a href="https://fsprojects.github.io/fantomas/reference/fantomas-core-context-context.html">Context</a></code>
               </dt>
               <dd class="fsdocs-return-docs"></dd>
             </dl>
@@ -6632,7 +6665,7 @@
                 <p>
                   <a id="sepSpaceOrIndentAndNlnIfTypeExceedsPageWidthUnlessStroustrup">
                     <a href="#sepSpaceOrIndentAndNlnIfTypeExceedsPageWidthUnlessStroustrup">
-                      <code><span>sepSpaceOrIndentAndNlnIfTypeExceedsPageWidthUnlessStroustrup&#32;<span>f&#32;t</span></span></code>
+                      <code><span>sepSpaceOrIndentAndNlnIfTypeExceedsPageWidthUnlessStroustrup&#32;<span>f&#32;t&#32;ctx</span></span></code>
                     </a>
                   </a>
                 </p>
@@ -6640,7 +6673,7 @@
               <div class="fsdocs-tip" id="91">
                 <div class="member-tooltip">
                   Full Usage: 
-                  <code><span>sepSpaceOrIndentAndNlnIfTypeExceedsPageWidthUnlessStroustrup&#32;<span>f&#32;t</span></span></code>
+                  <code><span>sepSpaceOrIndentAndNlnIfTypeExceedsPageWidthUnlessStroustrup&#32;<span>f&#32;t&#32;ctx</span></span></code>
                   <br/>
                   <br/>
                   Parameters: 
@@ -6661,11 +6694,19 @@
                       <code><a href="https://fsprojects.github.io/fantomas/reference/fantomas-core-syntaxoak-type.html">Type</a></code>
                     </span>
                     <br/>
+                    <span>
+                      <b>
+                        ctx
+                      </b>
+                      :
+                      <code><a href="https://fsprojects.github.io/fantomas/reference/fantomas-core-context-context.html">Context</a></code>
+                    </span>
+                    <br/>
                   </ul>
                   <br/>
                   <span>
                     Returns: 
-                    <code><span><a href="https://fsprojects.github.io/fantomas/reference/fantomas-core-context-context.html">Context</a>&#32;->&#32;<a href="https://fsprojects.github.io/fantomas/reference/fantomas-core-context-context.html">Context</a></span></code>
+                    <code><a href="https://fsprojects.github.io/fantomas/reference/fantomas-core-context-context.html">Context</a></code>
                   </span>
                   <br/>
                 </div>
@@ -6690,13 +6731,21 @@
                 <code><a href="https://fsprojects.github.io/fantomas/reference/fantomas-core-syntaxoak-type.html">Type</a></code>
               </dt>
               <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  ctx
+                </span>
+                :
+                <code><a href="https://fsprojects.github.io/fantomas/reference/fantomas-core-context-context.html">Context</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
             </dl>
             <dl class="fsdocs-returns">
               <dt>
                 <span class="fsdocs-return-name">
                   Returns: 
                 </span>
-                <code><span><a href="https://fsprojects.github.io/fantomas/reference/fantomas-core-context-context.html">Context</a>&#32;->&#32;<a href="https://fsprojects.github.io/fantomas/reference/fantomas-core-context-context.html">Context</a></span></code>
+                <code><a href="https://fsprojects.github.io/fantomas/reference/fantomas-core-context-context.html">Context</a></code>
               </dt>
               <dd class="fsdocs-return-docs"></dd>
             </dl>
@@ -7188,7 +7237,7 @@
     </div>
 </main>
 <aside id="fsdocs-page-menu">
-    <p>On this page</p>
+    <p id="on-this-page">On this page</p>
     <div class="empty"></div>
 </aside>
 <dialog>

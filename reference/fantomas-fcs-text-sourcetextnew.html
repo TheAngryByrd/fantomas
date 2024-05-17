@@ -5,12 +5,23 @@
     <meta content="IE=edge" http-equiv="X-UA-Compatible">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Florian Verdonck, Jindřich Ivánek, David Schaefer" name="author">
-    <title>ILConst (fantomas) | fantomas</title>
+    <!-- Opengraph properties (https://ogp.me/) -->
+    <meta property="og:site_name" content="fantomas">
+    <meta property="og:title" content="SourceTextNew (fantomas)" />
+    <meta property="og:url" content="https://fsprojects.github.io/fantomas/{{fsdocs-source-basename}}.html">
+    <meta property="og:type" content="website" />
+    <!-- Twitter cards (https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/summary-card-with-large-image) -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="https://fsprojects.github.io/fantomas/">
+    <meta name="twitter:title" content="SourceTextNew (fantomas)">
+    
+    <title>SourceTextNew (fantomas) | fantomas</title>
     <link href="https://fonts.googleapis.com" rel="preconnect">
     <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
     <link href="https://fsprojects.github.io/fantomas/images/favicon.ico" rel="icon" sizes="32x32" type="image/png"/>
+    <script type="application/javascript" src="https://fsprojects.github.io/fantomas/content/fsdocs-theme-set-dark.js"></script>
     <link href="https://fsprojects.github.io/fantomas/content/fsdocs-default.css" rel="stylesheet" type="text/css"/>
     <link href="https://fsprojects.github.io/fantomas/content/fsdocs-theme.css" rel="stylesheet" type="text/css"/>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;1,400&family=Reem+Kufi:wght@400;500;700&display=swap" rel="stylesheet">
@@ -69,6 +80,9 @@
 </a></li>
 
 <li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/UpgradeGuide.html" class="nav-link" > Upgrade guide
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/Recipes.html" class="nav-link" > Recipes
 </a></li>
 
 <li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/FAQ.html" class="nav-link" > FAQ
@@ -197,6 +211,9 @@
 <li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/UpgradeGuide.html" class="nav-link" > Upgrade guide
 </a></li>
 
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/Recipes.html" class="nav-link" > Recipes
+</a></li>
+
 <li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/FAQ.html" class="nav-link" > FAQ
 </a></li>
 
@@ -266,37 +283,17 @@
     <div id="content">
         <div>
   <h2>
-    ILConst Type
+    SourceTextNew Module
   </h2>
   <dl class="fsdocs-metadata">
     <dt>
       Namespace: 
-      <a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-abstractil.html">
-        Fantomas.FCS.AbstractIL
+      <a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-text.html">
+        Fantomas.FCS.Text
       </a>
     </dt>
     <dt>
       Assembly: Fantomas.FCS.dll
-    </dt>
-    <dt>
-      Parent Module: 
-      <a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-abstractil-il.html">
-        IL
-      </a>
-    </dt>
-    <dt>
-      Base Type: 
-      <code>obj</code>
-    </dt>
-    <dt>
-      All Interfaces: 
-      <code><a href="https://learn.microsoft.com/dotnet/api/system.collections.istructuralequatable">IStructuralEquatable</a></code>
-      , 
-      <code><span><a href="https://learn.microsoft.com/dotnet/api/system.icomparable-1">IComparable</a>&lt;<a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-abstractil-il-ilconst.html">ILConst</a>&gt;</span></code>
-      , 
-      <code><a href="https://learn.microsoft.com/dotnet/api/system.icomparable">IComparable</a></code>
-      , 
-      <code><a href="https://learn.microsoft.com/dotnet/api/system.collections.istructuralcomparable">IStructuralComparable</a></code>
     </dt>
   </dl>
   <div class="fsdocs-xmldoc">
@@ -306,18 +303,15 @@
       </p>
     </div>
   </div>
-  <div></div>
-  <div></div>
-  <div></div>
   <div>
     <h3>
-      Union cases
+      Functions and values
     </h3>
     <table class="table outer-list fsdocs-member-list">
       <thead>
         <tr>
           <td class="fsdocs-member-list-header">
-            Union case
+            Function or value
           </td>
           <td class="fsdocs-member-list-header">
             Description
@@ -328,32 +322,37 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '5579', 5579)" onmouseover="showTip(event, '5579', 5579)">
+              <code onmouseout="hideTip(event, '906', 906)" onmouseover="showTip(event, '906', 906)">
                 <p>
-                  <a id="I4">
-                    <a href="#I4">
-                      <code><span>I4&#32;int32</span></code>
+                  <a id="ofISourceText">
+                    <a href="#ofISourceText">
+                      <code><span>ofISourceText&#32;<span>arg1</span></span></code>
                     </a>
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="5579">
+              <div class="fsdocs-tip" id="906">
                 <div class="member-tooltip">
                   Full Usage: 
-                  <code><span>I4&#32;int32</span></code>
+                  <code><span>ofISourceText&#32;<span>arg1</span></span></code>
                   <br/>
                   <br/>
                   Parameters: 
                   <ul>
                     <span>
                       <b>
-                        Item
+                        arg0
                       </b>
                       :
-                      <code>int32</code>
+                      <code><a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-text-isourcetext.html">ISourceText</a></code>
                     </span>
                     <br/>
                   </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-text-isourcetextnew.html">ISourceTextNew</a></code>
+                  </span>
                   <br/>
                 </div>
               </div>
@@ -363,44 +362,58 @@
             <dl class="fsdocs-params">
               <dt class="fsdocs-param">
                 <span class="fsdocs-param-name">
-                  Item
+                  arg0
                 </span>
                 :
-                <code>int32</code>
+                <code><a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-text-isourcetext.html">ISourceText</a></code>
               </dt>
               <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
+                </span>
+                <code><a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-text-isourcetextnew.html">ISourceTextNew</a></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
             </dl>
           </td>
         </tr>
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '5580', 5580)" onmouseover="showTip(event, '5580', 5580)">
+              <code onmouseout="hideTip(event, '907', 907)" onmouseover="showTip(event, '907', 907)">
                 <p>
-                  <a id="I8">
-                    <a href="#I8">
-                      <code><span>I8&#32;int64</span></code>
+                  <a id="ofString">
+                    <a href="#ofString">
+                      <code><span>ofString&#32;<span>arg1</span></span></code>
                     </a>
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="5580">
+              <div class="fsdocs-tip" id="907">
                 <div class="member-tooltip">
                   Full Usage: 
-                  <code><span>I8&#32;int64</span></code>
+                  <code><span>ofString&#32;<span>arg1</span></span></code>
                   <br/>
                   <br/>
                   Parameters: 
                   <ul>
                     <span>
                       <b>
-                        Item
+                        arg0
                       </b>
                       :
-                      <code>int64</code>
+                      <code>string</code>
                     </span>
                     <br/>
                   </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-text-isourcetextnew.html">ISourceTextNew</a></code>
+                  </span>
                   <br/>
                 </div>
               </div>
@@ -410,106 +423,21 @@
             <dl class="fsdocs-params">
               <dt class="fsdocs-param">
                 <span class="fsdocs-param-name">
-                  Item
+                  arg0
                 </span>
                 :
-                <code>int64</code>
+                <code>string</code>
               </dt>
               <dd class="fsdocs-param-docs"></dd>
             </dl>
-          </td>
-        </tr>
-        <tr>
-          <td class="fsdocs-member-usage">
-            <div>
-              <code onmouseout="hideTip(event, '5581', 5581)" onmouseover="showTip(event, '5581', 5581)">
-                <p>
-                  <a id="R4">
-                    <a href="#R4">
-                      <code><span>R4&#32;single</span></code>
-                    </a>
-                  </a>
-                </p>
-              </code>
-              <div class="fsdocs-tip" id="5581">
-                <div class="member-tooltip">
-                  Full Usage: 
-                  <code><span>R4&#32;single</span></code>
-                  <br/>
-                  <br/>
-                  Parameters: 
-                  <ul>
-                    <span>
-                      <b>
-                        Item
-                      </b>
-                      :
-                      <code>single</code>
-                    </span>
-                    <br/>
-                  </ul>
-                  <br/>
-                </div>
-              </div>
-            </div>
-          </td>
-          <td class="fsdocs-member-xmldoc">
-            <dl class="fsdocs-params">
-              <dt class="fsdocs-param">
-                <span class="fsdocs-param-name">
-                  Item
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
                 </span>
-                :
-                <code>single</code>
+                <code><a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-text-isourcetextnew.html">ISourceTextNew</a></code>
               </dt>
-              <dd class="fsdocs-param-docs"></dd>
-            </dl>
-          </td>
-        </tr>
-        <tr>
-          <td class="fsdocs-member-usage">
-            <div>
-              <code onmouseout="hideTip(event, '5582', 5582)" onmouseover="showTip(event, '5582', 5582)">
-                <p>
-                  <a id="R8">
-                    <a href="#R8">
-                      <code><span>R8&#32;double</span></code>
-                    </a>
-                  </a>
-                </p>
-              </code>
-              <div class="fsdocs-tip" id="5582">
-                <div class="member-tooltip">
-                  Full Usage: 
-                  <code><span>R8&#32;double</span></code>
-                  <br/>
-                  <br/>
-                  Parameters: 
-                  <ul>
-                    <span>
-                      <b>
-                        Item
-                      </b>
-                      :
-                      <code>double</code>
-                    </span>
-                    <br/>
-                  </ul>
-                  <br/>
-                </div>
-              </div>
-            </div>
-          </td>
-          <td class="fsdocs-member-xmldoc">
-            <dl class="fsdocs-params">
-              <dt class="fsdocs-param">
-                <span class="fsdocs-param-name">
-                  Item
-                </span>
-                :
-                <code>double</code>
-              </dt>
-              <dd class="fsdocs-param-docs"></dd>
+              <dd class="fsdocs-return-docs"></dd>
             </dl>
           </td>
         </tr>
@@ -521,12 +449,15 @@
   <div></div>
   <div></div>
   <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
 </div>
         
     </div>
 </main>
 <aside id="fsdocs-page-menu">
-    <p>On this page</p>
+    <p id="on-this-page">On this page</p>
     <div class="empty"></div>
 </aside>
 <dialog>

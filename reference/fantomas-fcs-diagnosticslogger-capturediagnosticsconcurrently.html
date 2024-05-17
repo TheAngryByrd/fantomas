@@ -5,12 +5,23 @@
     <meta content="IE=edge" http-equiv="X-UA-Compatible">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Florian Verdonck, Jindřich Ivánek, David Schaefer" name="author">
-    <title>ILToken (fantomas) | fantomas</title>
+    <!-- Opengraph properties (https://ogp.me/) -->
+    <meta property="og:site_name" content="fantomas">
+    <meta property="og:title" content="CaptureDiagnosticsConcurrently (fantomas)" />
+    <meta property="og:url" content="https://fsprojects.github.io/fantomas/{{fsdocs-source-basename}}.html">
+    <meta property="og:type" content="website" />
+    <!-- Twitter cards (https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/summary-card-with-large-image) -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="https://fsprojects.github.io/fantomas/">
+    <meta name="twitter:title" content="CaptureDiagnosticsConcurrently (fantomas)">
+    
+    <title>CaptureDiagnosticsConcurrently (fantomas) | fantomas</title>
     <link href="https://fonts.googleapis.com" rel="preconnect">
     <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
     <link href="https://fsprojects.github.io/fantomas/images/favicon.ico" rel="icon" sizes="32x32" type="image/png"/>
+    <script type="application/javascript" src="https://fsprojects.github.io/fantomas/content/fsdocs-theme-set-dark.js"></script>
     <link href="https://fsprojects.github.io/fantomas/content/fsdocs-default.css" rel="stylesheet" type="text/css"/>
     <link href="https://fsprojects.github.io/fantomas/content/fsdocs-theme.css" rel="stylesheet" type="text/css"/>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;1,400&family=Reem+Kufi:wght@400;500;700&display=swap" rel="stylesheet">
@@ -69,6 +80,9 @@
 </a></li>
 
 <li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/UpgradeGuide.html" class="nav-link" > Upgrade guide
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/Recipes.html" class="nav-link" > Recipes
 </a></li>
 
 <li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/FAQ.html" class="nav-link" > FAQ
@@ -197,6 +211,9 @@
 <li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/UpgradeGuide.html" class="nav-link" > Upgrade guide
 </a></li>
 
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/Recipes.html" class="nav-link" > Recipes
+</a></li>
+
 <li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/FAQ.html" class="nav-link" > FAQ
 </a></li>
 
@@ -266,13 +283,13 @@
     <div id="content">
         <div>
   <h2>
-    ILToken Type
+    CaptureDiagnosticsConcurrently Type
   </h2>
   <dl class="fsdocs-metadata">
     <dt>
       Namespace: 
-      <a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-abstractil.html">
-        Fantomas.FCS.AbstractIL
+      <a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs.html">
+        Fantomas.FCS
       </a>
     </dt>
     <dt>
@@ -280,8 +297,8 @@
     </dt>
     <dt>
       Parent Module: 
-      <a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-abstractil-il.html">
-        IL
+      <a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-diagnosticslogger.html">
+        DiagnosticsLogger
       </a>
     </dt>
     <dt>
@@ -290,13 +307,7 @@
     </dt>
     <dt>
       All Interfaces: 
-      <code><a href="https://learn.microsoft.com/dotnet/api/system.collections.istructuralequatable">IStructuralEquatable</a></code>
-      , 
-      <code><span><a href="https://learn.microsoft.com/dotnet/api/system.icomparable-1">IComparable</a>&lt;<a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-abstractil-il-iltoken.html">ILToken</a>&gt;</span></code>
-      , 
-      <code><a href="https://learn.microsoft.com/dotnet/api/system.icomparable">IComparable</a></code>
-      , 
-      <code><a href="https://learn.microsoft.com/dotnet/api/system.collections.istructuralcomparable">IStructuralComparable</a></code>
+      <code><a href="https://learn.microsoft.com/dotnet/api/system.idisposable">IDisposable</a></code>
     </dt>
   </dl>
   <div class="fsdocs-xmldoc">
@@ -309,15 +320,18 @@
   <div></div>
   <div></div>
   <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
   <div>
     <h3>
-      Union cases
+      Constructors
     </h3>
     <table class="table outer-list fsdocs-member-list">
       <thead>
         <tr>
           <td class="fsdocs-member-list-header">
-            Union case
+            Constructor
           </td>
           <td class="fsdocs-member-list-header">
             Description
@@ -328,79 +342,95 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '6179', 6179)" onmouseover="showTip(event, '6179', 6179)">
+              <code onmouseout="hideTip(event, '4552', 4552)" onmouseover="showTip(event, '4552', 4552)">
                 <p>
-                  <a id="ILField">
-                    <a href="#ILField">
-                      <code><span>ILField&#32;<a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-abstractil-il-ilfieldspec.html">ILFieldSpec</a></span></code>
+                  <a id="``.ctor``">
+                    <a href="#``.ctor``">
+                      <code><span>CaptureDiagnosticsConcurrently<span>()</span></span></code>
                     </a>
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="6179">
+              <div class="fsdocs-tip" id="4552">
                 <div class="member-tooltip">
                   Full Usage: 
-                  <code><span>ILField&#32;<a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-abstractil-il-ilfieldspec.html">ILFieldSpec</a></span></code>
+                  <code><span>CaptureDiagnosticsConcurrently<span>()</span></span></code>
                   <br/>
                   <br/>
-                  Parameters: 
-                  <ul>
-                    <span>
-                      <b>
-                        Item
-                      </b>
-                      :
-                      <code><a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-abstractil-il-ilfieldspec.html">ILFieldSpec</a></code>
-                    </span>
-                    <br/>
-                  </ul>
+                  <span>
+                    Returns: 
+                    <code><a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-diagnosticslogger-capturediagnosticsconcurrently.html">CaptureDiagnosticsConcurrently</a></code>
+                  </span>
                   <br/>
                 </div>
               </div>
             </div>
           </td>
           <td class="fsdocs-member-xmldoc">
-            <dl class="fsdocs-params">
-              <dt class="fsdocs-param">
-                <span class="fsdocs-param-name">
-                  Item
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
                 </span>
-                :
-                <code><a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-abstractil-il-ilfieldspec.html">ILFieldSpec</a></code>
+                <code><a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-diagnosticslogger-capturediagnosticsconcurrently.html">CaptureDiagnosticsConcurrently</a></code>
               </dt>
-              <dd class="fsdocs-param-docs"></dd>
+              <dd class="fsdocs-return-docs"></dd>
             </dl>
           </td>
         </tr>
+      </tbody>
+    </table>
+  </div>
+  <div>
+    <h3>
+      Instance members
+    </h3>
+    <table class="table outer-list fsdocs-member-list">
+      <thead>
+        <tr>
+          <td class="fsdocs-member-list-header">
+            Instance member
+          </td>
+          <td class="fsdocs-member-list-header">
+            Description
+          </td>
+        </tr>
+      </thead>
+      <tbody>
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '6180', 6180)" onmouseover="showTip(event, '6180', 6180)">
+              <code onmouseout="hideTip(event, '4553', 4553)" onmouseover="showTip(event, '4553', 4553)">
                 <p>
-                  <a id="ILMethod">
-                    <a href="#ILMethod">
-                      <code><span>ILMethod&#32;<a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-abstractil-il-ilmethodspec.html">ILMethodSpec</a></span></code>
+                  <a id="GetLoggerForTask">
+                    <a href="#GetLoggerForTask">
+                      <code><span>this.GetLoggerForTask</span></code>
                     </a>
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="6180">
+              <div class="fsdocs-tip" id="4553">
                 <div class="member-tooltip">
                   Full Usage: 
-                  <code><span>ILMethod&#32;<a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-abstractil-il-ilmethodspec.html">ILMethodSpec</a></span></code>
+                  <code><span>this.GetLoggerForTask</span></code>
                   <br/>
                   <br/>
                   Parameters: 
                   <ul>
                     <span>
                       <b>
-                        Item
+                        arg0
                       </b>
                       :
-                      <code><a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-abstractil-il-ilmethodspec.html">ILMethodSpec</a></code>
+                      <code>string</code>
                     </span>
                     <br/>
                   </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-diagnosticslogger-diagnosticslogger.html">DiagnosticsLogger</a></code>
+                  </span>
                   <br/>
                 </div>
               </div>
@@ -410,59 +440,21 @@
             <dl class="fsdocs-params">
               <dt class="fsdocs-param">
                 <span class="fsdocs-param-name">
-                  Item
+                  arg0
                 </span>
                 :
-                <code><a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-abstractil-il-ilmethodspec.html">ILMethodSpec</a></code>
+                <code>string</code>
               </dt>
               <dd class="fsdocs-param-docs"></dd>
             </dl>
-          </td>
-        </tr>
-        <tr>
-          <td class="fsdocs-member-usage">
-            <div>
-              <code onmouseout="hideTip(event, '6181', 6181)" onmouseover="showTip(event, '6181', 6181)">
-                <p>
-                  <a id="ILType">
-                    <a href="#ILType">
-                      <code><span>ILType&#32;<a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-abstractil-il-iltype.html">ILType</a></span></code>
-                    </a>
-                  </a>
-                </p>
-              </code>
-              <div class="fsdocs-tip" id="6181">
-                <div class="member-tooltip">
-                  Full Usage: 
-                  <code><span>ILType&#32;<a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-abstractil-il-iltype.html">ILType</a></span></code>
-                  <br/>
-                  <br/>
-                  Parameters: 
-                  <ul>
-                    <span>
-                      <b>
-                        Item
-                      </b>
-                      :
-                      <code><a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-abstractil-il-iltype.html">ILType</a></code>
-                    </span>
-                    <br/>
-                  </ul>
-                  <br/>
-                </div>
-              </div>
-            </div>
-          </td>
-          <td class="fsdocs-member-xmldoc">
-            <dl class="fsdocs-params">
-              <dt class="fsdocs-param">
-                <span class="fsdocs-param-name">
-                  Item
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns: 
                 </span>
-                :
-                <code><a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-abstractil-il-iltype.html">ILType</a></code>
+                <code><a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-diagnosticslogger-diagnosticslogger.html">DiagnosticsLogger</a></code>
               </dt>
-              <dd class="fsdocs-param-docs"></dd>
+              <dd class="fsdocs-return-docs"></dd>
             </dl>
           </td>
         </tr>
@@ -470,16 +462,12 @@
     </table>
   </div>
   <div></div>
-  <div></div>
-  <div></div>
-  <div></div>
-  <div></div>
 </div>
         
     </div>
 </main>
 <aside id="fsdocs-page-menu">
-    <p>On this page</p>
+    <p id="on-this-page">On this page</p>
     <div class="empty"></div>
 </aside>
 <dialog>

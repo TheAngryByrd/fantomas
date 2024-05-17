@@ -5,12 +5,23 @@
     <meta content="IE=edge" http-equiv="X-UA-Compatible">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Florian Verdonck, Jindřich Ivánek, David Schaefer" name="author">
+    <!-- Opengraph properties (https://ogp.me/) -->
+    <meta property="og:site_name" content="fantomas">
+    <meta property="og:title" content="MemberDefnExplicitCtorNode (fantomas)" />
+    <meta property="og:url" content="https://fsprojects.github.io/fantomas/{{fsdocs-source-basename}}.html">
+    <meta property="og:type" content="website" />
+    <!-- Twitter cards (https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/summary-card-with-large-image) -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="https://fsprojects.github.io/fantomas/">
+    <meta name="twitter:title" content="MemberDefnExplicitCtorNode (fantomas)">
+    
     <title>MemberDefnExplicitCtorNode (fantomas) | fantomas</title>
     <link href="https://fonts.googleapis.com" rel="preconnect">
     <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
     <link href="https://fsprojects.github.io/fantomas/images/favicon.ico" rel="icon" sizes="32x32" type="image/png"/>
+    <script type="application/javascript" src="https://fsprojects.github.io/fantomas/content/fsdocs-theme-set-dark.js"></script>
     <link href="https://fsprojects.github.io/fantomas/content/fsdocs-default.css" rel="stylesheet" type="text/css"/>
     <link href="https://fsprojects.github.io/fantomas/content/fsdocs-theme.css" rel="stylesheet" type="text/css"/>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;1,400&family=Reem+Kufi:wght@400;500;700&display=swap" rel="stylesheet">
@@ -69,6 +80,9 @@
 </a></li>
 
 <li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/UpgradeGuide.html" class="nav-link" > Upgrade guide
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/Recipes.html" class="nav-link" > Recipes
 </a></li>
 
 <li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/FAQ.html" class="nav-link" > FAQ
@@ -197,6 +211,9 @@
 <li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/UpgradeGuide.html" class="nav-link" > Upgrade guide
 </a></li>
 
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/Recipes.html" class="nav-link" > Recipes
+</a></li>
+
 <li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/FAQ.html" class="nav-link" > FAQ
 </a></li>
 
@@ -296,7 +313,8 @@
   <div class="fsdocs-xmldoc">
     <div>
       <p class="fsdocs-summary">
-        
+         Secondary constructor
+ new (pat: type) = expr
       </p>
     </div>
   </div>
@@ -325,19 +343,19 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '3716', 3716)" onmouseover="showTip(event, '3716', 3716)">
+              <code onmouseout="hideTip(event, '3916', 3916)" onmouseover="showTip(event, '3916', 3916)">
                 <p>
                   <a id="``.ctor``">
                     <a href="#``.ctor``">
-                      <code><span>MemberDefnExplicitCtorNode<span><span>(<span>xmlDoc,&#32;attributes,&#32;accessibility,&#32;newKeyword,&#32;pat,&#32;alias,&#32;equals,&#32;expr,&#32;thenExpr,&#32;range</span>)</span></span></span></code>
+                      <code><span>MemberDefnExplicitCtorNode<span><span>(<span>xmlDoc,&#32;attributes,&#32;accessibility,&#32;newKeyword,&#32;pat,&#32;alias,&#32;equals,&#32;expr,&#32;range</span>)</span></span></span></code>
                     </a>
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="3716">
+              <div class="fsdocs-tip" id="3916">
                 <div class="member-tooltip">
                   Full Usage: 
-                  <code><span>MemberDefnExplicitCtorNode<span><span>(<span>xmlDoc,&#32;attributes,&#32;accessibility,&#32;newKeyword,&#32;pat,&#32;alias,&#32;equals,&#32;expr,&#32;thenExpr,&#32;range</span>)</span></span></span></code>
+                  <code><span>MemberDefnExplicitCtorNode<span><span>(<span>xmlDoc,&#32;attributes,&#32;accessibility,&#32;newKeyword,&#32;pat,&#32;alias,&#32;equals,&#32;expr,&#32;range</span>)</span></span></span></code>
                   <br/>
                   <br/>
                   Parameters: 
@@ -404,14 +422,6 @@
                       </b>
                       :
                       <code><a href="https://fsprojects.github.io/fantomas/reference/fantomas-core-syntaxoak-expr.html">Expr</a></code>
-                    </span>
-                    <br/>
-                    <span>
-                      <b>
-                        thenExpr
-                      </b>
-                      :
-                      <code><span><a href="https://fsprojects.github.io/fantomas/reference/fantomas-core-syntaxoak-expr.html">Expr</a>&#32;option</span></code>
                     </span>
                     <br/>
                     <span>
@@ -501,14 +511,6 @@
               <dd class="fsdocs-param-docs"></dd>
               <dt class="fsdocs-param">
                 <span class="fsdocs-param-name">
-                  thenExpr
-                </span>
-                :
-                <code><span><a href="https://fsprojects.github.io/fantomas/reference/fantomas-core-syntaxoak-expr.html">Expr</a>&#32;option</span></code>
-              </dt>
-              <dd class="fsdocs-param-docs"></dd>
-              <dt class="fsdocs-param">
-                <span class="fsdocs-param-name">
                   range
                 </span>
                 :
@@ -549,7 +551,7 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '3717', 3717)" onmouseover="showTip(event, '3717', 3717)">
+              <code onmouseout="hideTip(event, '3917', 3917)" onmouseover="showTip(event, '3917', 3917)">
                 <p>
                   <a id="Accessibility">
                     <a href="#Accessibility">
@@ -558,7 +560,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="3717">
+              <div class="fsdocs-tip" id="3917">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code><span>this.Accessibility</span></code>
@@ -588,7 +590,7 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '3718', 3718)" onmouseover="showTip(event, '3718', 3718)">
+              <code onmouseout="hideTip(event, '3918', 3918)" onmouseover="showTip(event, '3918', 3918)">
                 <p>
                   <a id="Alias">
                     <a href="#Alias">
@@ -597,7 +599,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="3718">
+              <div class="fsdocs-tip" id="3918">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code><span>this.Alias</span></code>
@@ -627,7 +629,7 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '3719', 3719)" onmouseover="showTip(event, '3719', 3719)">
+              <code onmouseout="hideTip(event, '3919', 3919)" onmouseover="showTip(event, '3919', 3919)">
                 <p>
                   <a id="Attributes">
                     <a href="#Attributes">
@@ -636,7 +638,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="3719">
+              <div class="fsdocs-tip" id="3919">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code><span>this.Attributes</span></code>
@@ -666,7 +668,7 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '3720', 3720)" onmouseover="showTip(event, '3720', 3720)">
+              <code onmouseout="hideTip(event, '3920', 3920)" onmouseover="showTip(event, '3920', 3920)">
                 <p>
                   <a id="Equals">
                     <a href="#Equals">
@@ -675,7 +677,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="3720">
+              <div class="fsdocs-tip" id="3920">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code><span>this.Equals</span></code>
@@ -705,7 +707,7 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '3721', 3721)" onmouseover="showTip(event, '3721', 3721)">
+              <code onmouseout="hideTip(event, '3921', 3921)" onmouseover="showTip(event, '3921', 3921)">
                 <p>
                   <a id="Expr">
                     <a href="#Expr">
@@ -714,7 +716,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="3721">
+              <div class="fsdocs-tip" id="3921">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code><span>this.Expr</span></code>
@@ -744,7 +746,7 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '3722', 3722)" onmouseover="showTip(event, '3722', 3722)">
+              <code onmouseout="hideTip(event, '3922', 3922)" onmouseover="showTip(event, '3922', 3922)">
                 <p>
                   <a id="New">
                     <a href="#New">
@@ -753,7 +755,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="3722">
+              <div class="fsdocs-tip" id="3922">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code><span>this.New</span></code>
@@ -783,7 +785,7 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '3723', 3723)" onmouseover="showTip(event, '3723', 3723)">
+              <code onmouseout="hideTip(event, '3923', 3923)" onmouseover="showTip(event, '3923', 3923)">
                 <p>
                   <a id="Pattern">
                     <a href="#Pattern">
@@ -792,7 +794,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="3723">
+              <div class="fsdocs-tip" id="3923">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code><span>this.Pattern</span></code>
@@ -822,46 +824,7 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '3724', 3724)" onmouseover="showTip(event, '3724', 3724)">
-                <p>
-                  <a id="ThenExpr">
-                    <a href="#ThenExpr">
-                      <code><span>this.ThenExpr</span></code>
-                    </a>
-                  </a>
-                </p>
-              </code>
-              <div class="fsdocs-tip" id="3724">
-                <div class="member-tooltip">
-                  Full Usage: 
-                  <code><span>this.ThenExpr</span></code>
-                  <br/>
-                  <br/>
-                  <span>
-                    Returns: 
-                    <code><span><a href="https://fsprojects.github.io/fantomas/reference/fantomas-core-syntaxoak-expr.html">Expr</a>&#32;option</span></code>
-                  </span>
-                  <br/>
-                </div>
-              </div>
-            </div>
-          </td>
-          <td class="fsdocs-member-xmldoc">
-            <dl class="fsdocs-returns">
-              <dt>
-                <span class="fsdocs-return-name">
-                  Returns: 
-                </span>
-                <code><span><a href="https://fsprojects.github.io/fantomas/reference/fantomas-core-syntaxoak-expr.html">Expr</a>&#32;option</span></code>
-              </dt>
-              <dd class="fsdocs-return-docs"></dd>
-            </dl>
-          </td>
-        </tr>
-        <tr>
-          <td class="fsdocs-member-usage">
-            <div>
-              <code onmouseout="hideTip(event, '3725', 3725)" onmouseover="showTip(event, '3725', 3725)">
+              <code onmouseout="hideTip(event, '3924', 3924)" onmouseover="showTip(event, '3924', 3924)">
                 <p>
                   <a id="XmlDoc">
                     <a href="#XmlDoc">
@@ -870,7 +833,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="3725">
+              <div class="fsdocs-tip" id="3924">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code><span>this.XmlDoc</span></code>
@@ -906,7 +869,7 @@
     </div>
 </main>
 <aside id="fsdocs-page-menu">
-    <p>On this page</p>
+    <p id="on-this-page">On this page</p>
     <div class="empty"></div>
 </aside>
 <dialog>

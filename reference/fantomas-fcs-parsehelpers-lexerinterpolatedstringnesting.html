@@ -5,12 +5,23 @@
     <meta content="IE=edge" http-equiv="X-UA-Compatible">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Florian Verdonck, Jindřich Ivánek, David Schaefer" name="author">
+    <!-- Opengraph properties (https://ogp.me/) -->
+    <meta property="og:site_name" content="fantomas">
+    <meta property="og:title" content="LexerInterpolatedStringNesting (fantomas)" />
+    <meta property="og:url" content="https://fsprojects.github.io/fantomas/{{fsdocs-source-basename}}.html">
+    <meta property="og:type" content="website" />
+    <!-- Twitter cards (https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/summary-card-with-large-image) -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="https://fsprojects.github.io/fantomas/">
+    <meta name="twitter:title" content="LexerInterpolatedStringNesting (fantomas)">
+    
     <title>LexerInterpolatedStringNesting (fantomas) | fantomas</title>
     <link href="https://fonts.googleapis.com" rel="preconnect">
     <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
     <link href="https://fsprojects.github.io/fantomas/images/favicon.ico" rel="icon" sizes="32x32" type="image/png"/>
+    <script type="application/javascript" src="https://fsprojects.github.io/fantomas/content/fsdocs-theme-set-dark.js"></script>
     <link href="https://fsprojects.github.io/fantomas/content/fsdocs-default.css" rel="stylesheet" type="text/css"/>
     <link href="https://fsprojects.github.io/fantomas/content/fsdocs-theme.css" rel="stylesheet" type="text/css"/>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;1,400&family=Reem+Kufi:wght@400;500;700&display=swap" rel="stylesheet">
@@ -69,6 +80,9 @@
 </a></li>
 
 <li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/UpgradeGuide.html" class="nav-link" > Upgrade guide
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/Recipes.html" class="nav-link" > Recipes
 </a></li>
 
 <li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/FAQ.html" class="nav-link" > FAQ
@@ -197,6 +211,9 @@
 <li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/UpgradeGuide.html" class="nav-link" > Upgrade guide
 </a></li>
 
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/Recipes.html" class="nav-link" > Recipes
+</a></li>
+
 <li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/FAQ.html" class="nav-link" > FAQ
 </a></li>
 
@@ -286,7 +303,7 @@
     </dt>
     <dt>
       Abbreviation For: 
-      <code><span><span>(<span>int&#32;*&#32;<a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-parsehelpers-lexerstringstyle.html">LexerStringStyle</a>&#32;*&#32;int&#32;*&#32;<a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-text-range-0.html">range</a></span>)</span>&#32;list</span></code>
+      <code><span><span>(<span>int&#32;*&#32;<a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-parsehelpers-lexerstringstyle.html">LexerStringStyle</a>&#32;*&#32;int&#32;*&#32;<span><a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-text-range-0.html">range</a>&#32;option</span>&#32;*&#32;<a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-text-range-0.html">range</a></span>)</span>&#32;list</span></code>
     </dt>
     <dt>
       Base Type: 
@@ -296,17 +313,17 @@
       All Interfaces: 
       <code><a href="https://learn.microsoft.com/dotnet/api/system.collections.istructuralequatable">IStructuralEquatable</a></code>
       , 
-      <code><span><a href="https://learn.microsoft.com/dotnet/api/system.icomparable-1">IComparable</a>&lt;<span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharplist-1">List</a>&lt;<span>int&#32;*&#32;<a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-parsehelpers-lexerstringstyle.html">LexerStringStyle</a>&#32;*&#32;int&#32;*&#32;<a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-text-range-0.html">range</a></span>&gt;</span>&gt;</span></code>
+      <code><span><a href="https://learn.microsoft.com/dotnet/api/system.icomparable-1">IComparable</a>&lt;<span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharplist-1">List</a>&lt;<span>int&#32;*&#32;<a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-parsehelpers-lexerstringstyle.html">LexerStringStyle</a>&#32;*&#32;int&#32;*&#32;<span><a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-text-range-0.html">range</a>&#32;option</span>&#32;*&#32;<a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-text-range-0.html">range</a></span>&gt;</span>&gt;</span></code>
       , 
       <code><a href="https://learn.microsoft.com/dotnet/api/system.icomparable">IComparable</a></code>
       , 
       <code><a href="https://learn.microsoft.com/dotnet/api/system.collections.istructuralcomparable">IStructuralComparable</a></code>
       , 
-      <code><span><a href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<span>int&#32;*&#32;<a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-parsehelpers-lexerstringstyle.html">LexerStringStyle</a>&#32;*&#32;int&#32;*&#32;<a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-text-range-0.html">range</a></span>&gt;</span></code>
+      <code><span><a href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<span>int&#32;*&#32;<a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-parsehelpers-lexerstringstyle.html">LexerStringStyle</a>&#32;*&#32;int&#32;*&#32;<span><a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-text-range-0.html">range</a>&#32;option</span>&#32;*&#32;<a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-text-range-0.html">range</a></span>&gt;</span></code>
       , 
-      <code><span><a href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1">IReadOnlyCollection</a>&lt;<span>int&#32;*&#32;<a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-parsehelpers-lexerstringstyle.html">LexerStringStyle</a>&#32;*&#32;int&#32;*&#32;<a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-text-range-0.html">range</a></span>&gt;</span></code>
+      <code><span><a href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1">IReadOnlyCollection</a>&lt;<span>int&#32;*&#32;<a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-parsehelpers-lexerstringstyle.html">LexerStringStyle</a>&#32;*&#32;int&#32;*&#32;<span><a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-text-range-0.html">range</a>&#32;option</span>&#32;*&#32;<a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-text-range-0.html">range</a></span>&gt;</span></code>
       , 
-      <code><span><a href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<span>int&#32;*&#32;<a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-parsehelpers-lexerstringstyle.html">LexerStringStyle</a>&#32;*&#32;int&#32;*&#32;<a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-text-range-0.html">range</a></span>&gt;</span></code>
+      <code><span><a href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<span>int&#32;*&#32;<a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-parsehelpers-lexerstringstyle.html">LexerStringStyle</a>&#32;*&#32;int&#32;*&#32;<span><a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-text-range-0.html">range</a>&#32;option</span>&#32;*&#32;<a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-text-range-0.html">range</a></span>&gt;</span></code>
       , 
       <code><a href="https://learn.microsoft.com/dotnet/api/system.collections.ienumerable">IEnumerable</a></code>
     </dt>
@@ -344,7 +361,7 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '4519', 4519)" onmouseover="showTip(event, '4519', 4519)">
+              <code onmouseout="hideTip(event, '4964', 4964)" onmouseover="showTip(event, '4964', 4964)">
                 <p>
                   <a id="Head">
                     <a href="#Head">
@@ -353,7 +370,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="4519">
+              <div class="fsdocs-tip" id="4964">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code><span>this.Head</span></code>
@@ -361,7 +378,7 @@
                   <br/>
                   <span>
                     Returns: 
-                    <code><span>int&#32;*&#32;<a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-parsehelpers-lexerstringstyle.html">LexerStringStyle</a>&#32;*&#32;int&#32;*&#32;<a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-text-range-0.html">range</a></span></code>
+                    <code><span>int&#32;*&#32;<a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-parsehelpers-lexerstringstyle.html">LexerStringStyle</a>&#32;*&#32;int&#32;*&#32;<span><a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-text-range-0.html">range</a>&#32;option</span>&#32;*&#32;<a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-text-range-0.html">range</a></span></code>
                   </span>
                   <br/>
                 </div>
@@ -374,7 +391,7 @@
                 <span class="fsdocs-return-name">
                   Returns: 
                 </span>
-                <code><span>int&#32;*&#32;<a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-parsehelpers-lexerstringstyle.html">LexerStringStyle</a>&#32;*&#32;int&#32;*&#32;<a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-text-range-0.html">range</a></span></code>
+                <code><span>int&#32;*&#32;<a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-parsehelpers-lexerstringstyle.html">LexerStringStyle</a>&#32;*&#32;int&#32;*&#32;<span><a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-text-range-0.html">range</a>&#32;option</span>&#32;*&#32;<a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-text-range-0.html">range</a></span></code>
               </dt>
               <dd class="fsdocs-return-docs"></dd>
             </dl>
@@ -383,7 +400,7 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '4520', 4520)" onmouseover="showTip(event, '4520', 4520)">
+              <code onmouseout="hideTip(event, '4965', 4965)" onmouseover="showTip(event, '4965', 4965)">
                 <p>
                   <a id="IsEmpty">
                     <a href="#IsEmpty">
@@ -392,7 +409,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="4520">
+              <div class="fsdocs-tip" id="4965">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code><span>this.IsEmpty</span></code>
@@ -422,7 +439,7 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '4521', 4521)" onmouseover="showTip(event, '4521', 4521)">
+              <code onmouseout="hideTip(event, '4966', 4966)" onmouseover="showTip(event, '4966', 4966)">
                 <p>
                   <a id="Item">
                     <a href="#Item">
@@ -431,7 +448,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="4521">
+              <div class="fsdocs-tip" id="4966">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code><span>this[<span>index</span>]</span></code>
@@ -451,7 +468,7 @@
                   <br/>
                   <span>
                     Returns: 
-                    <code><span>int&#32;*&#32;<a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-parsehelpers-lexerstringstyle.html">LexerStringStyle</a>&#32;*&#32;int&#32;*&#32;<a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-text-range-0.html">range</a></span></code>
+                    <code><span>int&#32;*&#32;<a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-parsehelpers-lexerstringstyle.html">LexerStringStyle</a>&#32;*&#32;int&#32;*&#32;<span><a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-text-range-0.html">range</a>&#32;option</span>&#32;*&#32;<a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-text-range-0.html">range</a></span></code>
                   </span>
                   <br/>
                 </div>
@@ -474,7 +491,7 @@
                 <span class="fsdocs-return-name">
                   Returns: 
                 </span>
-                <code><span>int&#32;*&#32;<a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-parsehelpers-lexerstringstyle.html">LexerStringStyle</a>&#32;*&#32;int&#32;*&#32;<a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-text-range-0.html">range</a></span></code>
+                <code><span>int&#32;*&#32;<a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-parsehelpers-lexerstringstyle.html">LexerStringStyle</a>&#32;*&#32;int&#32;*&#32;<span><a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-text-range-0.html">range</a>&#32;option</span>&#32;*&#32;<a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-text-range-0.html">range</a></span></code>
               </dt>
               <dd class="fsdocs-return-docs"></dd>
             </dl>
@@ -483,7 +500,7 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '4522', 4522)" onmouseover="showTip(event, '4522', 4522)">
+              <code onmouseout="hideTip(event, '4967', 4967)" onmouseover="showTip(event, '4967', 4967)">
                 <p>
                   <a id="Length">
                     <a href="#Length">
@@ -492,7 +509,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="4522">
+              <div class="fsdocs-tip" id="4967">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code><span>this.Length</span></code>
@@ -522,7 +539,7 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '4523', 4523)" onmouseover="showTip(event, '4523', 4523)">
+              <code onmouseout="hideTip(event, '4968', 4968)" onmouseover="showTip(event, '4968', 4968)">
                 <p>
                   <a id="Tail">
                     <a href="#Tail">
@@ -531,7 +548,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="4523">
+              <div class="fsdocs-tip" id="4968">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code><span>this.Tail</span></code>
@@ -539,7 +556,7 @@
                   <br/>
                   <span>
                     Returns: 
-                    <code><span><span>(<span>int&#32;*&#32;<a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-parsehelpers-lexerstringstyle.html">LexerStringStyle</a>&#32;*&#32;int&#32;*&#32;<a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-text-range-0.html">range</a></span>)</span>&#32;list</span></code>
+                    <code><span><span>(<span>int&#32;*&#32;<a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-parsehelpers-lexerstringstyle.html">LexerStringStyle</a>&#32;*&#32;int&#32;*&#32;<span><a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-text-range-0.html">range</a>&#32;option</span>&#32;*&#32;<a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-text-range-0.html">range</a></span>)</span>&#32;list</span></code>
                   </span>
                   <br/>
                 </div>
@@ -552,7 +569,7 @@
                 <span class="fsdocs-return-name">
                   Returns: 
                 </span>
-                <code><span><span>(<span>int&#32;*&#32;<a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-parsehelpers-lexerstringstyle.html">LexerStringStyle</a>&#32;*&#32;int&#32;*&#32;<a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-text-range-0.html">range</a></span>)</span>&#32;list</span></code>
+                <code><span><span>(<span>int&#32;*&#32;<a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-parsehelpers-lexerstringstyle.html">LexerStringStyle</a>&#32;*&#32;int&#32;*&#32;<span><a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-text-range-0.html">range</a>&#32;option</span>&#32;*&#32;<a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-text-range-0.html">range</a></span>)</span>&#32;list</span></code>
               </dt>
               <dd class="fsdocs-return-docs"></dd>
             </dl>
@@ -580,7 +597,7 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '4524', 4524)" onmouseover="showTip(event, '4524', 4524)">
+              <code onmouseout="hideTip(event, '4969', 4969)" onmouseover="showTip(event, '4969', 4969)">
                 <p>
                   <a id="Empty">
                     <a href="#Empty">
@@ -589,7 +606,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="4524">
+              <div class="fsdocs-tip" id="4969">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code><span>List.Empty</span></code>
@@ -597,7 +614,7 @@
                   <br/>
                   <span>
                     Returns: 
-                    <code><span><span>(<span>int&#32;*&#32;<a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-parsehelpers-lexerstringstyle.html">LexerStringStyle</a>&#32;*&#32;int&#32;*&#32;<a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-text-range-0.html">range</a></span>)</span>&#32;list</span></code>
+                    <code><span><span>(<span>int&#32;*&#32;<a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-parsehelpers-lexerstringstyle.html">LexerStringStyle</a>&#32;*&#32;int&#32;*&#32;<span><a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-text-range-0.html">range</a>&#32;option</span>&#32;*&#32;<a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-text-range-0.html">range</a></span>)</span>&#32;list</span></code>
                   </span>
                   <br/>
                 </div>
@@ -610,7 +627,7 @@
                 <span class="fsdocs-return-name">
                   Returns: 
                 </span>
-                <code><span><span>(<span>int&#32;*&#32;<a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-parsehelpers-lexerstringstyle.html">LexerStringStyle</a>&#32;*&#32;int&#32;*&#32;<a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-text-range-0.html">range</a></span>)</span>&#32;list</span></code>
+                <code><span><span>(<span>int&#32;*&#32;<a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-parsehelpers-lexerstringstyle.html">LexerStringStyle</a>&#32;*&#32;int&#32;*&#32;<span><a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-text-range-0.html">range</a>&#32;option</span>&#32;*&#32;<a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-text-range-0.html">range</a></span>)</span>&#32;list</span></code>
               </dt>
               <dd class="fsdocs-return-docs"></dd>
             </dl>
@@ -624,7 +641,7 @@
     </div>
 </main>
 <aside id="fsdocs-page-menu">
-    <p>On this page</p>
+    <p id="on-this-page">On this page</p>
     <div class="empty"></div>
 </aside>
 <dialog>

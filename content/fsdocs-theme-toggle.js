@@ -2,9 +2,6 @@
 
 const prefersDark = window.matchMedia("@media (prefers-color-scheme: dark)").matches;
 let currentTheme = localStorage.getItem('theme') ?? (prefersDark ? 'dark' : 'light');
-if (currentTheme === 'dark') {
-    window.document.documentElement.setAttribute("data-theme", 'dark');
-}
 
 export class ThemeToggle extends LitElement {
     static properties = {
@@ -32,10 +29,8 @@ export class ThemeToggle extends LitElement {
 
     render() {
         const icon = this._theme === 'light' ? 'basil:moon-solid' : 'basil:sun-solid';
-        const color = this._theme === 'light' ? '--fsdocs-theme-toggle-light-color' : '--fsdocs-theme-toggle-dark-color';
-        
         return html`
-            <iconify-icon width="30" height="30" icon="${icon}" style="color:var(${color})" @click=${this.changeTheme}></iconify-icon>
+            <iconify-icon width="30" height="30" icon="${icon}" style="color:var(--header-link-color)" @click=${this.changeTheme}></iconify-icon>
         `;
     }
 }

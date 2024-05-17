@@ -5,6 +5,18 @@
     <meta content="IE=edge" http-equiv="X-UA-Compatible">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Florian Verdonck, Jindřich Ivánek, David Schaefer" name="author">
+    <!-- Opengraph properties (https://ogp.me/) -->
+    <meta property="og:site_name" content="fantomas">
+    <meta property="og:title" content="Generating source code
+" />
+    <meta property="og:url" content="https://fsprojects.github.io/fantomas/docs/end-users/GeneratingCode.html">
+    <meta property="og:type" content="website" />
+    <!-- Twitter cards (https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/summary-card-with-large-image) -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="https://fsprojects.github.io/fantomas/">
+    <meta name="twitter:title" content="Generating source code
+">
+    
     <title>Generating source code
  | fantomas</title>
     <link href="https://fonts.googleapis.com" rel="preconnect">
@@ -12,6 +24,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
     <link href="https://fsprojects.github.io/fantomas/images/favicon.ico" rel="icon" sizes="32x32" type="image/png"/>
+    <script type="application/javascript" src="https://fsprojects.github.io/fantomas/content/fsdocs-theme-set-dark.js"></script>
     <link href="https://fsprojects.github.io/fantomas/content/fsdocs-default.css" rel="stylesheet" type="text/css"/>
     <link href="https://fsprojects.github.io/fantomas/content/fsdocs-theme.css" rel="stylesheet" type="text/css"/>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;1,400&family=Reem+Kufi:wght@400;500;700&display=swap" rel="stylesheet">
@@ -70,6 +83,9 @@
 </a></li>
 
 <li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/UpgradeGuide.html" class="nav-link" > Upgrade guide
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/Recipes.html" class="nav-link" > Recipes
 </a></li>
 
 <li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/FAQ.html" class="nav-link" > FAQ
@@ -198,6 +214,9 @@
 <li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/UpgradeGuide.html" class="nav-link" > Upgrade guide
 </a></li>
 
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/Recipes.html" class="nav-link" > Recipes
+</a></li>
+
 <li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/FAQ.html" class="nav-link" > FAQ
 </a></li>
 
@@ -282,8 +301,8 @@ In simple scenarios this can work out, but in the long run it doesn't scale well
 <h2><a name="Generating-source-code-from-scratch" class="anchor" href="#Generating-source-code-from-scratch">Generating source code from scratch</a></h2>
 <h3><a name="Example-syntax-tree" class="anchor" href="#Example-syntax-tree">Example syntax tree</a></h3>
 <p>To illustrate the API, lets generate a simple value binding: <code>let a = 0</code>.</p>
-<pre class="fssnip highlighted"><code lang="fsharp"><span class="pp">#r</span> <span class="s">&quot;../../../src/Fantomas/bin/Release/net6.0/Fantomas.FCS.dll&quot;</span>
-<span class="pp">#r</span> <span class="s">&quot;../../../src/Fantomas/bin/Release/net6.0/Fantomas.Core.dll&quot;</span> <span class="c">// In production use #r &quot;nuget: Fantomas.Core, 6.*&quot;</span>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="pp">#r</span> <span class="s">&quot;../../../artifacts/bin/Fantomas.FCS/release/Fantomas.FCS.dll&quot;</span>
+<span class="pp">#r</span> <span class="s">&quot;../../../artifacts/bin/Fantomas.Core/release/Fantomas.Core.dll&quot;</span> <span class="c">// In production use #r &quot;nuget: Fantomas.Core, 6.*&quot;</span>
 
 <span class="k">open</span> <span onmouseout="hideTip(event, 'fs1', 1)" onmouseover="showTip(event, 'fs1', 1)" class="id">Fantomas</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs2', 2)" onmouseover="showTip(event, 'fs2', 2)" class="id">FCS</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs3', 3)" onmouseover="showTip(event, 'fs3', 3)" class="id">Text</span>
 <span class="k">open</span> <span onmouseout="hideTip(event, 'fs1', 4)" onmouseover="showTip(event, 'fs1', 4)" class="id">Fantomas</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs4', 5)" onmouseover="showTip(event, 'fs4', 5)" class="id">Core</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs5', 6)" onmouseover="showTip(event, 'fs5', 6)" class="m">SyntaxOak</span>
@@ -354,9 +373,9 @@ Example usage:</p>
                   (None, Normal, false, false, [],
                    PreXmlDoc ((1,0), Fantomas.FCS.Xml.XmlDocCollector),
                    SynValData
-                     (None, SynValInfo ([], SynArgInfo ([], false, None)), None,
-                      None), Named (SynIdent (a, None), false, None, (1,4--1,5)),
-                   None, Const (Int32 1, (1,8--1,9)), (1,4--1,5), Yes (1,0--1,9),
+                     (None, SynValInfo ([], SynArgInfo ([], false, None)), None),
+                   Named (SynIdent (a, None), false, None, (1,4--1,5)), None,
+                   Const (Int32 1, (1,8--1,9)), (1,4--1,5), Yes (1,0--1,9),
                    { LeadingKeyword = Let (1,0--1,3)
                      InlineKeyword = None
                      EqualsRange = Some (1,6--1,7) })], (1,0--1,9))],
@@ -519,6 +538,9 @@ type Range =
   | Ident of SingleTextNode
   | KnownDot of SingleTextNode
   | UnknownDot
+  member IsIdent: bool
+  member IsKnownDot: bool
+  member IsUnknownDot: bool
   member Range: range option</div>
 <div class="fsdocs-tip" id="fs18">union case IdentifierOrDot.Ident: SingleTextNode -&gt; IdentifierOrDot</div>
 <div class="fsdocs-tip" id="fs19">type Expr =
@@ -534,13 +556,25 @@ type Range =
   | ArrayOrList of ExprArrayOrListNode
   ...
   static member Node: x: Expr -&gt; Node
-  member HasParentheses: bool</div>
+  member HasParentheses: bool
+  member IsAnonStructRecord: bool
+  member IsApp: bool
+  member IsAppLongIdentAndSingleParenArg: bool
+  member IsAppSingleParenArg: bool
+  member IsAppWithLambda: bool
+  member IsArrayOrList: bool
+  member IsBeginEnd: bool
+  member IsChain: bool
+  ...</div>
 <div class="fsdocs-tip" id="fs20">union case Expr.Constant: Constant -&gt; Expr</div>
 <div class="fsdocs-tip" id="fs21">type Constant =
   | FromText of SingleTextNode
   | Unit of UnitNode
   | Measure of ConstantMeasureNode
-  static member Node: c: Constant -&gt; NodeBase</div>
+  static member Node: c: Constant -&gt; NodeBase
+  member IsFromText: bool
+  member IsMeasure: bool
+  member IsUnit: bool</div>
 <div class="fsdocs-tip" id="fs22">union case Constant.FromText: SingleTextNode -&gt; Constant</div>
 <div class="fsdocs-tip" id="fs23">type ModuleDecl =
   | OpenList of OpenListNode
@@ -554,7 +588,17 @@ type Range =
   | NestedModule of NestedModuleNode
   | TypeDefn of TypeDefn
   ...
-  static member Node: x: ModuleDecl -&gt; Node<br /><em>&lt;summary&gt;
+  static member Node: x: ModuleDecl -&gt; Node
+  member IsAttributes: bool
+  member IsDeclExpr: bool
+  member IsException: bool
+  member IsExternBinding: bool
+  member IsHashDirectiveList: bool
+  member IsModuleAbbrev: bool
+  member IsNestedModule: bool
+  member IsOpenList: bool
+  member IsTopLevelBinding: bool
+  ...<br /><em>&lt;summary&gt;
  Each case in this DU should have a container node
 &lt;/summary&gt;</em></div>
 <div class="fsdocs-tip" id="fs24">union case ModuleDecl.TopLevelBinding: BindingNode -&gt; ModuleDecl</div>
@@ -646,7 +690,17 @@ from Fantomas.FCS.Text<br /><em>&lt;summary&gt;
   | As of PatLeftMiddleRight
   | ListCons of PatLeftMiddleRight
   ...
-  static member Node: x: Pattern -&gt; Node</div>
+  static member Node: x: Pattern -&gt; Node
+  member IsAnds: bool
+  member IsArrayOrList: bool
+  member IsAs: bool
+  member IsConst: bool
+  member IsIsInst: bool
+  member IsListCons: bool
+  member IsLongIdent: bool
+  member IsNamePatPairs: bool
+  member IsNamed: bool
+  ...</div>
 <div class="fsdocs-tip" id="fs50">union case Pattern.Named: PatNamedNode -&gt; Pattern</div>
 <div class="fsdocs-tip" id="fs51">Multiple items<br />type PatNamedNode =
   inherit NodeBase
@@ -659,7 +713,7 @@ from Fantomas.FCS.Text<br /><em>&lt;summary&gt;
     </div>
 </main>
 <aside id="fsdocs-page-menu">
-    <p>On this page</p>
+    <p id="on-this-page">On this page</p>
     <ul>
   <li class="level-1">
     <a href="#Generating-source-code">

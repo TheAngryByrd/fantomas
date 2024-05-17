@@ -5,6 +5,18 @@
     <meta content="IE=edge" http-equiv="X-UA-Compatible">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Florian Verdonck, Jindřich Ivánek, David Schaefer" name="author">
+    <!-- Opengraph properties (https://ogp.me/) -->
+    <meta property="og:site_name" content="fantomas">
+    <meta property="og:title" content="JetBrains Rider
+" />
+    <meta property="og:url" content="https://fsprojects.github.io/fantomas/docs/end-users/Rider.html">
+    <meta property="og:type" content="website" />
+    <!-- Twitter cards (https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/summary-card-with-large-image) -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="https://fsprojects.github.io/fantomas/">
+    <meta name="twitter:title" content="JetBrains Rider
+">
+    
     <title>JetBrains Rider
  | fantomas</title>
     <link href="https://fonts.googleapis.com" rel="preconnect">
@@ -12,6 +24,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
     <link href="https://fsprojects.github.io/fantomas/images/favicon.ico" rel="icon" sizes="32x32" type="image/png"/>
+    <script type="application/javascript" src="https://fsprojects.github.io/fantomas/content/fsdocs-theme-set-dark.js"></script>
     <link href="https://fsprojects.github.io/fantomas/content/fsdocs-default.css" rel="stylesheet" type="text/css"/>
     <link href="https://fsprojects.github.io/fantomas/content/fsdocs-theme.css" rel="stylesheet" type="text/css"/>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;1,400&family=Reem+Kufi:wght@400;500;700&display=swap" rel="stylesheet">
@@ -70,6 +83,9 @@
 </a></li>
 
 <li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/UpgradeGuide.html" class="nav-link" > Upgrade guide
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/Recipes.html" class="nav-link" > Recipes
 </a></li>
 
 <li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/FAQ.html" class="nav-link" > FAQ
@@ -198,6 +214,9 @@
 <li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/UpgradeGuide.html" class="nav-link" > Upgrade guide
 </a></li>
 
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/Recipes.html" class="nav-link" > Recipes
+</a></li>
+
 <li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/FAQ.html" class="nav-link" > FAQ
 </a></li>
 
@@ -268,59 +287,20 @@
         
 <h1><a name="JetBrains-Rider" class="anchor" href="#JetBrains-Rider">JetBrains Rider</a></h1>
 <p>The resharper-fsharp uses Fantomas under the hood to format the source code. No need for any additional plugins.</p>
-<p>From Rider 2022.2 onwards, Rider can detect your <code>dotnet</code> Fantomas installation, either globally or locally.<br />
-Install Fantomas locally with <code>dotnet tool install fantomas</code>.</p>
-<img class="mt-2" src="https://fsprojects.github.io/fantomas//images/rider-fantomas.png" alt="drawing" width="70%"/>
-<p>At the time of writing, Rider versions prior to the not yet released 2022.3 <a href="https://youtrack.jetbrains.com/issue/RIDER-83997/Rider-doesnt-respect-Fantomas-default-settings-not-explicitly-set-in-editorconfig">overwrite</a>
-the settings of Fantomas which aren't explicitly set in your editorconfig file.<br />
-As the settings chosen by Rider can lead to unwanted results, Rider users might want to also include the default settings in their editorconfig file.</p>
-<p>Fortunately, with 2022.3 the Rider developers changed the settings chosen by Rider to be the same as the default Fantomas settings.<br />
-This means, as long as the Fantomas default settings don't change, the described issue should be solved with Rider 2022.3.<br />
-The current default settings are the following:</p>
-<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">indent_size</span><span class="o">=</span><span class="n">4</span>
-<span class="id">max_line_length</span><span class="o">=</span><span class="n">120</span>
-<span class="id">end_of_line</span><span class="o">=</span><span class="id">crlf</span>
-<span class="id">insert_final_newline</span><span class="o">=</span><span class="k">true</span> 
-<span class="id">fsharp_space_before_parameter</span><span class="o">=</span><span class="k">true</span> 
-<span class="id">fsharp_space_before_lowercase_invocation</span><span class="o">=</span><span class="k">true</span> 
-<span class="id">fsharp_space_before_uppercase_invocation</span><span class="o">=</span><span class="k">false</span>
-<span class="id">fsharp_space_before_class_constructor</span><span class="o">=</span><span class="k">false</span>
-<span class="id">fsharp_space_before_member</span><span class="o">=</span><span class="k">false</span>
-<span class="id">fsharp_space_before_colon</span><span class="o">=</span><span class="k">false</span>
-<span class="id">fsharp_space_after_comma</span><span class="o">=</span><span class="k">true</span> 
-<span class="id">fsharp_space_before_semicolon</span><span class="o">=</span><span class="k">false</span>
-<span class="id">fsharp_space_after_semicolon</span><span class="o">=</span><span class="k">true</span> 
-<span class="id">fsharp_space_around_delimiter</span><span class="o">=</span><span class="k">true</span> 
-<span class="id">fsharp_max_if_then_short_width</span><span class="o">=</span><span class="n">0</span>
-<span class="id">fsharp_max_if_then_else_short_width</span><span class="o">=</span><span class="n">60</span>
-<span class="id">fsharp_max_infix_operator_expression</span><span class="o">=</span><span class="n">80</span>
-<span class="id">fsharp_max_record_width</span><span class="o">=</span><span class="n">40</span>
-<span class="id">fsharp_max_record_number_of_items</span><span class="o">=</span><span class="n">1</span>
-<span class="id">fsharp_record_multiline_formatter</span><span class="o">=</span><span class="id">character_width</span>
-<span class="id">fsharp_max_array_or_list_width</span><span class="o">=</span><span class="n">80</span>
-<span class="id">fsharp_max_array_or_list_number_of_items</span><span class="o">=</span><span class="n">1</span>
-<span class="id">fsharp_array_or_list_multiline_formatter</span><span class="o">=</span><span class="id">character_width</span>
-<span class="id">fsharp_max_value_binding_width</span><span class="o">=</span><span class="n">80</span>
-<span class="id">fsharp_max_function_binding_width</span><span class="o">=</span><span class="n">40</span>
-<span class="id">fsharp_max_dot_get_expression_width</span><span class="o">=</span><span class="n">80</span>
-<span class="id">fsharp_multiline_bracket_style</span> <span class="o">=</span> <span class="id">cramped</span>
-<span class="id">fsharp_newline_between_type_definition_and_members</span><span class="o">=</span><span class="k">true</span> 
-<span class="id">fsharp_align_function_signature_to_indentation</span><span class="o">=</span><span class="k">false</span>
-<span class="id">fsharp_alternative_long_member_definitions</span><span class="o">=</span><span class="k">false</span>
-<span class="id">fsharp_multi_line_lambda_closing_newline</span><span class="o">=</span><span class="k">false</span>
-<span class="id">fsharp_experimental_keep_indent_in_branch</span><span class="o">=</span><span class="k">false</span>
-<span class="id">fsharp_blank_lines_around_nested_multiline_expressions</span><span class="o">=</span><span class="k">true</span> 
-<span class="id">fsharp_bar_before_discriminated_union_declaration</span><span class="o">=</span><span class="k">false</span>
-<span class="id">fsharp_keep_max_number_of_blank_lines</span><span class="o">=</span><span class="n">100</span>
-<span class="id">fsharp_strict_mode</span><span class="o">=</span><span class="k">false</span>
+<p>From Rider 2022.2 onwards, Rider can detect your <code>dotnet</code> Fantomas installation, either globally or locally.</p>
+<p>Install Fantomas locally with:</p>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">dotnet</span> <span class="id">tool</span> <span class="id">install</span> <span class="id">fantomas</span>
 </code></pre>
+<img class="mt-2" src="https://fsprojects.github.io/fantomas//images/rider-fantomas.png" alt="drawing" width="70%"/>
+<p>Prior to Rider 2022.3 it did not <a href="https://youtrack.jetbrains.com/issue/RIDER-83997/Rider-doesnt-respect-Fantomas-default-settings-not-explicitly-set-in-editorconfig">respect</a> the default settings of Fantomas.
+If you are stuck on version 2022.2 (or earlier) consider adding the default settings of Fantomas to your <code>.editorconfig</code> file.</p>
 <fantomas-nav previous="GitHooks.html" next="VisualStudio.html"></fantomas-nav>
 
         
     </div>
 </main>
 <aside id="fsdocs-page-menu">
-    <p>On this page</p>
+    <p id="on-this-page">On this page</p>
     <ul>
   <li class="level-1">
     <a href="#JetBrains-Rider">
