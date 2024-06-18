@@ -57,6 +57,9 @@ let rec (|UppercaseExpr|LowercaseExpr|) (expr: Expr) =
     | Expr.DotIndexedGet node -> (|UppercaseExpr|LowercaseExpr|) node.ObjectExpr
     | Expr.TypeApp node -> (|UppercaseExpr|LowercaseExpr|) node.Identifier
     | Expr.Dynamic node -> (|UppercaseExpr|LowercaseExpr|) node.FuncExpr
+    | Expr.AppSingleParenArg node -> (|UppercaseExpr|LowercaseExpr|) node.FunctionExpr
+    | Expr.Paren node -> (|UppercaseExpr|LowercaseExpr|) node.Expr
+    | Expr.App node -> (|UppercaseExpr|LowercaseExpr|) node.FunctionExpr
     | _ -> failwithf "cannot determine if Expr %A is uppercase or lowercase" expr
 
 let (|ParenExpr|_|) (e: Expr) =
@@ -193,8 +196,12 @@ let addSpaceBeforeParenInPattern (node: IdentListNode) (ctx: Context) =
         | _ -> sepSpace ctx
 
 let genParsedHashDirective (phd: ParsedHashDirectiveNode) =
-    !- "#" +> !-phd.Ident +> sepSpace +> col sepSpace phd.Args genSingleTextNode
-    |> genNode phd
+    let genArg =
+        function
+        | Choice1Of2(stn) -> genSingleTextNode stn
+        | Choice2Of2(idl) -> genIdentListNode idl
+
+    !- "#" +> !-phd.Ident +> sepSpace +> col sepSpace phd.Args genArg |> genNode phd
 
 let genUnit (n: UnitNode) =
     genSingleTextNode n.OpeningParen +> genSingleTextNode n.ClosingParen
@@ -1896,6 +1903,7 @@ let genTupleMultiline (node: ExprTupleNode) =
                 | Expr.Lambda _ -> true
                 | Expr.InfixApp node ->
                     match node.RightHandSide with
+                    | Expr.Match _
                     | Expr.Lambda _ -> true
                     | _ -> false
                 | Expr.SameInfixApps node ->
@@ -2160,7 +2168,7 @@ let genMultilineInfixExpr (node: ExprInfixAppNode) =
         match node.LeftHandSide with
         | IsIfThenElse _ when (ctx.Config.IndentSize - 1 <= node.Operator.Text.Length) ->
             autoParenthesisIfExpressionExceedsPageWidth (genExpr node.LeftHandSide) ctx
-        | Expr.Match _ when (ctx.Config.IndentSize <= node.Operator.Text.Length) ->
+        | Expr.Match _ when (ctx.Config.IndentSize - 1 <= node.Operator.Text.Length) ->
             let ctxAfterMatch = genExpr node.LeftHandSide ctx
 
             let lastClauseIsSingleLine =
@@ -2983,6 +2991,12 @@ let genBinding (b: BindingNode) (ctx: Context) : Context =
 
             let genDestructedTuples =
                 expressionFitsOnRestOfLine (genPat pat) (sepOpenT +> genPat pat +> sepCloseT)
+                +> optSingle
+                    (fun (rt: BindingReturnInfoNode) ->
+                        genSingleTextNode rt.Colon
+                        +> sepSpace
+                        +> atCurrentColumnIndent (genType rt.Type))
+                    b.ReturnType
 
             genXml b.XmlDoc
             +> genAttrAndPref
