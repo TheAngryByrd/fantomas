@@ -22,6 +22,7 @@
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
     <link href="https://fsprojects.github.io/fantomas/images/favicon.ico" rel="icon" sizes="32x32" type="image/png"/>
     <script type="application/javascript" src="https://fsprojects.github.io/fantomas/content/fsdocs-theme-set-dark.js"></script>
+    <script type="application/javascript" src="https://fsprojects.github.io/fantomas/content/fsdocs-details-set-expanded.js"></script>
     <link href="https://fsprojects.github.io/fantomas/content/fsdocs-default.css" rel="stylesheet" type="text/css"/>
     <link href="https://fsprojects.github.io/fantomas/content/fsdocs-theme.css" rel="stylesheet" type="text/css"/>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;1,400&family=Reem+Kufi:wght@400;500;700&display=swap" rel="stylesheet">
@@ -312,9 +313,11 @@
   </dl>
   <div class="fsdocs-xmldoc">
     <div>
-      <p class="fsdocs-summary">
-         The kind associated with a binding - "let", "do" or a standalone expression
-      </p>
+      <div class="fsdocs-summary-contents">
+        <p class="fsdocs-summary">
+           The kind associated with a binding - "let", "do" or a standalone expression
+        </p>
+      </div>
     </div>
   </div>
   <div></div>
@@ -332,6 +335,7 @@
           </td>
           <td class="fsdocs-member-list-header">
             Description
+            <fsdocs-details-toggle></fsdocs-details-toggle>
           </td>
         </tr>
       </thead>
@@ -339,7 +343,7 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '7565', 7565)" onmouseover="showTip(event, '7565', 7565)">
+              <code onmouseout="hideTip(event, '6655', 6655)" onmouseover="showTip(event, '6655', 6655)">
                 <p>
                   <a id="Do">
                     <a href="#Do">
@@ -348,7 +352,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="7565">
+              <div class="fsdocs-tip" id="6655">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code><span>Do</span></code>
@@ -360,19 +364,23 @@
           </td>
           <td class="fsdocs-member-xmldoc">
             <div class="fsdocs-summary">
-              <a href="" class="fsdocs-source-link" title="Source on GitHub">
-                <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
-              </a>
-              <p class="fsdocs-summary">
-                 A 'do' binding in a module. Must have type 'unit'
-              </p>
+              <div class="fsdocs-summary-contents">
+                <p class="fsdocs-summary">
+                   A 'do' binding in a module. Must have type 'unit'
+                </p>
+              </div>
+              <div class="icon-button-row">
+                <a href="" class="fsdocs-source-link" title="Source on GitHub">
+                  <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                </a>
+              </div>
             </div>
           </td>
         </tr>
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '7566', 7566)" onmouseover="showTip(event, '7566', 7566)">
+              <code onmouseout="hideTip(event, '6656', 6656)" onmouseover="showTip(event, '6656', 6656)">
                 <p>
                   <a id="Normal">
                     <a href="#Normal">
@@ -381,7 +389,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="7566">
+              <div class="fsdocs-tip" id="6656">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code><span>Normal</span></code>
@@ -393,19 +401,23 @@
           </td>
           <td class="fsdocs-member-xmldoc">
             <div class="fsdocs-summary">
-              <a href="" class="fsdocs-source-link" title="Source on GitHub">
-                <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
-              </a>
-              <p class="fsdocs-summary">
-                 A normal 'let' binding in a module
-              </p>
+              <div class="fsdocs-summary-contents">
+                <p class="fsdocs-summary">
+                   A normal 'let' binding in a module
+                </p>
+              </div>
+              <div class="icon-button-row">
+                <a href="" class="fsdocs-source-link" title="Source on GitHub">
+                  <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                </a>
+              </div>
             </div>
           </td>
         </tr>
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '7567', 7567)" onmouseover="showTip(event, '7567', 7567)">
+              <code onmouseout="hideTip(event, '6657', 6657)" onmouseover="showTip(event, '6657', 6657)">
                 <p>
                   <a id="StandaloneExpression">
                     <a href="#StandaloneExpression">
@@ -414,7 +426,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="7567">
+              <div class="fsdocs-tip" id="6657">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code><span>StandaloneExpression</span></code>
@@ -426,12 +438,16 @@
           </td>
           <td class="fsdocs-member-xmldoc">
             <div class="fsdocs-summary">
-              <a href="" class="fsdocs-source-link" title="Source on GitHub">
-                <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
-              </a>
-              <p class="fsdocs-summary">
-                 A standalone expression in a module
-              </p>
+              <div class="fsdocs-summary-contents">
+                <p class="fsdocs-summary">
+                   A standalone expression in a module
+                </p>
+              </div>
+              <div class="icon-button-row">
+                <a href="" class="fsdocs-source-link" title="Source on GitHub">
+                  <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                </a>
+              </div>
             </div>
           </td>
         </tr>
@@ -441,142 +457,7 @@
   <div></div>
   <div></div>
   <div></div>
-  <div>
-    <h3>
-      Instance members
-    </h3>
-    <table class="table outer-list fsdocs-member-list">
-      <thead>
-        <tr>
-          <td class="fsdocs-member-list-header">
-            Instance member
-          </td>
-          <td class="fsdocs-member-list-header">
-            Description
-          </td>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="fsdocs-member-usage">
-            <div>
-              <code onmouseout="hideTip(event, '7568', 7568)" onmouseover="showTip(event, '7568', 7568)">
-                <p>
-                  <a id="IsDo">
-                    <a href="#IsDo">
-                      <code><span>this.IsDo</span></code>
-                    </a>
-                  </a>
-                </p>
-              </code>
-              <div class="fsdocs-tip" id="7568">
-                <div class="member-tooltip">
-                  Full Usage: 
-                  <code><span>this.IsDo</span></code>
-                  <br/>
-                  <br/>
-                  <span>
-                    Returns: 
-                    <code>bool</code>
-                  </span>
-                  <br/>
-                </div>
-              </div>
-            </div>
-          </td>
-          <td class="fsdocs-member-xmldoc">
-            <dl class="fsdocs-returns">
-              <dt>
-                <span class="fsdocs-return-name">
-                  Returns: 
-                </span>
-                <code>bool</code>
-              </dt>
-              <dd class="fsdocs-return-docs"></dd>
-            </dl>
-          </td>
-        </tr>
-        <tr>
-          <td class="fsdocs-member-usage">
-            <div>
-              <code onmouseout="hideTip(event, '7569', 7569)" onmouseover="showTip(event, '7569', 7569)">
-                <p>
-                  <a id="IsNormal">
-                    <a href="#IsNormal">
-                      <code><span>this.IsNormal</span></code>
-                    </a>
-                  </a>
-                </p>
-              </code>
-              <div class="fsdocs-tip" id="7569">
-                <div class="member-tooltip">
-                  Full Usage: 
-                  <code><span>this.IsNormal</span></code>
-                  <br/>
-                  <br/>
-                  <span>
-                    Returns: 
-                    <code>bool</code>
-                  </span>
-                  <br/>
-                </div>
-              </div>
-            </div>
-          </td>
-          <td class="fsdocs-member-xmldoc">
-            <dl class="fsdocs-returns">
-              <dt>
-                <span class="fsdocs-return-name">
-                  Returns: 
-                </span>
-                <code>bool</code>
-              </dt>
-              <dd class="fsdocs-return-docs"></dd>
-            </dl>
-          </td>
-        </tr>
-        <tr>
-          <td class="fsdocs-member-usage">
-            <div>
-              <code onmouseout="hideTip(event, '7570', 7570)" onmouseover="showTip(event, '7570', 7570)">
-                <p>
-                  <a id="IsStandaloneExpression">
-                    <a href="#IsStandaloneExpression">
-                      <code><span>this.IsStandaloneExpression</span></code>
-                    </a>
-                  </a>
-                </p>
-              </code>
-              <div class="fsdocs-tip" id="7570">
-                <div class="member-tooltip">
-                  Full Usage: 
-                  <code><span>this.IsStandaloneExpression</span></code>
-                  <br/>
-                  <br/>
-                  <span>
-                    Returns: 
-                    <code>bool</code>
-                  </span>
-                  <br/>
-                </div>
-              </div>
-            </div>
-          </td>
-          <td class="fsdocs-member-xmldoc">
-            <dl class="fsdocs-returns">
-              <dt>
-                <span class="fsdocs-return-name">
-                  Returns: 
-                </span>
-                <code>bool</code>
-              </dt>
-              <dd class="fsdocs-return-docs"></dd>
-            </dl>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+  <div></div>
   <div></div>
 </div>
         
@@ -595,6 +476,7 @@
 </dialog>
 <script type="module" src="https://fsprojects.github.io/fantomas/content/fsdocs-tips.js"></script>
 <script type="module" src="https://fsprojects.github.io/fantomas/content/fsdocs-theme-toggle.js"></script>
+<script type="module" src="https://fsprojects.github.io/fantomas/content/fsdocs-details-toggle.js"></script>
 <script type="module" src="https://fsprojects.github.io/fantomas/content/fsdocs-theme.js"></script>
 <script type="module" src="https://fsprojects.github.io/fantomas/content/fsdocs-search.js"></script>
 <script type="module">

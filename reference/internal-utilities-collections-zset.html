@@ -22,6 +22,7 @@
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
     <link href="https://fsprojects.github.io/fantomas/images/favicon.ico" rel="icon" sizes="32x32" type="image/png"/>
     <script type="application/javascript" src="https://fsprojects.github.io/fantomas/content/fsdocs-theme-set-dark.js"></script>
+    <script type="application/javascript" src="https://fsprojects.github.io/fantomas/content/fsdocs-details-set-expanded.js"></script>
     <link href="https://fsprojects.github.io/fantomas/content/fsdocs-default.css" rel="stylesheet" type="text/css"/>
     <link href="https://fsprojects.github.io/fantomas/content/fsdocs-theme.css" rel="stylesheet" type="text/css"/>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;1,400&family=Reem+Kufi:wght@400;500;700&display=swap" rel="stylesheet">
@@ -298,9 +299,11 @@
   </dl>
   <div class="fsdocs-xmldoc">
     <div>
-      <p class="fsdocs-summary">
-        
-      </p>
+      <div class="fsdocs-summary-contents">
+        <p class="fsdocs-summary">
+          
+        </p>
+      </div>
     </div>
   </div>
   <div>
@@ -315,6 +318,7 @@
           </td>
           <td class="fsdocs-member-list-header">
             Description
+            <fsdocs-details-toggle></fsdocs-details-toggle>
           </td>
         </tr>
       </thead>
@@ -322,7 +326,7 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '1085', 1085)" onmouseover="showTip(event, '1085', 1085)">
+              <code onmouseout="hideTip(event, '1090', 1090)" onmouseover="showTip(event, '1090', 1090)">
                 <p>
                   <a id="add">
                     <a href="#add">
@@ -331,7 +335,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="1085">
+              <div class="fsdocs-tip" id="1090">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code><span>add&#32;<span>arg1&#32;arg2</span></span></code>
@@ -367,39 +371,46 @@
             </div>
           </td>
           <td class="fsdocs-member-xmldoc">
-            <dl class="fsdocs-params">
-              <dt class="fsdocs-param">
-                <span class="fsdocs-param-name">
-                  arg0
-                </span>
-                :
-                <code>'T</code>
-              </dt>
-              <dd class="fsdocs-param-docs"></dd>
-              <dt class="fsdocs-param">
-                <span class="fsdocs-param-name">
-                  arg1
-                </span>
-                :
-                <code><span><a href="https://fsprojects.github.io/fantomas/reference/internal-utilities-collections-zset-1.html">Zset</a>&lt;'T&gt;</span></code>
-              </dt>
-              <dd class="fsdocs-param-docs"></dd>
-            </dl>
-            <dl class="fsdocs-returns">
-              <dt>
-                <span class="fsdocs-return-name">
-                  Returns: 
-                </span>
-                <code><span><a href="https://fsprojects.github.io/fantomas/reference/internal-utilities-collections-zset-1.html">Zset</a>&lt;'T&gt;</span></code>
-              </dt>
-              <dd class="fsdocs-return-docs"></dd>
-            </dl>
+            <div class="fsdocs-member-xmldoc-column">
+              <div class="icon-button-row">
+                <a href="" class="fsdocs-source-link" title="Source on GitHub">
+                  <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                </a>
+              </div>
+              <dl class="fsdocs-params">
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    arg0
+                  </span>
+                  :
+                  <code>'T</code>
+                </dt>
+                <dd class="fsdocs-param-docs"></dd>
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    arg1
+                  </span>
+                  :
+                  <code><span><a href="https://fsprojects.github.io/fantomas/reference/internal-utilities-collections-zset-1.html">Zset</a>&lt;'T&gt;</span></code>
+                </dt>
+                <dd class="fsdocs-param-docs"></dd>
+              </dl>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code><span><a href="https://fsprojects.github.io/fantomas/reference/internal-utilities-collections-zset-1.html">Zset</a>&lt;'T&gt;</span></code>
+                </dt>
+                <dd class="fsdocs-return-docs"></dd>
+              </dl>
+            </div>
           </td>
         </tr>
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '1086', 1086)" onmouseover="showTip(event, '1086', 1086)">
+              <code onmouseout="hideTip(event, '1091', 1091)" onmouseover="showTip(event, '1091', 1091)">
                 <p>
                   <a id="addList">
                     <a href="#addList">
@@ -408,7 +419,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="1086">
+              <div class="fsdocs-tip" id="1091">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code><span>addList&#32;<span>arg1&#32;arg2</span></span></code>
@@ -444,39 +455,46 @@
             </div>
           </td>
           <td class="fsdocs-member-xmldoc">
-            <dl class="fsdocs-params">
-              <dt class="fsdocs-param">
-                <span class="fsdocs-param-name">
-                  arg0
-                </span>
-                :
-                <code><span>'T&#32;list</span></code>
-              </dt>
-              <dd class="fsdocs-param-docs"></dd>
-              <dt class="fsdocs-param">
-                <span class="fsdocs-param-name">
-                  arg1
-                </span>
-                :
-                <code><span><a href="https://fsprojects.github.io/fantomas/reference/internal-utilities-collections-zset-1.html">Zset</a>&lt;'T&gt;</span></code>
-              </dt>
-              <dd class="fsdocs-param-docs"></dd>
-            </dl>
-            <dl class="fsdocs-returns">
-              <dt>
-                <span class="fsdocs-return-name">
-                  Returns: 
-                </span>
-                <code><span><a href="https://fsprojects.github.io/fantomas/reference/internal-utilities-collections-zset-1.html">Zset</a>&lt;'T&gt;</span></code>
-              </dt>
-              <dd class="fsdocs-return-docs"></dd>
-            </dl>
+            <div class="fsdocs-member-xmldoc-column">
+              <div class="icon-button-row">
+                <a href="" class="fsdocs-source-link" title="Source on GitHub">
+                  <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                </a>
+              </div>
+              <dl class="fsdocs-params">
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    arg0
+                  </span>
+                  :
+                  <code><span>'T&#32;list</span></code>
+                </dt>
+                <dd class="fsdocs-param-docs"></dd>
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    arg1
+                  </span>
+                  :
+                  <code><span><a href="https://fsprojects.github.io/fantomas/reference/internal-utilities-collections-zset-1.html">Zset</a>&lt;'T&gt;</span></code>
+                </dt>
+                <dd class="fsdocs-param-docs"></dd>
+              </dl>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code><span><a href="https://fsprojects.github.io/fantomas/reference/internal-utilities-collections-zset-1.html">Zset</a>&lt;'T&gt;</span></code>
+                </dt>
+                <dd class="fsdocs-return-docs"></dd>
+              </dl>
+            </div>
           </td>
         </tr>
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '1087', 1087)" onmouseover="showTip(event, '1087', 1087)">
+              <code onmouseout="hideTip(event, '1092', 1092)" onmouseover="showTip(event, '1092', 1092)">
                 <p>
                   <a id="contains">
                     <a href="#contains">
@@ -485,7 +503,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="1087">
+              <div class="fsdocs-tip" id="1092">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code><span>contains&#32;<span>arg1&#32;arg2</span></span></code>
@@ -521,39 +539,46 @@
             </div>
           </td>
           <td class="fsdocs-member-xmldoc">
-            <dl class="fsdocs-params">
-              <dt class="fsdocs-param">
-                <span class="fsdocs-param-name">
-                  arg0
-                </span>
-                :
-                <code>'T</code>
-              </dt>
-              <dd class="fsdocs-param-docs"></dd>
-              <dt class="fsdocs-param">
-                <span class="fsdocs-param-name">
-                  arg1
-                </span>
-                :
-                <code><span><a href="https://fsprojects.github.io/fantomas/reference/internal-utilities-collections-zset-1.html">Zset</a>&lt;'T&gt;</span></code>
-              </dt>
-              <dd class="fsdocs-param-docs"></dd>
-            </dl>
-            <dl class="fsdocs-returns">
-              <dt>
-                <span class="fsdocs-return-name">
-                  Returns: 
-                </span>
-                <code>bool</code>
-              </dt>
-              <dd class="fsdocs-return-docs"></dd>
-            </dl>
+            <div class="fsdocs-member-xmldoc-column">
+              <div class="icon-button-row">
+                <a href="" class="fsdocs-source-link" title="Source on GitHub">
+                  <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                </a>
+              </div>
+              <dl class="fsdocs-params">
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    arg0
+                  </span>
+                  :
+                  <code>'T</code>
+                </dt>
+                <dd class="fsdocs-param-docs"></dd>
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    arg1
+                  </span>
+                  :
+                  <code><span><a href="https://fsprojects.github.io/fantomas/reference/internal-utilities-collections-zset-1.html">Zset</a>&lt;'T&gt;</span></code>
+                </dt>
+                <dd class="fsdocs-param-docs"></dd>
+              </dl>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code>bool</code>
+                </dt>
+                <dd class="fsdocs-return-docs"></dd>
+              </dl>
+            </div>
           </td>
         </tr>
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '1088', 1088)" onmouseover="showTip(event, '1088', 1088)">
+              <code onmouseout="hideTip(event, '1093', 1093)" onmouseover="showTip(event, '1093', 1093)">
                 <p>
                   <a id="count">
                     <a href="#count">
@@ -562,7 +587,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="1088">
+              <div class="fsdocs-tip" id="1093">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code><span>count&#32;<span>arg1</span></span></code>
@@ -590,31 +615,38 @@
             </div>
           </td>
           <td class="fsdocs-member-xmldoc">
-            <dl class="fsdocs-params">
-              <dt class="fsdocs-param">
-                <span class="fsdocs-param-name">
-                  arg0
-                </span>
-                :
-                <code><span><a href="https://fsprojects.github.io/fantomas/reference/internal-utilities-collections-zset-1.html">Zset</a>&lt;'T&gt;</span></code>
-              </dt>
-              <dd class="fsdocs-param-docs"></dd>
-            </dl>
-            <dl class="fsdocs-returns">
-              <dt>
-                <span class="fsdocs-return-name">
-                  Returns: 
-                </span>
-                <code>int</code>
-              </dt>
-              <dd class="fsdocs-return-docs"></dd>
-            </dl>
+            <div class="fsdocs-member-xmldoc-column">
+              <div class="icon-button-row">
+                <a href="" class="fsdocs-source-link" title="Source on GitHub">
+                  <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                </a>
+              </div>
+              <dl class="fsdocs-params">
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    arg0
+                  </span>
+                  :
+                  <code><span><a href="https://fsprojects.github.io/fantomas/reference/internal-utilities-collections-zset-1.html">Zset</a>&lt;'T&gt;</span></code>
+                </dt>
+                <dd class="fsdocs-param-docs"></dd>
+              </dl>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code>int</code>
+                </dt>
+                <dd class="fsdocs-return-docs"></dd>
+              </dl>
+            </div>
           </td>
         </tr>
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '1089', 1089)" onmouseover="showTip(event, '1089', 1089)">
+              <code onmouseout="hideTip(event, '1094', 1094)" onmouseover="showTip(event, '1094', 1094)">
                 <p>
                   <a id="diff">
                     <a href="#diff">
@@ -623,7 +655,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="1089">
+              <div class="fsdocs-tip" id="1094">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code><span>diff&#32;<span>arg1&#32;arg2</span></span></code>
@@ -659,39 +691,46 @@
             </div>
           </td>
           <td class="fsdocs-member-xmldoc">
-            <dl class="fsdocs-params">
-              <dt class="fsdocs-param">
-                <span class="fsdocs-param-name">
-                  arg0
-                </span>
-                :
-                <code><span><a href="https://fsprojects.github.io/fantomas/reference/internal-utilities-collections-zset-1.html">Zset</a>&lt;'T&gt;</span></code>
-              </dt>
-              <dd class="fsdocs-param-docs"></dd>
-              <dt class="fsdocs-param">
-                <span class="fsdocs-param-name">
-                  arg1
-                </span>
-                :
-                <code><span><a href="https://fsprojects.github.io/fantomas/reference/internal-utilities-collections-zset-1.html">Zset</a>&lt;'T&gt;</span></code>
-              </dt>
-              <dd class="fsdocs-param-docs"></dd>
-            </dl>
-            <dl class="fsdocs-returns">
-              <dt>
-                <span class="fsdocs-return-name">
-                  Returns: 
-                </span>
-                <code><span><a href="https://fsprojects.github.io/fantomas/reference/internal-utilities-collections-zset-1.html">Zset</a>&lt;'T&gt;</span></code>
-              </dt>
-              <dd class="fsdocs-return-docs"></dd>
-            </dl>
+            <div class="fsdocs-member-xmldoc-column">
+              <div class="icon-button-row">
+                <a href="" class="fsdocs-source-link" title="Source on GitHub">
+                  <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                </a>
+              </div>
+              <dl class="fsdocs-params">
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    arg0
+                  </span>
+                  :
+                  <code><span><a href="https://fsprojects.github.io/fantomas/reference/internal-utilities-collections-zset-1.html">Zset</a>&lt;'T&gt;</span></code>
+                </dt>
+                <dd class="fsdocs-param-docs"></dd>
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    arg1
+                  </span>
+                  :
+                  <code><span><a href="https://fsprojects.github.io/fantomas/reference/internal-utilities-collections-zset-1.html">Zset</a>&lt;'T&gt;</span></code>
+                </dt>
+                <dd class="fsdocs-param-docs"></dd>
+              </dl>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code><span><a href="https://fsprojects.github.io/fantomas/reference/internal-utilities-collections-zset-1.html">Zset</a>&lt;'T&gt;</span></code>
+                </dt>
+                <dd class="fsdocs-return-docs"></dd>
+              </dl>
+            </div>
           </td>
         </tr>
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '1090', 1090)" onmouseover="showTip(event, '1090', 1090)">
+              <code onmouseout="hideTip(event, '1095', 1095)" onmouseover="showTip(event, '1095', 1095)">
                 <p>
                   <a id="elements">
                     <a href="#elements">
@@ -700,7 +739,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="1090">
+              <div class="fsdocs-tip" id="1095">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code><span>elements&#32;<span>arg1</span></span></code>
@@ -728,31 +767,38 @@
             </div>
           </td>
           <td class="fsdocs-member-xmldoc">
-            <dl class="fsdocs-params">
-              <dt class="fsdocs-param">
-                <span class="fsdocs-param-name">
-                  arg0
-                </span>
-                :
-                <code><span><a href="https://fsprojects.github.io/fantomas/reference/internal-utilities-collections-zset-1.html">Zset</a>&lt;'T&gt;</span></code>
-              </dt>
-              <dd class="fsdocs-param-docs"></dd>
-            </dl>
-            <dl class="fsdocs-returns">
-              <dt>
-                <span class="fsdocs-return-name">
-                  Returns: 
-                </span>
-                <code><span>'T&#32;list</span></code>
-              </dt>
-              <dd class="fsdocs-return-docs"></dd>
-            </dl>
+            <div class="fsdocs-member-xmldoc-column">
+              <div class="icon-button-row">
+                <a href="" class="fsdocs-source-link" title="Source on GitHub">
+                  <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                </a>
+              </div>
+              <dl class="fsdocs-params">
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    arg0
+                  </span>
+                  :
+                  <code><span><a href="https://fsprojects.github.io/fantomas/reference/internal-utilities-collections-zset-1.html">Zset</a>&lt;'T&gt;</span></code>
+                </dt>
+                <dd class="fsdocs-param-docs"></dd>
+              </dl>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code><span>'T&#32;list</span></code>
+                </dt>
+                <dd class="fsdocs-return-docs"></dd>
+              </dl>
+            </div>
           </td>
         </tr>
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '1091', 1091)" onmouseover="showTip(event, '1091', 1091)">
+              <code onmouseout="hideTip(event, '1096', 1096)" onmouseover="showTip(event, '1096', 1096)">
                 <p>
                   <a id="empty">
                     <a href="#empty">
@@ -761,7 +807,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="1091">
+              <div class="fsdocs-tip" id="1096">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code><span>empty&#32;<span>arg1</span></span></code>
@@ -789,31 +835,38 @@
             </div>
           </td>
           <td class="fsdocs-member-xmldoc">
-            <dl class="fsdocs-params">
-              <dt class="fsdocs-param">
-                <span class="fsdocs-param-name">
-                  arg0
-                </span>
-                :
-                <code><span><a href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icomparer-1">IComparer</a>&lt;'T&gt;</span></code>
-              </dt>
-              <dd class="fsdocs-param-docs"></dd>
-            </dl>
-            <dl class="fsdocs-returns">
-              <dt>
-                <span class="fsdocs-return-name">
-                  Returns: 
-                </span>
-                <code><span><a href="https://fsprojects.github.io/fantomas/reference/internal-utilities-collections-zset-1.html">Zset</a>&lt;'T&gt;</span></code>
-              </dt>
-              <dd class="fsdocs-return-docs"></dd>
-            </dl>
+            <div class="fsdocs-member-xmldoc-column">
+              <div class="icon-button-row">
+                <a href="" class="fsdocs-source-link" title="Source on GitHub">
+                  <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                </a>
+              </div>
+              <dl class="fsdocs-params">
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    arg0
+                  </span>
+                  :
+                  <code><span><a href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icomparer-1">IComparer</a>&lt;'T&gt;</span></code>
+                </dt>
+                <dd class="fsdocs-param-docs"></dd>
+              </dl>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code><span><a href="https://fsprojects.github.io/fantomas/reference/internal-utilities-collections-zset-1.html">Zset</a>&lt;'T&gt;</span></code>
+                </dt>
+                <dd class="fsdocs-return-docs"></dd>
+              </dl>
+            </div>
           </td>
         </tr>
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '1092', 1092)" onmouseover="showTip(event, '1092', 1092)">
+              <code onmouseout="hideTip(event, '1097', 1097)" onmouseover="showTip(event, '1097', 1097)">
                 <p>
                   <a id="equal">
                     <a href="#equal">
@@ -822,7 +875,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="1092">
+              <div class="fsdocs-tip" id="1097">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code><span>equal&#32;<span>arg1&#32;arg2</span></span></code>
@@ -858,39 +911,46 @@
             </div>
           </td>
           <td class="fsdocs-member-xmldoc">
-            <dl class="fsdocs-params">
-              <dt class="fsdocs-param">
-                <span class="fsdocs-param-name">
-                  arg0
-                </span>
-                :
-                <code><span><a href="https://fsprojects.github.io/fantomas/reference/internal-utilities-collections-zset-1.html">Zset</a>&lt;'T&gt;</span></code>
-              </dt>
-              <dd class="fsdocs-param-docs"></dd>
-              <dt class="fsdocs-param">
-                <span class="fsdocs-param-name">
-                  arg1
-                </span>
-                :
-                <code><span><a href="https://fsprojects.github.io/fantomas/reference/internal-utilities-collections-zset-1.html">Zset</a>&lt;'T&gt;</span></code>
-              </dt>
-              <dd class="fsdocs-param-docs"></dd>
-            </dl>
-            <dl class="fsdocs-returns">
-              <dt>
-                <span class="fsdocs-return-name">
-                  Returns: 
-                </span>
-                <code>bool</code>
-              </dt>
-              <dd class="fsdocs-return-docs"></dd>
-            </dl>
+            <div class="fsdocs-member-xmldoc-column">
+              <div class="icon-button-row">
+                <a href="" class="fsdocs-source-link" title="Source on GitHub">
+                  <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                </a>
+              </div>
+              <dl class="fsdocs-params">
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    arg0
+                  </span>
+                  :
+                  <code><span><a href="https://fsprojects.github.io/fantomas/reference/internal-utilities-collections-zset-1.html">Zset</a>&lt;'T&gt;</span></code>
+                </dt>
+                <dd class="fsdocs-param-docs"></dd>
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    arg1
+                  </span>
+                  :
+                  <code><span><a href="https://fsprojects.github.io/fantomas/reference/internal-utilities-collections-zset-1.html">Zset</a>&lt;'T&gt;</span></code>
+                </dt>
+                <dd class="fsdocs-param-docs"></dd>
+              </dl>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code>bool</code>
+                </dt>
+                <dd class="fsdocs-return-docs"></dd>
+              </dl>
+            </div>
           </td>
         </tr>
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '1093', 1093)" onmouseover="showTip(event, '1093', 1093)">
+              <code onmouseout="hideTip(event, '1098', 1098)" onmouseover="showTip(event, '1098', 1098)">
                 <p>
                   <a id="exists">
                     <a href="#exists">
@@ -899,7 +959,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="1093">
+              <div class="fsdocs-tip" id="1098">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code><span>exists&#32;<span>predicate&#32;arg2</span></span></code>
@@ -935,39 +995,46 @@
             </div>
           </td>
           <td class="fsdocs-member-xmldoc">
-            <dl class="fsdocs-params">
-              <dt class="fsdocs-param">
-                <span class="fsdocs-param-name">
-                  predicate
-                </span>
-                :
-                <code><span>'T&#32;->&#32;bool</span></code>
-              </dt>
-              <dd class="fsdocs-param-docs"></dd>
-              <dt class="fsdocs-param">
-                <span class="fsdocs-param-name">
-                  arg1
-                </span>
-                :
-                <code><span><a href="https://fsprojects.github.io/fantomas/reference/internal-utilities-collections-zset-1.html">Zset</a>&lt;'T&gt;</span></code>
-              </dt>
-              <dd class="fsdocs-param-docs"></dd>
-            </dl>
-            <dl class="fsdocs-returns">
-              <dt>
-                <span class="fsdocs-return-name">
-                  Returns: 
-                </span>
-                <code>bool</code>
-              </dt>
-              <dd class="fsdocs-return-docs"></dd>
-            </dl>
+            <div class="fsdocs-member-xmldoc-column">
+              <div class="icon-button-row">
+                <a href="" class="fsdocs-source-link" title="Source on GitHub">
+                  <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                </a>
+              </div>
+              <dl class="fsdocs-params">
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    predicate
+                  </span>
+                  :
+                  <code><span>'T&#32;->&#32;bool</span></code>
+                </dt>
+                <dd class="fsdocs-param-docs"></dd>
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    arg1
+                  </span>
+                  :
+                  <code><span><a href="https://fsprojects.github.io/fantomas/reference/internal-utilities-collections-zset-1.html">Zset</a>&lt;'T&gt;</span></code>
+                </dt>
+                <dd class="fsdocs-param-docs"></dd>
+              </dl>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code>bool</code>
+                </dt>
+                <dd class="fsdocs-return-docs"></dd>
+              </dl>
+            </div>
           </td>
         </tr>
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '1094', 1094)" onmouseover="showTip(event, '1094', 1094)">
+              <code onmouseout="hideTip(event, '1099', 1099)" onmouseover="showTip(event, '1099', 1099)">
                 <p>
                   <a id="filter">
                     <a href="#filter">
@@ -976,7 +1043,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="1094">
+              <div class="fsdocs-tip" id="1099">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code><span>filter&#32;<span>predicate&#32;arg2</span></span></code>
@@ -1012,39 +1079,46 @@
             </div>
           </td>
           <td class="fsdocs-member-xmldoc">
-            <dl class="fsdocs-params">
-              <dt class="fsdocs-param">
-                <span class="fsdocs-param-name">
-                  predicate
-                </span>
-                :
-                <code><span>'T&#32;->&#32;bool</span></code>
-              </dt>
-              <dd class="fsdocs-param-docs"></dd>
-              <dt class="fsdocs-param">
-                <span class="fsdocs-param-name">
-                  arg1
-                </span>
-                :
-                <code><span><a href="https://fsprojects.github.io/fantomas/reference/internal-utilities-collections-zset-1.html">Zset</a>&lt;'T&gt;</span></code>
-              </dt>
-              <dd class="fsdocs-param-docs"></dd>
-            </dl>
-            <dl class="fsdocs-returns">
-              <dt>
-                <span class="fsdocs-return-name">
-                  Returns: 
-                </span>
-                <code><span><a href="https://fsprojects.github.io/fantomas/reference/internal-utilities-collections-zset-1.html">Zset</a>&lt;'T&gt;</span></code>
-              </dt>
-              <dd class="fsdocs-return-docs"></dd>
-            </dl>
+            <div class="fsdocs-member-xmldoc-column">
+              <div class="icon-button-row">
+                <a href="" class="fsdocs-source-link" title="Source on GitHub">
+                  <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                </a>
+              </div>
+              <dl class="fsdocs-params">
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    predicate
+                  </span>
+                  :
+                  <code><span>'T&#32;->&#32;bool</span></code>
+                </dt>
+                <dd class="fsdocs-param-docs"></dd>
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    arg1
+                  </span>
+                  :
+                  <code><span><a href="https://fsprojects.github.io/fantomas/reference/internal-utilities-collections-zset-1.html">Zset</a>&lt;'T&gt;</span></code>
+                </dt>
+                <dd class="fsdocs-param-docs"></dd>
+              </dl>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code><span><a href="https://fsprojects.github.io/fantomas/reference/internal-utilities-collections-zset-1.html">Zset</a>&lt;'T&gt;</span></code>
+                </dt>
+                <dd class="fsdocs-return-docs"></dd>
+              </dl>
+            </div>
           </td>
         </tr>
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '1095', 1095)" onmouseover="showTip(event, '1095', 1095)">
+              <code onmouseout="hideTip(event, '1100', 1100)" onmouseover="showTip(event, '1100', 1100)">
                 <p>
                   <a id="fold">
                     <a href="#fold">
@@ -1053,7 +1127,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="1095">
+              <div class="fsdocs-tip" id="1100">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code><span>fold&#32;<span>arg1&#32;arg2&#32;arg3</span></span></code>
@@ -1097,47 +1171,54 @@
             </div>
           </td>
           <td class="fsdocs-member-xmldoc">
-            <dl class="fsdocs-params">
-              <dt class="fsdocs-param">
-                <span class="fsdocs-param-name">
-                  arg0
-                </span>
-                :
-                <code><span>'T&#32;->&#32;'State&#32;->&#32;'State</span></code>
-              </dt>
-              <dd class="fsdocs-param-docs"></dd>
-              <dt class="fsdocs-param">
-                <span class="fsdocs-param-name">
-                  arg1
-                </span>
-                :
-                <code><span><a href="https://fsprojects.github.io/fantomas/reference/internal-utilities-collections-zset-1.html">Zset</a>&lt;'T&gt;</span></code>
-              </dt>
-              <dd class="fsdocs-param-docs"></dd>
-              <dt class="fsdocs-param">
-                <span class="fsdocs-param-name">
-                  arg2
-                </span>
-                :
-                <code>'State</code>
-              </dt>
-              <dd class="fsdocs-param-docs"></dd>
-            </dl>
-            <dl class="fsdocs-returns">
-              <dt>
-                <span class="fsdocs-return-name">
-                  Returns: 
-                </span>
-                <code>'State</code>
-              </dt>
-              <dd class="fsdocs-return-docs"></dd>
-            </dl>
+            <div class="fsdocs-member-xmldoc-column">
+              <div class="icon-button-row">
+                <a href="" class="fsdocs-source-link" title="Source on GitHub">
+                  <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                </a>
+              </div>
+              <dl class="fsdocs-params">
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    arg0
+                  </span>
+                  :
+                  <code><span>'T&#32;->&#32;'State&#32;->&#32;'State</span></code>
+                </dt>
+                <dd class="fsdocs-param-docs"></dd>
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    arg1
+                  </span>
+                  :
+                  <code><span><a href="https://fsprojects.github.io/fantomas/reference/internal-utilities-collections-zset-1.html">Zset</a>&lt;'T&gt;</span></code>
+                </dt>
+                <dd class="fsdocs-param-docs"></dd>
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    arg2
+                  </span>
+                  :
+                  <code>'State</code>
+                </dt>
+                <dd class="fsdocs-param-docs"></dd>
+              </dl>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code>'State</code>
+                </dt>
+                <dd class="fsdocs-return-docs"></dd>
+              </dl>
+            </div>
           </td>
         </tr>
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '1096', 1096)" onmouseover="showTip(event, '1096', 1096)">
+              <code onmouseout="hideTip(event, '1101', 1101)" onmouseover="showTip(event, '1101', 1101)">
                 <p>
                   <a id="forall">
                     <a href="#forall">
@@ -1146,7 +1227,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="1096">
+              <div class="fsdocs-tip" id="1101">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code><span>forall&#32;<span>predicate&#32;arg2</span></span></code>
@@ -1182,39 +1263,46 @@
             </div>
           </td>
           <td class="fsdocs-member-xmldoc">
-            <dl class="fsdocs-params">
-              <dt class="fsdocs-param">
-                <span class="fsdocs-param-name">
-                  predicate
-                </span>
-                :
-                <code><span>'T&#32;->&#32;bool</span></code>
-              </dt>
-              <dd class="fsdocs-param-docs"></dd>
-              <dt class="fsdocs-param">
-                <span class="fsdocs-param-name">
-                  arg1
-                </span>
-                :
-                <code><span><a href="https://fsprojects.github.io/fantomas/reference/internal-utilities-collections-zset-1.html">Zset</a>&lt;'T&gt;</span></code>
-              </dt>
-              <dd class="fsdocs-param-docs"></dd>
-            </dl>
-            <dl class="fsdocs-returns">
-              <dt>
-                <span class="fsdocs-return-name">
-                  Returns: 
-                </span>
-                <code>bool</code>
-              </dt>
-              <dd class="fsdocs-return-docs"></dd>
-            </dl>
+            <div class="fsdocs-member-xmldoc-column">
+              <div class="icon-button-row">
+                <a href="" class="fsdocs-source-link" title="Source on GitHub">
+                  <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                </a>
+              </div>
+              <dl class="fsdocs-params">
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    predicate
+                  </span>
+                  :
+                  <code><span>'T&#32;->&#32;bool</span></code>
+                </dt>
+                <dd class="fsdocs-param-docs"></dd>
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    arg1
+                  </span>
+                  :
+                  <code><span><a href="https://fsprojects.github.io/fantomas/reference/internal-utilities-collections-zset-1.html">Zset</a>&lt;'T&gt;</span></code>
+                </dt>
+                <dd class="fsdocs-param-docs"></dd>
+              </dl>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code>bool</code>
+                </dt>
+                <dd class="fsdocs-return-docs"></dd>
+              </dl>
+            </div>
           </td>
         </tr>
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '1097', 1097)" onmouseover="showTip(event, '1097', 1097)">
+              <code onmouseout="hideTip(event, '1102', 1102)" onmouseover="showTip(event, '1102', 1102)">
                 <p>
                   <a id="inter">
                     <a href="#inter">
@@ -1223,7 +1311,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="1097">
+              <div class="fsdocs-tip" id="1102">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code><span>inter&#32;<span>arg1&#32;arg2</span></span></code>
@@ -1259,39 +1347,46 @@
             </div>
           </td>
           <td class="fsdocs-member-xmldoc">
-            <dl class="fsdocs-params">
-              <dt class="fsdocs-param">
-                <span class="fsdocs-param-name">
-                  arg0
-                </span>
-                :
-                <code><span><a href="https://fsprojects.github.io/fantomas/reference/internal-utilities-collections-zset-1.html">Zset</a>&lt;'T&gt;</span></code>
-              </dt>
-              <dd class="fsdocs-param-docs"></dd>
-              <dt class="fsdocs-param">
-                <span class="fsdocs-param-name">
-                  arg1
-                </span>
-                :
-                <code><span><a href="https://fsprojects.github.io/fantomas/reference/internal-utilities-collections-zset-1.html">Zset</a>&lt;'T&gt;</span></code>
-              </dt>
-              <dd class="fsdocs-param-docs"></dd>
-            </dl>
-            <dl class="fsdocs-returns">
-              <dt>
-                <span class="fsdocs-return-name">
-                  Returns: 
-                </span>
-                <code><span><a href="https://fsprojects.github.io/fantomas/reference/internal-utilities-collections-zset-1.html">Zset</a>&lt;'T&gt;</span></code>
-              </dt>
-              <dd class="fsdocs-return-docs"></dd>
-            </dl>
+            <div class="fsdocs-member-xmldoc-column">
+              <div class="icon-button-row">
+                <a href="" class="fsdocs-source-link" title="Source on GitHub">
+                  <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                </a>
+              </div>
+              <dl class="fsdocs-params">
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    arg0
+                  </span>
+                  :
+                  <code><span><a href="https://fsprojects.github.io/fantomas/reference/internal-utilities-collections-zset-1.html">Zset</a>&lt;'T&gt;</span></code>
+                </dt>
+                <dd class="fsdocs-param-docs"></dd>
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    arg1
+                  </span>
+                  :
+                  <code><span><a href="https://fsprojects.github.io/fantomas/reference/internal-utilities-collections-zset-1.html">Zset</a>&lt;'T&gt;</span></code>
+                </dt>
+                <dd class="fsdocs-param-docs"></dd>
+              </dl>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code><span><a href="https://fsprojects.github.io/fantomas/reference/internal-utilities-collections-zset-1.html">Zset</a>&lt;'T&gt;</span></code>
+                </dt>
+                <dd class="fsdocs-return-docs"></dd>
+              </dl>
+            </div>
           </td>
         </tr>
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '1098', 1098)" onmouseover="showTip(event, '1098', 1098)">
+              <code onmouseout="hideTip(event, '1103', 1103)" onmouseover="showTip(event, '1103', 1103)">
                 <p>
                   <a id="isEmpty">
                     <a href="#isEmpty">
@@ -1300,7 +1395,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="1098">
+              <div class="fsdocs-tip" id="1103">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code><span>isEmpty&#32;<span>arg1</span></span></code>
@@ -1328,31 +1423,38 @@
             </div>
           </td>
           <td class="fsdocs-member-xmldoc">
-            <dl class="fsdocs-params">
-              <dt class="fsdocs-param">
-                <span class="fsdocs-param-name">
-                  arg0
-                </span>
-                :
-                <code><span><a href="https://fsprojects.github.io/fantomas/reference/internal-utilities-collections-zset-1.html">Zset</a>&lt;'T&gt;</span></code>
-              </dt>
-              <dd class="fsdocs-param-docs"></dd>
-            </dl>
-            <dl class="fsdocs-returns">
-              <dt>
-                <span class="fsdocs-return-name">
-                  Returns: 
-                </span>
-                <code>bool</code>
-              </dt>
-              <dd class="fsdocs-return-docs"></dd>
-            </dl>
+            <div class="fsdocs-member-xmldoc-column">
+              <div class="icon-button-row">
+                <a href="" class="fsdocs-source-link" title="Source on GitHub">
+                  <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                </a>
+              </div>
+              <dl class="fsdocs-params">
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    arg0
+                  </span>
+                  :
+                  <code><span><a href="https://fsprojects.github.io/fantomas/reference/internal-utilities-collections-zset-1.html">Zset</a>&lt;'T&gt;</span></code>
+                </dt>
+                <dd class="fsdocs-param-docs"></dd>
+              </dl>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code>bool</code>
+                </dt>
+                <dd class="fsdocs-return-docs"></dd>
+              </dl>
+            </div>
           </td>
         </tr>
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '1099', 1099)" onmouseover="showTip(event, '1099', 1099)">
+              <code onmouseout="hideTip(event, '1104', 1104)" onmouseover="showTip(event, '1104', 1104)">
                 <p>
                   <a id="iter">
                     <a href="#iter">
@@ -1361,7 +1463,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="1099">
+              <div class="fsdocs-tip" id="1104">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code><span>iter&#32;<span>arg1&#32;arg2</span></span></code>
@@ -1392,30 +1494,37 @@
             </div>
           </td>
           <td class="fsdocs-member-xmldoc">
-            <dl class="fsdocs-params">
-              <dt class="fsdocs-param">
-                <span class="fsdocs-param-name">
-                  arg0
-                </span>
-                :
-                <code><span>'T&#32;->&#32;unit</span></code>
-              </dt>
-              <dd class="fsdocs-param-docs"></dd>
-              <dt class="fsdocs-param">
-                <span class="fsdocs-param-name">
-                  arg1
-                </span>
-                :
-                <code><span><a href="https://fsprojects.github.io/fantomas/reference/internal-utilities-collections-zset-1.html">Zset</a>&lt;'T&gt;</span></code>
-              </dt>
-              <dd class="fsdocs-param-docs"></dd>
-            </dl>
+            <div class="fsdocs-member-xmldoc-column">
+              <div class="icon-button-row">
+                <a href="" class="fsdocs-source-link" title="Source on GitHub">
+                  <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                </a>
+              </div>
+              <dl class="fsdocs-params">
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    arg0
+                  </span>
+                  :
+                  <code><span>'T&#32;->&#32;unit</span></code>
+                </dt>
+                <dd class="fsdocs-param-docs"></dd>
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    arg1
+                  </span>
+                  :
+                  <code><span><a href="https://fsprojects.github.io/fantomas/reference/internal-utilities-collections-zset-1.html">Zset</a>&lt;'T&gt;</span></code>
+                </dt>
+                <dd class="fsdocs-param-docs"></dd>
+              </dl>
+            </div>
           </td>
         </tr>
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '1100', 1100)" onmouseover="showTip(event, '1100', 1100)">
+              <code onmouseout="hideTip(event, '1105', 1105)" onmouseover="showTip(event, '1105', 1105)">
                 <p>
                   <a id="memberOf">
                     <a href="#memberOf">
@@ -1424,7 +1533,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="1100">
+              <div class="fsdocs-tip" id="1105">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code><span>memberOf&#32;<span>arg1&#32;arg2</span></span></code>
@@ -1460,39 +1569,46 @@
             </div>
           </td>
           <td class="fsdocs-member-xmldoc">
-            <dl class="fsdocs-params">
-              <dt class="fsdocs-param">
-                <span class="fsdocs-param-name">
-                  arg0
-                </span>
-                :
-                <code><span><a href="https://fsprojects.github.io/fantomas/reference/internal-utilities-collections-zset-1.html">Zset</a>&lt;'T&gt;</span></code>
-              </dt>
-              <dd class="fsdocs-param-docs"></dd>
-              <dt class="fsdocs-param">
-                <span class="fsdocs-param-name">
-                  arg1
-                </span>
-                :
-                <code>'T</code>
-              </dt>
-              <dd class="fsdocs-param-docs"></dd>
-            </dl>
-            <dl class="fsdocs-returns">
-              <dt>
-                <span class="fsdocs-return-name">
-                  Returns: 
-                </span>
-                <code>bool</code>
-              </dt>
-              <dd class="fsdocs-return-docs"></dd>
-            </dl>
+            <div class="fsdocs-member-xmldoc-column">
+              <div class="icon-button-row">
+                <a href="" class="fsdocs-source-link" title="Source on GitHub">
+                  <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                </a>
+              </div>
+              <dl class="fsdocs-params">
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    arg0
+                  </span>
+                  :
+                  <code><span><a href="https://fsprojects.github.io/fantomas/reference/internal-utilities-collections-zset-1.html">Zset</a>&lt;'T&gt;</span></code>
+                </dt>
+                <dd class="fsdocs-param-docs"></dd>
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    arg1
+                  </span>
+                  :
+                  <code>'T</code>
+                </dt>
+                <dd class="fsdocs-param-docs"></dd>
+              </dl>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code>bool</code>
+                </dt>
+                <dd class="fsdocs-return-docs"></dd>
+              </dl>
+            </div>
           </td>
         </tr>
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '1101', 1101)" onmouseover="showTip(event, '1101', 1101)">
+              <code onmouseout="hideTip(event, '1106', 1106)" onmouseover="showTip(event, '1106', 1106)">
                 <p>
                   <a id="remove">
                     <a href="#remove">
@@ -1501,7 +1617,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="1101">
+              <div class="fsdocs-tip" id="1106">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code><span>remove&#32;<span>arg1&#32;arg2</span></span></code>
@@ -1537,39 +1653,46 @@
             </div>
           </td>
           <td class="fsdocs-member-xmldoc">
-            <dl class="fsdocs-params">
-              <dt class="fsdocs-param">
-                <span class="fsdocs-param-name">
-                  arg0
-                </span>
-                :
-                <code>'T</code>
-              </dt>
-              <dd class="fsdocs-param-docs"></dd>
-              <dt class="fsdocs-param">
-                <span class="fsdocs-param-name">
-                  arg1
-                </span>
-                :
-                <code><span><a href="https://fsprojects.github.io/fantomas/reference/internal-utilities-collections-zset-1.html">Zset</a>&lt;'T&gt;</span></code>
-              </dt>
-              <dd class="fsdocs-param-docs"></dd>
-            </dl>
-            <dl class="fsdocs-returns">
-              <dt>
-                <span class="fsdocs-return-name">
-                  Returns: 
-                </span>
-                <code><span><a href="https://fsprojects.github.io/fantomas/reference/internal-utilities-collections-zset-1.html">Zset</a>&lt;'T&gt;</span></code>
-              </dt>
-              <dd class="fsdocs-return-docs"></dd>
-            </dl>
+            <div class="fsdocs-member-xmldoc-column">
+              <div class="icon-button-row">
+                <a href="" class="fsdocs-source-link" title="Source on GitHub">
+                  <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                </a>
+              </div>
+              <dl class="fsdocs-params">
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    arg0
+                  </span>
+                  :
+                  <code>'T</code>
+                </dt>
+                <dd class="fsdocs-param-docs"></dd>
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    arg1
+                  </span>
+                  :
+                  <code><span><a href="https://fsprojects.github.io/fantomas/reference/internal-utilities-collections-zset-1.html">Zset</a>&lt;'T&gt;</span></code>
+                </dt>
+                <dd class="fsdocs-param-docs"></dd>
+              </dl>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code><span><a href="https://fsprojects.github.io/fantomas/reference/internal-utilities-collections-zset-1.html">Zset</a>&lt;'T&gt;</span></code>
+                </dt>
+                <dd class="fsdocs-return-docs"></dd>
+              </dl>
+            </div>
           </td>
         </tr>
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '1102', 1102)" onmouseover="showTip(event, '1102', 1102)">
+              <code onmouseout="hideTip(event, '1107', 1107)" onmouseover="showTip(event, '1107', 1107)">
                 <p>
                   <a id="singleton">
                     <a href="#singleton">
@@ -1578,7 +1701,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="1102">
+              <div class="fsdocs-tip" id="1107">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code><span>singleton&#32;<span>arg1&#32;arg2</span></span></code>
@@ -1614,39 +1737,46 @@
             </div>
           </td>
           <td class="fsdocs-member-xmldoc">
-            <dl class="fsdocs-params">
-              <dt class="fsdocs-param">
-                <span class="fsdocs-param-name">
-                  arg0
-                </span>
-                :
-                <code><span><a href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icomparer-1">IComparer</a>&lt;'T&gt;</span></code>
-              </dt>
-              <dd class="fsdocs-param-docs"></dd>
-              <dt class="fsdocs-param">
-                <span class="fsdocs-param-name">
-                  arg1
-                </span>
-                :
-                <code>'T</code>
-              </dt>
-              <dd class="fsdocs-param-docs"></dd>
-            </dl>
-            <dl class="fsdocs-returns">
-              <dt>
-                <span class="fsdocs-return-name">
-                  Returns: 
-                </span>
-                <code><span><a href="https://fsprojects.github.io/fantomas/reference/internal-utilities-collections-zset-1.html">Zset</a>&lt;'T&gt;</span></code>
-              </dt>
-              <dd class="fsdocs-return-docs"></dd>
-            </dl>
+            <div class="fsdocs-member-xmldoc-column">
+              <div class="icon-button-row">
+                <a href="" class="fsdocs-source-link" title="Source on GitHub">
+                  <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                </a>
+              </div>
+              <dl class="fsdocs-params">
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    arg0
+                  </span>
+                  :
+                  <code><span><a href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icomparer-1">IComparer</a>&lt;'T&gt;</span></code>
+                </dt>
+                <dd class="fsdocs-param-docs"></dd>
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    arg1
+                  </span>
+                  :
+                  <code>'T</code>
+                </dt>
+                <dd class="fsdocs-param-docs"></dd>
+              </dl>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code><span><a href="https://fsprojects.github.io/fantomas/reference/internal-utilities-collections-zset-1.html">Zset</a>&lt;'T&gt;</span></code>
+                </dt>
+                <dd class="fsdocs-return-docs"></dd>
+              </dl>
+            </div>
           </td>
         </tr>
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '1103', 1103)" onmouseover="showTip(event, '1103', 1103)">
+              <code onmouseout="hideTip(event, '1108', 1108)" onmouseover="showTip(event, '1108', 1108)">
                 <p>
                   <a id="subset">
                     <a href="#subset">
@@ -1655,7 +1785,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="1103">
+              <div class="fsdocs-tip" id="1108">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code><span>subset&#32;<span>arg1&#32;arg2</span></span></code>
@@ -1691,39 +1821,46 @@
             </div>
           </td>
           <td class="fsdocs-member-xmldoc">
-            <dl class="fsdocs-params">
-              <dt class="fsdocs-param">
-                <span class="fsdocs-param-name">
-                  arg0
-                </span>
-                :
-                <code><span><a href="https://fsprojects.github.io/fantomas/reference/internal-utilities-collections-zset-1.html">Zset</a>&lt;'T&gt;</span></code>
-              </dt>
-              <dd class="fsdocs-param-docs"></dd>
-              <dt class="fsdocs-param">
-                <span class="fsdocs-param-name">
-                  arg1
-                </span>
-                :
-                <code><span><a href="https://fsprojects.github.io/fantomas/reference/internal-utilities-collections-zset-1.html">Zset</a>&lt;'T&gt;</span></code>
-              </dt>
-              <dd class="fsdocs-param-docs"></dd>
-            </dl>
-            <dl class="fsdocs-returns">
-              <dt>
-                <span class="fsdocs-return-name">
-                  Returns: 
-                </span>
-                <code>bool</code>
-              </dt>
-              <dd class="fsdocs-return-docs"></dd>
-            </dl>
+            <div class="fsdocs-member-xmldoc-column">
+              <div class="icon-button-row">
+                <a href="" class="fsdocs-source-link" title="Source on GitHub">
+                  <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                </a>
+              </div>
+              <dl class="fsdocs-params">
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    arg0
+                  </span>
+                  :
+                  <code><span><a href="https://fsprojects.github.io/fantomas/reference/internal-utilities-collections-zset-1.html">Zset</a>&lt;'T&gt;</span></code>
+                </dt>
+                <dd class="fsdocs-param-docs"></dd>
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    arg1
+                  </span>
+                  :
+                  <code><span><a href="https://fsprojects.github.io/fantomas/reference/internal-utilities-collections-zset-1.html">Zset</a>&lt;'T&gt;</span></code>
+                </dt>
+                <dd class="fsdocs-param-docs"></dd>
+              </dl>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code>bool</code>
+                </dt>
+                <dd class="fsdocs-return-docs"></dd>
+              </dl>
+            </div>
           </td>
         </tr>
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '1104', 1104)" onmouseover="showTip(event, '1104', 1104)">
+              <code onmouseout="hideTip(event, '1109', 1109)" onmouseover="showTip(event, '1109', 1109)">
                 <p>
                   <a id="union">
                     <a href="#union">
@@ -1732,7 +1869,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="1104">
+              <div class="fsdocs-tip" id="1109">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code><span>union&#32;<span>arg1&#32;arg2</span></span></code>
@@ -1768,33 +1905,40 @@
             </div>
           </td>
           <td class="fsdocs-member-xmldoc">
-            <dl class="fsdocs-params">
-              <dt class="fsdocs-param">
-                <span class="fsdocs-param-name">
-                  arg0
-                </span>
-                :
-                <code><span><a href="https://fsprojects.github.io/fantomas/reference/internal-utilities-collections-zset-1.html">Zset</a>&lt;'T&gt;</span></code>
-              </dt>
-              <dd class="fsdocs-param-docs"></dd>
-              <dt class="fsdocs-param">
-                <span class="fsdocs-param-name">
-                  arg1
-                </span>
-                :
-                <code><span><a href="https://fsprojects.github.io/fantomas/reference/internal-utilities-collections-zset-1.html">Zset</a>&lt;'T&gt;</span></code>
-              </dt>
-              <dd class="fsdocs-param-docs"></dd>
-            </dl>
-            <dl class="fsdocs-returns">
-              <dt>
-                <span class="fsdocs-return-name">
-                  Returns: 
-                </span>
-                <code><span><a href="https://fsprojects.github.io/fantomas/reference/internal-utilities-collections-zset-1.html">Zset</a>&lt;'T&gt;</span></code>
-              </dt>
-              <dd class="fsdocs-return-docs"></dd>
-            </dl>
+            <div class="fsdocs-member-xmldoc-column">
+              <div class="icon-button-row">
+                <a href="" class="fsdocs-source-link" title="Source on GitHub">
+                  <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                </a>
+              </div>
+              <dl class="fsdocs-params">
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    arg0
+                  </span>
+                  :
+                  <code><span><a href="https://fsprojects.github.io/fantomas/reference/internal-utilities-collections-zset-1.html">Zset</a>&lt;'T&gt;</span></code>
+                </dt>
+                <dd class="fsdocs-param-docs"></dd>
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    arg1
+                  </span>
+                  :
+                  <code><span><a href="https://fsprojects.github.io/fantomas/reference/internal-utilities-collections-zset-1.html">Zset</a>&lt;'T&gt;</span></code>
+                </dt>
+                <dd class="fsdocs-param-docs"></dd>
+              </dl>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code><span><a href="https://fsprojects.github.io/fantomas/reference/internal-utilities-collections-zset-1.html">Zset</a>&lt;'T&gt;</span></code>
+                </dt>
+                <dd class="fsdocs-return-docs"></dd>
+              </dl>
+            </div>
           </td>
         </tr>
       </tbody>
@@ -1825,6 +1969,7 @@
 </dialog>
 <script type="module" src="https://fsprojects.github.io/fantomas/content/fsdocs-tips.js"></script>
 <script type="module" src="https://fsprojects.github.io/fantomas/content/fsdocs-theme-toggle.js"></script>
+<script type="module" src="https://fsprojects.github.io/fantomas/content/fsdocs-details-toggle.js"></script>
 <script type="module" src="https://fsprojects.github.io/fantomas/content/fsdocs-theme.js"></script>
 <script type="module" src="https://fsprojects.github.io/fantomas/content/fsdocs-search.js"></script>
 <script type="module">

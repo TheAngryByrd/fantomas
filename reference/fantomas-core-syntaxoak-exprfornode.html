@@ -22,6 +22,7 @@
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
     <link href="https://fsprojects.github.io/fantomas/images/favicon.ico" rel="icon" sizes="32x32" type="image/png"/>
     <script type="application/javascript" src="https://fsprojects.github.io/fantomas/content/fsdocs-theme-set-dark.js"></script>
+    <script type="application/javascript" src="https://fsprojects.github.io/fantomas/content/fsdocs-details-set-expanded.js"></script>
     <link href="https://fsprojects.github.io/fantomas/content/fsdocs-default.css" rel="stylesheet" type="text/css"/>
     <link href="https://fsprojects.github.io/fantomas/content/fsdocs-theme.css" rel="stylesheet" type="text/css"/>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;1,400&family=Reem+Kufi:wght@400;500;700&display=swap" rel="stylesheet">
@@ -312,9 +313,11 @@
   </dl>
   <div class="fsdocs-xmldoc">
     <div>
-      <p class="fsdocs-summary">
-        
-      </p>
+      <div class="fsdocs-summary-contents">
+        <p class="fsdocs-summary">
+          
+        </p>
+      </div>
     </div>
   </div>
   <div></div>
@@ -335,6 +338,7 @@
           </td>
           <td class="fsdocs-member-list-header">
             Description
+            <fsdocs-details-toggle></fsdocs-details-toggle>
           </td>
         </tr>
       </thead>
@@ -342,7 +346,7 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '3553', 3553)" onmouseover="showTip(event, '3553', 3553)">
+              <code onmouseout="hideTip(event, '3453', 3453)" onmouseover="showTip(event, '3453', 3453)">
                 <p>
                   <a id="``.ctor``">
                     <a href="#``.ctor``">
@@ -351,7 +355,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="3553">
+              <div class="fsdocs-tip" id="3453">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code><span>ExprForNode<span><span>(<span>forNode,&#32;ident,&#32;equals,&#32;identBody,&#32;direction,&#32;toBody,&#32;doBody,&#32;range</span>)</span></span></span></code>
@@ -435,81 +439,88 @@
             </div>
           </td>
           <td class="fsdocs-member-xmldoc">
-            <dl class="fsdocs-params">
-              <dt class="fsdocs-param">
-                <span class="fsdocs-param-name">
-                  forNode
-                </span>
-                :
-                <code><a href="https://fsprojects.github.io/fantomas/reference/fantomas-core-syntaxoak-singletextnode.html">SingleTextNode</a></code>
-              </dt>
-              <dd class="fsdocs-param-docs"></dd>
-              <dt class="fsdocs-param">
-                <span class="fsdocs-param-name">
-                  ident
-                </span>
-                :
-                <code><a href="https://fsprojects.github.io/fantomas/reference/fantomas-core-syntaxoak-singletextnode.html">SingleTextNode</a></code>
-              </dt>
-              <dd class="fsdocs-param-docs"></dd>
-              <dt class="fsdocs-param">
-                <span class="fsdocs-param-name">
-                  equals
-                </span>
-                :
-                <code><a href="https://fsprojects.github.io/fantomas/reference/fantomas-core-syntaxoak-singletextnode.html">SingleTextNode</a></code>
-              </dt>
-              <dd class="fsdocs-param-docs"></dd>
-              <dt class="fsdocs-param">
-                <span class="fsdocs-param-name">
-                  identBody
-                </span>
-                :
-                <code><a href="https://fsprojects.github.io/fantomas/reference/fantomas-core-syntaxoak-expr.html">Expr</a></code>
-              </dt>
-              <dd class="fsdocs-param-docs"></dd>
-              <dt class="fsdocs-param">
-                <span class="fsdocs-param-name">
-                  direction
-                </span>
-                :
-                <code>bool</code>
-              </dt>
-              <dd class="fsdocs-param-docs"></dd>
-              <dt class="fsdocs-param">
-                <span class="fsdocs-param-name">
-                  toBody
-                </span>
-                :
-                <code><a href="https://fsprojects.github.io/fantomas/reference/fantomas-core-syntaxoak-expr.html">Expr</a></code>
-              </dt>
-              <dd class="fsdocs-param-docs"></dd>
-              <dt class="fsdocs-param">
-                <span class="fsdocs-param-name">
-                  doBody
-                </span>
-                :
-                <code><a href="https://fsprojects.github.io/fantomas/reference/fantomas-core-syntaxoak-expr.html">Expr</a></code>
-              </dt>
-              <dd class="fsdocs-param-docs"></dd>
-              <dt class="fsdocs-param">
-                <span class="fsdocs-param-name">
-                  range
-                </span>
-                :
-                <code><a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-text-range-0.html">range</a></code>
-              </dt>
-              <dd class="fsdocs-param-docs"></dd>
-            </dl>
-            <dl class="fsdocs-returns">
-              <dt>
-                <span class="fsdocs-return-name">
-                  Returns: 
-                </span>
-                <code><a href="https://fsprojects.github.io/fantomas/reference/fantomas-core-syntaxoak-exprfornode.html">ExprForNode</a></code>
-              </dt>
-              <dd class="fsdocs-return-docs"></dd>
-            </dl>
+            <div class="fsdocs-member-xmldoc-column">
+              <div class="icon-button-row">
+                <a href="" class="fsdocs-source-link" title="Source on GitHub">
+                  <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                </a>
+              </div>
+              <dl class="fsdocs-params">
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    forNode
+                  </span>
+                  :
+                  <code><a href="https://fsprojects.github.io/fantomas/reference/fantomas-core-syntaxoak-singletextnode.html">SingleTextNode</a></code>
+                </dt>
+                <dd class="fsdocs-param-docs"></dd>
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    ident
+                  </span>
+                  :
+                  <code><a href="https://fsprojects.github.io/fantomas/reference/fantomas-core-syntaxoak-singletextnode.html">SingleTextNode</a></code>
+                </dt>
+                <dd class="fsdocs-param-docs"></dd>
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    equals
+                  </span>
+                  :
+                  <code><a href="https://fsprojects.github.io/fantomas/reference/fantomas-core-syntaxoak-singletextnode.html">SingleTextNode</a></code>
+                </dt>
+                <dd class="fsdocs-param-docs"></dd>
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    identBody
+                  </span>
+                  :
+                  <code><a href="https://fsprojects.github.io/fantomas/reference/fantomas-core-syntaxoak-expr.html">Expr</a></code>
+                </dt>
+                <dd class="fsdocs-param-docs"></dd>
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    direction
+                  </span>
+                  :
+                  <code>bool</code>
+                </dt>
+                <dd class="fsdocs-param-docs"></dd>
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    toBody
+                  </span>
+                  :
+                  <code><a href="https://fsprojects.github.io/fantomas/reference/fantomas-core-syntaxoak-expr.html">Expr</a></code>
+                </dt>
+                <dd class="fsdocs-param-docs"></dd>
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    doBody
+                  </span>
+                  :
+                  <code><a href="https://fsprojects.github.io/fantomas/reference/fantomas-core-syntaxoak-expr.html">Expr</a></code>
+                </dt>
+                <dd class="fsdocs-param-docs"></dd>
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    range
+                  </span>
+                  :
+                  <code><a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-text-range-0.html">range</a></code>
+                </dt>
+                <dd class="fsdocs-param-docs"></dd>
+              </dl>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code><a href="https://fsprojects.github.io/fantomas/reference/fantomas-core-syntaxoak-exprfornode.html">ExprForNode</a></code>
+                </dt>
+                <dd class="fsdocs-return-docs"></dd>
+              </dl>
+            </div>
           </td>
         </tr>
       </tbody>
@@ -527,6 +538,7 @@
           </td>
           <td class="fsdocs-member-list-header">
             Description
+            <fsdocs-details-toggle></fsdocs-details-toggle>
           </td>
         </tr>
       </thead>
@@ -534,7 +546,7 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '3554', 3554)" onmouseover="showTip(event, '3554', 3554)">
+              <code onmouseout="hideTip(event, '3454', 3454)" onmouseover="showTip(event, '3454', 3454)">
                 <p>
                   <a id="Direction">
                     <a href="#Direction">
@@ -543,7 +555,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="3554">
+              <div class="fsdocs-tip" id="3454">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code><span>this.Direction</span></code>
@@ -559,21 +571,28 @@
             </div>
           </td>
           <td class="fsdocs-member-xmldoc">
-            <dl class="fsdocs-returns">
-              <dt>
-                <span class="fsdocs-return-name">
-                  Returns: 
-                </span>
-                <code>bool</code>
-              </dt>
-              <dd class="fsdocs-return-docs"></dd>
-            </dl>
+            <div class="fsdocs-member-xmldoc-column">
+              <div class="icon-button-row">
+                <a href="" class="fsdocs-source-link" title="Source on GitHub">
+                  <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                </a>
+              </div>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code>bool</code>
+                </dt>
+                <dd class="fsdocs-return-docs"></dd>
+              </dl>
+            </div>
           </td>
         </tr>
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '3555', 3555)" onmouseover="showTip(event, '3555', 3555)">
+              <code onmouseout="hideTip(event, '3455', 3455)" onmouseover="showTip(event, '3455', 3455)">
                 <p>
                   <a id="DoBody">
                     <a href="#DoBody">
@@ -582,7 +601,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="3555">
+              <div class="fsdocs-tip" id="3455">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code><span>this.DoBody</span></code>
@@ -598,21 +617,28 @@
             </div>
           </td>
           <td class="fsdocs-member-xmldoc">
-            <dl class="fsdocs-returns">
-              <dt>
-                <span class="fsdocs-return-name">
-                  Returns: 
-                </span>
-                <code><a href="https://fsprojects.github.io/fantomas/reference/fantomas-core-syntaxoak-expr.html">Expr</a></code>
-              </dt>
-              <dd class="fsdocs-return-docs"></dd>
-            </dl>
+            <div class="fsdocs-member-xmldoc-column">
+              <div class="icon-button-row">
+                <a href="" class="fsdocs-source-link" title="Source on GitHub">
+                  <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                </a>
+              </div>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code><a href="https://fsprojects.github.io/fantomas/reference/fantomas-core-syntaxoak-expr.html">Expr</a></code>
+                </dt>
+                <dd class="fsdocs-return-docs"></dd>
+              </dl>
+            </div>
           </td>
         </tr>
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '3556', 3556)" onmouseover="showTip(event, '3556', 3556)">
+              <code onmouseout="hideTip(event, '3456', 3456)" onmouseover="showTip(event, '3456', 3456)">
                 <p>
                   <a id="Equals">
                     <a href="#Equals">
@@ -621,7 +647,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="3556">
+              <div class="fsdocs-tip" id="3456">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code><span>this.Equals</span></code>
@@ -637,21 +663,28 @@
             </div>
           </td>
           <td class="fsdocs-member-xmldoc">
-            <dl class="fsdocs-returns">
-              <dt>
-                <span class="fsdocs-return-name">
-                  Returns: 
-                </span>
-                <code><a href="https://fsprojects.github.io/fantomas/reference/fantomas-core-syntaxoak-singletextnode.html">SingleTextNode</a></code>
-              </dt>
-              <dd class="fsdocs-return-docs"></dd>
-            </dl>
+            <div class="fsdocs-member-xmldoc-column">
+              <div class="icon-button-row">
+                <a href="" class="fsdocs-source-link" title="Source on GitHub">
+                  <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                </a>
+              </div>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code><a href="https://fsprojects.github.io/fantomas/reference/fantomas-core-syntaxoak-singletextnode.html">SingleTextNode</a></code>
+                </dt>
+                <dd class="fsdocs-return-docs"></dd>
+              </dl>
+            </div>
           </td>
         </tr>
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '3557', 3557)" onmouseover="showTip(event, '3557', 3557)">
+              <code onmouseout="hideTip(event, '3457', 3457)" onmouseover="showTip(event, '3457', 3457)">
                 <p>
                   <a id="For">
                     <a href="#For">
@@ -660,7 +693,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="3557">
+              <div class="fsdocs-tip" id="3457">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code><span>this.For</span></code>
@@ -676,21 +709,28 @@
             </div>
           </td>
           <td class="fsdocs-member-xmldoc">
-            <dl class="fsdocs-returns">
-              <dt>
-                <span class="fsdocs-return-name">
-                  Returns: 
-                </span>
-                <code><a href="https://fsprojects.github.io/fantomas/reference/fantomas-core-syntaxoak-singletextnode.html">SingleTextNode</a></code>
-              </dt>
-              <dd class="fsdocs-return-docs"></dd>
-            </dl>
+            <div class="fsdocs-member-xmldoc-column">
+              <div class="icon-button-row">
+                <a href="" class="fsdocs-source-link" title="Source on GitHub">
+                  <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                </a>
+              </div>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code><a href="https://fsprojects.github.io/fantomas/reference/fantomas-core-syntaxoak-singletextnode.html">SingleTextNode</a></code>
+                </dt>
+                <dd class="fsdocs-return-docs"></dd>
+              </dl>
+            </div>
           </td>
         </tr>
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '3558', 3558)" onmouseover="showTip(event, '3558', 3558)">
+              <code onmouseout="hideTip(event, '3458', 3458)" onmouseover="showTip(event, '3458', 3458)">
                 <p>
                   <a id="Ident">
                     <a href="#Ident">
@@ -699,7 +739,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="3558">
+              <div class="fsdocs-tip" id="3458">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code><span>this.Ident</span></code>
@@ -715,21 +755,28 @@
             </div>
           </td>
           <td class="fsdocs-member-xmldoc">
-            <dl class="fsdocs-returns">
-              <dt>
-                <span class="fsdocs-return-name">
-                  Returns: 
-                </span>
-                <code><a href="https://fsprojects.github.io/fantomas/reference/fantomas-core-syntaxoak-singletextnode.html">SingleTextNode</a></code>
-              </dt>
-              <dd class="fsdocs-return-docs"></dd>
-            </dl>
+            <div class="fsdocs-member-xmldoc-column">
+              <div class="icon-button-row">
+                <a href="" class="fsdocs-source-link" title="Source on GitHub">
+                  <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                </a>
+              </div>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code><a href="https://fsprojects.github.io/fantomas/reference/fantomas-core-syntaxoak-singletextnode.html">SingleTextNode</a></code>
+                </dt>
+                <dd class="fsdocs-return-docs"></dd>
+              </dl>
+            </div>
           </td>
         </tr>
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '3559', 3559)" onmouseover="showTip(event, '3559', 3559)">
+              <code onmouseout="hideTip(event, '3459', 3459)" onmouseover="showTip(event, '3459', 3459)">
                 <p>
                   <a id="IdentBody">
                     <a href="#IdentBody">
@@ -738,7 +785,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="3559">
+              <div class="fsdocs-tip" id="3459">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code><span>this.IdentBody</span></code>
@@ -754,21 +801,28 @@
             </div>
           </td>
           <td class="fsdocs-member-xmldoc">
-            <dl class="fsdocs-returns">
-              <dt>
-                <span class="fsdocs-return-name">
-                  Returns: 
-                </span>
-                <code><a href="https://fsprojects.github.io/fantomas/reference/fantomas-core-syntaxoak-expr.html">Expr</a></code>
-              </dt>
-              <dd class="fsdocs-return-docs"></dd>
-            </dl>
+            <div class="fsdocs-member-xmldoc-column">
+              <div class="icon-button-row">
+                <a href="" class="fsdocs-source-link" title="Source on GitHub">
+                  <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                </a>
+              </div>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code><a href="https://fsprojects.github.io/fantomas/reference/fantomas-core-syntaxoak-expr.html">Expr</a></code>
+                </dt>
+                <dd class="fsdocs-return-docs"></dd>
+              </dl>
+            </div>
           </td>
         </tr>
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '3560', 3560)" onmouseover="showTip(event, '3560', 3560)">
+              <code onmouseout="hideTip(event, '3460', 3460)" onmouseover="showTip(event, '3460', 3460)">
                 <p>
                   <a id="ToBody">
                     <a href="#ToBody">
@@ -777,7 +831,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="3560">
+              <div class="fsdocs-tip" id="3460">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code><span>this.ToBody</span></code>
@@ -793,15 +847,22 @@
             </div>
           </td>
           <td class="fsdocs-member-xmldoc">
-            <dl class="fsdocs-returns">
-              <dt>
-                <span class="fsdocs-return-name">
-                  Returns: 
-                </span>
-                <code><a href="https://fsprojects.github.io/fantomas/reference/fantomas-core-syntaxoak-expr.html">Expr</a></code>
-              </dt>
-              <dd class="fsdocs-return-docs"></dd>
-            </dl>
+            <div class="fsdocs-member-xmldoc-column">
+              <div class="icon-button-row">
+                <a href="" class="fsdocs-source-link" title="Source on GitHub">
+                  <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                </a>
+              </div>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code><a href="https://fsprojects.github.io/fantomas/reference/fantomas-core-syntaxoak-expr.html">Expr</a></code>
+                </dt>
+                <dd class="fsdocs-return-docs"></dd>
+              </dl>
+            </div>
           </td>
         </tr>
       </tbody>
@@ -825,6 +886,7 @@
 </dialog>
 <script type="module" src="https://fsprojects.github.io/fantomas/content/fsdocs-tips.js"></script>
 <script type="module" src="https://fsprojects.github.io/fantomas/content/fsdocs-theme-toggle.js"></script>
+<script type="module" src="https://fsprojects.github.io/fantomas/content/fsdocs-details-toggle.js"></script>
 <script type="module" src="https://fsprojects.github.io/fantomas/content/fsdocs-theme.js"></script>
 <script type="module" src="https://fsprojects.github.io/fantomas/content/fsdocs-search.js"></script>
 <script type="module">

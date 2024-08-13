@@ -22,6 +22,7 @@
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
     <link href="https://fsprojects.github.io/fantomas/images/favicon.ico" rel="icon" sizes="32x32" type="image/png"/>
     <script type="application/javascript" src="https://fsprojects.github.io/fantomas/content/fsdocs-theme-set-dark.js"></script>
+    <script type="application/javascript" src="https://fsprojects.github.io/fantomas/content/fsdocs-details-set-expanded.js"></script>
     <link href="https://fsprojects.github.io/fantomas/content/fsdocs-default.css" rel="stylesheet" type="text/css"/>
     <link href="https://fsprojects.github.io/fantomas/content/fsdocs-theme.css" rel="stylesheet" type="text/css"/>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;1,400&family=Reem+Kufi:wght@400;500;700&display=swap" rel="stylesheet">
@@ -306,9 +307,11 @@
   </dl>
   <div class="fsdocs-xmldoc">
     <div>
-      <p class="fsdocs-summary">
-         Represents a shim for the file system
-      </p>
+      <div class="fsdocs-summary-contents">
+        <p class="fsdocs-summary">
+           Represents a shim for the file system
+        </p>
+      </div>
     </div>
   </div>
   <div></div>
@@ -330,6 +333,7 @@
           </td>
           <td class="fsdocs-member-list-header">
             Description
+            <fsdocs-details-toggle></fsdocs-details-toggle>
           </td>
         </tr>
       </thead>
@@ -337,7 +341,7 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '7355', 7355)" onmouseover="showTip(event, '7355', 7355)">
+              <code onmouseout="hideTip(event, '6496', 6496)" onmouseover="showTip(event, '6496', 6496)">
                 <p>
                   <a id="AssemblyLoader">
                     <a href="#AssemblyLoader">
@@ -346,7 +350,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="7355">
+              <div class="fsdocs-tip" id="6496">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code><span>this.AssemblyLoader</span></code>
@@ -365,21 +369,28 @@
             </div>
           </td>
           <td class="fsdocs-member-xmldoc">
-            <dl class="fsdocs-returns">
-              <dt>
-                <span class="fsdocs-return-name">
-                  Returns: 
-                </span>
-                <code><a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-io-iassemblyloader.html">IAssemblyLoader</a></code>
-              </dt>
-              <dd class="fsdocs-return-docs"></dd>
-            </dl>
+            <div class="fsdocs-member-xmldoc-column">
+              <div class="icon-button-row">
+                <a href="" class="fsdocs-source-link" title="Source on GitHub">
+                  <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                </a>
+              </div>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code><a href="https://fsprojects.github.io/fantomas/reference/fantomas-fcs-io-iassemblyloader.html">IAssemblyLoader</a></code>
+                </dt>
+                <dd class="fsdocs-return-docs"></dd>
+              </dl>
+            </div>
           </td>
         </tr>
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '7356', 7356)" onmouseover="showTip(event, '7356', 7356)">
+              <code onmouseout="hideTip(event, '6497', 6497)" onmouseover="showTip(event, '6497', 6497)">
                 <p>
                   <a id="ChangeExtensionShim">
                     <a href="#ChangeExtensionShim">
@@ -388,7 +399,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="7356">
+              <div class="fsdocs-tip" id="6497">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code><span>this.ChangeExtensionShim</span></code>
@@ -430,18 +441,22 @@
             <details>
               <summary>
                 <div class="fsdocs-summary">
-                  <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Fantomas.FCS.IO.IFileSystem.ChangeExtensionShim`')">
-                    <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                  <div class="fsdocs-summary-contents">
+                    <p class="fsdocs-summary">
+                       A shim over Path.ChangeExtension
+                    </p>
                   </div>
-                  <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Fantomas.FCS.IO.IFileSystem.ChangeExtensionShim\'/>')">
-                    <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                  <div class="icon-button-row">
+                    <a href="" class="fsdocs-source-link" title="Source on GitHub">
+                      <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                    </a>
+                    <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Fantomas.FCS.IO.IFileSystem.ChangeExtensionShim\'/>')">
+                      <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                    </div>
+                    <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Fantomas.FCS.IO.IFileSystem.ChangeExtensionShim`')">
+                      <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                    </div>
                   </div>
-                  <a href="" class="fsdocs-source-link" title="Source on GitHub">
-                    <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
-                  </a>
-                  <p class="fsdocs-summary">
-                     A shim over Path.ChangeExtension
-                  </p>
                 </div>
               </summary>
               <dl class="fsdocs-params">
@@ -477,7 +492,7 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '7357', 7357)" onmouseover="showTip(event, '7357', 7357)">
+              <code onmouseout="hideTip(event, '6498', 6498)" onmouseover="showTip(event, '6498', 6498)">
                 <p>
                   <a id="CopyShim">
                     <a href="#CopyShim">
@@ -486,7 +501,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="7357">
+              <div class="fsdocs-tip" id="6498">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code><span>this.CopyShim</span></code>
@@ -528,38 +543,45 @@
             </div>
           </td>
           <td class="fsdocs-member-xmldoc">
-            <dl class="fsdocs-params">
-              <dt class="fsdocs-param">
-                <span class="fsdocs-param-name">
-                  src
-                </span>
-                :
-                <code>string</code>
-              </dt>
-              <dd class="fsdocs-param-docs"></dd>
-              <dt class="fsdocs-param">
-                <span class="fsdocs-param-name">
-                  dest
-                </span>
-                :
-                <code>string</code>
-              </dt>
-              <dd class="fsdocs-param-docs"></dd>
-              <dt class="fsdocs-param">
-                <span class="fsdocs-param-name">
-                  overwrite
-                </span>
-                :
-                <code>bool</code>
-              </dt>
-              <dd class="fsdocs-param-docs"></dd>
-            </dl>
+            <div class="fsdocs-member-xmldoc-column">
+              <div class="icon-button-row">
+                <a href="" class="fsdocs-source-link" title="Source on GitHub">
+                  <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                </a>
+              </div>
+              <dl class="fsdocs-params">
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    src
+                  </span>
+                  :
+                  <code>string</code>
+                </dt>
+                <dd class="fsdocs-param-docs"></dd>
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    dest
+                  </span>
+                  :
+                  <code>string</code>
+                </dt>
+                <dd class="fsdocs-param-docs"></dd>
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    overwrite
+                  </span>
+                  :
+                  <code>bool</code>
+                </dt>
+                <dd class="fsdocs-param-docs"></dd>
+              </dl>
+            </div>
           </td>
         </tr>
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '7358', 7358)" onmouseover="showTip(event, '7358', 7358)">
+              <code onmouseout="hideTip(event, '6499', 6499)" onmouseover="showTip(event, '6499', 6499)">
                 <p>
                   <a id="DirectoryCreateShim">
                     <a href="#DirectoryCreateShim">
@@ -568,7 +590,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="7358">
+              <div class="fsdocs-tip" id="6499">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code><span>this.DirectoryCreateShim</span></code>
@@ -602,19 +624,23 @@
             <details>
               <summary>
                 <div class="fsdocs-summary">
-                  <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Fantomas.FCS.IO.IFileSystem.DirectoryCreateShim`')">
-                    <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
-                  </div>
-                  <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Fantomas.FCS.IO.IFileSystem.DirectoryCreateShim\'/>')">
-                    <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
-                  </div>
-                  <a href="" class="fsdocs-source-link" title="Source on GitHub">
-                    <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
-                  </a>
-                  <p class="fsdocs-summary">
-                     A shim over Directory.Exists, but returns a string, the FullName of the resulting
+                  <div class="fsdocs-summary-contents">
+                    <p class="fsdocs-summary">
+                       A shim over Directory.Exists, but returns a string, the FullName of the resulting
  DirectoryInfo.
-                  </p>
+                    </p>
+                  </div>
+                  <div class="icon-button-row">
+                    <a href="" class="fsdocs-source-link" title="Source on GitHub">
+                      <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                    </a>
+                    <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Fantomas.FCS.IO.IFileSystem.DirectoryCreateShim\'/>')">
+                      <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                    </div>
+                    <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Fantomas.FCS.IO.IFileSystem.DirectoryCreateShim`')">
+                      <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                    </div>
+                  </div>
                 </div>
               </summary>
               <dl class="fsdocs-params">
@@ -642,7 +668,7 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '7359', 7359)" onmouseover="showTip(event, '7359', 7359)">
+              <code onmouseout="hideTip(event, '6500', 6500)" onmouseover="showTip(event, '6500', 6500)">
                 <p>
                   <a id="DirectoryDeleteShim">
                     <a href="#DirectoryDeleteShim">
@@ -651,7 +677,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="7359">
+              <div class="fsdocs-tip" id="6500">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code><span>this.DirectoryDeleteShim</span></code>
@@ -680,18 +706,22 @@
             <details>
               <summary>
                 <div class="fsdocs-summary">
-                  <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Fantomas.FCS.IO.IFileSystem.DirectoryDeleteShim`')">
-                    <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                  <div class="fsdocs-summary-contents">
+                    <p class="fsdocs-summary">
+                       A shim over Directory.Delete
+                    </p>
                   </div>
-                  <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Fantomas.FCS.IO.IFileSystem.DirectoryDeleteShim\'/>')">
-                    <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                  <div class="icon-button-row">
+                    <a href="" class="fsdocs-source-link" title="Source on GitHub">
+                      <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                    </a>
+                    <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Fantomas.FCS.IO.IFileSystem.DirectoryDeleteShim\'/>')">
+                      <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                    </div>
+                    <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Fantomas.FCS.IO.IFileSystem.DirectoryDeleteShim`')">
+                      <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                    </div>
                   </div>
-                  <a href="" class="fsdocs-source-link" title="Source on GitHub">
-                    <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
-                  </a>
-                  <p class="fsdocs-summary">
-                     A shim over Directory.Delete
-                  </p>
                 </div>
               </summary>
               <dl class="fsdocs-params">
@@ -710,7 +740,7 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '7360', 7360)" onmouseover="showTip(event, '7360', 7360)">
+              <code onmouseout="hideTip(event, '6501', 6501)" onmouseover="showTip(event, '6501', 6501)">
                 <p>
                   <a id="DirectoryExistsShim">
                     <a href="#DirectoryExistsShim">
@@ -719,7 +749,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="7360">
+              <div class="fsdocs-tip" id="6501">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code><span>this.DirectoryExistsShim</span></code>
@@ -753,18 +783,22 @@
             <details>
               <summary>
                 <div class="fsdocs-summary">
-                  <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Fantomas.FCS.IO.IFileSystem.DirectoryExistsShim`')">
-                    <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                  <div class="fsdocs-summary-contents">
+                    <p class="fsdocs-summary">
+                       A shim over Directory.Exists
+                    </p>
                   </div>
-                  <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Fantomas.FCS.IO.IFileSystem.DirectoryExistsShim\'/>')">
-                    <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                  <div class="icon-button-row">
+                    <a href="" class="fsdocs-source-link" title="Source on GitHub">
+                      <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                    </a>
+                    <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Fantomas.FCS.IO.IFileSystem.DirectoryExistsShim\'/>')">
+                      <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                    </div>
+                    <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Fantomas.FCS.IO.IFileSystem.DirectoryExistsShim`')">
+                      <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                    </div>
                   </div>
-                  <a href="" class="fsdocs-source-link" title="Source on GitHub">
-                    <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
-                  </a>
-                  <p class="fsdocs-summary">
-                     A shim over Directory.Exists
-                  </p>
                 </div>
               </summary>
               <dl class="fsdocs-params">
@@ -792,7 +826,7 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '7361', 7361)" onmouseover="showTip(event, '7361', 7361)">
+              <code onmouseout="hideTip(event, '6502', 6502)" onmouseover="showTip(event, '6502', 6502)">
                 <p>
                   <a id="EnumerateDirectoriesShim">
                     <a href="#EnumerateDirectoriesShim">
@@ -801,7 +835,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="7361">
+              <div class="fsdocs-tip" id="6502">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code><span>this.EnumerateDirectoriesShim</span></code>
@@ -835,18 +869,22 @@
             <details>
               <summary>
                 <div class="fsdocs-summary">
-                  <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Fantomas.FCS.IO.IFileSystem.EnumerateDirectoriesShim`')">
-                    <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                  <div class="fsdocs-summary-contents">
+                    <p class="fsdocs-summary">
+                       A shim over Directory.EnumerateDirectories
+                    </p>
                   </div>
-                  <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Fantomas.FCS.IO.IFileSystem.EnumerateDirectoriesShim\'/>')">
-                    <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                  <div class="icon-button-row">
+                    <a href="" class="fsdocs-source-link" title="Source on GitHub">
+                      <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                    </a>
+                    <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Fantomas.FCS.IO.IFileSystem.EnumerateDirectoriesShim\'/>')">
+                      <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                    </div>
+                    <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Fantomas.FCS.IO.IFileSystem.EnumerateDirectoriesShim`')">
+                      <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                    </div>
                   </div>
-                  <a href="" class="fsdocs-source-link" title="Source on GitHub">
-                    <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
-                  </a>
-                  <p class="fsdocs-summary">
-                     A shim over Directory.EnumerateDirectories
-                  </p>
                 </div>
               </summary>
               <dl class="fsdocs-params">
@@ -874,7 +912,7 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '7362', 7362)" onmouseover="showTip(event, '7362', 7362)">
+              <code onmouseout="hideTip(event, '6503', 6503)" onmouseover="showTip(event, '6503', 6503)">
                 <p>
                   <a id="EnumerateFilesShim">
                     <a href="#EnumerateFilesShim">
@@ -883,7 +921,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="7362">
+              <div class="fsdocs-tip" id="6503">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code><span>this.EnumerateFilesShim</span></code>
@@ -925,18 +963,22 @@
             <details>
               <summary>
                 <div class="fsdocs-summary">
-                  <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Fantomas.FCS.IO.IFileSystem.EnumerateFilesShim`')">
-                    <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                  <div class="fsdocs-summary-contents">
+                    <p class="fsdocs-summary">
+                       A shim over Directory.EnumerateFiles
+                    </p>
                   </div>
-                  <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Fantomas.FCS.IO.IFileSystem.EnumerateFilesShim\'/>')">
-                    <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                  <div class="icon-button-row">
+                    <a href="" class="fsdocs-source-link" title="Source on GitHub">
+                      <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                    </a>
+                    <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Fantomas.FCS.IO.IFileSystem.EnumerateFilesShim\'/>')">
+                      <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                    </div>
+                    <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Fantomas.FCS.IO.IFileSystem.EnumerateFilesShim`')">
+                      <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                    </div>
                   </div>
-                  <a href="" class="fsdocs-source-link" title="Source on GitHub">
-                    <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
-                  </a>
-                  <p class="fsdocs-summary">
-                     A shim over Directory.EnumerateFiles
-                  </p>
                 </div>
               </summary>
               <dl class="fsdocs-params">
@@ -972,7 +1014,7 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '7363', 7363)" onmouseover="showTip(event, '7363', 7363)">
+              <code onmouseout="hideTip(event, '6504', 6504)" onmouseover="showTip(event, '6504', 6504)">
                 <p>
                   <a id="FileDeleteShim">
                     <a href="#FileDeleteShim">
@@ -981,7 +1023,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="7363">
+              <div class="fsdocs-tip" id="6504">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code><span>this.FileDeleteShim</span></code>
@@ -1010,18 +1052,22 @@
             <details>
               <summary>
                 <div class="fsdocs-summary">
-                  <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Fantomas.FCS.IO.IFileSystem.FileDeleteShim`')">
-                    <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                  <div class="fsdocs-summary-contents">
+                    <p class="fsdocs-summary">
+                       A shim over File.Delete
+                    </p>
                   </div>
-                  <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Fantomas.FCS.IO.IFileSystem.FileDeleteShim\'/>')">
-                    <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                  <div class="icon-button-row">
+                    <a href="" class="fsdocs-source-link" title="Source on GitHub">
+                      <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                    </a>
+                    <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Fantomas.FCS.IO.IFileSystem.FileDeleteShim\'/>')">
+                      <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                    </div>
+                    <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Fantomas.FCS.IO.IFileSystem.FileDeleteShim`')">
+                      <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                    </div>
                   </div>
-                  <a href="" class="fsdocs-source-link" title="Source on GitHub">
-                    <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
-                  </a>
-                  <p class="fsdocs-summary">
-                     A shim over File.Delete
-                  </p>
                 </div>
               </summary>
               <dl class="fsdocs-params">
@@ -1040,7 +1086,7 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '7364', 7364)" onmouseover="showTip(event, '7364', 7364)">
+              <code onmouseout="hideTip(event, '6505', 6505)" onmouseover="showTip(event, '6505', 6505)">
                 <p>
                   <a id="FileExistsShim">
                     <a href="#FileExistsShim">
@@ -1049,7 +1095,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="7364">
+              <div class="fsdocs-tip" id="6505">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code><span>this.FileExistsShim</span></code>
@@ -1083,18 +1129,22 @@
             <details>
               <summary>
                 <div class="fsdocs-summary">
-                  <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Fantomas.FCS.IO.IFileSystem.FileExistsShim`')">
-                    <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                  <div class="fsdocs-summary-contents">
+                    <p class="fsdocs-summary">
+                       A shim over File.Exists
+                    </p>
                   </div>
-                  <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Fantomas.FCS.IO.IFileSystem.FileExistsShim\'/>')">
-                    <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                  <div class="icon-button-row">
+                    <a href="" class="fsdocs-source-link" title="Source on GitHub">
+                      <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                    </a>
+                    <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Fantomas.FCS.IO.IFileSystem.FileExistsShim\'/>')">
+                      <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                    </div>
+                    <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Fantomas.FCS.IO.IFileSystem.FileExistsShim`')">
+                      <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                    </div>
                   </div>
-                  <a href="" class="fsdocs-source-link" title="Source on GitHub">
-                    <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
-                  </a>
-                  <p class="fsdocs-summary">
-                     A shim over File.Exists
-                  </p>
                 </div>
               </summary>
               <dl class="fsdocs-params">
@@ -1122,7 +1172,7 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '7365', 7365)" onmouseover="showTip(event, '7365', 7365)">
+              <code onmouseout="hideTip(event, '6506', 6506)" onmouseover="showTip(event, '6506', 6506)">
                 <p>
                   <a id="GetCreationTimeShim">
                     <a href="#GetCreationTimeShim">
@@ -1131,7 +1181,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="7365">
+              <div class="fsdocs-tip" id="6506">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code><span>this.GetCreationTimeShim</span></code>
@@ -1162,31 +1212,38 @@
             </div>
           </td>
           <td class="fsdocs-member-xmldoc">
-            <dl class="fsdocs-params">
-              <dt class="fsdocs-param">
-                <span class="fsdocs-param-name">
-                  path
-                </span>
-                :
-                <code>string</code>
-              </dt>
-              <dd class="fsdocs-param-docs"></dd>
-            </dl>
-            <dl class="fsdocs-returns">
-              <dt>
-                <span class="fsdocs-return-name">
-                  Returns: 
-                </span>
-                <code><a href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></code>
-              </dt>
-              <dd class="fsdocs-return-docs"></dd>
-            </dl>
+            <div class="fsdocs-member-xmldoc-column">
+              <div class="icon-button-row">
+                <a href="" class="fsdocs-source-link" title="Source on GitHub">
+                  <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                </a>
+              </div>
+              <dl class="fsdocs-params">
+                <dt class="fsdocs-param">
+                  <span class="fsdocs-param-name">
+                    path
+                  </span>
+                  :
+                  <code>string</code>
+                </dt>
+                <dd class="fsdocs-param-docs"></dd>
+              </dl>
+              <dl class="fsdocs-returns">
+                <dt>
+                  <span class="fsdocs-return-name">
+                    Returns: 
+                  </span>
+                  <code><a href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></code>
+                </dt>
+                <dd class="fsdocs-return-docs"></dd>
+              </dl>
+            </div>
           </td>
         </tr>
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '7366', 7366)" onmouseover="showTip(event, '7366', 7366)">
+              <code onmouseout="hideTip(event, '6507', 6507)" onmouseover="showTip(event, '6507', 6507)">
                 <p>
                   <a id="GetDirectoryNameShim">
                     <a href="#GetDirectoryNameShim">
@@ -1195,7 +1252,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="7366">
+              <div class="fsdocs-tip" id="6507">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code><span>this.GetDirectoryNameShim</span></code>
@@ -1229,18 +1286,22 @@
             <details>
               <summary>
                 <div class="fsdocs-summary">
-                  <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Fantomas.FCS.IO.IFileSystem.GetDirectoryNameShim`')">
-                    <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                  <div class="fsdocs-summary-contents">
+                    <p class="fsdocs-summary">
+                       A shim for getting directory name from path
+                    </p>
                   </div>
-                  <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Fantomas.FCS.IO.IFileSystem.GetDirectoryNameShim\'/>')">
-                    <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                  <div class="icon-button-row">
+                    <a href="" class="fsdocs-source-link" title="Source on GitHub">
+                      <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                    </a>
+                    <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Fantomas.FCS.IO.IFileSystem.GetDirectoryNameShim\'/>')">
+                      <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                    </div>
+                    <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Fantomas.FCS.IO.IFileSystem.GetDirectoryNameShim`')">
+                      <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                    </div>
                   </div>
-                  <a href="" class="fsdocs-source-link" title="Source on GitHub">
-                    <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
-                  </a>
-                  <p class="fsdocs-summary">
-                     A shim for getting directory name from path
-                  </p>
                 </div>
               </summary>
               <dl class="fsdocs-params">
@@ -1268,7 +1329,7 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '7367', 7367)" onmouseover="showTip(event, '7367', 7367)">
+              <code onmouseout="hideTip(event, '6508', 6508)" onmouseover="showTip(event, '6508', 6508)">
                 <p>
                   <a id="GetFullFilePathInDirectoryShim">
                     <a href="#GetFullFilePathInDirectoryShim">
@@ -1277,7 +1338,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="7367">
+              <div class="fsdocs-tip" id="6508">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code><span>this.GetFullFilePathInDirectoryShim</span></code>
@@ -1319,20 +1380,24 @@
             <details>
               <summary>
                 <div class="fsdocs-summary">
-                  <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Fantomas.FCS.IO.IFileSystem.GetFullFilePathInDirectoryShim`')">
-                    <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
-                  </div>
-                  <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Fantomas.FCS.IO.IFileSystem.GetFullFilePathInDirectoryShim\'/>')">
-                    <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
-                  </div>
-                  <a href="" class="fsdocs-source-link" title="Source on GitHub">
-                    <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
-                  </a>
-                  <p class="fsdocs-summary">
-                     Take in a directory, filename, and return canonicalized path to the file name in directory.
+                  <div class="fsdocs-summary-contents">
+                    <p class="fsdocs-summary">
+                       Take in a directory, filename, and return canonicalized path to the file name in directory.
  If file name path is rooted, ignores directory and returns file name path.
  Otherwise, combines directory with file name and gets full path via GetFullPathShim(string).
-                  </p>
+                    </p>
+                  </div>
+                  <div class="icon-button-row">
+                    <a href="" class="fsdocs-source-link" title="Source on GitHub">
+                      <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                    </a>
+                    <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Fantomas.FCS.IO.IFileSystem.GetFullFilePathInDirectoryShim\'/>')">
+                      <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                    </div>
+                    <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Fantomas.FCS.IO.IFileSystem.GetFullFilePathInDirectoryShim`')">
+                      <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                    </div>
+                  </div>
                 </div>
               </summary>
               <dl class="fsdocs-params">
@@ -1368,7 +1433,7 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '7368', 7368)" onmouseover="showTip(event, '7368', 7368)">
+              <code onmouseout="hideTip(event, '6509', 6509)" onmouseover="showTip(event, '6509', 6509)">
                 <p>
                   <a id="GetFullPathShim">
                     <a href="#GetFullPathShim">
@@ -1377,7 +1442,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="7368">
+              <div class="fsdocs-tip" id="6509">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code><span>this.GetFullPathShim</span></code>
@@ -1411,20 +1476,24 @@
             <details>
               <summary>
                 <div class="fsdocs-summary">
-                  <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Fantomas.FCS.IO.IFileSystem.GetFullPathShim`')">
-                    <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
-                  </div>
-                  <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Fantomas.FCS.IO.IFileSystem.GetFullPathShim\'/>')">
-                    <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
-                  </div>
-                  <a href="" class="fsdocs-source-link" title="Source on GitHub">
-                    <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
-                  </a>
-                  <p class="fsdocs-summary">
-                     Take in a file name with an absolute path, and return the same file name
+                  <div class="fsdocs-summary-contents">
+                    <p class="fsdocs-summary">
+                       Take in a file name with an absolute path, and return the same file name
  but canonicalized with respect to extra path separators (e.g. C:\\\\foo.txt)
  and '..' portions
-                  </p>
+                    </p>
+                  </div>
+                  <div class="icon-button-row">
+                    <a href="" class="fsdocs-source-link" title="Source on GitHub">
+                      <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                    </a>
+                    <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Fantomas.FCS.IO.IFileSystem.GetFullPathShim\'/>')">
+                      <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                    </div>
+                    <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Fantomas.FCS.IO.IFileSystem.GetFullPathShim`')">
+                      <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                    </div>
+                  </div>
                 </div>
               </summary>
               <dl class="fsdocs-params">
@@ -1452,7 +1521,7 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '7369', 7369)" onmouseover="showTip(event, '7369', 7369)">
+              <code onmouseout="hideTip(event, '6510', 6510)" onmouseover="showTip(event, '6510', 6510)">
                 <p>
                   <a id="GetLastWriteTimeShim">
                     <a href="#GetLastWriteTimeShim">
@@ -1461,7 +1530,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="7369">
+              <div class="fsdocs-tip" id="6510">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code><span>this.GetLastWriteTimeShim</span></code>
@@ -1495,18 +1564,22 @@
             <details>
               <summary>
                 <div class="fsdocs-summary">
-                  <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Fantomas.FCS.IO.IFileSystem.GetLastWriteTimeShim`')">
-                    <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                  <div class="fsdocs-summary-contents">
+                    <p class="fsdocs-summary">
+                       Utc time of the last modification
+                    </p>
                   </div>
-                  <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Fantomas.FCS.IO.IFileSystem.GetLastWriteTimeShim\'/>')">
-                    <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                  <div class="icon-button-row">
+                    <a href="" class="fsdocs-source-link" title="Source on GitHub">
+                      <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                    </a>
+                    <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Fantomas.FCS.IO.IFileSystem.GetLastWriteTimeShim\'/>')">
+                      <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                    </div>
+                    <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Fantomas.FCS.IO.IFileSystem.GetLastWriteTimeShim`')">
+                      <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                    </div>
                   </div>
-                  <a href="" class="fsdocs-source-link" title="Source on GitHub">
-                    <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
-                  </a>
-                  <p class="fsdocs-summary">
-                     Utc time of the last modification
-                  </p>
                 </div>
               </summary>
               <dl class="fsdocs-params">
@@ -1534,7 +1607,7 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '7370', 7370)" onmouseover="showTip(event, '7370', 7370)">
+              <code onmouseout="hideTip(event, '6511', 6511)" onmouseover="showTip(event, '6511', 6511)">
                 <p>
                   <a id="GetTempPathShim">
                     <a href="#GetTempPathShim">
@@ -1543,7 +1616,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="7370">
+              <div class="fsdocs-tip" id="6511">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code><span>this.GetTempPathShim</span></code>
@@ -1565,18 +1638,22 @@
             <details>
               <summary>
                 <div class="fsdocs-summary">
-                  <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Fantomas.FCS.IO.IFileSystem.GetTempPathShim`')">
-                    <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                  <div class="fsdocs-summary-contents">
+                    <p class="fsdocs-summary">
+                       A shim over Path.GetTempPath
+                    </p>
                   </div>
-                  <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Fantomas.FCS.IO.IFileSystem.GetTempPathShim\'/>')">
-                    <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                  <div class="icon-button-row">
+                    <a href="" class="fsdocs-source-link" title="Source on GitHub">
+                      <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                    </a>
+                    <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Fantomas.FCS.IO.IFileSystem.GetTempPathShim\'/>')">
+                      <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                    </div>
+                    <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Fantomas.FCS.IO.IFileSystem.GetTempPathShim`')">
+                      <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                    </div>
                   </div>
-                  <a href="" class="fsdocs-source-link" title="Source on GitHub">
-                    <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
-                  </a>
-                  <p class="fsdocs-summary">
-                     A shim over Path.GetTempPath
-                  </p>
                 </div>
               </summary>
               <dl class="fsdocs-returns">
@@ -1594,7 +1671,7 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '7371', 7371)" onmouseover="showTip(event, '7371', 7371)">
+              <code onmouseout="hideTip(event, '6512', 6512)" onmouseover="showTip(event, '6512', 6512)">
                 <p>
                   <a id="IsInvalidPathShim">
                     <a href="#IsInvalidPathShim">
@@ -1603,7 +1680,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="7371">
+              <div class="fsdocs-tip" id="6512">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code><span>this.IsInvalidPathShim</span></code>
@@ -1637,18 +1714,22 @@
             <details>
               <summary>
                 <div class="fsdocs-summary">
-                  <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Fantomas.FCS.IO.IFileSystem.IsInvalidPathShim`')">
-                    <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                  <div class="fsdocs-summary-contents">
+                    <p class="fsdocs-summary">
+                       A shim over Path.IsInvalidPath
+                    </p>
                   </div>
-                  <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Fantomas.FCS.IO.IFileSystem.IsInvalidPathShim\'/>')">
-                    <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                  <div class="icon-button-row">
+                    <a href="" class="fsdocs-source-link" title="Source on GitHub">
+                      <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                    </a>
+                    <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Fantomas.FCS.IO.IFileSystem.IsInvalidPathShim\'/>')">
+                      <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                    </div>
+                    <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Fantomas.FCS.IO.IFileSystem.IsInvalidPathShim`')">
+                      <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                    </div>
                   </div>
-                  <a href="" class="fsdocs-source-link" title="Source on GitHub">
-                    <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
-                  </a>
-                  <p class="fsdocs-summary">
-                     A shim over Path.IsInvalidPath
-                  </p>
                 </div>
               </summary>
               <dl class="fsdocs-params">
@@ -1676,7 +1757,7 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '7372', 7372)" onmouseover="showTip(event, '7372', 7372)">
+              <code onmouseout="hideTip(event, '6513', 6513)" onmouseover="showTip(event, '6513', 6513)">
                 <p>
                   <a id="IsPathRootedShim">
                     <a href="#IsPathRootedShim">
@@ -1685,7 +1766,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="7372">
+              <div class="fsdocs-tip" id="6513">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code><span>this.IsPathRootedShim</span></code>
@@ -1719,18 +1800,22 @@
             <details>
               <summary>
                 <div class="fsdocs-summary">
-                  <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Fantomas.FCS.IO.IFileSystem.IsPathRootedShim`')">
-                    <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                  <div class="fsdocs-summary-contents">
+                    <p class="fsdocs-summary">
+                       A shim over Path.IsPathRooted
+                    </p>
                   </div>
-                  <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Fantomas.FCS.IO.IFileSystem.IsPathRootedShim\'/>')">
-                    <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                  <div class="icon-button-row">
+                    <a href="" class="fsdocs-source-link" title="Source on GitHub">
+                      <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                    </a>
+                    <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Fantomas.FCS.IO.IFileSystem.IsPathRootedShim\'/>')">
+                      <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                    </div>
+                    <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Fantomas.FCS.IO.IFileSystem.IsPathRootedShim`')">
+                      <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                    </div>
                   </div>
-                  <a href="" class="fsdocs-source-link" title="Source on GitHub">
-                    <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
-                  </a>
-                  <p class="fsdocs-summary">
-                     A shim over Path.IsPathRooted
-                  </p>
                 </div>
               </summary>
               <dl class="fsdocs-params">
@@ -1758,7 +1843,7 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '7373', 7373)" onmouseover="showTip(event, '7373', 7373)">
+              <code onmouseout="hideTip(event, '6514', 6514)" onmouseover="showTip(event, '6514', 6514)">
                 <p>
                   <a id="IsStableFileHeuristic">
                     <a href="#IsStableFileHeuristic">
@@ -1767,7 +1852,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="7373">
+              <div class="fsdocs-tip" id="6514">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code><span>this.IsStableFileHeuristic</span></code>
@@ -1801,18 +1886,22 @@
             <details>
               <summary>
                 <div class="fsdocs-summary">
-                  <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Fantomas.FCS.IO.IFileSystem.IsStableFileHeuristic`')">
-                    <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                  <div class="fsdocs-summary-contents">
+                    <p class="fsdocs-summary">
+                       Used to determine if a file will not be subject to deletion during the lifetime of a typical client process.
+                    </p>
                   </div>
-                  <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Fantomas.FCS.IO.IFileSystem.IsStableFileHeuristic\'/>')">
-                    <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                  <div class="icon-button-row">
+                    <a href="" class="fsdocs-source-link" title="Source on GitHub">
+                      <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                    </a>
+                    <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Fantomas.FCS.IO.IFileSystem.IsStableFileHeuristic\'/>')">
+                      <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                    </div>
+                    <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Fantomas.FCS.IO.IFileSystem.IsStableFileHeuristic`')">
+                      <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                    </div>
                   </div>
-                  <a href="" class="fsdocs-source-link" title="Source on GitHub">
-                    <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
-                  </a>
-                  <p class="fsdocs-summary">
-                     Used to determine if a file will not be subject to deletion during the lifetime of a typical client process.
-                  </p>
                 </div>
               </summary>
               <dl class="fsdocs-params">
@@ -1840,7 +1929,7 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '7374', 7374)" onmouseover="showTip(event, '7374', 7374)">
+              <code onmouseout="hideTip(event, '6515', 6515)" onmouseover="showTip(event, '6515', 6515)">
                 <p>
                   <a id="NormalizePathShim">
                     <a href="#NormalizePathShim">
@@ -1849,7 +1938,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="7374">
+              <div class="fsdocs-tip" id="6515">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code><span>this.NormalizePathShim</span></code>
@@ -1883,18 +1972,22 @@
             <details>
               <summary>
                 <div class="fsdocs-summary">
-                  <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Fantomas.FCS.IO.IFileSystem.NormalizePathShim`')">
-                    <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                  <div class="fsdocs-summary-contents">
+                    <p class="fsdocs-summary">
+                       Removes relative parts from any full paths
+                    </p>
                   </div>
-                  <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Fantomas.FCS.IO.IFileSystem.NormalizePathShim\'/>')">
-                    <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                  <div class="icon-button-row">
+                    <a href="" class="fsdocs-source-link" title="Source on GitHub">
+                      <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                    </a>
+                    <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Fantomas.FCS.IO.IFileSystem.NormalizePathShim\'/>')">
+                      <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                    </div>
+                    <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Fantomas.FCS.IO.IFileSystem.NormalizePathShim`')">
+                      <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                    </div>
                   </div>
-                  <a href="" class="fsdocs-source-link" title="Source on GitHub">
-                    <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
-                  </a>
-                  <p class="fsdocs-summary">
-                     Removes relative parts from any full paths
-                  </p>
                 </div>
               </summary>
               <dl class="fsdocs-params">
@@ -1922,7 +2015,7 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '7375', 7375)" onmouseover="showTip(event, '7375', 7375)">
+              <code onmouseout="hideTip(event, '6516', 6516)" onmouseover="showTip(event, '6516', 6516)">
                 <p>
                   <a id="OpenFileForReadShim">
                     <a href="#OpenFileForReadShim">
@@ -1931,7 +2024,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="7375">
+              <div class="fsdocs-tip" id="6516">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code><span>this.OpenFileForReadShim</span></code>
@@ -1981,18 +2074,22 @@
             <details>
               <summary>
                 <div class="fsdocs-summary">
-                  <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Fantomas.FCS.IO.IFileSystem.OpenFileForReadShim`')">
-                    <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                  <div class="fsdocs-summary-contents">
+                    <p class="fsdocs-summary">
+                       Open the file for read, returns ByteMemory, uses either FileStream (for smaller files) or MemoryMappedFile (for potentially big files, such as dlls).
+                    </p>
                   </div>
-                  <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Fantomas.FCS.IO.IFileSystem.OpenFileForReadShim\'/>')">
-                    <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                  <div class="icon-button-row">
+                    <a href="" class="fsdocs-source-link" title="Source on GitHub">
+                      <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                    </a>
+                    <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Fantomas.FCS.IO.IFileSystem.OpenFileForReadShim\'/>')">
+                      <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                    </div>
+                    <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Fantomas.FCS.IO.IFileSystem.OpenFileForReadShim`')">
+                      <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                    </div>
                   </div>
-                  <a href="" class="fsdocs-source-link" title="Source on GitHub">
-                    <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
-                  </a>
-                  <p class="fsdocs-summary">
-                     Open the file for read, returns ByteMemory, uses either FileStream (for smaller files) or MemoryMappedFile (for potentially big files, such as dlls).
-                  </p>
                 </div>
               </summary>
               <dl class="fsdocs-params">
@@ -2036,7 +2133,7 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '7376', 7376)" onmouseover="showTip(event, '7376', 7376)">
+              <code onmouseout="hideTip(event, '6517', 6517)" onmouseover="showTip(event, '6517', 6517)">
                 <p>
                   <a id="OpenFileForWriteShim">
                     <a href="#OpenFileForWriteShim">
@@ -2045,7 +2142,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="7376">
+              <div class="fsdocs-tip" id="6517">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code><span>this.OpenFileForWriteShim</span></code>
@@ -2103,18 +2200,22 @@
             <details>
               <summary>
                 <div class="fsdocs-summary">
-                  <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Fantomas.FCS.IO.IFileSystem.OpenFileForWriteShim`')">
-                    <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                  <div class="fsdocs-summary-contents">
+                    <p class="fsdocs-summary">
+                       Open the file for writing. Returns a Stream.
+                    </p>
                   </div>
-                  <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Fantomas.FCS.IO.IFileSystem.OpenFileForWriteShim\'/>')">
-                    <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                  <div class="icon-button-row">
+                    <a href="" class="fsdocs-source-link" title="Source on GitHub">
+                      <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
+                    </a>
+                    <div class="fsdocs-source-link" title="Copy signature (XML)" onclick="Clipboard_CopyTo('<see cref=\'M:Fantomas.FCS.IO.IFileSystem.OpenFileForWriteShim\'/>')">
+                      <iconify-icon icon="bi:filetype-xml" height="24" width="24"></iconify-icon>
+                    </div>
+                    <div class="fsdocs-source-link" title="Copy signature (Markdown)" onclick="Clipboard_CopyTo('`cref:M:Fantomas.FCS.IO.IFileSystem.OpenFileForWriteShim`')">
+                      <iconify-icon icon="bi:filetype-md" height="24" width="24"></iconify-icon>
+                    </div>
                   </div>
-                  <a href="" class="fsdocs-source-link" title="Source on GitHub">
-                    <iconify-icon icon="ri:github-fill" height="24" width="24"></iconify-icon>
-                  </a>
-                  <p class="fsdocs-summary">
-                     Open the file for writing. Returns a Stream.
-                  </p>
                 </div>
               </summary>
               <dl class="fsdocs-params">
@@ -2184,6 +2285,7 @@
 </dialog>
 <script type="module" src="https://fsprojects.github.io/fantomas/content/fsdocs-tips.js"></script>
 <script type="module" src="https://fsprojects.github.io/fantomas/content/fsdocs-theme-toggle.js"></script>
+<script type="module" src="https://fsprojects.github.io/fantomas/content/fsdocs-details-toggle.js"></script>
 <script type="module" src="https://fsprojects.github.io/fantomas/content/fsdocs-theme.js"></script>
 <script type="module" src="https://fsprojects.github.io/fantomas/content/fsdocs-search.js"></script>
 <script type="module">
