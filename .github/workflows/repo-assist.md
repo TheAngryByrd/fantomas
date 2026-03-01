@@ -75,7 +75,7 @@ tools:
     #allowed_domains: ["defaults", "github", "*.custom.com", "fsprojects.github.io"]
     version: "1.56.1"  # Optional: defaults to 1.56.1, use "latest" for newest
 
-source: githubnext/agentics/workflows/repo-assist.md@afb00b92a9514fee9a14c583f059a03d05738f70
+source: githubnext/agentics/workflows/repo-assist.md@da02dddebe71d9a937665abdcd1f5214dab852a7
 ---
 
 # Repo Assist
