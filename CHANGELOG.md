@@ -1,6 +1,10 @@
 # Changelog
 
-## [Unreleased]
+## [8.0.0-alpha-012] - 2026-04-16
+
+### Changed
+
+- Bump `FSharp.Core` to `10.0.100`. [#3353](https://github.com/fsprojects/fantomas/pull/3353)
 
 ### Fixed
 
