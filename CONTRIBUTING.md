@@ -110,7 +110,7 @@ The maintainers know the code and will be able to tell.
 
 # Community
 
-There is a [Discord](https://discord.gg/D5QXvQrBVa) server or you can try the `#editor_support` channel in the [F# Foundation Slack](https://fsharp.slack.com).
+You can ask questions in the [#fantomas channel on the F# Discord](https://discord.com/channels/196693847965696000/1493226271767924747) or the `#editor_support` channel in the [F# Foundation Slack](https://fsharp.slack.com).
 
 ## Talks
 
