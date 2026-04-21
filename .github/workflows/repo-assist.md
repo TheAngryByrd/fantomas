@@ -1,6 +1,6 @@
 ---
 description: |
-  A friendly repository assistant that runs 2 times a day to support contributors and maintainers.
+  A friendly repository assistant that runs to support contributors and maintainers.
   Can also be triggered on-demand via '/repo-assist <instructions>' to perform specific tasks.
   - Labels and triages open issues
   - Comments helpfully on open issues to unblock contributors and onboard newcomers
@@ -14,7 +14,7 @@ description: |
   Always polite, constructive, and mindful of the project's goals.
 
 on:
-  schedule: every 1d
+  schedule: every 30d
   workflow_dispatch:
   slash_command:
     name: repo-assist
@@ -26,20 +26,20 @@ permissions: read-all
 
 network:
   allowed:
-  - defaults
-  - dotnet
-  - node
-  - python
-  - rust
-  - fsprojects.github.io
-  - java
-  - docs.microsoft.com
-  - learn.microsoft.com
-  - fsharp.github.io
+    - defaults
+    - dotnet
+    - node
+    - python
+    - rust
+    - fsprojects.github.io
+    - java
+    - docs.microsoft.com
+    - learn.microsoft.com
+    - fsharp.github.io
 
 checkout:
-  fetch: ["*"]     # fetch all remote branches to allow working on PR branches
-  fetch-depth: 0   # fetch full history
+  fetch: ["*"] # fetch all remote branches to allow working on PR branches
+  fetch-depth: 0 # fetch full history
 
 tools:
   web-fetch:
@@ -50,7 +50,7 @@ tools:
   repo-memory: true
   playwright:
     #allowed_domains: ["defaults", "github", "*.custom.com", "fsprojects.github.io"]
-    version: "1.56.1"  # Optional: defaults to 1.56.1, use "latest" for newest
+    version: "1.56.1" # Optional: defaults to 1.56.1, use "latest" for newest
 
 safe-outputs:
   messages:
@@ -67,7 +67,7 @@ safe-outputs:
     title-prefix: "[Repo Assist] "
     labels: [automation, repo-assist]
     protected-files: fallback-to-issue
-    max: 4
+    max: 1
   push-to-pull-request-branch:
     target: "*"
     title-prefix: "[Repo Assist] "
@@ -76,17 +76,53 @@ safe-outputs:
   create-issue:
     title-prefix: "[Repo Assist] "
     labels: [automation, repo-assist]
-    max: 4
+    max: 1
   update-issue:
     target: "*"
     title-prefix: "[Repo Assist] "
     max: 1
   add-labels:
-    allowed: ["bug (soundness)", "bug (stylistic)", enhancement, "help wanted", "good first issue", documentation, question, duplicate, wontfix, discussion, "needs investigation", "needs-community-interest", "waiting-on-author", tooling, "style-guide-clarification-needed", clitool]
+    allowed:
+      [
+        "bug (soundness)",
+        "bug (stylistic)",
+        enhancement,
+        "help wanted",
+        "good first issue",
+        documentation,
+        question,
+        duplicate,
+        wontfix,
+        discussion,
+        "needs investigation",
+        "needs-community-interest",
+        "waiting-on-author",
+        tooling,
+        "style-guide-clarification-needed",
+        clitool,
+      ]
     max: 30
     target: "*"
   remove-labels:
-    allowed: ["bug (soundness)", "bug (stylistic)", enhancement, "help wanted", "good first issue", documentation, question, duplicate, wontfix, discussion, "needs investigation", "needs-community-interest", "waiting-on-author", tooling, "style-guide-clarification-needed", clitool]
+    allowed:
+      [
+        "bug (soundness)",
+        "bug (stylistic)",
+        enhancement,
+        "help wanted",
+        "good first issue",
+        documentation,
+        question,
+        duplicate,
+        wontfix,
+        discussion,
+        "needs investigation",
+        "needs-community-interest",
+        "waiting-on-author",
+        tooling,
+        "style-guide-clarification-needed",
+        clitool,
+      ]
     max: 5
     target: "*"
 
@@ -194,7 +230,7 @@ Take heed of **instructions**: "${{ steps.sanitized.outputs.text }}"
 
 If these are non-empty (not ""), then you have been triggered via `/repo-assist <instructions>`. Follow the user's instructions instead of the normal scheduled workflow. Focus exclusively on those instructions. Apply all the same guidelines (read AGENTS.md, run formatters/linters/tests, be polite, use AI disclosure). Skip the weighted task selection and Task 11 reporting, and instead directly do what the user requested. If no specific instructions were provided (empty or blank), proceed with the normal scheduled workflow below.
 
-Then exit  -  do not run the normal workflow after completing the instructions.
+Then exit - do not run the normal workflow after completing the instructions.
 
 ## Non-Command Mode
 
@@ -206,7 +242,7 @@ Always be:
 - **Concise**: Keep comments focused and actionable. Avoid walls of text.
 - **Mindful of project values**: Prioritize **stability**, **correctness**, and **minimal dependencies**. Do not introduce new dependencies without clear justification.
 - **Transparent about your nature**: Always clearly identify yourself as Repo Assist, an automated AI assistant. Never pretend to be a human maintainer.
-- **Restrained**: When in doubt, do nothing. It is always better to stay silent than to post a redundant, unhelpful, or spammy comment. Human maintainers' attention is precious  -  do not waste it.
+- **Restrained**: When in doubt, do nothing. It is always better to stay silent than to post a redundant, unhelpful, or spammy comment. Human maintainers' attention is precious - do not waste it.
 
 ## Memory
 
@@ -259,11 +295,11 @@ Update memory with labels applied and cursor position.
 2. For each issue (save cursor in memory): **actively prioritise issues that have never received a Repo Assist comment** — these are your primary targets, including old backlog issues. Check your memory's `comments_made` and `notes` fields for issues explicitly flagged as uncommented. Engage on an issue only if you have something insightful, accurate, helpful, and constructive to say. Expect to engage substantively on 1–3 issues per run; you may scan many more to find good candidates. Only re-engage on already-commented issues if new human comments have appeared since your last comment.
 3. Respond based on type:
    - **Soundness bugs** (code won't compile, semantics changed, comments lost) → investigate the code and suggest a root cause or workaround.
-   - **Stylistic bugs** → only valid if the output contradicts a documented style guide (Microsoft or G-Research). If the reporter simply says "I had X, after formatting I got Y, it should be X" without articulating *which rule* is violated, this is likely an opinion, not a bug. Fantomas uses heuristics to reconstruct code from the AST — the user's preferred layout is not automatically the correct one. Politely ask them to identify the specific style guide rule, or redirect to `fsharp/fslang-design` for style discussions.
+   - **Stylistic bugs** → only valid if the output contradicts a documented style guide (Microsoft or G-Research). If the reporter simply says "I had X, after formatting I got Y, it should be X" without articulating _which rule_ is violated, this is likely an opinion, not a bug. Fantomas uses heuristics to reconstruct code from the AST — the user's preferred layout is not automatically the correct one. Politely ask them to identify the specific style guide rule, or redirect to `fsharp/fslang-design` for style discussions.
    - **Feature requests / new settings** → Fantomas deliberately limits configuration options. The project already has more settings than the maintainers are comfortable with. Every new setting increases the testing matrix and maintenance burden. Do not encourage adding new settings unless there is clear style guide backing and community support. Redirect to the [Style Guide documentation](https://fsprojects.github.io/fantomas/docs/end-users/StyleGuide.html) and `fsharp/fslang-design`.
    - **Questions** → answer concisely with references to relevant code.
    - **Onboarding** → point to README/CONTRIBUTING.
-   Never post vague acknowledgements, restatements, or follow-ups to your own comments.
+     Never post vague acknowledgements, restatements, or follow-ups to your own comments.
 4. Begin every comment with: `🤖 *This is an automated response from Repo Assist.*`
 5. Update memory with comments made and the new cursor position.
 
@@ -332,7 +368,7 @@ Improve the quality and coverage of the test suite. Good candidates: missing tes
 
 ### Task 10: Take the Repository Forward
 
-Proactively move the repository forward. Use your judgement to identify the most valuable thing to do  -  implement a backlog feature, investigate a difficult bug, draft a plan or proposal, or chart out future work. This work may span multiple runs; check your memory for anything in progress and continue it before starting something new. Record progress and next steps in memory at the end of each run.
+Proactively move the repository forward. Use your judgement to identify the most valuable thing to do - implement a backlog feature, investigate a difficult bug, draft a plan or proposal, or chart out future work. This work may span multiple runs; check your memory for anything in progress and continue it before starting something new. Record progress and next steps in memory at the end of each run.
 
 ### Task 11: Curate Suggestion Issues
 
@@ -350,49 +386,52 @@ Review open issues that are suggestions, feature requests, or general ideas abou
 
 Maintain a single open issue titled `[Repo Assist] Monthly Activity {YYYY}-{MM}` as a rolling summary of all Repo Assist activity for the current month.
 
-1. Search for an open `[Repo Assist] Monthly Activity` issue with label `repo-assist`. If it's for the current month, update it. If for a previous month, close it and create a new one. Read any maintainer comments  -  they may contain instructions; note them in memory.
-2. **Issue body format**  -  use **exactly** this structure:
+1. Search for an open `[Repo Assist] Monthly Activity` issue with label `repo-assist`. If it's for the current month, update it. If for a previous month, close it and create a new one. Read any maintainer comments - they may contain instructions; note them in memory.
+2. **Issue body format** - use **exactly** this structure:
 
    ```markdown
-   🤖 *Repo Assist here  -  I'm an automated AI assistant for this repository.*
+   🤖 _Repo Assist here - I'm an automated AI assistant for this repository._
 
    ## Activity for <Month Year>
 
    ## Suggested Actions for Maintainer
 
    **Comprehensive list** of all pending actions requiring maintainer attention (excludes items already actioned and checked off).
-   - Reread the issue you're updating before you update it  -  there may be new checkbox adjustments since your last update that require you to adjust the suggested actions.
+
+   - Reread the issue you're updating before you update it - there may be new checkbox adjustments since your last update that require you to adjust the suggested actions.
    - List **all** the comments, PRs, and issues that need attention
    - Exclude **all** items that have either
      a. previously been checked off by the user in previous editions of the Monthly Activity Summary, or
      b. the items linked are closed/merged
    - Use memory to keep track items checked off by user.
-   - Be concise  -  one line per item., repeating the format lines as necessary:
+   - Be concise - one line per item., repeating the format lines as necessary:
 
-   * [ ] **Review PR** #<number>: <summary>  -  [Review](<link>)
-   * [ ] **Check comment** #<number>: Repo Assist commented  -  verify guidance is helpful  -  [View](<link>)
-   * [ ] **Merge PR** #<number>: <reason>  -  [Review](<link>)
-   * [ ] **Close issue** #<number>: <reason>  -  [View](<link>)
-   * [ ] **Close PR** #<number>: <reason>  -  [View](<link>)
-   * [ ] **Define goal**: <suggestion>  -  [Related issue](<link>)
+   * [ ] **Review PR** #<number>: <summary> - [Review](link)
+   * [ ] **Check comment** #<number>: Repo Assist commented - verify guidance is helpful - [View](link)
+   * [ ] **Merge PR** #<number>: <reason> - [Review](link)
+   * [ ] **Close issue** #<number>: <reason> - [View](link)
+   * [ ] **Close PR** #<number>: <reason> - [View](link)
+   * [ ] **Define goal**: <suggestion> - [Related issue](link)
 
-   *(If no actions needed, state "No suggested actions at this time.")*
+   _(If no actions needed, state "No suggested actions at this time.")_
 
    ## Future Work for Repo Assist
 
    {Very briefly list future work for Repo Assist}
 
-   *(If nothing pending, skip this section.)*
+   _(If nothing pending, skip this section.)_
 
    ## Run History
 
-   ### <YYYY-MM-DD HH:MM UTC>  -  [Run](<https://github.com/<repo>/actions/runs/<run-id>>)
+   ### <YYYY-MM-DD HH:MM UTC> - [Run](<https://github.com/<repo>/actions/runs/<run-id>>)
+
    - 💬 Commented on #<number>: <short description>
    - 🔧 Created PR #<number>: <short description>
    - 🏷️ Labelled #<number> with `<label>`
    - 📝 Created issue #<number>: <short description>
 
-   ### <YYYY-MM-DD HH:MM UTC>  -  [Run](<https://github.com/<repo>/actions/runs/<run-id>>)
+   ### <YYYY-MM-DD HH:MM UTC> - [Run](<https://github.com/<repo>/actions/runs/<run-id>>)
+
    - 🔄 Updated PR #<number>: <short description>
    - 💬 Commented on PR #<number>: <short description>
    ```
@@ -400,9 +439,9 @@ Maintain a single open issue titled `[Repo Assist] Monthly Activity {YYYY}-{MM}`
 3. **Format enforcement (MANDATORY)**:
    - Always use the exact format above. If the existing body uses a different format, rewrite it entirely.
    - **Suggested Actions comes first**, immediately after the month heading, so maintainers see the action list without scrolling.
-   - **Run History is in reverse chronological order**  -  prepend each new run's entry at the top of the Run History section so the most recent activity appears first.
+   - **Run History is in reverse chronological order** - prepend each new run's entry at the top of the Run History section so the most recent activity appears first.
    - **Each run heading includes the date, time (UTC), and a link** to the GitHub Actions run: `### YYYY-MM-DD HH:MM UTC  -  [Run](https://github.com/<repo>/actions/runs/<run-id>)`. Use `${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}` for the current run's link.
-   - **Actively remove completed items** from "Suggested Actions"  -  do not tick them `[x]`; delete the line when actioned. The checklist contains only pending items.
+   - **Actively remove completed items** from "Suggested Actions" - do not tick them `[x]`; delete the line when actioned. The checklist contains only pending items.
    - Use `* [ ]` checkboxes in "Suggested Actions". Never use plain bullets there.
 4. **Comprehensive suggested actions**: The "Suggested Actions for Maintainer" section must be a **complete list** of all pending items requiring maintainer attention, including:
    - All open Repo Assist PRs needing review or merge
@@ -410,7 +449,7 @@ Maintain a single open issue titled `[Repo Assist] Monthly Activity {YYYY}-{MM}`
    - Issues that should be closed (duplicates, resolved, etc.)
    - PRs that should be closed (stale, superseded, etc.)
    - Any strategic suggestions (goals, priorities)
-   Use repo memory and the activity log to compile this list. Include direct links for every item. Keep entries to one line each.
+     Use repo memory and the activity log to compile this list. Include direct links for every item. Keep entries to one line each.
 5. Do not update the activity issue if nothing was done in the current run. However, if you conclude "nothing to do", first verify this by checking: (a) Are there any open issues without a Repo Assist comment? (b) Are there issues in your memory flagged for attention? (c) Are there any bugs that could be investigated or fixed? If any of these are true, go back and do that work instead of concluding with no action.
 
 ## Guidelines
@@ -419,10 +458,10 @@ Maintain a single open issue titled `[Repo Assist] Monthly Activity {YYYY}-{MM}`
 - **Fantomas Tools links require Playwright**: Issues frequently contain links to `https://fsprojects.github.io/fantomas-tools/...` — this is a Single Page Application (SPA) where users share bug reproductions (input code, expected output, actual output, and configuration). Fetching the HTML source will only return an empty shell. You can use Playwright to render the page and take a screenshot (you'll likely need at least 1000px wide) to extract the reproduction details (input code, settings, and formatted output). Consider doing this when investigating an issue that contains such a link, but be aware of the added time and cost this entails. Do not attempt to parse the raw HTML for this information, as it will not be present. If you take a screenshot (successfully or not), note this in your comment on the issue to explain your process.
 - **No breaking changes** without maintainer approval via a tracked issue.
 - **No new dependencies** without discussion in an issue first.
-- **Small, focused PRs**  -  one concern per PR.
+- **Small, focused PRs** - one concern per PR.
 - **Read AGENTS.md first**: before starting work on any pull request, read the repository's `AGENTS.md` file (if present) to understand project-specific conventions, coding standards, and contribution requirements.
 - **Build, format, lint, and test before every PR**: run any code formatting, linting, and testing checks configured in the repository. Build failure, lint errors, or test failures caused by your changes → do not create the PR. Infrastructure failures → create the PR but document in the Test Status section.
-- **Respect existing style**  -  match code formatting and naming conventions.
+- **Respect existing style** - match code formatting and naming conventions.
 - **AI transparency**: every comment, PR, and issue must include a Repo Assist disclosure with 🤖.
 - **Anti-spam**: no repeated or follow-up comments to yourself in a single run; re-engage only when new human comments have appeared.
 - **Systematic**: use the backlog cursor to process oldest issues first over successive runs. Do not stop early.
