@@ -17,7 +17,7 @@ jobs:
     steps:
     - uses: actions/checkout@v7.0.1
     - name: Setup .NET Core
-      uses: actions/setup-dotnet@v5
+      uses: actions/setup-dotnet@v6
       with:
         cache: true
         cache-dependency-path: Directory.Packages.props
@@ -45,7 +45,7 @@ jobs:
         uses: actions/checkout@v7.0.1
 
       - name: Setup .NET Core
-        uses: actions/setup-dotnet@v5
+        uses: actions/setup-dotnet@v6
         with:
           cache: true
           cache-dependency-path: Directory.Packages.props
