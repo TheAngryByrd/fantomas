@@ -582,6 +582,10 @@
 
  Only Fantomas 8 daemons send these; an older one never raises it, so no version check is
  needed.
+
+ `Version` names the daemon that raised the warning, so reporting one needs no separate
+ `VersionAsync` call. Asking afterwards would also be a race against `ClearCache`, which can
+ leave a newly installed daemon answering for a warning the one it replaced raised.
                     </p>
                   </div>
                   <div class="icon-button-row">
